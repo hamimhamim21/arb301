@@ -57,6 +57,24 @@
         .dialogue-speaker { font-weight: bold; color: #00695c; font-size: 24px; }
         .dialogue-text { font-size: 24px; color: #2c3e50; }
         @media (max-width: 768px) { .arabic-large { font-size: 32px; } .arabic-medium { font-size: 26px; } .section-title { font-size: 28px; } table { font-size: 18px; } }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.selected { border-color: #2196f3; background: #e3f2fd; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        .diagram-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; }
+        .diagram-title { text-align: center; font-size: 30px; color: #00695c; font-weight: bold; margin-bottom: 20px; }
+        .diagram-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .diagram-item { background: white; border-radius: 12px; padding: 15px; text-align: center; border: 2px solid #00897b; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .diagram-item h4 { color: #00695c; font-size: 22px; margin: 0 0 8px 0; }
+        .diagram-item p { font-size: 16px; color: #555; margin: 0; }
     </style>
 </head>
 <body>
@@ -76,6 +94,7 @@
         <a href="#vocab"><span class="nav-ar">المفردات</span><span class="nav-en">Vocabulary</span></a>
         <a href="#exercises"><span class="nav-ar">التمارين</span><span class="nav-en">Exercises</span></a>
         <a href="#dialogue"><span class="nav-ar">الحوار</span><span class="nav-en">Dialogue</span></a>
+        <a href="#masdar"><span class="nav-ar">المصادر</span><span class="nav-en">Masdar</span></a>
         <a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a>
     </div>
 </nav>
@@ -696,97 +715,219 @@
     </div>
 </section>
 
+<!-- Lesson 11 Grammar: مَصَادِرُ الأَفْعَالِ - Pages 58-63 -->
+<section class="section" id="masdar">
+    <h2 class="section-title">الدَّرْسُ الحَادِي عَشَرَ: مَصَادِرُ الأَفْعَالِ - Lesson 11: Verb Infinitives (Masdar)</h2>
+    <p class="english-text">What we will learn in this lesson (سَنَعْرِفُ فِي هَذَا الدَّرْسِ)</p>
+
+    <div class="diagram-box">
+        <div class="diagram-title">سَنَعْرِفُ فِي الدَّرْسِ الحَادِي عَشَرَ</div>
+        <p class="english-text" style="text-align: center;">Topics covered in Lesson 11</p>
+        <div class="diagram-grid">
+            <div class="diagram-item">
+                <h4>مَصَادِرُ الأَفْعَالِ</h4>
+                <p>Verb Infinitives (Masdar)</p>
+            </div>
+            <div class="diagram-item">
+                <h4>التَّمْيِيزُ</h4>
+                <p>Specification (Tamyeez)</p>
+            </div>
+            <div class="diagram-item">
+                <h4>الشَّرْطُ وَمَعْنَاهُ</h4>
+                <p>Condition &amp; Its Meaning</p>
+            </div>
+            <div class="diagram-item">
+                <h4>تَعَلُّمُ الفِعْلِ المُضَارِعِ</h4>
+                <p>Learning the Present Tense</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">أَوَّلًا: مَصَادِرُ الأَفْعَالِ - First: The Infinitives of Verbs</h3>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">أَنْوَاعُ الأَفْعَالِ حَسَبَ حُرُوفِهَا - Types of Verbs by Their Letters</h4>
+        <p class="arabic-text">عَرَفْنَا قَبْلَ ذَلِكَ أَنَّ الفِعْلَ فِي اللُّغَةِ العَرَبِيَّةِ يَنْقَسِمُ حَسَبَ حُرُوفِهِ إِلَى:</p>
+        <p class="english-text">We learned before that verbs in Arabic are classified by their root letters into:</p>
+    </div>
+
+    <table>
+        <tr><th>النَّوْعُ</th><th>التَّعْرِيفُ</th><th>أَمْثِلَة</th><th>English</th></tr>
+        <tr>
+            <td class="pronoun-cell">١. فِعْلٌ ثُلَاثِيٌّ</td>
+            <td>يَتَكَوَّنُ مِنْ ثَلَاثَةِ حُرُوفٍ</td>
+            <td>خَرَجَ، فَهِمَ، شَكَرَ، لَعِبَ، كَرُمَ</td>
+            <td class="english-text">3-letter root verb</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">٢. فِعْلٌ رُبَاعِيٌّ</td>
+            <td>يَتَكَوَّنُ مِنْ أَرْبَعَةِ حُرُوفٍ</td>
+            <td>أَعْطَى، خَاصَمَ</td>
+            <td class="english-text">4-letter root verb (e.g., Antagonize)</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">٣. فِعْلٌ خُمَاسِيٌّ</td>
+            <td>يَتَكَوَّنُ مِنْ خَمْسَةِ حُرُوفٍ</td>
+            <td>تَكَلَّمَ، تَعَلَّمَ، انْطَلَقَ</td>
+            <td class="english-text">5-letter root verb (e.g., To become free/released)</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell">٤. فِعْلٌ سُدَاسِيٌّ</td>
+            <td>يَتَكَوَّنُ مِنْ سِتَّةِ حُرُوفٍ</td>
+            <td>اسْتَقَامَ، اسْتَطَاعَ</td>
+            <td class="english-text">6-letter root verb (To be righteous, To be able)</td>
+        </tr>
+    </table>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">القَاعِدَة: مَصْدَرُ الفِعْلِ الثُّلَاثِيِّ اللَّازِمِ - Rule: Masdar of Intransitive Trilateral Verbs</h4>
+        <p class="arabic-text">وَلِكُلِّ نَوْعٍ مِنْ هَذِهِ الأَنْوَاعِ الأَرْبَعَةِ مَصَادِرُ خَاصَّةٌ</p>
+        <p class="english-text">Each of these four types has its own special masdar (infinitive) patterns.</p>
+        <p class="arabic-text">وَسَنَدْرُسُ الفِعْلَ الثُّلَاثِيَّ اللَّازِمَ الَّذِي يَكُونُ عَلَى وَزْنِ <strong>(فَعَلَ)</strong></p>
+        <p class="english-text">We will study the intransitive trilateral verb on the pattern (fa'ala).</p>
+        <p class="arabic-text">فَفِي هَذِهِ الحَالَةِ فَإِنَّ مَصْدَرَهُ يَكُونُ عَلَى وَزْنِ <strong>(فُعُول)</strong></p>
+        <p class="english-text">In this case, its masdar follows the pattern (fu'ool).</p>
+    </div>
+
+    <div class="formula-box">
+        <div class="formula">فَعَلَ (لَازِمٌ) ← فُعُول</div>
+        <p class="english-text">Intransitive trilateral verb pattern → Masdar pattern</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">مِثَالٌ - Example</h4>
+        <p class="arabic-text">الفِعْلُ (خَرَجَ) عَلَى وَزْنِ (فَعَلَ) وَهُوَ فِعْلٌ ثُلَاثِيٌّ يَتَكَوَّنُ مِنْ ثَلَاثَةِ حُرُوفٍ</p>
+        <p class="english-text">The verb (خَرَجَ) follows the pattern (فَعَلَ) and is a trilateral verb of three letters.</p>
+        <p class="arabic-text">كَمَا أَنَّهُ فِعْلٌ لَازِمٌ، أَيْ لَا يَحْتَاجُ إِلَى مَفْعُولٍ بِهِ</p>
+        <p class="english-text">It is also an intransitive verb, meaning it does not need a direct object.</p>
+        <p class="arabic-text">فَيَكُونُ مَصْدَرُهُ عَلَى وَزْنِ (فُعُول) أَيْ خَرَجَ ← <strong>خُرُوجٌ</strong></p>
+        <p class="english-text">So its masdar follows the pattern (فُعُول), i.e., خَرَجَ → خُرُوج (going out)</p>
+    </div>
+</section>
+
 <!-- MCQ Section -->
 <section class="section" id="mcq">
     <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
     <p class="english-text">Test your understanding of Lecture 3</p>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="الحَالُ مَنْصُوبٌ دَائِمًا، وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ. - The Haal is always in the accusative case (mansub), and its sign is the fathah.">
         <h4 class="arabic-medium">١. الحَالُ يَكُونُ دَائِمًا:</h4>
         <p class="english-text">The Haal is always:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) مَرْفُوعًا</p>
-            <p class="arabic-text">ب) مَنْصُوبًا ✓</p>
-            <p class="arabic-text">ج) مَجْرُورًا</p>
-            <p class="arabic-text">د) مَبْنِيًّا</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) مَرْفُوعًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) مَنْصُوبًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) مَجْرُورًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) مَبْنِيًّا</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="صَاحِبُ الحَالِ يَجِبُ أَنْ يَكُونَ مَعْرِفَةً (اسْمٌ مُعَرَّفٌ بِـ ال أَوْ إِضَافَةٌ أَوْ ضَمِيرٌ). - The owner of Haal must be definite (defined by al-, idafa, or pronoun).">
         <h4 class="arabic-medium">٢. صَاحِبُ الحَالِ يَكُونُ:</h4>
-        <p class="english-text">The owner of Haal (sahib al-haal) is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) نَكِرَةً دَائِمًا</p>
-            <p class="arabic-text">ب) مَعْرِفَةً دَائِمًا ✓</p>
-            <p class="arabic-text">ج) مُنَوَّنًا دَائِمًا</p>
-            <p class="arabic-text">د) مَجْرُورًا دَائِمًا</p>
+        <p class="english-text">The owner of Haal is:</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) نَكِرَةً دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) مَعْرِفَةً دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) مُنَوَّنًا دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) مَجْرُورًا دَائِمًا</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="مُبَكِّرًا هُوَ الحَالُ لِأَنَّهُ يَصِفُ هَيْئَةَ الطَّالِبِ عِنْدَ مَجِيئِهِ، وَهُوَ مَنْصُوبٌ بِالفَتْحَةِ. - مُبَكِّرًا is the Haal because it describes the state of the student when he came, and it is accusative.">
         <h4 class="arabic-medium">٣. "جَاءَ الطَّالِبُ مُبَكِّرًا" - الحَالُ هُنَا:</h4>
-        <p class="english-text">"جَاءَ الطَّالِبُ مُبَكِّرًا" - the Haal here is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) الطَّالِبُ</p>
-            <p class="arabic-text">ب) جَاءَ</p>
-            <p class="arabic-text">ج) مُبَكِّرًا ✓</p>
-            <p class="arabic-text">د) لَا يُوجَدُ حَال</p>
+        <p class="english-text">the Haal here is:</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) الطَّالِبُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) جَاءَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) مُبَكِّرًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) لَا يُوجَدُ حَال</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="الحَالُ يُجِيبُ عَنْ سُؤَالِ 'كَيْفَ؟' لِأَنَّهُ يُبَيِّنُ هَيْئَةَ صَاحِبِهِ. - The Haal answers 'How?' because it shows the state/condition of its owner.">
         <h4 class="arabic-medium">٤. الحَالُ يُجِيبُ عَلَى سُؤَالِ:</h4>
         <p class="english-text">The Haal answers the question:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) مَتَى؟</p>
-            <p class="arabic-text">ب) أَيْنَ؟</p>
-            <p class="arabic-text">ج) كَيْفَ؟ ✓</p>
-            <p class="arabic-text">د) لِمَاذَا؟</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) مَتَى؟</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) أَيْنَ؟</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) كَيْفَ؟</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) لِمَاذَا؟</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="الطَّالِبَةُ هِيَ صَاحِبُ الحَالِ لِأَنَّهَا الفَاعِلُ الَّذِي وُصِفَتْ هَيْئَتُهُ بِـ(مَسْرُورَةً). - الطَّالِبَةُ is the owner because she is the subject whose state is described by مَسْرُورَةً.">
         <h4 class="arabic-medium">٥. "رَجَعَتِ الطَّالِبَةُ مَسْرُورَةً" - صَاحِبُ الحَالِ:</h4>
-        <p class="english-text">"رَجَعَتِ الطَّالِبَةُ مَسْرُورَةً" - the owner of Haal:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) رَجَعَتْ</p>
-            <p class="arabic-text">ب) الطَّالِبَةُ ✓</p>
-            <p class="arabic-text">ج) مَسْرُورَةً</p>
-            <p class="arabic-text">د) لَا يُوجَدُ صَاحِبُ حَال</p>
+        <p class="english-text">the owner of Haal:</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) رَجَعَتْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) الطَّالِبَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) مَسْرُورَةً</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) لَا يُوجَدُ صَاحِبُ حَال</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="الحَالُ يَكُونُ نَكِرَةً دَائِمًا (غَيْرَ مُعَرَّفٍ بِـ ال)، بَيْنَمَا صَاحِبُ الحَالِ يَكُونُ مَعْرِفَةً. - The Haal is always indefinite (no ال), while its owner is definite.">
         <h4 class="arabic-medium">٦. الحَالُ يَكُونُ:</h4>
         <p class="english-text">The Haal is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) مَعْرِفَةً دَائِمًا</p>
-            <p class="arabic-text">ب) نَكِرَةً دَائِمًا ✓</p>
-            <p class="arabic-text">ج) مُضَافًا دَائِمًا</p>
-            <p class="arabic-text">د) جُمْلَةً دَائِمًا</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) مَعْرِفَةً دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) نَكِرَةً دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) مُضَافًا دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) جُمْلَةً دَائِمًا</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="رَكَعَ فِعْلٌ ثُلَاثِيٌّ لَازِمٌ عَلَى وَزْنِ (فَعَلَ)، فَمَصْدَرُهُ عَلَى وَزْنِ (فُعُول) = رُكُوع. - رَكَعَ is an intransitive trilateral verb on pattern فَعَلَ, so its masdar follows فُعُول = رُكُوع.">
         <h4 class="arabic-medium">٧. المَصْدَرُ مِنَ "رَكَعَ - يَرْكَعُ" هُوَ:</h4>
         <p class="english-text">The masdar from "رَكَعَ - يَرْكَعُ" is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) رَاكِع</p>
-            <p class="arabic-text">ب) رُكُوع ✓</p>
-            <p class="arabic-text">ج) مَرْكَع</p>
-            <p class="arabic-text">د) تَرْكِيع</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) رَاكِع</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) رُكُوع</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) مَرْكَع</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) تَرْكِيع</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="a" data-explanation="الحَالُ يَأْتِي بَعْدَ صَاحِبِ الحَالِ فِي الجُمْلَةِ لِيَصِفَ هَيْئَتَهُ. - The Haal comes after its owner in the sentence to describe their state.">
         <h4 class="arabic-medium">٨. الحَالُ يَأْتِي بَعْدَ:</h4>
         <p class="english-text">The Haal comes after:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) صَاحِبِ الحَالِ ✓</p>
-            <p class="arabic-text">ب) الفِعْلِ مُبَاشَرَةً</p>
-            <p class="arabic-text">ج) حَرْفِ الجَرِّ</p>
-            <p class="arabic-text">د) الظَّرْفِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) صَاحِبِ الحَالِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) الفِعْلِ مُبَاشَرَةً</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) حَرْفِ الجَرِّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) الظَّرْفِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="خَرَجَ يَتَكَوَّنُ مِنْ ثَلَاثَةِ حُرُوفٍ (خ-ر-ج)، فَهُوَ فِعْلٌ ثُلَاثِيٌّ. - خَرَجَ consists of 3 letters (خ-ر-ج), so it is a trilateral verb.">
+        <h4 class="arabic-medium">٩. الفِعْلُ "خَرَجَ" فِعْلٌ:</h4>
+        <p class="english-text">The verb "خَرَجَ" is a:</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q9" value="a"><span>أ) رُبَاعِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="b"><span>ب) خُمَاسِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="c"><span>ج) ثُلَاثِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="d"><span>د) سُدَاسِيٌّ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="القَاعِدَةُ: الفِعْلُ الثُّلَاثِيُّ اللَّازِمُ عَلَى وَزْنِ (فَعَلَ) مَصْدَرُهُ عَلَى وَزْنِ (فُعُول)، مِثْلُ: خَرَجَ←خُرُوج. - Rule: Intransitive trilateral verb on فَعَلَ pattern has masdar on فُعُول pattern, e.g., خَرَجَ→خُرُوج.">
+        <h4 class="arabic-medium">١٠. مَصْدَرُ الفِعْلِ الثُّلَاثِيِّ اللَّازِمِ (فَعَلَ) يَكُونُ عَلَى وَزْنِ:</h4>
+        <p class="english-text">The masdar of intransitive trilateral verb (fa'ala) follows the pattern:</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q10" value="a"><span>أ) فَعْل</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="b"><span>ب) فِعَال</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="c"><span>ج) فُعُول</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="d"><span>د) تَفْعِيل</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
     </div>
 </section>
 
@@ -800,11 +941,42 @@
 document.querySelectorAll('.answer-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const content = this.nextElementSibling;
+        content.classList.toggle('show');
         if (content.classList.contains('show')) {
-            this.textContent = 'الإِجَابَة - Show Answer';
-        } else {
             this.textContent = 'إِخْفَاء - Hide Answer';
+        } else {
+            this.textContent = 'الإِجَابَة - Show Answer';
         }
+    });
+});
+
+// Interactive MCQ
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => {
+                if (opt.querySelector('input').value === correct) {
+                    opt.classList.add('correct');
+                }
+            });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>✓ إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>✗ إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
     });
 });
 </script>

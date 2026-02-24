@@ -109,6 +109,18 @@
         .number-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .number-ar { font-size: 32px; color: #00695c; font-weight: bold; }
         .number-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.selected { border-color: #2196f3; background: #e3f2fd; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
         @media (max-width: 768px) {
             .arabic-large { font-size: 32px; }
             .arabic-medium { font-size: 26px; }
@@ -593,92 +605,100 @@
     <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
     <p class="english-text">Test your understanding of Lecture 2</p>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="الفِعْلُ المُضَارِعُ يَبْدَأُ بِأَحَدِ أَحْرُفِ المُضَارَعَةِ: أَنَيْتُ (أ-ن-ي-ت). - The present verb begins with one of the mudaraah letters: أَنَيْتُ (hamzah, nun, ya, ta).">
         <h4 class="arabic-medium">١. الفِعْلُ المُضَارِعُ يَبْدَأُ بِأَحَدِ الحُرُوفِ:</h4>
         <p class="english-text">The present tense verb starts with one of the letters:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) ت - ث - ج - ح</p>
-            <p class="arabic-text">ب) أ - ن - ي - ت ✓</p>
-            <p class="arabic-text">ج) س - ش - ص - ض</p>
-            <p class="arabic-text">د) ع - غ - ف - ق</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) ت - ث - ج - ح</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) أ - ن - ي - ت</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) س - ش - ص - ض</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) ع - غ - ف - ق</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="الأَعْدَادُ مِنْ ٣-١٠ تُخَالِفُ المَعْدُودَ: ثَلَاثَةُ رِجَالٍ (مُؤَنَّث+مُذَكَّر)، ثَلَاثُ بَنَاتٍ (مُذَكَّر+مُؤَنَّث). - Numbers 3-10 OPPOSE the counted noun in gender.">
         <h4 class="arabic-medium">٢. الأَعْدَادُ مِنْ ٣ إِلَى ١٠ مَعَ المَعْدُودِ:</h4>
         <p class="english-text">Numbers 3-10 with the counted noun:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) تُوَافِقُ المَعْدُودَ فِي التَّذْكِيرِ وَالتَّأْنِيثِ</p>
-            <p class="arabic-text">ب) تُخَالِفُ المَعْدُودَ فِي التَّذْكِيرِ وَالتَّأْنِيثِ ✓</p>
-            <p class="arabic-text">ج) لَا تَتَغَيَّرُ</p>
-            <p class="arabic-text">د) تَكُونُ مَبْنِيَّةً</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) تُوَافِقُ المَعْدُودَ فِي التَّذْكِيرِ وَالتَّأْنِيثِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) تُخَالِفُ المَعْدُودَ فِي التَّذْكِيرِ وَالتَّأْنِيثِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) لَا تَتَغَيَّرُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) تَكُونُ مَبْنِيَّةً</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="المَعْدُودُ مَعَ الأَعْدَادِ ١١-١٩ يَكُونُ مُفْرَدًا مَنْصُوبًا (تَمْيِيز): أَحَدَ عَشَرَ كِتَابًا. - The counted noun with 11-19 is singular accusative (tamyeez): eleven books.">
         <h4 class="arabic-medium">٣. المَعْدُودُ مَعَ الأَعْدَادِ (١١-١٩) يَكُونُ:</h4>
         <p class="english-text">The counted noun with numbers 11-19 is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) جَمْعًا مَجْرُورًا</p>
-            <p class="arabic-text">ب) مُفْرَدًا مَرْفُوعًا</p>
-            <p class="arabic-text">ج) مُفْرَدًا مَنْصُوبًا (تَمْيِيز) ✓</p>
-            <p class="arabic-text">د) جَمْعًا مَنْصُوبًا</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) جَمْعًا مَجْرُورًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) مُفْرَدًا مَرْفُوعًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) مُفْرَدًا مَنْصُوبًا (تَمْيِيز)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) جَمْعًا مَنْصُوبًا</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="يَذْهَبُونَ مِنَ الأَفْعَالِ الخَمْسَةِ، تُرْفَعُ بِثُبُوتِ النُّونِ (لَا بِالضَّمَّةِ). - يَذْهَبُونَ is one of the five verbs, raised by keeping the nun (not by dammah).">
         <h4 class="arabic-medium">٤. "يَذْهَبُونَ" فِعْلٌ مُضَارِعٌ مَرْفُوعٌ بِـ:</h4>
         <p class="english-text">"يَذْهَبُونَ" is a present verb nominative by:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) الضَّمَّةِ الظَّاهِرَةِ</p>
-            <p class="arabic-text">ب) ثُبُوتِ النُّونِ ✓</p>
-            <p class="arabic-text">ج) الضَّمَّةِ المُقَدَّرَةِ</p>
-            <p class="arabic-text">د) الأَلِفِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) الضَّمَّةِ الظَّاهِرَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) ثُبُوتِ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) الضَّمَّةِ المُقَدَّرَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) الأَلِفِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="أَلْفَاظُ العُقُودِ (٢٠-٩٠) تُعَامَلُ مُعَامَلَةَ جَمْعِ المُذَكَّرِ السَّالِمِ: تُرْفَعُ بِالوَاوِ وَتُنْصَبُ وَتُجَرُّ بِاليَاءِ. - Decades (20-90) follow sound masculine plural: nominative with waw, accusative/genitive with ya.">
         <h4 class="arabic-medium">٥. أَلْفَاظُ العُقُودِ (٢٠-٩٠) تُعْرَبُ إِعْرَابَ:</h4>
         <p class="english-text">Decades (20-90) take the i'rab of:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) المُثَنَّى</p>
-            <p class="arabic-text">ب) جَمْعِ المُؤَنَّثِ السَّالِمِ</p>
-            <p class="arabic-text">ج) جَمْعِ المُذَكَّرِ السَّالِمِ ✓</p>
-            <p class="arabic-text">د) الأَسْمَاءِ الخَمْسَةِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) المُثَنَّى</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) جَمْعِ المُؤَنَّثِ السَّالِمِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) جَمْعِ المُذَكَّرِ السَّالِمِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) الأَسْمَاءِ الخَمْسَةِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="السَّاعَةُ 5:30 تُقْرَأُ: الخَامِسَةُ وَالنِّصْفُ. النِّصْفُ = ٣٠ دَقِيقَة. - 5:30 is read as 'the fifth and a half'. النِّصْفُ = 30 minutes.">
         <h4 class="arabic-medium">٦. كَيْفَ نَقُولُ "5:30" بِالعَرَبِيَّةِ؟</h4>
         <p class="english-text">How do we say "5:30" in Arabic?</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) الخَامِسَةُ وَالرُّبْعُ</p>
-            <p class="arabic-text">ب) الخَامِسَةُ وَالنِّصْفُ ✓</p>
-            <p class="arabic-text">ج) الخَامِسَةُ إِلَّا رُبْعًا</p>
-            <p class="arabic-text">د) الخَامِسَةُ تَمَامًا</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) الخَامِسَةُ وَالرُّبْعُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) الخَامِسَةُ وَالنِّصْفُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) الخَامِسَةُ إِلَّا رُبْعًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) الخَامِسَةُ تَمَامًا</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="الفِعْلُ المُضَارِعُ المُتَّصِلُ بِنُونِ النِّسْوَةِ يُبْنَى عَلَى السُّكُونِ وَلَيْسَ مُعْرَبًا. - Present verb with nun al-niswah is BUILT on sukoon (indeclinable), not declined.">
         <h4 class="arabic-medium">٧. الفِعْلُ المُضَارِعُ المُتَّصِلُ بِنُونِ النِّسْوَةِ:</h4>
         <p class="english-text">Present verb connected to nun al-niswah is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) مَرْفُوعٌ بِالضَّمَّةِ</p>
-            <p class="arabic-text">ب) مَرْفُوعٌ بِثُبُوتِ النُّونِ</p>
-            <p class="arabic-text">ج) مَبْنِيٌّ عَلَى السُّكُونِ ✓</p>
-            <p class="arabic-text">د) مَنْصُوبٌ بِالفَتْحَةِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) مَرْفُوعٌ بِالضَّمَّةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) مَرْفُوعٌ بِثُبُوتِ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) مَبْنِيٌّ عَلَى السُّكُونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) مَنْصُوبٌ بِالفَتْحَةِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="فِي العَدَدِ المُرَكَّبِ (١٣) الجُزْءُ الأَوَّلُ (ثَلَاثَة) يُخَالِفُ المَعْدُودَ (رَجُلًا=مُذَكَّر، فَالعَدَدُ مُؤَنَّث). - In compound number 13, the first part opposes the counted noun in gender.">
         <h4 class="arabic-medium">٨. "ثَلَاثَةَ عَشَرَ رَجُلًا" - الجُزْءُ الأَوَّلُ:</h4>
         <p class="english-text">"ثَلَاثَةَ عَشَرَ رَجُلًا" - the first part:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) يُوَافِقُ المَعْدُودَ</p>
-            <p class="arabic-text">ب) يُخَالِفُ المَعْدُودَ ✓</p>
-            <p class="arabic-text">ج) لَا يَتَغَيَّرُ</p>
-            <p class="arabic-text">د) مَبْنِيٌّ دَائِمًا</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) يُوَافِقُ المَعْدُودَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) يُخَالِفُ المَعْدُودَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) لَا يَتَغَيَّرُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مَبْنِيٌّ دَائِمًا</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 </section>
 
@@ -686,6 +706,37 @@
     <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الثَّانِيَةُ</p>
     <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 2</p>
 </footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => {
+                if (opt.querySelector('input').value === correct) {
+                    opt.classList.add('correct');
+                }
+            });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 \u0625\u0650\u062C\u064E\u0627\u0628\u064E\u0629\u064C \u0635\u064E\u062D\u0650\u064A\u062D\u064E\u0629\u064C! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 \u0625\u0650\u062C\u064E\u0627\u0628\u064E\u0629\u064C \u062E\u064E\u0627\u0637\u0650\u0626\u064E\u0629\u064C - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>

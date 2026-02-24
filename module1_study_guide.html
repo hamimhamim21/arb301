@@ -234,6 +234,18 @@
             color: #00695c;
             font-weight: bold;
         }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.selected { border-color: #2196f3; background: #e3f2fd; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
         @media (max-width: 768px) {
             .arabic-large { font-size: 32px; }
             .arabic-medium { font-size: 26px; }
@@ -1012,92 +1024,100 @@
     <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
     <p class="english-text">Test your understanding of Lecture 1</p>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="صِيغَةُ التَّعَجُّبِ فِي العَرَبِيَّةِ هِيَ (مَا أَفْعَلَ)، مِثْلُ: مَا أَجْمَلَ! مَا أَكْبَرَ! - The exclamatory form in Arabic is مَا أَفْعَلَ, e.g., How beautiful! How great!">
         <h4 class="arabic-medium">١. صِيغَةُ التَّعَجُّبِ هِيَ:</h4>
         <p class="english-text">The exclamatory form is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) مَا فَعَلَ</p>
-            <p class="arabic-text">ب) مَا أَفْعَلَ ✓</p>
-            <p class="arabic-text">ج) مَا يَفْعَلُ</p>
-            <p class="arabic-text">د) مَا فَاعِل</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) مَا فَعَلَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) مَا أَفْعَلَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) مَا يَفْعَلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) مَا فَاعِل</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="المُنَادَى المُفْرَدُ العَلَمُ يُبْنَى عَلَى الضَّمِّ: يَا مُحَمَّدُ! يَا خَالِدُ! - The single proper noun vocative is built on dammah: Ya Muhammad! Ya Khalid!">
         <h4 class="arabic-medium">٢. المُنَادَى المُفْرَدُ العَلَمُ يُبْنَى عَلَى:</h4>
         <p class="english-text">The single proper noun vocative is built on:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) الفَتْحِ</p>
-            <p class="arabic-text">ب) الكَسْرِ</p>
-            <p class="arabic-text">ج) الضَّمِّ ✓</p>
-            <p class="arabic-text">د) السُّكُونِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) الفَتْحِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) الكَسْرِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) الضَّمِّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) السُّكُونِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="جَمْعُ المُؤَنَّثِ السَّالِمُ يُرْفَعُ بِالضَّمَّةِ وَيُنْصَبُ وَيُجَرُّ بِالكَسْرَةِ (لَا بِالفَتْحَةِ). - Sound feminine plural: nominative with dammah, accusative AND genitive with kasrah (not fathah).">
         <h4 class="arabic-medium">٣. جَمْعُ المُؤَنَّثِ السَّالِمُ يُنْصَبُ وَيُجَرُّ بِـ:</h4>
         <p class="english-text">Sound feminine plural is made accusative/genitive by:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) الفَتْحَةِ</p>
-            <p class="arabic-text">ب) الكَسْرَةِ ✓</p>
-            <p class="arabic-text">ج) الضَّمَّةِ</p>
-            <p class="arabic-text">د) الأَلِفِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) الفَتْحَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) الكَسْرَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) الضَّمَّةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) الأَلِفِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="عِنْدَ اتِّصَالِ (مَا) بِـ(مِنْ) تُصْبِحُ (مِمَّا/مِمَّ) بِإِدْغَامِ النُّونِ فِي المِيمِ. - When مَا joins مِنْ, the nun assimilates into meem: مِمَّا/مِمَّ.">
         <h4 class="arabic-medium">٤. إِذَا اتَّصَلَتْ (مَا) بِحَرْفِ الجَرِّ (مِنْ) تُصْبِحُ:</h4>
         <p class="english-text">When "ما" is connected to "مِنْ" it becomes:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) مِنْمَا</p>
-            <p class="arabic-text">ب) مِمَّا / مِمَّ ✓</p>
-            <p class="arabic-text">ج) مَامِنْ</p>
-            <p class="arabic-text">د) مِينَا</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) مِنْمَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) مِمَّا / مِمَّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) مَامِنْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) مِينَا</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="عَبْدَ اللهِ مُنَادًى مُضَافٌ (مُضَافٌ إِلَى لَفْظِ الجَلَالَةِ)، وَالمُنَادَى المُضَافُ يَكُونُ مَنْصُوبًا. - عَبْدَ اللهِ is a مُنَادًى مُضَاف (in idafa), and the مُنَادَى مُضَاف is always accusative.">
         <h4 class="arabic-medium">٥. "يَا عَبْدَ اللهِ" - المُنَادَى هُنَا:</h4>
         <p class="english-text">"يَا عَبْدَ اللهِ" - the vocative here is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) مُنَادًى مُفْرَدٌ مَبْنِيٌّ عَلَى الضَّمِّ</p>
-            <p class="arabic-text">ب) مُنَادًى مُضَافٌ مَنْصُوبٌ ✓</p>
-            <p class="arabic-text">ج) مُنَادًى نَكِرَةٌ مَقْصُودَةٌ</p>
-            <p class="arabic-text">د) مُنَادًى شَبِيهٌ بِالمُضَافِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) مُنَادًى مُفْرَدٌ مَبْنِيٌّ عَلَى الضَّمِّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) مُنَادًى مُضَافٌ مَنْصُوبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) مُنَادًى نَكِرَةٌ مَقْصُودَةٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) مُنَادًى شَبِيهٌ بِالمُضَافِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="أَجْمَلَ فِي (مَا أَجْمَلَ السَّمَاءَ!) فِعْلُ تَعَجُّبٍ عَلَى وَزْنِ (مَا أَفْعَلَ)، وَلَيْسَ اسْمَ تَفْضِيلٍ. - أَجْمَلَ in (مَا أَجْمَلَ!) is an exclamatory verb on pattern مَا أَفْعَلَ, not a superlative.">
         <h4 class="arabic-medium">٦. مَا أَجْمَلَ السَّمَاءَ! - "أَجْمَلَ" هُنَا:</h4>
         <p class="english-text">"أَجْمَلَ" here is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) اسْمُ تَفْضِيلٍ</p>
-            <p class="arabic-text">ب) فِعْلُ تَعَجُّبٍ ✓</p>
-            <p class="arabic-text">ج) فِعْلٌ مَاضٍ</p>
-            <p class="arabic-text">د) صِفَةٌ مُشَبَّهَةٌ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) اسْمُ تَفْضِيلٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) فِعْلُ تَعَجُّبٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) فِعْلٌ مَاضٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) صِفَةٌ مُشَبَّهَةٌ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="a" data-explanation="جَمْعُ المُؤَنَّثِ السَّالِمُ يُرْفَعُ بِالضَّمَّةِ عَلَى التَّاءِ: الطَّالِبَاتُ، المُسْلِمَاتُ. - Sound feminine plural is nominative with dammah on the taa': الطَّالِبَاتُ.">
         <h4 class="arabic-medium">٧. "الطَّالِبَاتُ" جَمْعُ مُؤَنَّثٍ سَالِمٌ مَرْفُوعٌ بِـ:</h4>
         <p class="english-text">"الطَّالِبَاتُ" is nominative by:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) الضَّمَّةِ ✓</p>
-            <p class="arabic-text">ب) الكَسْرَةِ</p>
-            <p class="arabic-text">ج) الأَلِفِ</p>
-            <p class="arabic-text">د) الوَاوِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) الضَّمَّةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) الكَسْرَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) الأَلِفِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) الوَاوِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="الأَسْمَاءُ الخَمْسَةُ المُضَافَةُ فِي النِّدَاءِ تُنْصَبُ بِالأَلِفِ: يَا أَبَا! يَا أَخَا! - The five nouns in idafa when called are accusative with alif: يَا أَبَا! يَا أَخَا!">
         <h4 class="arabic-medium">٨. عِنْدَمَا نُنَادِي الأَسْمَاءَ الخَمْسَةَ المُضَافَةَ:</h4>
         <p class="english-text">When calling the five nouns in idafa:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) تُبْنَى عَلَى الضَّمِّ</p>
-            <p class="arabic-text">ب) تُنْصَبُ بِالأَلِفِ ✓</p>
-            <p class="arabic-text">ج) تُجَرُّ بِالكَسْرَةِ</p>
-            <p class="arabic-text">د) تُرْفَعُ بِالوَاوِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) تُبْنَى عَلَى الضَّمِّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) تُنْصَبُ بِالأَلِفِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) تُجَرُّ بِالكَسْرَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) تُرْفَعُ بِالوَاوِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 </section>
 
@@ -1105,6 +1125,37 @@
     <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الأُولَى</p>
     <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 1</p>
 </footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => {
+                if (opt.querySelector('input').value === correct) {
+                    opt.classList.add('correct');
+                }
+            });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 \u0625\u0650\u062C\u064E\u0627\u0628\u064E\u0629\u064C \u0635\u064E\u062D\u0650\u064A\u062D\u064E\u0629\u064C! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 \u0625\u0650\u062C\u064E\u0627\u0628\u064E\u0629\u064C \u062E\u064E\u0627\u0637\u0650\u0626\u064E\u0629\u064C - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>

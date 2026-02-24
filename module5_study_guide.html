@@ -49,6 +49,18 @@
         .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .vocab-ar { font-size: 26px; color: #00695c; font-weight: bold; }
         .vocab-en { font-family: Georgia, serif; font-size: 14px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.selected { border-color: #2196f3; background: #e3f2fd; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
     </style>
 </head>
 <body>
@@ -233,92 +245,100 @@
     <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
     <p class="english-text">Test your understanding of Lecture 5</p>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="حَرْفُ الاسْتِقْبَالِ (سَـ) يَدْخُلُ فَقَطْ عَلَى الفِعْلِ المُضَارِعِ وَلَا يَدْخُلُ عَلَى المَاضِي أَوِ الأَمْرِ. - The future particle سَـ ONLY enters on present tense verbs, not past or imperative.">
         <h4 class="arabic-medium">١. حَرْفُ الاسْتِقْبَالِ (سَـ) يَدْخُلُ عَلَى:</h4>
         <p class="english-text">The future particle (سَـ) enters on:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) الفِعْلِ المَاضِي</p>
-            <p class="arabic-text">ب) الفِعْلِ المُضَارِعِ ✓</p>
-            <p class="arabic-text">ج) الاسْمِ</p>
-            <p class="arabic-text">د) فِعْلِ الأَمْرِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) الفِعْلِ المَاضِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) الفِعْلِ المُضَارِعِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) الاسْمِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) فِعْلِ الأَمْرِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
-        <h4 class="arabic-medium">٢. الفَرْقُ بَيْنَ (سَـ) وَ (سَوْفَ):</h4>
+    <div class="mcq-question" data-correct="b" data-explanation="السِّينُ لِلمُسْتَقْبَلِ القَرِيبِ (سَأَذْهَبُ غَدًا)، وَسَوْفَ لِلمُسْتَقْبَلِ البَعِيدِ (سَوْفَ أَتَعَلَّمُ العَرَبِيَّةَ). - سَـ for near future (I'll go tomorrow), سَوْفَ for far future (I will learn Arabic).">
+        <h4 class="arabic-medium">٢. الفَرْقُ بَيْنَ (سَـ) وَ(سَوْفَ):</h4>
         <p class="english-text">The difference between (سَـ) and (سَوْفَ):</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) لَا فَرْقَ بَيْنَهُمَا</p>
-            <p class="arabic-text">ب) (سَـ) لِلقَرِيبِ وَ (سَوْفَ) لِلبَعِيدِ ✓</p>
-            <p class="arabic-text">ج) (سَـ) لِلمَاضِي وَ (سَوْفَ) لِلمُسْتَقْبَلِ</p>
-            <p class="arabic-text">د) (سَوْفَ) لِلقَرِيبِ وَ (سَـ) لِلبَعِيدِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) لَا فَرْقَ بَيْنَهُمَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) (سَـ) لِلقَرِيبِ وَ(سَوْفَ) لِلبَعِيدِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) (سَـ) لِلمَاضِي وَ(سَوْفَ) لِلمُسْتَقْبَلِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) (سَوْفَ) لِلقَرِيبِ وَ(سَـ) لِلبَعِيدِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="نَزَلَ فِعْلٌ ثُلَاثِيٌّ لَازِمٌ عَلَى وَزْنِ (فَعَلَ)، فَمَصْدَرُهُ عَلَى وَزْنِ (فُعُول) = نُزُول. - نَزَلَ is intransitive trilateral on فَعَلَ pattern, masdar follows فُعُول = نُزُول.">
         <h4 class="arabic-medium">٣. المَصْدَرُ مِنَ "نَزَلَ - يَنْزِلُ" هُوَ:</h4>
         <p class="english-text">The masdar from "نَزَلَ - يَنْزِلُ" is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) نَازِل</p>
-            <p class="arabic-text">ب) نُزُول ✓</p>
-            <p class="arabic-text">ج) مَنْزِل</p>
-            <p class="arabic-text">د) تَنْزِيل</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) نَازِل</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) نُزُول</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) مَنْزِل</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) تَنْزِيل</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="السِّينُ فِي (سَأَذْهَبُ) تَدُلُّ عَلَى الاسْتِقْبَالِ القَرِيبِ لِأَنَّ (غَدًا) زَمَنٌ قَرِيبٌ. - سَـ in سَأَذْهَبُ indicates near future because غَدًا (tomorrow) is near.">
         <h4 class="arabic-medium">٤. "سَأَذْهَبُ غَدًا" - الفِعْلُ يَدُلُّ عَلَى:</h4>
         <p class="english-text">"سَأَذْهَبُ غَدًا" - the verb indicates:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) الحَالِ</p>
-            <p class="arabic-text">ب) المَاضِي</p>
-            <p class="arabic-text">ج) الاسْتِقْبَالِ القَرِيبِ ✓</p>
-            <p class="arabic-text">د) الأَمْرِ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) الحَالِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) المَاضِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) الاسْتِقْبَالِ القَرِيبِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) الأَمْرِ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="فِعْلُ الأَمْرِ مِنْ (نَزَلَ-يَنْزِلُ) هُوَ (انْزِلْ) بِزِيَادَةِ هَمْزَةِ الوَصْلِ وَكَسْرِ الزَّايِ. - Imperative of نَزَلَ-يَنْزِلُ is انْزِلْ with connecting hamzah and kasrah on zay.">
         <h4 class="arabic-medium">٥. فِعْلُ الأَمْرِ مِنْ "نَزَلَ":</h4>
         <p class="english-text">The imperative of "نَزَلَ" is:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) نَزَلَ</p>
-            <p class="arabic-text">ب) يَنْزِلُ</p>
-            <p class="arabic-text">ج) انْزِلْ ✓</p>
-            <p class="arabic-text">د) نَازِل</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) نَزَلَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) يَنْزِلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) انْزِلْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) نَازِل</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="a" data-explanation="سَوْفَ وَالسِّينُ كِلَاهُمَا لِلاسْتِقْبَالِ، فَيُمْكِنُ اسْتِبْدَالُ أَحَدِهِمَا بِالآخَرِ. - Both سَوْفَ and سَـ indicate future, so one can replace the other.">
         <h4 class="arabic-medium">٦. "سَوْفَ أَقْرَأُ الكِتَابَ" - يُمْكِنُ أَنْ نَقُولَ:</h4>
         <p class="english-text">"سَوْفَ أَقْرَأُ الكِتَابَ" - we can also say:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) سَأَقْرَأُ الكِتَابَ ✓</p>
-            <p class="arabic-text">ب) أَقْرَأُ سَوْفَ الكِتَابَ</p>
-            <p class="arabic-text">ج) سَوْفَ الكِتَابَ أَقْرَأُ</p>
-            <p class="arabic-text">د) قَرَأْتُ الكِتَابَ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) سَأَقْرَأُ الكِتَابَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) أَقْرَأُ سَوْفَ الكِتَابَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) سَوْفَ الكِتَابَ أَقْرَأُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) قَرَأْتُ الكِتَابَ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="c" data-explanation="السِّينُ تُسَمَّى حَرْفَ اسْتِقْبَالٍ (أَوْ تَنْفِيس) لِأَنَّهَا تُوَسِّعُ زَمَنَ الفِعْلِ إِلَى المُسْتَقْبَلِ. - سَـ is called future particle (tanfees) because it expands the verb's time to the future.">
         <h4 class="arabic-medium">٧. (سَـ) تُسَمَّى:</h4>
         <p class="english-text">(سَـ) is called:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) حَرْفُ جَرٍّ</p>
-            <p class="arabic-text">ب) حَرْفُ عَطْفٍ</p>
-            <p class="arabic-text">ج) حَرْفُ اسْتِقْبَالٍ (تَنْفِيس) ✓</p>
-            <p class="arabic-text">د) حَرْفُ نَفْيٍ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) حَرْفُ جَرٍّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) حَرْفُ عَطْفٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) حَرْفُ اسْتِقْبَالٍ (تَنْفِيس)</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) حَرْفُ نَفْيٍ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 
-    <div class="rule-box" style="margin-bottom: 20px;">
+    <div class="mcq-question" data-correct="b" data-explanation="يَنْزِلُ عَلَى وَزْنِ (يَفْعِلُ) بِكَسْرِ العَيْنِ، وَهُوَ مِنَ الأَوْزَانِ الشَّائِعَةِ لِلْفِعْلِ المُضَارِعِ. - يَنْزِلُ follows يَفْعِلُ (with kasrah on the ayn), a common present tense pattern.">
         <h4 class="arabic-medium">٨. الفِعْلُ "يَنْزِلُ" عَلَى وَزْنِ:</h4>
         <p class="english-text">"يَنْزِلُ" follows the pattern:</p>
-        <div style="padding: 10px 20px;">
-            <p class="arabic-text">أ) يَفْعُلُ</p>
-            <p class="arabic-text">ب) يَفْعِلُ ✓</p>
-            <p class="arabic-text">ج) يَفْعَلُ</p>
-            <p class="arabic-text">د) يُفَعِّلُ</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) يَفْعُلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) يَفْعِلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) يَفْعَلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) يُفَعِّلُ</span></label>
         </div>
+        <div class="mcq-feedback"></div>
     </div>
 </section>
 
@@ -327,6 +347,37 @@
     <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 5</p>
     <p style="font-family: Georgia, serif; margin-top: 20px; font-size: 20px;">تَمَّتْ بِحَمْدِ اللهِ - Completed with praise to Allah</p>
 </footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => {
+                if (opt.querySelector('input').value === correct) {
+                    opt.classList.add('correct');
+                }
+            });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 \u0625\u0650\u062C\u064E\u0627\u0628\u064E\u0629\u064C \u0635\u064E\u062D\u0650\u064A\u062D\u064E\u0629\u064C! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 \u0625\u0650\u062C\u064E\u0627\u0628\u064E\u0629\u064C \u062E\u064E\u0627\u0637\u0650\u0626\u064E\u0629\u064C - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>
