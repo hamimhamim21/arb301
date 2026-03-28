@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8 - ARB303 Study Guide | المحاضرة الثامنة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white; text-decoration: none; padding: 10px 18px;
+            background: rgba(255,255,255,0.2); border-radius: 12px;
+            font-size: 14px; transition: all 0.3s; text-align: center;
+            display: flex; flex-direction: column; gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%);
+            color: white; padding: 40px; border-radius: 15px;
+            margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white; border-radius: 15px; padding: 30px;
+            margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px; color: #00695c;
+            border-bottom: 4px solid #00897b;
+            padding-bottom: 15px; margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn {
+            position: fixed; top: 20px; left: 20px; width: 45px; height: 45px;
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4);
+            z-index: 1001; transition: all 0.3s;
+        }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center;
+        }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.selected { border-color: #2196f3; background: #e3f2fd; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="home-btn" title="Back to Home">
+    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</a>
+
+<nav class="nav-container">
+    <div class="nav-title">المحاضرة الثامنة - Lecture 8</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a>
+        <a href="#conjugation-overview"><span class="nav-ar">نظرة عامة</span><span class="nav-en">Overview</span></a>
+        <a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a>
+        <a href="#vocabulary"><span class="nav-ar">المفردات</span><span class="nav-en">Vocabulary</span></a>
+        <a href="#dialogue"><span class="nav-ar">الحوار</span><span class="nav-en">Dialogue</span></a>
+        <a href="#irab-amr"><span class="nav-ar">إعراب الأمر</span><span class="nav-en">Imperative I'rab</span></a>
+        <a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الثَّامِنَةُ</h1>
+    <div class="subtitle">Lecture 8 - الدَّرْسُ الثَّالِثَ عَشَرَ وَالرَّابِعَ عَشَرَ (Lessons 13 &amp; 14)</div>
+</div>
+
+<!-- Verb Section -->
+<section class="section" id="verb">
+    <h2 class="section-title">الفِعْلُ: زَرَعَ - يَزْرَعُ</h2>
+    <p class="english-text">The Verb: To plant / To farm / To seed</p>
+
+    <div class="formula-box">
+        <div class="formula">زَرَعَ - يَزْرَعُ - اِزْرَعْ - زِرَاعَةً</div>
+        <p class="english-text">Past - Present - Imperative - Masdar (Verbal Noun: Cultivation/Farming) - Pattern: فِعَالَة</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ التَّصْرِيفِ - Conjugation Table</h3>
+
+    <table>
+        <tr>
+            <th>الضَّمِير</th>
+            <th>المَاضِي</th>
+            <th>المُضَارِع</th>
+            <th>الأَمْر</th>
+        </tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>زَرَعْتُ</td><td>أَزْرَعُ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>زَرَعْنَا</td><td>نَزْرَعُ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>زَرَعْتَ</td><td>تَزْرَعُ</td><td>اِزْرَعْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>زَرَعْتِ</td><td>تَزْرَعِينَ</td><td>اِزْرَعِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>زَرَعْتُمَا</td><td>تَزْرَعَانِ</td><td>اِزْرَعَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا (مُؤَنَّث)</td><td>زَرَعْتُمَا</td><td>تَزْرَعَانِ</td><td>اِزْرَعَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>زَرَعْتُمْ</td><td>تَزْرَعُونَ</td><td>اِزْرَعُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>زَرَعْتُنَّ</td><td>تَزْرَعْنَ</td><td>اِزْرَعْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>زَرَعَ</td><td>يَزْرَعُ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>زَرَعَتْ</td><td>تَزْرَعُ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>زَرَعَا</td><td>يَزْرَعَانِ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مُؤَنَّث)</td><td>زَرَعَتَا</td><td>تَزْرَعَانِ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>زَرَعُوا</td><td>يَزْرَعُونَ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>زَرَعْنَ</td><td>يَزْرَعْنَ</td><td>-</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَة - Examples</h3>
+
+    <div class="example-box">
+        <div class="example-ar">كَثِيرٌ مِنَ النَّاسِ يَعْمَلُونَ بِالزِّرَاعَةِ فِي مِصْرَ</div>
+        <div class="example-en">Many people work in agriculture in Egypt</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">اِزْرَعْ شَجَرَةً يَا أَخِي</div>
+        <div class="example-en">Plant a tree, my brother</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">يَزْرَعُ الفَلَّاحُونَ القَمْحَ</div>
+        <div class="example-en">The farmers plant wheat</div>
+    </div>
+
+    <div class="info-box">
+        <h4>مُلَاحَظَة - Note</h4>
+        <p class="arabic-text">المَصْدَرُ: زِرَاعَة عَلَى وَزْنِ فِعَالَة</p>
+        <p class="english-text">The masdar (verbal noun) زِرَاعَة follows the فِعَالَة pattern, same as كِتَابَة (writing)</p>
+    </div>
+</section>
+
+<!-- Conjugation Overview -->
+<section class="section" id="conjugation-overview">
+    <h2 class="section-title">نَظْرَةٌ عَامَّةٌ عَلَى التَّصْرِيفِ - Conjugation Overview</h2>
+    <p class="english-text">Lesson 13 - الدَّرْسُ الثَّالِثَ عَشَرَ - Overview of verb conjugation by person type</p>
+
+    <table>
+        <tr>
+            <th>النَّوْع</th>
+            <th>الجِنْس</th>
+            <th>المُفْرَد</th>
+            <th>الجَمْع</th>
+        </tr>
+        <tr>
+            <td class="pronoun-cell" rowspan="2">الغَائِب</td>
+            <td>المُذَكَّر</td>
+            <td>حَامِدٌ يَذْهَبُ</td>
+            <td>حَامِدٌ وَعَلِيٌّ وَهَاشِمٌ يَذْهَبُونَ</td>
+        </tr>
+        <tr>
+            <td>المُؤَنَّث</td>
+            <td>آمِنَةُ تَذْهَبُ</td>
+            <td>آمِنَةُ وَمَرْيَمُ وَزَيْنَبُ يَذْهَبْنَ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell" rowspan="2">المُخَاطَب</td>
+            <td>المُذَكَّر</td>
+            <td>أَنْتَ تَذْهَبُ</td>
+            <td>أَنْتُمْ تَذْهَبُونَ</td>
+        </tr>
+        <tr>
+            <td>المُؤَنَّث</td>
+            <td>أَنْتِ تَذْهَبِينَ</td>
+            <td>أَنْتُنَّ تَذْهَبْنَ</td>
+        </tr>
+        <tr>
+            <td class="pronoun-cell" rowspan="2">المُتَكَلِّم</td>
+            <td>المُذَكَّر</td>
+            <td>أَنَا أَذْهَبُ</td>
+            <td rowspan="2">نَحْنُ نَذْهَبُ</td>
+        </tr>
+        <tr>
+            <td>المُؤَنَّث</td>
+            <td>أَنَا أَذْهَبُ</td>
+        </tr>
+    </table>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">تَحْلِيلُ الفِعْلِ المُضَارِعِ - Present Verb Analysis</h4>
+        <p class="arabic-text">يَذْهَبُ = يـ (حَرْفُ المُضَارَعَةِ) + ذهب + ضَمِيرٌ مُسْتَتِرٌ</p>
+        <p class="english-text">يَذْهَبُ = يـ (present tense prefix) + ذهب (root) + hidden pronoun</p>
+        <p class="arabic-text">يَذْهَبُونَ = يـ (حَرْفُ المُضَارَعَةِ) + ذهب + و (فَاعِلٌ) + ن (عَلَامَةُ الرَّفْعِ)</p>
+        <p class="english-text">يَذْهَبُونَ = يـ (prefix) + ذهب (root) + و (subject) + ن (sign of nominative)</p>
+    </div>
+</section>
+
+<!-- Exercises -->
+<section class="section" id="exercises">
+    <h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2>
+    <p class="english-text">Exercises from Lesson 13</p>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الأَوَّلُ - Exercise 1</h3>
+    <div class="rule-box">
+        <p class="arabic-text">أَكْمِلِ الجُمَلَ الآتِيَةَ بِوَضْعِ الفِعْلِ (ذَهَبَ) فِي المُضَارِعِ بَعْدَ إِسْنَادِهِ إِلَى الضَّمِيرِ المُنَاسِبِ:</p>
+        <p class="english-text">Complete the sentences by putting the verb ذَهَبَ in present tense with the appropriate pronoun:</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">(١) فِي أَيِّ سَاعَةٍ <strong>تَذْهَبِينَ</strong> إِلَى الجَامِعَةِ يَا عَائِشَةُ؟</div>
+        <div class="example-en">(1) At what time do you (f) go to the university, Aisha?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) الطُّلَّابُ <strong>يَذْهَبُونَ</strong> إِلَى المَلْعَبِ بَعْدَ الدَّرْسِ</div>
+        <div class="example-en">(2) The students go to the playground after the lesson</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) أَنَا <strong>أَذْهَبُ</strong> إِلَى السُّوقِ يَوْمَ الجُمُعَةِ فَقَطْ</div>
+        <div class="example-en">(3) I go to the market only on Friday</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) مَتَى <strong>تَذْهَبُونَ</strong> لِزِيَارَةِ المُدِيرِ يَا إِخْوَانُ؟</div>
+        <div class="example-en">(4) When do you (pl.m) go to visit the director, brothers?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٥) أُمِّي <strong>تَذْهَبُ</strong> إِلَى المُسْتَشْفَى كُلَّ يَوْمٍ لِأَنَّهَا مَرِيضَةٌ</div>
+        <div class="example-en">(5) My mother goes to the hospital every day because she is sick</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٦) أَ <strong>تَذْهَبْنَ</strong> إِلَى المَكْتَبَةِ كُلَّ مَسَاءٍ يَا بَنَاتِي؟</div>
+        <div class="example-en">(6) Do you (f.pl) go to the library every evening, my daughters?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٧) لِمَ لَا <strong>تَذْهَبُ</strong> إِلَى المَطَارِ مَعَنَا يَا عَبَّاسُ؟</div>
+        <div class="example-en">(7) Why don't you go to the airport with us, Abbas?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٨) نَحْنُ <strong>نَذْهَبُ</strong> إِلَى الجَامِعَةِ بِسَيَّارَةِ الأُجْرَةِ</div>
+        <div class="example-en">(8) We go to the university by taxi</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٩) أَبِي <strong>يَذْهَبُ</strong> إِلَى المَصْنَعِ فِي السَّاعَةِ العَاشِرَةِ</div>
+        <div class="example-en">(9) My father goes to the factory at 10 o'clock</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(١٠) أَخَوَاتِي <strong>يَذْهَبْنَ</strong> إِلَى المَدْرَسَةِ بِالحَافِلَةِ</div>
+        <div class="example-en">(10) My sisters go to school by bus</div>
+    </div>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الثَّالِثُ - Exercise 3</h3>
+    <div class="rule-box">
+        <p class="arabic-text">صَحِّحِ الجُمَلَ الآتِيَةَ:</p>
+        <p class="english-text">Correct the following sentences (fix verb-pronoun agreement):</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">(١) يَا مَرْيَمُ، <strong>أَتَعْرِفِينَ</strong> رَقْمَ هَاتِفِ المُدِيرَةِ؟</div>
+        <div class="example-en">(1) Maryam, do you (f) know the director's phone number? (corrected to feminine)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) <strong>يَدْخُلُ</strong> الطُّلَّابُ الفَصْلَ قَبْلَ دُخُولِ المُدَرِّسِ</div>
+        <div class="example-en">(2) The students enter the classroom before the teacher enters</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) الطَّبِيبَاتُ <strong>يَخْرُجْنَ</strong> مِنَ المُسْتَشْفَى فِي السَّاعَةِ الوَاحِدَةِ</div>
+        <div class="example-en">(3) The female doctors leave the hospital at one o'clock (corrected to feminine plural)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) <strong>تَجْلِسُ</strong> الطَّالِبَاتُ الجُدُدُ فِي الصَّفِّ الأَخِيرِ</div>
+        <div class="example-en">(4) The new female students sit in the last row</div>
+    </div>
+
+    <div class="warning-box">
+        <h4>تَنْبِيهٌ هَامٌّ - Important Alert</h4>
+        <p class="arabic-text">يَجِبُ مُطَابَقَةُ الفِعْلِ لِلْفَاعِلِ فِي التَّذْكِيرِ وَالتَّأْنِيثِ وَالإِفْرَادِ وَالجَمْعِ</p>
+        <p class="english-text">The verb must agree with the subject in gender (masculine/feminine) and number (singular/plural)</p>
+    </div>
+</section>
+
+<!-- Vocabulary -->
+<section class="section" id="vocabulary">
+    <h2 class="section-title">الكَلِمَاتُ الجَدِيدَةُ - New Vocabulary</h2>
+    <p class="english-text">New words from Lesson 14</p>
+
+    <div class="vocab-grid">
+        <div class="vocab-item">
+            <div class="vocab-ar">سَيَّارَةُ الأُجْرَةِ</div>
+            <div class="vocab-en">Taxi</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">صَفٌّ (ج صُفُوفٌ)</div>
+            <div class="vocab-en">Row / Class</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">أَخِيرٌ ↔ أَوَّلٌ</div>
+            <div class="vocab-en">Last ↔ First</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">عَقْرَبٌ</div>
+            <div class="vocab-en">Scorpion</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">حِذَاءٌ</div>
+            <div class="vocab-en">Shoe</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">نَعْسَانُ</div>
+            <div class="vocab-en">Sleepy</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">مُظْلِمَةٌ</div>
+            <div class="vocab-en">Dark</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">نَافِذَةٌ (ج نَوَافِذُ)</div>
+            <div class="vocab-en">Window (pl. Windows)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">سَبُّورَةٌ</div>
+            <div class="vocab-en">Blackboard</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">وَرَقَةٌ</div>
+            <div class="vocab-en">Paper / Sheet</div>
+        </div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">مُحَمَّدٌ يَجْلِسُ فِي الصَّفِّ الأَوَّلِ فِي الفَصْلِ، وَمُحَمَّدٌ فِي الصَّفِّ الثَّانِي فِي كُلِّيَّةِ الهَنْدَسَةِ</div>
+        <div class="example-en">Muhammad sits in the first row in the classroom, and Muhammad is in the second year in the engineering college</div>
+    </div>
+</section>
+
+<!-- Dialogue -->
+<section class="section" id="dialogue">
+    <h2 class="section-title">الحِوَارُ - Dialogue</h2>
+    <p class="english-text">Lesson 14 - الدَّرْسُ الرَّابِعَ عَشَرَ - A Classroom Scene</p>
+
+    <div style="background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0;">
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>المُدَرِّسُ:</strong> مَنْ بِالبَابِ؟</div>
+            <div class="example-en">Teacher: Who is at the door?</div>
+        </div>
+
+        <div class="example-box" style="background: #e3f2fd; border-right-color: #2196f3;">
+            <div class="example-ar"><strong>طَالِبٌ:</strong> أَنَا طَالِبٌ جَدِيدٌ</div>
+            <div class="example-en">Student: I am a new student</div>
+        </div>
+
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>المُدَرِّسُ:</strong> اُدْخُلْ... مَا اسْمُكَ؟</div>
+            <div class="example-en">Teacher: Enter... What is your name?</div>
+        </div>
+
+        <div class="example-box" style="background: #e3f2fd; border-right-color: #2196f3;">
+            <div class="example-ar"><strong>الطَّالِبُ:</strong> اسْمِي هُمَايُونُ</div>
+            <div class="example-en">Student: My name is Humayun</div>
+        </div>
+
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>المُدَرِّسُ:</strong> هُمَايُونُ؟ كَيْفَ تَكْتُبُ هَذَا الاسْمَ؟ اُكْتُبْهُ عَلَى هَذِهِ الوَرَقَةِ</div>
+            <div class="example-en">Teacher: Humayun? How do you write this name? Write it on this paper</div>
+        </div>
+
+        <div class="example-box" style="background: #fff3e0; border-right-color: #ff9800;">
+            <div class="example-ar"><strong>الطُّلَّابُ:</strong> يَا أُسْتَاذُ، هَهُنَا عَقْرَبٌ!</div>
+            <div class="example-en">Students: Teacher, there is a scorpion here!</div>
+        </div>
+
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>المُدَرِّسُ:</strong> أَعَقْرَبٌ فِي الفَصْلِ؟ أَيْنَ هِيَ؟</div>
+            <div class="example-en">Teacher: A scorpion in the classroom? Where is it?</div>
+        </div>
+
+        <div class="example-box" style="background: #fff3e0; border-right-color: #ff9800;">
+            <div class="example-ar"><strong>الطُّلَّابُ:</strong> اُنْظُرْ هُنَا يَا أُسْتَاذُ. هِيَ تَحْتَ مَكْتَبِ هِشَامٍ</div>
+            <div class="example-en">Students: Look here, teacher. It's under Hisham's desk</div>
+        </div>
+
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>المُدَرِّسُ:</strong> اقْتُلُوهَا يَا إِخْوَانُ</div>
+            <div class="example-en">Teacher: Kill it, brothers</div>
+        </div>
+
+        <div class="example-box" style="background: #fff3e0; border-right-color: #ff9800;">
+            <div class="example-ar"><strong>الطُّلَّابُ:</strong> بِمَ نَقْتُلُهَا؟</div>
+            <div class="example-en">Students: With what do we kill it?</div>
+        </div>
+
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>المُدَرِّسُ:</strong> اُقْتُلْهَا بِحِذَائِكَ يَا هِشَامُ... أَمَاتَتْ؟</div>
+            <div class="example-en">Teacher: Kill it with your shoe, Hisham... Is it dead?</div>
+        </div>
+
+        <div class="example-box" style="background: #e3f2fd; border-right-color: #2196f3;">
+            <div class="example-ar"><strong>هِشَامٌ:</strong> نَعَمْ. مَاتَتْ</div>
+            <div class="example-en">Hisham: Yes. It died</div>
+        </div>
+
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>المُدَرِّسُ:</strong> اِجْلِسُوا يَا أَبْنَائِي... اِقْرَأِ الدَّرْسَ يَا عَلِيُّ</div>
+            <div class="example-en">Teacher: Sit down, my sons... Read the lesson, Ali</div>
+        </div>
+
+        <div class="example-box" style="background: #e3f2fd; border-right-color: #2196f3;">
+            <div class="example-ar"><strong>عَلِيٌّ:</strong> أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ. بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ. ﴿اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ. خَلَقَ الإِنْسَانَ مِنْ عَلَقٍ﴾</div>
+            <div class="example-en">Ali: I seek refuge in Allah from the accursed Satan. In the name of Allah, the Most Gracious, the Most Merciful. "Read in the name of your Lord who created. Created man from a clinging substance."</div>
+        </div>
+
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>المُدَرِّسُ:</strong> اِحْفَظْ سُورَةَ التِّينِ... خُذْ دَفْتَرَكَ هَذَا وَاكْتُبْ فِيهِ سُورَةَ العَلَقِ. يَا أَبَا بَكْرٍ، إِنَّكَ نَعْسَانُ. اِذْهَبْ إِلَى الحَمَّامِ وَاغْسِلْ وَجْهَكَ... اِفْتَحِ النَّوَافِذَ يَا عَبْدَ اللهِ فَإِنَّ الغُرْفَةَ مُظْلِمَةٌ وَالجَوَّ حَارٌّ</div>
+            <div class="example-en">Teacher: Memorize Surah At-Tin... Take this notebook and write Surah Al-Alaq in it. Abu Bakr, you are sleepy. Go to the bathroom and wash your face... Open the windows, Abdullah, the room is dark and the weather is hot</div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h4>مُلَاحَظَة - Note</h4>
+        <p class="arabic-text">لَاحِظْ كَثْرَةَ اسْتِخْدَامِ فِعْلِ الأَمْرِ فِي هَذَا الحِوَارِ: اُدْخُلْ، اُكْتُبْ، اُنْظُرْ، اقْتُلُوا، اِجْلِسُوا، اِقْرَأْ، اِحْفَظْ، اِذْهَبْ، اِغْسِلْ، اِفْتَحْ</p>
+        <p class="english-text">Notice the frequent use of imperative verbs in this dialogue: enter, write, look, kill, sit, read, memorize, go, wash, open</p>
+    </div>
+</section>
+
+<!-- I'rab of Imperative Verb -->
+<section class="section" id="irab-amr">
+    <h2 class="section-title">إِعْرَابُ الفِعْلِ الأَمْرِ - I'rab of the Imperative Verb</h2>
+    <p class="english-text">What we will learn in Lesson 14: إعراب الفعل الأمر، المبتدأ النكرة، التعبير فإنّ</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">مُرَاجَعَةُ الإِعْرَابِ - I'rab Review</h4>
+        <p class="arabic-text"><strong>الفِعْلُ المَاضِي</strong> يَكُونُ دَائِمًا <strong>مَبْنِيًّا</strong>:</p>
+        <p class="arabic-text">• مَبْنِيٌّ عَلَى الفَتْحِ: دَخَلَ المُعَلِّمُ الفَصْلَ، وَالوَلَدَانِ قَالَا الحَقَّ</p>
+        <p class="english-text">Built on fathah: The teacher entered the classroom</p>
+        <p class="arabic-text">• مَبْنِيٌّ عَلَى السُّكُونِ: فَهِمْنَا الدَّرْسَ، وَأَخَذْتُ الكِتَابَ</p>
+        <p class="english-text">Built on sukoon: We understood the lesson, I took the book</p>
+        <p class="arabic-text">• مَبْنِيٌّ عَلَى الضَّمِّ: الأَوْلَادُ حَفِظُوا الفَاتِحَةَ</p>
+        <p class="english-text">Built on dammah: The children memorized Al-Fatihah</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">الفِعْلُ المُضَارِعُ - Present Tense Review</h4>
+        <p class="arabic-text">الأَصْلُ فِيهِ أَنْ يَكُونَ <strong>مَرْفُوعًا</strong>: يَقْرَأُ المُسْلِمُ القُرْآنَ، يَمْشِي الرَّجُلُ إِلَى المَسْجِدِ، الأَوْلَادُ يَلْعَبُونَ بِالكُرَةِ</p>
+        <p class="english-text">The default is nominative: The Muslim reads the Quran, the man walks to the mosque, the boys play with the ball</p>
+        <p class="arabic-text">وَقَدْ يَكُونُ <strong>مَنْصُوبًا</strong> إِذَا سَبَقَتْهُ أَدَاةٌ مِنْ أَدَوَاتِ النَّصْبِ</p>
+        <p class="english-text">It can be accusative if preceded by a nasb particle</p>
+        <p class="arabic-text">وَقَدْ يَكُونُ <strong>مَجْزُومًا</strong> إِذَا سَبَقَتْهُ أَدَاةٌ مِنْ أَدَوَاتِ الجَزْمِ (لَا النَّاهِيَة، لَمْ)</p>
+        <p class="english-text">It can be jussive if preceded by a jazm particle (لَا الناهية, لَمْ)</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">القَاعِدَةُ العَامَّةُ - The General Rule</h4>
+        <p class="arabic-large">الفِعْلُ الأَمْرُ يُبْنَى عَلَى مَا يُجْزَمُ بِهِ مُضَارِعُهُ</p>
+        <p class="english-text">The imperative verb is built on whatever its present tense is made jussive by</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">التَّفْصِيلُ - Details</h4>
+        <p class="arabic-text">• أَمَّا الفِعْلُ الأَمْرُ فَإِنَّهُ يَكُونُ دَائِمًا <strong>مَبْنِيًّا</strong>، فَهُوَ يُشْبِهُ الفِعْلَ المَاضِيَ</p>
+        <p class="english-text">The imperative verb is ALWAYS indeclinable (مَبْنِيّ), like the past tense</p>
+        <p class="arabic-text">• إِذَا كَانَ المُضَارِعُ يُجْزَمُ بِالسُّكُونِ → الأَمْرُ يُبْنَى عَلَى السُّكُونِ</p>
+        <p class="english-text">If present is made jussive by sukoon → imperative is built on sukoon</p>
+        <p class="arabic-text">مِثَالٌ: لَمْ يَفْهَمْ → اِفْهَمْ (فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ)</p>
+        <p class="english-text">Example: لَمْ يَفْهَمْ → اِفْهَمْ (imperative built on sukoon)</p>
+        <p class="arabic-text">مِثَالٌ: لَمْ يَقْرَأْ → اِقْرَأْ (فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ)</p>
+        <p class="english-text">Example: لَمْ يَقْرَأْ → اِقْرَأْ (imperative built on sukoon)</p>
+        <p class="arabic-text">مِثَالٌ: لَمْ يَخْرُجْ → اُخْرُجْ (فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ)</p>
+        <p class="english-text">Example: لَمْ يَخْرُجْ → اُخْرُجْ (imperative built on sukoon)</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>الفِعْلُ المَجْزُوم</th>
+            <th>إِعْرَابُهُ</th>
+            <th>فِعْلُ الأَمْرِ</th>
+            <th>إِعْرَابُهُ</th>
+        </tr>
+        <tr>
+            <td>لَمْ يَفْهَمْ</td>
+            <td>فِعْلٌ مُضَارِعٌ مَجْزُومٌ وَعَلَامَةُ جَزْمِهِ السُّكُونُ</td>
+            <td>اِفْهَمْ</td>
+            <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</td>
+        </tr>
+        <tr>
+            <td>لَمْ يَقْرَأْ</td>
+            <td>فِعْلٌ مُضَارِعٌ مَجْزُومٌ وَعَلَامَةُ جَزْمِهِ السُّكُونُ</td>
+            <td>اِقْرَأْ</td>
+            <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</td>
+        </tr>
+        <tr>
+            <td>لَمْ يَخْرُجْ</td>
+            <td>فِعْلٌ مُضَارِعٌ مَجْزُومٌ وَعَلَامَةُ جَزْمِهِ السُّكُونُ</td>
+            <td>اُخْرُجْ</td>
+            <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</td>
+        </tr>
+    </table>
+</section>
+
+<!-- MCQ Section -->
+<section class="section" id="mcq">
+    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
+    <p class="english-text">Test your understanding of Lecture 8</p>
+
+    <div class="mcq-question" data-correct="c" data-explanation="مَصْدَرُ زَرَعَ هُوَ زِرَاعَة عَلَى وَزْنِ فِعَالَة. - The masdar of زَرَعَ is زِرَاعَة on the pattern فِعَالَة.">
+        <h4 class="arabic-medium">١. مَا مَصْدَرُ الفِعْلِ "زَرَعَ"؟</h4>
+        <p class="english-text">What is the masdar of the verb "زَرَعَ"?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) زَرْعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) مَزْرَعَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) زِرَاعَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) زُرُوع</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="أَخَوَاتِي (جَمْعُ مُؤَنَّث) تَحْتَاجُ إِلَى يَذْهَبْنَ (بِنُونِ النِّسْوَةِ). - 'My sisters' (feminine plural) requires يَذْهَبْنَ (with nun al-niswah).">
+        <h4 class="arabic-medium">٢. أَخَوَاتِي ... إِلَى المَدْرَسَةِ بِالحَافِلَةِ</h4>
+        <p class="english-text">My sisters ... to school by bus</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) يَذْهَبُونَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) يَذْهَبْنَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) تَذْهَبُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) تَذْهَبِينَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="القَاعِدَةُ: الفِعْلُ الأَمْرُ يُبْنَى عَلَى مَا يُجْزَمُ بِهِ مُضَارِعُهُ. - The general rule: The imperative is built on whatever its present tense is made jussive by.">
+        <h4 class="arabic-medium">٣. الفِعْلُ الأَمْرُ يُبْنَى عَلَى:</h4>
+        <p class="english-text">The imperative verb is built on:</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) مَا يُجْزَمُ بِهِ مُضَارِعُهُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) الفَتْحِ دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) الضَّمِّ دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) الكَسْرِ دَائِمًا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="الفِعْلُ المَاضِي يَكُونُ دَائِمًا مَبْنِيًّا وَلَيْسَ مُعْرَبًا. - The past tense verb is ALWAYS indeclinable (built), never declined.">
+        <h4 class="arabic-medium">٤. الفِعْلُ المَاضِي يَكُونُ دَائِمًا:</h4>
+        <p class="english-text">The past tense verb is always:</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) مَرْفُوعًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) مَنْصُوبًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) مَبْنِيًّا</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) مَجْزُومًا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="الطَّبِيبَاتُ جَمْعُ مُؤَنَّثٍ، فَالفِعْلُ يَكُونُ يَخْرُجْنَ (بِنُونِ النِّسْوَةِ). - الطَّبِيبَات is feminine plural, so the verb must be يَخْرُجْنَ (with nun al-niswah).">
+        <h4 class="arabic-medium">٥. الطَّبِيبَاتُ ... مِنَ المُسْتَشْفَى فِي السَّاعَةِ الوَاحِدَةِ</h4>
+        <p class="english-text">The female doctors ... from the hospital at one o'clock</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) يَخْرُجُونَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) يَخْرُجْنَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) تَخْرُجُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) خَرَجْنَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="لَمْ يَفْهَمْ → اِفْهَمْ. المُضَارِعُ مَجْزُومٌ بِالسُّكُونِ، فَالأَمْرُ مَبْنِيٌّ عَلَى السُّكُونِ. - لَمْ يَفْهَمْ → اِفْهَمْ. The present is made jussive by sukoon, so the imperative is built on sukoon.">
+        <h4 class="arabic-medium">٦. إِعْرَابُ "اِفْهَمْ":</h4>
+        <p class="english-text">The i'rab of "اِفْهَمْ":</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى الفَتْحِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى الضَّمِّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) فِعْلٌ مُضَارِعٌ مَجْزُومٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="يَذْهَبُونَ = يـ (حَرْفُ المُضَارَعَةِ) + ذهب + و (فَاعِلٌ) + ن (عَلَامَةُ الرَّفْعِ). - يَذْهَبُونَ = يـ (prefix) + ذهب (root) + و (subject/doer) + ن (sign of nominative).">
+        <h4 class="arabic-medium">٧. فِي "يَذْهَبُونَ"، الوَاوُ هِيَ:</h4>
+        <p class="english-text">In "يَذْهَبُونَ", the waw is:</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) فَاعِلٌ (وَاوُ الجَمَاعَةِ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) عَلَامَةُ الرَّفْعِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) حَرْفُ المُضَارَعَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) ضَمِيرٌ مُسْتَتِرٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="سَيَّارَةُ الأُجْرَةِ تَعْنِي التَّاكْسِي. وَصَفٌّ تَعْنِي الصَّفّ/الطَّابُور. - سَيَّارَةُ الأُجْرَةِ means taxi, and صَفٌّ means row/class.">
+        <h4 class="arabic-medium">٨. مَا مَعْنَى "سَيَّارَةُ الأُجْرَةِ"؟</h4>
+        <p class="english-text">What is the meaning of "سَيَّارَةُ الأُجْرَةِ"?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) سَيَّارَةٌ خَاصَّةٌ (Private car)</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) تَاكْسِي (Taxi)</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) حَافِلَةٌ (Bus)</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) قِطَارٌ (Train)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الثَّامِنَةُ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 8</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => {
+                if (opt.querySelector('input').value === correct) {
+                    opt.classList.add('correct');
+                }
+            });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

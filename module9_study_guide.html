@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 9 - ARB303 Study Guide | المحاضرة التاسعة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .number-chart { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .number-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .number-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .number-ar { font-size: 32px; color: #00695c; font-weight: bold; }
+        .number-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.selected { border-color: #2196f3; background: #e3f2fd; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        .step-box { background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-right: 5px solid #9c27b0; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .step-number { display: inline-block; width: 40px; height: 40px; background: #9c27b0; color: white; border-radius: 50%; text-align: center; line-height: 40px; font-size: 20px; margin-left: 10px; }
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home">
+    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</a>
+
+<nav class="nav-container">
+    <div class="nav-title">المُحَاضَرَةُ التَّاسِعَةُ - Lecture 9</div>
+    <div class="nav-links">
+        <a href="#verb-fataha">
+            <span class="nav-ar">الفِعْلُ فَتَحَ</span>
+            <span class="nav-en">Verb: To Open</span>
+        </a>
+        <a href="#conjugation">
+            <span class="nav-ar">جَدْوَلُ التَّصْرِيفِ</span>
+            <span class="nav-en">Conjugation Table</span>
+        </a>
+        <a href="#examples-fataha">
+            <span class="nav-ar">أَمْثِلَةٌ</span>
+            <span class="nav-en">Examples</span>
+        </a>
+        <a href="#irab-mudari">
+            <span class="nav-ar">إِعْرَابُ المُضَارِعِ</span>
+            <span class="nav-en">Present Tense I'rab</span>
+        </a>
+        <a href="#irab-marfoo">
+            <span class="nav-ar">المَرْفُوعُ</span>
+            <span class="nav-en">Raf' Rules</span>
+        </a>
+        <a href="#irab-majzoom">
+            <span class="nav-ar">المَجْزُومُ</span>
+            <span class="nav-en">Jazm Rules</span>
+        </a>
+        <a href="#irab-amr">
+            <span class="nav-ar">إِعْرَابُ الأَمْرِ</span>
+            <span class="nav-en">Imperative I'rab</span>
+        </a>
+        <a href="#forming-amr">
+            <span class="nav-ar">صِيَاغَةُ الأَمْرِ</span>
+            <span class="nav-en">Forming Imperative</span>
+        </a>
+        <a href="#quran-examples">
+            <span class="nav-ar">أَمْثِلَةٌ قُرْآنِيَّةٌ</span>
+            <span class="nav-en">Quranic Examples</span>
+        </a>
+        <a href="#quiz">
+            <span class="nav-ar">اِخْتِبَارٌ</span>
+            <span class="nav-en">Quiz</span>
+        </a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ التَّاسِعَةُ</h1>
+    <div class="subtitle">Lecture 9 - الدَّرْسُ الرَّابِعَ عَشَرَ (Lesson 14)</div>
+    <div class="subtitle" style="font-size: 20px; margin-top: 10px;">الدَّوْرَةُ الرَّابِعَةُ - مِنْ كِتَابِ المَدِينَةِ</div>
+</div>
+
+<!-- Section 1: The Verb فَتَحَ -->
+<section class="section" id="verb-fataha">
+    <h2 class="section-title">الفِعْلُ: فَتَحَ - The Verb: To Open / To Conquer</h2>
+
+    <div class="formula-box">
+        <div class="formula">فَتَحَ - يَفْتَحُ - اِفْتَحْ - فَتْحًا (فَعْلٌ)</div>
+        <p class="english-text" style="text-align: center; font-size: 20px;">To open - To conquer</p>
+    </div>
+
+    <h3 class="section-subtitle">مَعْنَيَانِ لِلْفِعْلِ فَتَحَ - Two Meanings of the Verb فَتَحَ</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text">الفِعْلُ فَتَحَ لَهُ مَعْنَيَانِ:</p>
+        <p class="english-text">The verb fataha has two meanings:</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-medium"><strong>المَعْنَى الأَوَّلُ:</strong> فَتَحَ البَابَ أَوْ فَتَحَ الحَقِيبَةَ</p>
+        <p class="english-text">First meaning: To open (e.g., He opened the door / He opened the bag) - <strong>To open</strong></p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-medium"><strong>المَعْنَى الثَّانِي:</strong> فَتَحَ البِلَادَ</p>
+        <p class="english-text">Second meaning: To conquer (e.g., He conquered the lands) - <strong>To conquer</strong></p>
+    </div>
+</section>
+
+<!-- Section 2: Conjugation Table -->
+<section class="section" id="conjugation">
+    <h2 class="section-title">جَدْوَلُ تَصْرِيفِ الفِعْلِ فَتَحَ - Conjugation Table</h2>
+
+    <div class="info-box">
+        <p class="arabic-text">المَصْدَرُ: فَتْحٌ (Opening / Conquering)</p>
+        <p class="english-text">Masdar (Verbal Noun): Fath - Opening / Conquering</p>
+    </div>
+
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>الضَّمِيرُ<br>Pronoun</th>
+                    <th>الفِعْلُ المَاضِي<br>Past Tense</th>
+                    <th>الفِعْلُ المُضَارِعُ<br>Present Tense</th>
+                    <th>فِعْلُ الأَمْرِ<br>Imperative</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="pronoun-cell">أَنَا</td>
+                    <td>فَتَحْتُ</td>
+                    <td>أَفْتَحُ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">نَحْنُ</td>
+                    <td>فَتَحْنَا</td>
+                    <td>نَفْتَحُ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">أَنْتَ</td>
+                    <td>فَتَحْتَ</td>
+                    <td>تَفْتَحُ</td>
+                    <td>اِفْتَحْ</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">أَنْتِ</td>
+                    <td>فَتَحْتِ</td>
+                    <td>تَفْتَحِينَ</td>
+                    <td>اِفْتَحِي</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">أَنْتُمَا</td>
+                    <td>فَتَحْتُمَا</td>
+                    <td>تَفْتَحَانِ</td>
+                    <td>اِفْتَحَا</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">أَنْتُمَا مُؤ</td>
+                    <td>فَتَحْتُمَا</td>
+                    <td>تَفْتَحَانِ</td>
+                    <td>اِفْتَحَا</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">أَنْتُمْ</td>
+                    <td>فَتَحْتُمْ</td>
+                    <td>تَفْتَحُونَ</td>
+                    <td>اِفْتَحُوا</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">أَنْتُنَّ</td>
+                    <td>فَتَحْتُنَّ</td>
+                    <td>تَفْتَحْنَ</td>
+                    <td>اِفْتَحْنَ</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">هُوَ</td>
+                    <td>فَتَحَ</td>
+                    <td>يَفْتَحُ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">هِيَ</td>
+                    <td>فَتَحَتْ</td>
+                    <td>تَفْتَحُ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">هُمَا</td>
+                    <td>فَتَحَا</td>
+                    <td>يَفْتَحَانِ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">هُمَا مُؤ</td>
+                    <td>فَتَحَتَا</td>
+                    <td>تَفْتَحَانِ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">هُمْ</td>
+                    <td>فَتَحُوا</td>
+                    <td>يَفْتَحُونَ</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td class="pronoun-cell">هُنَّ</td>
+                    <td>فَتَحْنَ</td>
+                    <td>يَفْتَحْنَ</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Section 3: Examples of فَتَحَ -->
+<section class="section" id="examples-fataha">
+    <h2 class="section-title">أَمْثِلَةٌ - Examples</h2>
+
+    <div class="example-box">
+        <div class="example-ar">فَتَحَ الأُسْتَاذُ بَابَ الفَصْلِ فَدَخَلَ المُدِيرُ</div>
+        <div class="example-en">The teacher opened the classroom door, so the principal entered.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">فَتَحَ المُسْلِمُونَ كَثِيرًا مِنَ البِلَادِ</div>
+        <div class="example-en">The Muslims conquered many lands.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">هَؤُلَاءِ الأَوْلَادُ يَفْتَحُونَ بَابَ السَّيَّارَةِ</div>
+        <div class="example-en">These boys are opening the car door.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">فَتْحُ البَابِ المَكْسُورِ صَعْبٌ جِدًّا</div>
+        <div class="example-en">Opening the broken door is very difficult.</div>
+    </div>
+</section>
+
+<!-- Section 4: Continuation / Review from Previous Lecture -->
+<section class="section" id="irab-mudari">
+    <h2 class="section-title">الاِسْتِمْرَارُ فِي دَرْسِنَا فِي المُحَاضَرَةِ السَّابِقَةِ</h2>
+    <p class="english-text" style="font-size: 20px;">Continuation of our lesson from the previous lecture</p>
+
+    <h3 class="section-subtitle">الفِعْلُ المَاضِي - The Past Tense Verb (Review)</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text">الفِعْلُ المَاضِي مَبْنِيٌّ (لَا يَتَغَيَّرُ آخِرُهُ):</p>
+        <p class="english-text">The past tense verb is indeclinable (its ending does not change for i'rab):</p>
+        <ul class="arabic-text" style="font-size: 24px;">
+            <li>مَبْنِيٌّ عَلَى الفَتْحِ - Built on fathah</li>
+            <li>مَبْنِيٌّ عَلَى السُّكُونِ - Built on sukoon</li>
+            <li>مَبْنِيٌّ عَلَى الضَّمِّ - Built on dammah</li>
+        </ul>
+    </div>
+
+    <h3 class="section-subtitle">إِعْرَابُ الفِعْلِ المُضَارِعِ - I'rab of the Present Tense Verb</h3>
+
+    <div class="info-box">
+        <p class="arabic-text">الفِعْلُ المُضَارِعُ لَهُ ثَلَاثُ حَالَاتٍ فِي الإِعْرَابِ:</p>
+        <p class="english-text">The present tense verb has three i'rab states:</p>
+    </div>
+
+    <div class="number-chart">
+        <div class="number-item">
+            <div class="number-ar">مَرْفُوعٌ</div>
+            <div class="number-en">Raf' (Nominative)</div>
+            <p class="arabic-text" style="font-size: 20px;">إِذَا لَمْ يُسْبَقْ بِشَيْءٍ</p>
+            <p class="english-text">When not preceded by anything</p>
+            <p class="arabic-text" style="font-size: 22px;">يَحْفَظُ الوَلَدُ القُرْآنَ</p>
+        </div>
+        <div class="number-item">
+            <div class="number-ar">مَنْصُوبٌ</div>
+            <div class="number-en">Nasb (Accusative)</div>
+            <p class="arabic-text" style="font-size: 20px;">إِذَا سُبِقَ بِأَدَاةِ نَصْبٍ</p>
+            <p class="english-text">When preceded by a nasb particle</p>
+            <p class="arabic-text" style="font-size: 22px;">لَنْ أَلْعَبَ فِي الشَّارِعِ</p>
+        </div>
+        <div class="number-item">
+            <div class="number-ar">مَجْزُومٌ</div>
+            <div class="number-en">Jazm (Jussive)</div>
+            <p class="arabic-text" style="font-size: 20px;">إِذَا سُبِقَ بِأَدَاةِ جَزْمٍ</p>
+            <p class="english-text">When preceded by a jazm particle</p>
+            <p class="arabic-text" style="font-size: 22px;">مُحَمَّدٌ لَمْ يَلْعَبْ فِي الشَّارِعِ</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5: I'rab of Marfoo' (Raf' Rules) -->
+<section class="section" id="irab-marfoo">
+    <h2 class="section-title">إِعْرَابُ الفِعْلِ المُضَارِعِ المَرْفُوعِ - I'rab of the Raf' Present Tense</h2>
+
+    <div class="rule-box">
+        <p class="arabic-medium"><strong>القَاعِدَةُ ١:</strong> يُرْفَعُ الفِعْلُ المُضَارِعُ بِالضَّمَّةِ الظَّاهِرَةِ إِذَا كَانَ آخِرُهُ حَرْفًا صَحِيحًا</p>
+        <p class="english-text"><strong>Rule 1:</strong> The present tense verb is raised (raf') with a visible dammah when its last letter is a sound consonant (not a weak letter).</p>
+        <p class="arabic-text" style="margin-top: 10px;">الحُرُوفُ الصَّحِيحَةُ هِيَ كُلُّ الحُرُوفِ مَا عَدَا الأَلِفَ وَالوَاوَ وَاليَاءَ</p>
+        <p class="english-text">Sound letters are all letters except alif, waw, and ya.</p>
+        <div class="example-box">
+            <div class="example-ar">مِثَالٌ: يَدْخُلُ الطُّلَّابُ الفَصْلَ</div>
+            <div class="example-en">Example: The students enter the classroom.</div>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-medium"><strong>القَاعِدَةُ ٢:</strong> يُرْفَعُ الفِعْلُ المُضَارِعُ بِالضَّمَّةِ المُقَدَّرَةِ إِذَا كَانَ آخِرُهُ الوَاوَ أَوِ الأَلِفَ أَوِ اليَاءَ (حَرْفُ عِلَّةٍ - Weak letter)</p>
+        <p class="english-text"><strong>Rule 2:</strong> The present tense verb is raised (raf') with an estimated dammah when its last letter is a waw, alif, or ya (weak letter).</p>
+        <div class="example-box">
+            <div class="example-ar">يَدْعُو المُسْلِمُ رَبَّهُ</div>
+            <div class="example-en">The Muslim calls upon his Lord. (ends in waw)</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">يَمْشِي الطَّالِبُ إِلَى المَدْرَسَةِ</div>
+            <div class="example-en">The student walks to the school. (ends in ya)</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">يَخْشَى المُؤْمِنُ رَبَّهُ</div>
+            <div class="example-en">The believer fears his Lord. (ends in alif)</div>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-medium"><strong>القَاعِدَةُ ٣:</strong> يُرْفَعُ الفِعْلُ المُضَارِعُ بِثُبُوتِ النُّونِ إِذَا كَانَ فِعْلًا مِنَ الأَفْعَالِ الخَمْسَةِ</p>
+        <p class="english-text"><strong>Rule 3:</strong> The present tense verb is raised (raf') by the retention of the nun when it is one of the five verbs (al-af'al al-khamsah).</p>
+        <div class="example-box">
+            <div class="example-ar">الفَلَّاحَانِ يَعْمَلَانِ فِي الحَقْلِ</div>
+            <div class="example-en">The two farmers are working in the field.</div>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-medium"><strong>القَاعِدَةُ ٤:</strong> يَكُونُ مَبْنِيًّا عَلَى السُّكُونِ فِي مَحَلِّ رَفْعٍ إِذَا اتَّصَلَتْ بِهِ نُونُ النِّسْوَةِ</p>
+        <p class="english-text"><strong>Rule 4:</strong> It is built on sukoon in the position of raf' when nun an-niswah (feminine plural nun) is attached to it.</p>
+        <div class="example-box">
+            <div class="example-ar">البَنَاتُ يَلْعَبْنَ فِي الحَدِيقَةِ</div>
+            <div class="example-en">The girls are playing in the garden.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 6: I'rab of Majzoom (Jazm Rules) -->
+<section class="section" id="irab-majzoom">
+    <h2 class="section-title">إِعْرَابُ الفِعْلِ المُضَارِعِ المَجْزُومِ - I'rab of the Jazm Present Tense</h2>
+
+    <div class="grammar-box">
+        <p class="arabic-text">يَكُونُ الفِعْلُ المُضَارِعُ مَجْزُومًا إِذَا سُبِقَ بِأَدَاةٍ مِنْ أَدَوَاتِ الجَزْمِ، مِثْلَ الأَدَاةِ (لَمْ)</p>
+        <p class="english-text">The present tense verb becomes majzoom when preceded by a jazm particle, such as (lam).</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-medium"><strong>١ - يَكُونُ مَجْزُومًا بِالسُّكُونِ</strong> إِذَا كَانَ صَحِيحَ الآخِرِ (الحَرْفُ الأَخِيرُ لَيْسَ الوَاوَ أَوِ الأَلِفَ أَوِ اليَاءَ)</p>
+        <p class="english-text"><strong>1 - Jazm with sukoon</strong> when the last letter is a sound consonant (not waw, alif, or ya).</p>
+        <div class="example-box">
+            <div class="example-ar">لَمْ يَلْعَبْ الوَلَدُ فِي الشَّارِعِ</div>
+            <div class="example-en">The boy did not play in the street.</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">لَمْ يَفْهَمْ خَالِدٌ الدَّرْسَ</div>
+            <div class="example-en">Khalid did not understand the lesson.</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">لَمْ يَقْرَأْ سَعِيدٌ الكِتَابَ</div>
+            <div class="example-en">Sa'id did not read the book.</div>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-medium"><strong>٢ - يَكُونُ مَجْزُومًا بِحَذْفِ حَرْفِ العِلَّةِ</strong> إِذَا كَانَ آخِرُهُ حَرْفَ عِلَّةٍ (الوَاوُ أَوِ الأَلِفُ أَوِ اليَاءُ)</p>
+        <p class="english-text"><strong>2 - Jazm by deleting the weak letter</strong> when the last letter is a weak letter (waw, alif, or ya).</p>
+        <div class="example-box">
+            <div class="example-ar">يَمْشِي ← لَمْ يَمْشِ</div>
+            <div class="example-en">He walks -> He did not walk (ya deleted)</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">يَدْعُو ← لَمْ يَدْعُ</div>
+            <div class="example-en">He calls -> He did not call (waw deleted)</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">يَخْشَى ← لَمْ يَخْشَ</div>
+            <div class="example-en">He fears -> He did not fear (alif deleted)</div>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-medium"><strong>٣ - يَكُونُ مَجْزُومًا بِحَذْفِ النُّونِ</strong> إِذَا كَانَ فِعْلًا مِنَ الأَفْعَالِ الخَمْسَةِ</p>
+        <p class="english-text"><strong>3 - Jazm by deleting the nun</strong> when it is one of the five verbs (al-af'al al-khamsah).</p>
+        <div class="example-box">
+            <div class="example-ar">يَلْعَبَانِ ← لَمْ يَلْعَبَا</div>
+            <div class="example-en">They (dual) play -> They (dual) did not play</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">يَسْمَعُونَ ← لَمْ يَسْمَعُوا</div>
+            <div class="example-en">They (pl.) listen -> They (pl.) did not listen</div>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ المُقَارَنَةِ: المَرْفُوعُ وَالمَجْزُومُ - Comparison Table: Raf' and Jazm</h3>
+
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>الفِعْلُ المُضَارِعُ المَرْفُوعُ<br>Raf' Present</th>
+                    <th>الفِعْلُ المُضَارِعُ المَجْزُومُ<br>Jazm Present</th>
+                    <th>عَلَامَةُ الجَزْمِ<br>Sign of Jazm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>يَأْكُلُ مُحَمَّدٌ التُّفَّاحَةَ</td>
+                    <td>لَمْ يَأْكُلْ مُحَمَّدٌ التُّفَّاحَةَ</td>
+                    <td>السُّكُونُ</td>
+                </tr>
+                <tr>
+                    <td>يَشْرَبُ الوَلَدُ اللَّبَنَ</td>
+                    <td>لَمْ يَشْرَبْ الوَلَدُ اللَّبَنَ</td>
+                    <td>السُّكُونُ</td>
+                </tr>
+                <tr>
+                    <td>يَجْرِي الوَلَدُ فِي المَلْعَبِ</td>
+                    <td>لَمْ يَجْرِ الوَلَدُ فِي المَلْعَبِ</td>
+                    <td>حَذْفُ حَرْفِ العِلَّةِ (اليَاءُ)</td>
+                </tr>
+                <tr>
+                    <td>يَدْعُو المُسْلِمُ اللهَ</td>
+                    <td>لَمْ يَدْعُ الكَافِرُ اللهَ</td>
+                    <td>حَذْفُ حَرْفِ العِلَّةِ (الوَاوُ)</td>
+                </tr>
+                <tr>
+                    <td>يَخْشَى الوَلَدُ الكَلْبَ</td>
+                    <td>لَمْ يَخْشَ الوَلَدُ الكَلْبَ</td>
+                    <td>حَذْفُ حَرْفِ العِلَّةِ (الأَلِفُ)</td>
+                </tr>
+                <tr>
+                    <td>المُدَرِّسَانِ يَشْرَحَانِ الدَّرْسَ</td>
+                    <td>المُدَرِّسَانِ لَمْ يَشْرَحَا الدَّرْسَ</td>
+                    <td>حَذْفُ النُّونِ</td>
+                </tr>
+                <tr>
+                    <td>أَنْتِ تَشْرَبِينَ المَاءَ</td>
+                    <td>أَنْتِ لَمْ تَشْرَبِي المَاءَ</td>
+                    <td>حَذْفُ النُّونِ</td>
+                </tr>
+                <tr>
+                    <td>أَنْتُمْ تَذْهَبُونَ لِلْعَمَلِ</td>
+                    <td>أَنْتُمْ لَمْ تَذْهَبُوا لِلْعَمَلِ</td>
+                    <td>حَذْفُ النُّونِ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Section 7: I'rab of the Imperative Verb -->
+<section class="section" id="irab-amr">
+    <h2 class="section-title">إِعْرَابُ الفِعْلِ الأَمْرِ - I'rab of the Imperative Verb</h2>
+
+    <div class="grammar-box">
+        <p class="arabic-text">القَاعِدَةُ العَامَّةُ فِي إِعْرَابِ الفِعْلِ الأَمْرِ هِيَ أَنَّ الفِعْلَ الأَمْرَ يُبْنَى عَلَى مَا يُجْزَمُ بِهِ مُضَارِعُهُ.</p>
+        <p class="english-text">The general rule for the i'rab of the imperative verb is that the imperative is built upon whatever its present tense is made jazm with.</p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-text"><strong>فَيَجِبُ أَوَّلًا أَنْ نَعْرِفَ جَزْمَ الفِعْلِ المُضَارِعِ.</strong></p>
+        <p class="english-text"><strong>So we must first know the jazm of the present tense verb.</strong></p>
+        <p class="arabic-text">كَمَا أَنَّ الفِعْلَ الأَمْرَ يَكُونُ دَائِمًا مَبْنِيًّا.</p>
+        <p class="english-text">Also, the imperative verb is always indeclinable (mabniy).</p>
+    </div>
+
+    <h3 class="section-subtitle">أَوَّلًا: المَجْزُومُ بِالسُّكُونِ ← الأَمْرُ مَبْنِيٌّ عَلَى السُّكُونِ</h3>
+    <p class="english-text" style="font-size: 18px;">First: When jazm is with sukoon, the imperative is built on sukoon</p>
+
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>الفِعْلُ المَجْزُومُ<br>Jazm Verb</th>
+                    <th>إِعْرَابُهُ<br>Its I'rab</th>
+                    <th>الفِعْلُ الأَمْرُ<br>Imperative</th>
+                    <th>إِعْرَابُهُ<br>Its I'rab</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>لَمْ يَفْهَمْ</td>
+                    <td>فِعْلٌ مُضَارِعٌ مَجْزُومٌ وَعَلَامَةُ جَزْمِهِ السُّكُونُ</td>
+                    <td>اِفْهَمْ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ يَقْرَأْ</td>
+                    <td>فِعْلٌ مُضَارِعٌ مَجْزُومٌ وَعَلَامَةُ جَزْمِهِ السُّكُونُ</td>
+                    <td>اِقْرَأْ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ يَخْرُجْ</td>
+                    <td>فِعْلٌ مُضَارِعٌ مَجْزُومٌ وَعَلَامَةُ جَزْمِهِ السُّكُونُ</td>
+                    <td>اُخْرُجْ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="section-subtitle">ثَانِيًا: المَجْزُومُ بِحَذْفِ حَرْفِ العِلَّةِ ← الأَمْرُ مَبْنِيٌّ عَلَى حَذْفِ حَرْفِ العِلَّةِ</h3>
+    <p class="english-text" style="font-size: 18px;">Second: When jazm is by deleting the weak letter, the imperative is built on deleting the weak letter</p>
+
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>الفِعْلُ المَجْزُومُ<br>Jazm Verb</th>
+                    <th>عَلَامَةُ الجَزْمِ<br>Sign of Jazm</th>
+                    <th>الفِعْلُ الأَمْرُ<br>Imperative</th>
+                    <th>إِعْرَابُهُ<br>Its I'rab</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>لَمْ يَجْرِ</td>
+                    <td>عَلَامَةُ جَزْمِهِ حَذْفُ حَرْفِ العِلَّةِ (اليَاءُ)</td>
+                    <td>اِجْرِ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ حَرْفِ العِلَّةِ (اليَاءُ)</td>
+                </tr>
+                <tr>
+                    <td>لَمْ يَدْعُ</td>
+                    <td>عَلَامَةُ جَزْمِهِ حَذْفُ حَرْفِ العِلَّةِ (الوَاوُ)</td>
+                    <td>اُدْعُ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ حَرْفِ العِلَّةِ (الوَاوُ)</td>
+                </tr>
+                <tr>
+                    <td>لَمْ يَخْشَ</td>
+                    <td>عَلَامَةُ جَزْمِهِ حَذْفُ حَرْفِ العِلَّةِ (الأَلِفُ)</td>
+                    <td>اِخْشَ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ حَرْفِ العِلَّةِ (الأَلِفُ)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="section-subtitle">ثَالِثًا: المَجْزُومُ بِحَذْفِ النُّونِ ← الأَمْرُ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ</h3>
+    <p class="english-text" style="font-size: 18px;">Third: When jazm is by deleting the nun, the imperative is built on deleting the nun</p>
+
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>الفِعْلُ المَجْزُومُ<br>Jazm Verb</th>
+                    <th>عَلَامَةُ الجَزْمِ<br>Sign of Jazm</th>
+                    <th>الفِعْلُ الأَمْرُ<br>Imperative</th>
+                    <th>إِعْرَابُهُ<br>Its I'rab</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>لَمْ يَفْهَمَا</td>
+                    <td>عَلَامَةُ جَزْمِهِ حَذْفُ النُّونِ، وَالأَلِفُ فَاعِلٌ</td>
+                    <td>اِفْهَمَا</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ وَأَلِفُ الاثْنَيْنِ فَاعِلٌ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ يَسْمَعُوا</td>
+                    <td>عَلَامَةُ جَزْمِهِ حَذْفُ النُّونِ، وَالوَاوُ فَاعِلٌ</td>
+                    <td>اِسْمَعُوا</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ وَوَاوُ الجَمَاعَةِ فَاعِلٌ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ تَفْهَمِي</td>
+                    <td>عَلَامَةُ جَزْمِهِ حَذْفُ النُّونِ، وَاليَاءُ فَاعِلٌ</td>
+                    <td>اِفْهَمِي</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ وَيَاءُ المُخَاطَبَةِ فَاعِلٌ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="section-subtitle">تَطْبِيقٌ عَلَى الفِعْلِ فَتَحَ - Application on the Verb فَتَحَ</h3>
+
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>الفِعْلُ المُضَارِعُ المَجْزُومُ</th>
+                    <th>الفِعْلُ الأَمْرُ</th>
+                    <th>عَلَامَةُ البِنَاءِ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>لَمْ يَفْتَحْ</td>
+                    <td>اِفْتَحْ كِتَابَكَ، يَا مُحَمَّدُ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ تَفْتَحِي</td>
+                    <td>اِفْتَحِي كِتَابَكِ، يَا سَلْمَى</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ تَفْتَحَا</td>
+                    <td>اِفْتَحَا كِتَابَيْكُمَا؛ يَا وَلَدَانِ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ تَفْتَحَا</td>
+                    <td>اِفْتَحَا كِتَابَيْكُمَا؛ يَا بِنْتَانِ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ تَفْتَحُوا</td>
+                    <td>اِفْتَحُوا كُتُبَكُمْ يَا أَوْلَادُ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ</td>
+                </tr>
+                <tr>
+                    <td>لَمْ تَفْتَحْنَ</td>
+                    <td>اِفْتَحْنَ كُتُبَكُنَّ يَا بَنَاتُ</td>
+                    <td>فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ لاتِّصَالِهِ بِنُونِ النِّسْوَةِ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Section 8: How to Form the Imperative -->
+<section class="section" id="forming-amr">
+    <h2 class="section-title">كَيْفَ نَصُوغُ الفِعْلَ الأَمْرَ - How We Formulate the Imperative</h2>
+    <p class="english-text" style="font-size: 20px;">How we formulate the command verb</p>
+
+    <div class="grammar-box">
+        <p class="arabic-text">إِذَا أَرَدْنَا أَنْ نَأْتِيَ بِالفِعْلِ الأَمْرِ، فَهُنَاكَ قَاعِدَةٌ سَهْلَةٌ وَهِيَ:</p>
+        <p class="english-text">If we want to derive the imperative verb, there is an easy rule:</p>
+    </div>
+
+    <div class="step-box">
+        <p class="arabic-medium"><span class="step-number">1</span> نَأْتِي أَوَّلًا بِالفِعْلِ المُضَارِعِ</p>
+        <p class="english-text">Step 1: First, bring the present tense verb.</p>
+    </div>
+
+    <div class="step-box">
+        <p class="arabic-medium"><span class="step-number">2</span> نَجْزِمُ الفِعْلَ المُضَارِعَ</p>
+        <p class="english-text">Step 2: Apply jazm to the present tense verb.</p>
+    </div>
+
+    <div class="step-box">
+        <p class="arabic-medium"><span class="step-number">3</span> نَحْذِفُ حَرْفَ المُضَارَعَةِ فَيَكُونُ ذَلِكَ هُوَ الأَمْرُ</p>
+        <p class="english-text">Step 3: Delete the present tense prefix letter - and that becomes the imperative.</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-medium"><strong>مِثَالٌ عَلَى الفِعْلِ تَعَلَّمَ:</strong></p>
+        <p class="arabic-text">تَقُولُ فِي تَعَلَّمَ: لَمْ يَتَعَلَّمْ، فَإِذَا حَذَفْنَا حَرْفَ المُضَارَعَةِ فَيَكُونُ الأَمْرُ هُوَ: <strong>تَعَلَّمْ</strong></p>
+        <p class="english-text">Example: For the verb ta'allama: lam yata'allam -> delete the ya -> the imperative is: <strong>ta'allam</strong></p>
+    </div>
+
+    <div class="warning-box">
+        <p class="arabic-medium"><strong>هَمْزَةُ الوَصْلِ:</strong></p>
+        <p class="arabic-text">أَمَّا الفِعْلُ حَفِظَ فَإِنَّ المُضَارِعَ المَجْزُومَ هُوَ: لَمْ يَحْفَظْ، فَإِذَا حَذَفْنَا حَرْفَ المُضَارَعَةِ فَيَكُونُ الأَمْرُ هُوَ: حْفَظْ.</p>
+        <p class="arabic-text">وَلَا يَجُوزُ فِي اللُّغَةِ العَرَبِيَّةِ أَنْ تَبْدَأَ كَلِمَةٌ بِحَرْفٍ سَاكِنٍ، فَنُضِيفُ <strong>هَمْزَةَ الوَصْلِ</strong> فَيَكُونُ: <strong>اِحْفَظْ</strong></p>
+        <p class="english-text">For the verb hafidha: lam yahfadh -> delete the ya -> hfadh. But in Arabic, a word cannot begin with a sukoon letter, so we add <strong>hamzat al-wasl</strong> to get: <strong>ihfadh</strong></p>
+        <p class="arabic-text" style="margin-top: 10px;">وَنَقُولُ فِي قَرَأَ: لَمْ يَقْرَأْ ← <strong>اِقْرَأْ</strong></p>
+        <p class="english-text">And for qara'a: lam yaqra' -> <strong>iqra'</strong></p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-medium"><strong>حَالَةٌ خَاصَّةٌ - الفِعْلُ الَّذِي يَبْدَأُ بِالهَمْزَةِ:</strong></p>
+        <p class="arabic-text">أَمَّا الفِعْلُ الَّذِي يَبْدَأُ فِي المَاضِي بِحَرْفِ الهَمْزَةِ، مِثْلَ الفِعْلِ: أَخَذَ، وَالفِعْلِ أَكَلَ، فَفِي المُضَارِعِ المَجْزُومِ نَقُولُ: لَمْ يَأْكُلْ، وَلَمْ يَأْخُذْ.</p>
+        <p class="arabic-text">وَفِي هَذِهِ الحَالَةِ فَيَجِبُ أَنْ نَحْذِفَ حَرْفَ المُضَارَعَةِ وَنَحْذِفُ أَيْضًا الهَمْزَةَ الَّتِي بَعْدَ حَرْفِ المُضَارَعَةِ.</p>
+        <p class="arabic-text">فَنَقُولُ فِي الفِعْلِ الأَمْرِ: <strong>كُلْ</strong> وَ <strong>خُذْ</strong></p>
+        <p class="english-text"><strong>Special case:</strong> For verbs that begin with hamzah in the past tense, like akhadha (to take) and akala (to eat), in the majzoom we say: lam ya'kul, lam ya'khudh. In this case, we delete both the present tense prefix AND the hamzah after it. So the imperative becomes: <strong>kul</strong> (eat!) and <strong>khudh</strong> (take!)</p>
+    </div>
+
+    <div class="formula-box">
+        <div class="formula" style="font-size: 30px;">المُضَارِعُ ← الجَزْمُ ← حَذْفُ حَرْفِ المُضَارَعَةِ ← (+ هَمْزَةُ الوَصْلِ إِنْ لَزِمَ) ← الأَمْرُ</div>
+        <p class="english-text" style="text-align: center; font-size: 18px;">Present -> Jazm -> Delete prefix letter -> (+ hamzat al-wasl if needed) -> Imperative</p>
+    </div>
+</section>
+
+<!-- Section 9: Quranic Examples -->
+<section class="section" id="quran-examples">
+    <h2 class="section-title">أَمْثِلَةٌ مِنَ القُرْآنِ الكَرِيمِ - Examples from the Noble Quran</h2>
+
+    <div class="example-box">
+        <div class="example-ar">﴿يَا أَيُّهَا النَّاسُ اتَّقُوا رَبَّكُمْ إِنَّ زَلْزَلَةَ السَّاعَةِ شَيْءٌ عَظِيمٌ﴾</div>
+        <div class="example-en">"O mankind! Be wary of your Lord! Indeed the quake of the Hour is a terrible thing." (Surah Al-Hajj 22:1)</div>
+        <div class="grammar-box" style="margin-top: 10px;">
+            <p class="arabic-text"><strong>اتَّقُوا:</strong> فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ</p>
+            <p class="english-text"><strong>ittaqoo:</strong> Imperative verb built on the deletion of nun</p>
+        </div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">﴿يَا أَيُّهَا النَّاسُ اعْبُدُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ وَالَّذِينَ مِنْ قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ﴾</div>
+        <div class="example-en">"O mankind! Worship your Lord, who created you and those who were before you, so that you may be Godwary." (Surah Al-Baqarah 2:21)</div>
+        <div class="grammar-box" style="margin-top: 10px;">
+            <p class="arabic-text"><strong>اعْبُدُوا:</strong> فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى حَذْفِ النُّونِ</p>
+            <p class="english-text"><strong>u'budoo:</strong> Imperative verb built on the deletion of nun</p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 10: Quiz -->
+<section class="section" id="quiz">
+    <h2 class="section-title">اِخْتِبِرْ نَفْسَكَ - Test Yourself</h2>
+    <p class="english-text" style="font-size: 20px;">Answer these 8 multiple-choice questions to test your understanding of Module 9.</p>
+
+    <!-- MCQ 1 -->
+    <div class="mcq-question" data-correct="b" data-explanation="الفِعْلُ فَتَحَ لَهُ مَعْنَيَانِ: فَتَحَ البَابَ (To open) وَفَتَحَ البِلَادَ (To conquer). The verb fataha has two meanings: to open and to conquer.">
+        <p class="arabic-text"><strong>السُّؤَالُ ١:</strong> مَا مَعْنَى الفِعْلِ فَتَحَ؟</p>
+        <p class="english-text">Question 1: What does the verb fataha mean?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"> فَقَطْ: فَتَحَ البَابَ (To open only)</label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"> فَتَحَ البَابَ (To open) وَفَتَحَ البِلَادَ (To conquer)</label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"> فَقَطْ: فَتَحَ البِلَادَ (To conquer only)</label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"> فَتَحَ الكِتَابَ (To study)</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 2 -->
+    <div class="mcq-question" data-correct="c" data-explanation="الفِعْلُ المُضَارِعُ يُرْفَعُ بِالضَّمَّةِ المُقَدَّرَةِ إِذَا كَانَ آخِرُهُ حَرْفَ عِلَّةٍ (وَاو، أَلِف، يَاء). When the last letter is a weak letter, the dammah is estimated (muqaddarah).">
+        <p class="arabic-text"><strong>السُّؤَالُ ٢:</strong> كَيْفَ يُرْفَعُ الفِعْلُ المُضَارِعُ (يَدْعُو)؟</p>
+        <p class="english-text">Question 2: How is the present tense verb (yad'oo) given raf'?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"> بِالضَّمَّةِ الظَّاهِرَةِ (with visible dammah)</label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"> بِثُبُوتِ النُّونِ (by retention of nun)</label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"> بِالضَّمَّةِ المُقَدَّرَةِ (with estimated dammah)</label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"> بِالسُّكُونِ (with sukoon)</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 3 -->
+    <div class="mcq-question" data-correct="b" data-explanation="الأَفْعَالُ الخَمْسَةُ تُرْفَعُ بِثُبُوتِ النُّونِ. مِثْلَ: يَعْمَلَانِ، تَعْمَلَانِ، يَعْمَلُونَ، تَعْمَلُونَ، تَعْمَلِينَ. The five verbs are raised by retention of the nun.">
+        <p class="arabic-text"><strong>السُّؤَالُ ٣:</strong> كَيْفَ يُرْفَعُ الفِعْلُ (يَعْمَلَانِ) فِي: الفَلَّاحَانِ يَعْمَلَانِ فِي الحَقْلِ؟</p>
+        <p class="english-text">Question 3: How is the verb (ya'malaan) given raf' in: The two farmers work in the field?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"> بِالضَّمَّةِ الظَّاهِرَةِ (with visible dammah)</label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"> بِثُبُوتِ النُّونِ (by retention of nun)</label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"> بِالضَّمَّةِ المُقَدَّرَةِ (with estimated dammah)</label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"> بِحَذْفِ النُّونِ (by deletion of nun)</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 4 -->
+    <div class="mcq-question" data-correct="a" data-explanation="الفِعْلُ يَجْرِي آخِرُهُ يَاءٌ (حَرْفُ عِلَّةٍ)، فَيُجْزَمُ بِحَذْفِ حَرْفِ العِلَّةِ: لَمْ يَجْرِ. The verb yajree ends with ya (weak letter), so jazm is by deleting the weak letter: lam yajri.">
+        <p class="arabic-text"><strong>السُّؤَالُ ٤:</strong> مَا عَلَامَةُ جَزْمِ الفِعْلِ فِي: لَمْ يَجْرِ الوَلَدُ فِي المَلْعَبِ؟</p>
+        <p class="english-text">Question 4: What is the sign of jazm in: The boy did not run in the playground?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"> حَذْفُ حَرْفِ العِلَّةِ (deletion of weak letter)</label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"> السُّكُونُ (sukoon)</label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"> حَذْفُ النُّونِ (deletion of nun)</label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"> الفَتْحَةُ (fathah)</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 5 -->
+    <div class="mcq-question" data-correct="c" data-explanation="القَاعِدَةُ: الفِعْلُ الأَمْرُ يُبْنَى عَلَى مَا يُجْزَمُ بِهِ مُضَارِعُهُ. The rule: the imperative is built upon whatever its present tense is made jazm with.">
+        <p class="arabic-text"><strong>السُّؤَالُ ٥:</strong> مَا القَاعِدَةُ العَامَّةُ فِي إِعْرَابِ فِعْلِ الأَمْرِ؟</p>
+        <p class="english-text">Question 5: What is the general rule for the i'rab of the imperative verb?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"> يُبْنَى دَائِمًا عَلَى السُّكُونِ (always built on sukoon)</label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"> يُبْنَى دَائِمًا عَلَى الفَتْحِ (always built on fathah)</label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"> يُبْنَى عَلَى مَا يُجْزَمُ بِهِ مُضَارِعُهُ (built on whatever its present tense is made jazm with)</label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"> يُبْنَى عَلَى الضَّمِّ (always built on dammah)</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 6 -->
+    <div class="mcq-question" data-correct="b" data-explanation="الخُطُوَاتُ: ١- نَأْتِي بِالمُضَارِعِ (يَحْفَظُ)، ٢- نَجْزِمُهُ (لَمْ يَحْفَظْ)، ٣- نَحْذِفُ حَرْفَ المُضَارَعَةِ (حْفَظْ)، ثُمَّ نُضِيفُ هَمْزَةَ الوَصْلِ (اِحْفَظْ). The steps: present (yahfadhu) -> jazm (lam yahfadh) -> delete prefix (hfadh) -> add hamzat al-wasl (ihfadh).">
+        <p class="arabic-text"><strong>السُّؤَالُ ٦:</strong> مَا فِعْلُ الأَمْرِ مِنَ الفِعْلِ حَفِظَ؟</p>
+        <p class="english-text">Question 6: What is the imperative of the verb hafidha (to memorize)?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"> حْفَظْ</label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"> اِحْفَظْ</label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"> يَحْفَظْ</label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"> حَفِظْ</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 7 -->
+    <div class="mcq-question" data-correct="d" data-explanation="الفِعْلُ أَكَلَ يَبْدَأُ بِهَمْزَةٍ فِي المَاضِي، فَنَحْذِفُ حَرْفَ المُضَارَعَةِ وَالهَمْزَةَ مَعًا، فَيَكُونُ الأَمْرُ: كُلْ. For verbs starting with hamzah like akala, we delete both the prefix and the hamzah, giving: kul.">
+        <p class="arabic-text"><strong>السُّؤَالُ ٧:</strong> مَا فِعْلُ الأَمْرِ مِنَ الفِعْلِ أَكَلَ؟</p>
+        <p class="english-text">Question 7: What is the imperative of the verb akala (to eat)?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"> اُؤْكُلْ</label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"> أْكُلْ</label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"> اِأْكُلْ</label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"> كُلْ</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 8 -->
+    <div class="mcq-question" data-correct="a" data-explanation="فَتَحَ المُسْلِمُونَ البِلَادَ = المُسْلِمُونَ فَتَحُوا البِلَادَ (conquered). هَذَا هُوَ المَعْنَى الثَّانِي لِلْفِعْلِ فَتَحَ. This is the second meaning of fataha: to conquer lands.">
+        <p class="arabic-text"><strong>السُّؤَالُ ٨:</strong> فِي جُمْلَةِ «فَتَحَ المُسْلِمُونَ كَثِيرًا مِنَ البِلَادِ»، مَا مَعْنَى فَتَحَ هُنَا؟</p>
+        <p class="english-text">Question 8: In the sentence "The Muslims fataha many of the lands," what does fataha mean here?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"> غَلَبُوا وَاسْتَوْلَوْا عَلَيْهَا (conquered them)</label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"> فَتَحُوا أَبْوَابَهَا (opened their doors)</label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"> زَارُوهَا (visited them)</label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"> غَادَرُوهَا (left them)</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ التَّاسِعَةُ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 9</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => {
+                if (opt.querySelector('input').value === correct) { opt.classList.add('correct'); }
+            });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>&#10003; إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>&#10007; إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

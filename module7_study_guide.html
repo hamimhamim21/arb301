@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 7 - ARB303 Study Guide | المحاضرة السابعة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky; top: 0;
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            padding: 15px; border-radius: 10px; margin-bottom: 30px;
+            z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white; text-decoration: none; padding: 10px 18px;
+            background: rgba(255,255,255,0.2); border-radius: 12px;
+            font-size: 14px; transition: all 0.3s; text-align: center;
+            display: flex; flex-direction: column; gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%);
+            color: white; padding: 40px; border-radius: 15px;
+            margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white; border-radius: 15px; padding: 30px;
+            margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px; color: #00695c;
+            border-bottom: 4px solid #00897b;
+            padding-bottom: 15px; margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn {
+            position: fixed; top: 20px; left: 20px; width: 45px; height: 45px;
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4);
+            z-index: 1001; transition: all 0.3s;
+        }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .number-chart { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .number-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .number-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .number-ar { font-size: 32px; color: #00695c; font-weight: bold; }
+        .number-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.selected { border-color: #2196f3; background: #e3f2fd; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home">
+    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</a>
+<nav class="nav-container">
+    <div class="nav-title">المُحَاضَرَةُ السَّابِعَةُ - Lecture 7</div>
+    <div class="nav-links">
+        <a href="#masdar-fiaala">
+            <span class="nav-ar">وَزْنُ فِعَالَة</span>
+            <span class="nav-en">Masdar Pattern</span>
+        </a>
+        <a href="#verb-sanaa">
+            <span class="nav-ar">صَنَعَ يَصْنَعُ</span>
+            <span class="nav-en">Verb Conjugation</span>
+        </a>
+        <a href="#dialogue">
+            <span class="nav-ar">شَرْحُ الدَّرْسِ</span>
+            <span class="nav-en">Lesson Dialogue</span>
+        </a>
+        <a href="#exercises">
+            <span class="nav-ar">تَمَارِينُ الكِتَابِ</span>
+            <span class="nav-en">Book Exercises</span>
+        </a>
+        <a href="#inna-anna">
+            <span class="nav-ar">إِنَّ / أَنَّ</span>
+            <span class="nav-en">Hamza Rules</span>
+        </a>
+        <a href="#days">
+            <span class="nav-ar">أَيَّامُ الأُسْبُوعِ</span>
+            <span class="nav-en">Days of the Week</span>
+        </a>
+        <a href="#vocabulary">
+            <span class="nav-ar">الكَلِمَاتُ الجَدِيدَةُ</span>
+            <span class="nav-en">New Vocabulary</span>
+        </a>
+        <a href="#plurals">
+            <span class="nav-ar">الكَلِمَةُ وَجَمْعُهَا</span>
+            <span class="nav-en">Word &amp; Plural</span>
+        </a>
+        <a href="#mcq">
+            <span class="nav-ar">اِخْتِبَارٌ</span>
+            <span class="nav-en">Quiz</span>
+        </a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ السَّابِعَةُ</h1>
+    <div class="subtitle">Lecture 7 - الدَّرْسُ الثَّانِي عَشَرَ (Lesson 12)</div>
+</div>
+
+<!-- SECTION 1: Masdar Pattern فِعَالَة -->
+<div class="section" id="masdar-fiaala">
+    <h2 class="section-title">مِنَ المَصَادِرِ وَزْنُ فِعَالَة</h2>
+    <p class="english-text">From the Masdar Patterns: The Pattern fi'aalah</p>
+
+    <div class="grammar-box">
+        <p class="arabic-large">وَزْنُ فِعَالَة</p>
+        <p class="english-text">The masdar (verbal noun) pattern fi'aalah</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">دَرَسْنَا فِي بِدَايَةِ المُحَاضَرَةِ السَّابِقَةِ الفِعْلَ (كَتَبَ)</p>
+        <p class="english-text">We studied at the beginning of the previous lecture the verb kataba (to write).</p>
+        <p class="arabic-text">وَعَرَفْنَا أَنَّ مَصْدَرَهُ يَكُونُ عَلَى وَزْنِ فِعَالَةٍ أَيْ كِتَابَةً، وَمَعْنَاهَا writing</p>
+        <p class="english-text">And we learned that its masdar is on the pattern fi'aalah, i.e., kitaabah, meaning "writing".</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-text">وَهَذَا الوَزْنُ يَكُونُ فِي الأَفْعَالِ الَّتِي تَدُلُّ عَلَى حِرْفَةٍ (Occupation) أَوْ عَمَلٍ كَمَا فِي الفِعْلِ كَتَبَ</p>
+        <p class="english-text">This pattern occurs in verbs that indicate a profession/occupation or a type of work, as in the verb kataba.</p>
+        <p class="arabic-text">وَكَذَلِكَ الفِعْلُ الَّذِي مَعْنَاهُ اليَوْمَ، وَهُوَ الفِعْلُ:</p>
+        <p class="english-text">And likewise the verb we are studying today, which is:</p>
+    </div>
+
+    <div class="formula-box">
+        <div class="formula">صَنَعَ - يَصْنَعُ - اِصْنَعْ</div>
+        <p class="arabic-medium">صِنَاعَةً (فِعَالَة)</p>
+        <p class="english-text">To produce / manufacture / prepare / make - Masdar: sinaa'ah (manufacturing/industry)</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+
+    <div class="example-box">
+        <div class="example-ar">صِنَاعَةُ الطَّائِرَاتِ تَحْتَاجُ إِلَى نُقُودٍ كَثِيرَةٍ</div>
+        <div class="example-en">The manufacturing of airplanes needs a lot of money.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">تَصْنَعُ أُمِّي الطَّعَامَ</div>
+        <div class="example-en">My mother prepares the food.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">صَنَعَتِ اليَابَانُ قِطَارًا سَرِيعًا جِدًّا</div>
+        <div class="example-en">Japan manufactured a very fast train.</div>
+    </div>
+</div>
+
+<!-- SECTION 2: Verb Conjugation صَنَعَ -->
+<div class="section" id="verb-sanaa">
+    <h2 class="section-title">تَصْرِيفُ الفِعْلِ صَنَعَ</h2>
+    <p class="english-text">Conjugation of the Verb sana'a (to make/manufacture)</p>
+
+    <div class="formula-box">
+        <div class="formula">صَنَعَ - يَصْنَعُ - اِصْنَعْ</div>
+        <p class="english-text">Past - Present - Imperative | Masdar: صِنَاعَةً</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>الضَّمِيرُ</th>
+                <th>المَاضِي</th>
+                <th>المُضَارِعُ</th>
+                <th>الأَمْرُ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="pronoun-cell">أَنَا</td>
+                <td>صَنَعْتُ</td>
+                <td>أَصْنَعُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">نَحْنُ</td>
+                <td>صَنَعْنَا</td>
+                <td>نَصْنَعُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتَ</td>
+                <td>صَنَعْتَ</td>
+                <td>تَصْنَعُ</td>
+                <td>اِصْنَعْ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتِ</td>
+                <td>صَنَعْتِ</td>
+                <td>تَصْنَعِينَ</td>
+                <td>اِصْنَعِي</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمَا</td>
+                <td>صَنَعْتُمَا</td>
+                <td>تَصْنَعَانِ</td>
+                <td>اِصْنَعَا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمَا مُؤ</td>
+                <td>صَنَعْتُمَا</td>
+                <td>تَصْنَعَانِ</td>
+                <td>اِصْنَعَا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُمْ</td>
+                <td>صَنَعْتُمْ</td>
+                <td>تَصْنَعُونَ</td>
+                <td>اِصْنَعُوا</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">أَنْتُنَّ</td>
+                <td>صَنَعْتُنَّ</td>
+                <td>تَصْنَعْنَ</td>
+                <td>اِصْنَعْنَ</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُوَ</td>
+                <td>صَنَعَ</td>
+                <td>يَصْنَعُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هِيَ</td>
+                <td>صَنَعَتْ</td>
+                <td>تَصْنَعُ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا</td>
+                <td>صَنَعَا</td>
+                <td>يَصْنَعَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمَا مُؤ</td>
+                <td>صَنَعَتَا</td>
+                <td>تَصْنَعَانِ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُمْ</td>
+                <td>صَنَعُوا</td>
+                <td>يَصْنَعُونَ</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="pronoun-cell">هُنَّ</td>
+                <td>صَنَعْنَ</td>
+                <td>يَصْنَعْنَ</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <p class="arabic-text">المَصْدَرُ: صِنَاعَةً (عَلَى وَزْنِ فِعَالَة)</p>
+        <p class="english-text">The Masdar: sinaa'ah (on the pattern fi'aalah)</p>
+        <p class="arabic-text">مِثَالٌ: صَنَعْتُ سَيَّارَةً / أَصْنَعُ الطَّعَامَ</p>
+        <p class="english-text">Example: I made a car / I make the food</p>
+    </div>
+</div>
+
+<!-- SECTION 3: Dialogue / Lesson Explanation -->
+<div class="section" id="dialogue">
+    <h2 class="section-title">شَرْحُ الدَّرْسِ - Lesson Dialogue</h2>
+    <p class="english-text">Dialogue between Haamid, his sons, his daughters, and Ahmad</p>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>حَامِدٌ:</strong> مَاذَا تَفْعَلُونَ يَا أَبْنَائِي؟</div>
+        <div class="example-en">Haamid: What are you doing, my sons?</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبْنَاءُ:</strong> نَكْتُبُ الوَاجِبَاتِ.</div>
+        <div class="example-en">The sons: We are writing the homework.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>حَامِدٌ:</strong> أَتَفْهَمُونَ الدُّرُوسَ جَيِّدًا؟</div>
+        <div class="example-en">Haamid: Do you understand the lessons well?</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبْنَاءُ:</strong> نَعَمْ، نَفْهَمُهَا جَيِّدًا وَالحَمْدُ لِلَّهِ.</div>
+        <div class="example-en">The sons: Yes, we understand them well, praise be to Allah.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>حَامِدٌ:</strong> أَيَّ سُورَةٍ تَحْفَظُونَ الآنَ؟</div>
+        <div class="example-en">Haamid: Which surah are you memorizing now?</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>أَحْمَدُ:</strong> أَمَّا أَنَا فَأَحْفَظُ سُورَةَ المُلْكِ، وَأَمَّا هَؤُلَاءِ فَيَحْفَظُونَ سُورَةَ القَلَمِ.</div>
+        <div class="example-en">Ahmad: As for me, I am memorizing Surah al-Mulk, and as for them, they are memorizing Surah al-Qalam.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>حَامِدٌ:</strong> وَمَاذَا تَفْعَلْنَ أَنْتُنَّ يَا بَنَاتِي؟</div>
+        <div class="example-en">Haamid: And what are you girls doing, my daughters?</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>البَنَاتُ:</strong> نَحْنُ الآنَ نَلْعَبُ.</div>
+        <div class="example-en">The girls: We are playing now.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>حَامِدٌ:</strong> فِي وَقْتِ العَمَلِ تَلْعَبْنَ؟ مَتَى تَقْرَأْنَ الدُّرُوسَ وَمَتَى تَكْتُبْنَ الوَاجِبَاتِ؟</div>
+        <div class="example-en">Haamid: You are playing during work time? When do you read the lessons and when do you write the homework?</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>البَنَاتُ:</strong> نَحْنُ قَرَأْنَا الدُّرُوسَ وَكَتَبْنَا الوَاجِبَاتِ وَالحَمْدُ لِلَّهِ.</div>
+        <div class="example-en">The girls: We have read the lessons and written the homework, praise be to Allah.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>حَامِدٌ:</strong> أَحْسَنْتُنَّ يَا بَنَاتِي. هَكَذَا تَفْعَلُ التِّلْمِيذَاتُ المُجْتَهِدَاتُ... مَتَى تَذْهَبْنَ لِزِيَارَةِ خَالَتِكُنَّ؟ أَتَعْرِفْنَ أَنَّهَا مَرِيضَةٌ؟</div>
+        <div class="example-en">Haamid: Well done, my daughters. That is how diligent students do... When are you going to visit your aunt? Do you know that she is sick?</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>البَنَاتُ:</strong> نَعَمْ، نَعْرِفُ ذَلِكَ. شَفَاهَا اللَّهُ. سَنَذْهَبُ لِزِيَارَتِهَا هَذَا المَسَاءَ إِنْ شَاءَ اللَّهُ.</div>
+        <div class="example-en">The girls: Yes, we know that. May Allah cure her. We will go to visit her this evening, God willing.</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>حَامِدٌ:</strong> يَا أَحْمَدُ، أَتَعْرِفُ مَتَى يَرْجِعُ الجِيرَانُ مِنْ مَكَّةَ؟</div>
+        <div class="example-en">Haamid: Ahmad, do you know when the neighbors are returning from Makkah?</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>أَحْمَدُ:</strong> قَالَ لِي يُوسُفُ: «إِنَّنَا سَنَرْجِعُ فِي الأُسْبُوعِ القَادِمِ». أَظُنُّ أَنَّهُمْ سَيَرْجِعُونَ يَوْمَ السَّبْتِ إِنْ شَاءَ اللَّهُ.</div>
+        <div class="example-en">Ahmad: Yusuf said to me: "We will return next week." I think they are returning on Saturday, God willing.</div>
+    </div>
+</div>
+
+<!-- SECTION 4: Book Exercises -->
+<div class="section" id="exercises">
+    <h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2>
+    <p class="english-text">Exercises from the textbook with answers</p>
+
+    <!-- Exercise 1 -->
+    <h3 class="section-subtitle">التَّمْرِينُ الأَوَّلُ: صَحِّحْ مَا يَلِي</h3>
+    <p class="english-text">Exercise 1: Correct the following</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>الجُمْلَةُ الخَاطِئَةُ</th>
+                <th>التَّصْحِيحُ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>١</td>
+                <td>تَبْحَثُ أُمُّ أَحْمَدَ عَنِ المِفْتَاحِ</td>
+                <td>تَبْحَثُ أُمُّ أَحْمَدَ عَنِ <strong>الدَّوَاءِ</strong></td>
+            </tr>
+            <tr>
+                <td>٢</td>
+                <td>سَتَذْهَبُ أُمُّ أَحْمَدَ إِلَى المُسْتَشْفَى مَعَ زَوْجِهَا</td>
+                <td>سَتَذْهَبُ أُمُّ أَحْمَدَ إِلَى المُسْتَشْفَى مَعَ <strong>ابْنِهَا</strong></td>
+            </tr>
+            <tr>
+                <td>٣</td>
+                <td>أُمُّ أَحْمَدَ لَا تَعْرِفُ الدُّكْتُورَةَ سُعَادَ</td>
+                <td>أُمُّ أَحْمَدَ <strong>تَعْرِفُ</strong> الدُّكْتُورَةَ سُعَادَ</td>
+            </tr>
+            <tr>
+                <td>٤</td>
+                <td>أَحْمَدُ يَحْفَظُ سُورَةَ القَلَمِ وَإِخْوَتُهُ يَحْفَظُونَ سُورَةَ المُلْكِ</td>
+                <td><strong>أَحْمَدُ يَحْفَظُ سُورَةَ المُلْكِ وَإِخْوَتُهُ يَحْفَظُونَ سُورَةَ القَلَمِ</strong></td>
+            </tr>
+            <tr>
+                <td>٥</td>
+                <td>جِيرَانُ حَامِدٍ ذَهَبُوا إِلَى الرِّيَاضِ</td>
+                <td>جِيرَانُ حَامِدٍ ذَهَبُوا إِلَى <strong>مَكَّةَ</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Exercise 2 -->
+    <h3 class="section-subtitle">التَّمْرِينُ الثَّانِي: أَنِّثِ الفَاعِلَ فِي كُلٍّ مِنَ الجُمَلِ الآتِيَةِ</h3>
+    <p class="english-text">Exercise 2: Feminize the subject in each of the following sentences</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>المُذَكَّرُ</th>
+                <th>المُؤَنَّثُ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>١</td>
+                <td>أَتَعْرِفُ اللُّغَةَ العَرَبِيَّةَ يَا سَيِّدِي؟</td>
+                <td>أَتَعْرِفِينَ اللُّغَةَ العَرَبِيَّةَ يَا سَيِّدَتِي؟</td>
+            </tr>
+            <tr>
+                <td>٢</td>
+                <td>مَاذَا تَأْكُلُ يَا مُحَمَّدُ؟</td>
+                <td>مَاذَا تَأْكُلِينَ يَا انْتِصَارُ؟</td>
+            </tr>
+            <tr>
+                <td>٣</td>
+                <td>أَيْنَ تَجْلِسُ فِي الفَصْلِ يَا أَحْمَدُ؟</td>
+                <td>أَيْنَ تَجْلِسِينَ فِي الفَصْلِ يَا حَبِيبَةُ؟</td>
+            </tr>
+            <tr>
+                <td>٤</td>
+                <td>مَتَى تَذْهَبُ إِلَى المُسْتَشْفَى يَا أَبِي؟</td>
+                <td>مَتَى تَذْهَبِينَ إِلَى المُسْتَشْفَى يَا أُمِّي؟</td>
+            </tr>
+            <tr>
+                <td>٥</td>
+                <td>مَاذَا تَقُولُ يَا أَخِي؟</td>
+                <td>مَاذَا تَقُولِينَ يَا أُخْتِي؟</td>
+            </tr>
+            <tr>
+                <td>٦</td>
+                <td>مَتَى تَرْجِعُ مِنَ المَدْرَسَةِ يَا عَلِيُّ؟</td>
+                <td>مَتَى تَرْجِعِينَ مِنَ المَدْرَسَةِ يَا صَفِيَّةُ؟</td>
+            </tr>
+            <tr>
+                <td>٧</td>
+                <td>إِلَى مَنْ تَكْتُبُ هَذِهِ الرِّسَالَةَ يَا بَشِيرُ؟</td>
+                <td>إِلَى مَنْ تَكْتُبِينَ هَذِهِ الرِّسَالَةَ يَا حَبِيبَةُ؟</td>
+            </tr>
+            <tr>
+                <td>٨</td>
+                <td>أَيَّ سُورَةٍ تَحْفَظُ الآنَ يَا أَخِي؟</td>
+                <td>أَيَّ سُورَةٍ تَحْفَظِينَ الآنَ يَا أُخْتِي؟</td>
+            </tr>
+            <tr>
+                <td>٩</td>
+                <td>أَتَفْهَمُ الدَّرْسَ جَيِّدًا يَا حَامِدُ؟</td>
+                <td>أَتَفْهَمِينَ الدَّرْسَ جَيِّدًا يَا حَلِيمَةُ؟</td>
+            </tr>
+            <tr>
+                <td>١٠</td>
+                <td>مَتَى تَغْسِلُ هَذَا القَمِيصَ يَا يَاسِرُ؟</td>
+                <td>مَتَى تَغْسِلِينَ هَذَا القَمِيصَ يَا عَزِيزَةُ؟</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Exercise 3 -->
+    <h3 class="section-subtitle">التَّمْرِينُ الثَّالِثُ: أَنِّثِ الفَاعِلَ (جَمْعُ المُؤَنَّثِ)</h3>
+    <p class="english-text">Exercise 3: Feminize the subject (feminine plural) in each of the following sentences</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>جَمْعُ المُذَكَّرِ (يَا إِخْوَانُ / يَا أَوْلَادُ)</th>
+                <th>جَمْعُ المُؤَنَّثِ (يَا أَخَوَاتُ / يَا بَنَاتُ)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>١</td>
+                <td>أَيْنَ تَذْهَبُونَ يَا إِخْوَانُ؟</td>
+                <td>أَيْنَ تَذْهَبْنَ يَا أَخَوَاتُ؟</td>
+            </tr>
+            <tr>
+                <td>٢</td>
+                <td>أَيْنَ تَسْكُنُونَ يَا رِجَالُ؟</td>
+                <td>أَيْنَ تَسْكُنَّ يَا نِسَاءُ؟</td>
+            </tr>
+            <tr>
+                <td>٣</td>
+                <td>القَهْوَةُ تَشْرَبُونَ أَمِ الشَّايَ يَا إِخْوَانُ؟</td>
+                <td>القَهْوَةُ تَشْرَبْنَ أَمِ الشَّايَ يَا أَخَوَاتُ؟</td>
+            </tr>
+            <tr>
+                <td>٤</td>
+                <td>أَتَعْرِفُونَ رَقْمَ هَاتِفِ الجَامِعَةِ يَا إِخْوَانُ؟</td>
+                <td>أَتَعْرِفْنَ رَقْمَ هَاتِفِ الجَامِعَةِ يَا أَخَوَاتُ؟</td>
+            </tr>
+            <tr>
+                <td>٥</td>
+                <td>لِمَ تَضْحَكُونَ يَا أَوْلَادُ؟</td>
+                <td>لِمَ تَضْحَكْنَ يَا بَنَاتُ؟</td>
+            </tr>
+            <tr>
+                <td>٦</td>
+                <td>أَتَقْرَؤُونَ القُرْآنَ كُلَّ صَبَاحٍ يَا إِخْوَانُ؟</td>
+                <td>أَتَقْرَأْنَ القُرْآنَ كُلَّ صَبَاحٍ يَا أَخَوَاتُ؟</td>
+            </tr>
+            <tr>
+                <td>٧</td>
+                <td>أَتَسْأَلُونَ المُدَرِّسَ أَسْئِلَةً كَثِيرَةً يَا أَوْلَادُ؟</td>
+                <td>أَتَسْأَلْنَ المُدَرِّسَ أَسْئِلَةً كَثِيرَةً يَا بَنَاتُ؟</td>
+            </tr>
+            <tr>
+                <td>٨</td>
+                <td>أَتَسْتَمِعُونَ الأَخْبَارَ مِنَ الإِذَاعَةِ كُلَّ يَوْمٍ؟</td>
+                <td>أَتَسْتَمِعْنَ الأَخْبَارَ مِنَ الإِذَاعَةِ كُلَّ يَوْمٍ؟</td>
+            </tr>
+            <tr>
+                <td>٩</td>
+                <td>مَعَ مَنْ تَلْعَبُونَ يَا أَبْنَائِي؟</td>
+                <td>مَعَ مَنْ تَلْعَبْنَ يَا بَنَاتِي؟</td>
+            </tr>
+            <tr>
+                <td>١٠</td>
+                <td>لِمَ تَجْلِسُونَ هُنَا يَا رِجَالُ؟</td>
+                <td>لِمَ تَجْلِسْنَ هُنَا يَا نِسَاءُ؟</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Exercise 4 -->
+    <h3 class="section-subtitle">التَّمْرِينُ الرَّابِعُ: حَوِّلِ المُبْتَدَأَ إِلَى جَمْعٍ</h3>
+    <p class="english-text">Exercise 4: Convert the subject from singular (I) to plural (We)</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>المُفْرَدُ (أَنَا)</th>
+                <th>الجَمْعُ (نَحْنُ)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>١</td>
+                <td>أَنَا أَفْهَمُ الدَّرْسَ جَيِّدًا</td>
+                <td>نَحْنُ نَفْهَمُ الدَّرْسَ جَيِّدًا</td>
+            </tr>
+            <tr>
+                <td>٢</td>
+                <td>أَنَا لَا أَذْهَبُ إِلَى السُّوقِ كُلَّ يَوْمٍ</td>
+                <td>نَحْنُ لَا نَذْهَبُ إِلَى السُّوقِ كُلَّ يَوْمٍ</td>
+            </tr>
+            <tr>
+                <td>٣</td>
+                <td>أَنَا أَشْكُرُكَ يَا أُسْتَاذُ</td>
+                <td>نَحْنُ نَشْكُرُكَ يَا أُسْتَاذُ</td>
+            </tr>
+            <tr>
+                <td>٤</td>
+                <td>أَنَا أَجْلِسُ أَمَامَ المُدَرِّسِ</td>
+                <td>نَحْنُ نَجْلِسُ أَمَامَ المُدَرِّسِ</td>
+            </tr>
+            <tr>
+                <td>٥</td>
+                <td>أَنَا الآنَ أَكْتُبُ بَرْقِيَّةً</td>
+                <td>نَحْنُ الآنَ نَكْتُبُ بَرْقِيَّةً</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Exercise 5 -->
+    <h3 class="section-subtitle">التَّمْرِينُ الخَامِسُ: اخْتَرِ الصِّيغَةَ الصَّحِيحَةَ</h3>
+    <p class="english-text">Exercise 5: Two verb forms have been given. Choose the right one and fill in the blank.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>الجُمْلَةُ</th>
+                <th>الإِجَابَةُ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>١</td>
+                <td>فِي أَيِّ سَنَةٍ ـــ يَا فَاتِنَةُ؟ (تَدْرُسُ / تَدْرُسِينَ)</td>
+                <td><strong>تَدْرُسِينَ</strong></td>
+            </tr>
+            <tr>
+                <td>٢</td>
+                <td>اسْمُ الطَّبِيبِ الَّذِي يَسْكُنُ أَمَامَ بَيْتِنَا يَا أَحْمَدُ؟ (تَعْرِفُ / تَعْرِفِينَ)</td>
+                <td><strong>تَعْرِفُ</strong></td>
+            </tr>
+            <tr>
+                <td>٣</td>
+                <td>ـــ الوَاجِبَاتِ بِالقَلَمِ الأَحْمَرِ يَا بُنَيَّ؟ (تَكْتُبُونَ / تَكْتُبْنَ)</td>
+                <td><strong>تَكْتُبُونَ</strong> (مُذَكَّرٌ - يَا بُنَيَّ)</td>
+            </tr>
+            <tr>
+                <td>٤</td>
+                <td>فِي وَقْتِ العَمَلِ ـــ يَا أَبْنَائِي؟ (تَلْعَبُونَ / تَلْعَبْنَ)</td>
+                <td><strong>تَلْعَبُونَ</strong></td>
+            </tr>
+            <tr>
+                <td>٥</td>
+                <td>مَتَى ـــ إِلَى السُّوقِ يَا أَبِي؟ (تَذْهَبُ / تَذْهَبِينَ)</td>
+                <td><strong>تَذْهَبُ</strong></td>
+            </tr>
+            <tr>
+                <td>٦</td>
+                <td>رَقْمَ هَاتِفِ الصَّيْدَلِيَّةِ يَا أُمِّي؟ (نَعْرِفُ / تَعْرِفِينَ)</td>
+                <td><strong>تَعْرِفِينَ</strong></td>
+            </tr>
+            <tr>
+                <td>٧</td>
+                <td>هَذِهِ المَجَلَّةَ يَا أَخَوَاتُ؟ (تَقْرَؤُونَ / تَقْرَأْنَ)</td>
+                <td><strong>تَقْرَأْنَ</strong></td>
+            </tr>
+            <tr>
+                <td>٨</td>
+                <td>فِي مَهَاجِعِ الجَامِعَةِ يَا أَخِي؟ (تَسْكُنُونَ / تَسْكُنُ)</td>
+                <td><strong>تَسْكُنُ</strong></td>
+            </tr>
+            <tr>
+                <td>٩</td>
+                <td>نَحْنُ لَا ـــ كُرَةَ القَدَمِ فِي الشَّوَارِعِ (نَلْعَبُ / تَلْعَبُ)</td>
+                <td><strong>نَلْعَبُ</strong></td>
+            </tr>
+            <tr>
+                <td>١٠</td>
+                <td>أَيْنَ ـــ أَنْتَ؟ بِالجَامِعَةِ الإِسْلَامِيَّةِ (تَدْرُسُ / تَدْرُسِينَ)</td>
+                <td><strong>تَدْرُسُ</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SECTION 5: إنَّ / أنَّ Hamza Rules -->
+<div class="section" id="inna-anna">
+    <h2 class="section-title">ضَبْطُ هَمْزَةِ إِنَّ / أَنَّ</h2>
+    <p class="english-text">Rules for the Hamza of inna/anna (Determining when to use kasrah or fatHah)</p>
+
+    <h3 class="section-subtitle">التَّمْرِينُ السَّادِسُ: تَأَمَّلِ الأَمْثِلَةَ الآتِيَةَ</h3>
+    <p class="english-text">Exercise 6: Study the following examples</p>
+
+    <div class="example-box">
+        <div class="example-ar">(أ) سَمِعْتُ <strong>أَنَّ</strong>هَا أَحْسَنُ طَبِيبَةٍ فِي المُسْتَشْفَى.</div>
+        <div class="example-en">(a) I heard that she is the best doctor in the hospital. (After the verb sami'tu = anna)</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">(ب) يَقُولُونَ <strong>إِنَّ</strong>هَا أَحْسَنُ طَبِيبَةٍ فِي المُسْتَشْفَى.</div>
+        <div class="example-en">(b) They say that she is the best doctor in the hospital. (After qaala/yaquulu = inna)</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">(ج) <strong>إِنَّ</strong> القُرْآنَ كِتَابُ اللَّهِ.</div>
+        <div class="example-en">(c) Indeed, the Quran is the book of Allah. (At the beginning of a sentence = inna)</div>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-large">القَاعِدَةُ - The Rule:</p>
+        <p class="arabic-text">فِي أَوَّلِ الجُمْلَةِ = <strong>إِنَّ</strong> (بِالكَسْرَةِ)</p>
+        <p class="english-text">At the beginning of a sentence = inna (with kasrah)</p>
+        <p class="arabic-text">بَعْدَ قَالَ (يَقُولُ / تَقُولُونَ / نَقُولُ / قَالَتْ) = <strong>إِنَّ</strong> (بِالكَسْرَةِ)</p>
+        <p class="english-text">After qaala and its forms = inna (with kasrah)</p>
+        <p class="arabic-text">بَعْدَ الأَفْعَالِ الأُخْرَى (سَمِعَ / سَمِعُوا / نَسْمَعُ / تَسْمَعِينَ) = <strong>أَنَّ</strong> (بِالفَتْحَةِ)</p>
+        <p class="english-text">After other verbs (like sami'a, etc.) = anna (with fathah)</p>
+        <p class="arabic-text">بَعْدَ أَعْرِفُ = <strong>أَنَّ</strong> (بِالفَتْحَةِ)</p>
+        <p class="english-text">After a'rifu (I know) = anna (with fathah)</p>
+        <p class="arabic-text">بَعْدَ أَعْلَمُ = <strong>أَنَّ</strong> (بِالفَتْحَةِ)</p>
+        <p class="english-text">After a'lamu (I know) = anna (with fathah)</p>
+    </div>
+
+    <div class="rule-box">
+        <p class="arabic-large" style="text-align: center;">مُلَخَّصُ القَاعِدَةِ</p>
+        <p class="arabic-medium">فِي بِدَايَةِ الجُمْلَةِ نَبْدَأُ بِـ (إِنَّ) بِالكَسْرَةِ</p>
+        <p class="arabic-medium">قَالَ - يَقُولُ - تَقُولُونَ - نَقُولُ - قَالَتْ + <strong>إِنَّ</strong></p>
+        <p class="arabic-medium">سَمِعَ - سَمِعُوا - نَسْمَعُ - تَسْمَعِينَ + <strong>أَنَّ</strong></p>
+        <p class="arabic-medium">بَعْدَ أَعْرِفُ + <strong>أَنَّ</strong> / بَعْدَ أَعْلَمُ + <strong>أَنَّ</strong></p>
+    </div>
+
+    <h3 class="section-subtitle">تَطْبِيقٌ: اِقْرَأِ الجُمَلَ مَعَ ضَبْطِ هَمْزَةِ (إِنَّ/أَنَّ)</h3>
+    <p class="english-text">Application: Read the sentences with the correct hamza on inna/anna</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>الجُمْلَةُ</th>
+                <th>الإِجَابَةُ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>١</td>
+                <td>أَظُنُّ ___ طَالِبٌ جَدِيدٌ</td>
+                <td><strong>أَنَّهُ</strong> (بَعْدَ أَظُنُّ = أَنَّ)</td>
+            </tr>
+            <tr>
+                <td>٢</td>
+                <td>قَالَ المُدَرِّسُ ___ الطَّالِبُ الجَدِيدُ مُجْتَهِدٌ جِدًّا</td>
+                <td><strong>إِنَّ</strong> (بَعْدَ قَالَ = إِنَّ)</td>
+            </tr>
+            <tr>
+                <td>٣</td>
+                <td>سَمِعْتُ ___ المُدَرِّسَ مَا جَاءَ اليَوْمَ</td>
+                <td><strong>أَنَّ</strong> (بَعْدَ سَمِعْتُ = أَنَّ)</td>
+            </tr>
+            <tr>
+                <td>٤</td>
+                <td>___ اللَّهَ رَبِّي</td>
+                <td><strong>إِنَّ</strong> (فِي أَوَّلِ الجُمْلَةِ = إِنَّ)</td>
+            </tr>
+            <tr>
+                <td>٥</td>
+                <td>قَالَ زَمِيلِي ___ المُدَرِّسَ مَا جَاءَ اليَوْمَ</td>
+                <td><strong>إِنَّ</strong> (بَعْدَ قَالَ = إِنَّ)</td>
+            </tr>
+            <tr>
+                <td>٦</td>
+                <td>أَشْهَدُ ___ مُحَمَّدًا رَسُولُ اللَّهِ</td>
+                <td><strong>أَنَّ</strong> (بَعْدَ أَشْهَدُ = أَنَّ)</td>
+            </tr>
+            <tr>
+                <td>٧</td>
+                <td>قَرَأْتُ فِي الصَّحِيفَةِ ___ وَزِيرَ الخَارِجِيَّةِ سَيَرْجِعُ مِنْ لَنْدَنَ غَدًا</td>
+                <td><strong>أَنَّ</strong> (بَعْدَ قَرَأْتُ = أَنَّ)</td>
+            </tr>
+            <tr>
+                <td>٨</td>
+                <td>أَظُنُّ ___ مِنْ بَاكِسْتَانَ</td>
+                <td><strong>أَنَّكَ</strong> (بَعْدَ أَظُنُّ = أَنَّ)</td>
+            </tr>
+            <tr>
+                <td>٩</td>
+                <td>قَالَ لِي طَبِيبٌ ___ لَسْتُ بِمَرِيضٍ</td>
+                <td><strong>إِنَّكَ</strong> (بَعْدَ قَالَ = إِنَّ)</td>
+            </tr>
+            <tr>
+                <td>١٠</td>
+                <td>أَظُنُّ ___ الطَّبِيبَاتِ اللَّاتِي خَرَجْنَ مِنَ المُسْتَشْفَى الآنَ مِنَ الوِلَايَاتِ المُتَّحِدَةِ</td>
+                <td><strong>أَنَّ</strong> (بَعْدَ أَظُنُّ = أَنَّ)</td>
+            </tr>
+            <tr>
+                <td>١١</td>
+                <td>أَتَعْرِفُونَ ___ الطَّالِبَةَ الجَدِيدَةَ الَّتِي جَاءَتْ قَبْلَ ثَلَاثَةِ أَيَّامٍ تَعْرِفُ خَمْسَ لُغَاتٍ؟</td>
+                <td><strong>أَنَّ</strong> (بَعْدَ أَتَعْرِفُونَ = أَنَّ)</td>
+            </tr>
+            <tr>
+                <td>١٢</td>
+                <td>___ الدَّرْسَ سَهْلٌ</td>
+                <td><strong>إِنَّ</strong> (فِي أَوَّلِ الجُمْلَةِ = إِنَّ)</td>
+            </tr>
+            <tr>
+                <td>١٣</td>
+                <td>يَقُولُونَ ___ الامْتِحَانَ سَيَكُونُ فِي الأُسْبُوعِ الأَوَّلِ مِنْ شَهْرِ رَجَبٍ</td>
+                <td><strong>إِنَّ</strong> (بَعْدَ يَقُولُونَ = إِنَّ)</td>
+            </tr>
+            <tr>
+                <td>١٤</td>
+                <td>أَتَظُنُّ ___ ضَعِيفٌ؟</td>
+                <td><strong>أَنِّي</strong> (بَعْدَ أَتَظُنُّ = أَنَّ)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SECTION 6: Days of the Week -->
+<div class="section" id="days">
+    <h2 class="section-title">التَّمْرِينُ السَّابِعُ: أَسْمَاءُ أَيَّامِ الأُسْبُوعِ</h2>
+    <p class="english-text">Exercise 7: Names of the Days of the Week</p>
+
+    <div class="number-chart">
+        <div class="number-item">
+            <div class="number-ar">يَوْمُ السَّبْتِ</div>
+            <div class="number-en">Saturday</div>
+        </div>
+        <div class="number-item">
+            <div class="number-ar">يَوْمُ الأَحَدِ</div>
+            <div class="number-en">Sunday</div>
+        </div>
+        <div class="number-item">
+            <div class="number-ar">يَوْمُ الاِثْنَيْنِ</div>
+            <div class="number-en">Monday</div>
+        </div>
+        <div class="number-item">
+            <div class="number-ar">يَوْمُ الثُّلَاثَاءِ</div>
+            <div class="number-en">Tuesday</div>
+        </div>
+        <div class="number-item">
+            <div class="number-ar">يَوْمُ الأَرْبِعَاءِ</div>
+            <div class="number-en">Wednesday</div>
+        </div>
+        <div class="number-item">
+            <div class="number-ar">يَوْمُ الخَمِيسِ</div>
+            <div class="number-en">Thursday</div>
+        </div>
+        <div class="number-item">
+            <div class="number-ar">يَوْمُ الجُمُعَةِ</div>
+            <div class="number-en">Friday</div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 7: New Vocabulary -->
+<div class="section" id="vocabulary">
+    <h2 class="section-title">الكَلِمَاتُ الجَدِيدَةُ - New Vocabulary</h2>
+    <p class="english-text">New words and their meanings from Lesson 12</p>
+
+    <div class="vocab-grid">
+        <div class="vocab-item">
+            <div class="vocab-ar">جَارٌ (ج جِيرَانٌ)</div>
+            <div class="vocab-en">neighbor (pl. neighbors)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">رَقَمٌ (ج أَرْقَامٌ)</div>
+            <div class="vocab-en">number (pl. numbers)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">وَقْتٌ (ج أَوْقَاتٌ)</div>
+            <div class="vocab-en">time (pl. times)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">دَوَاءٌ (ج أَدْوِيَةٌ)</div>
+            <div class="vocab-en">medicine (pl. medicines)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">تِلْمِيذٌ (تَلَامِذَةٌ)</div>
+            <div class="vocab-en">pupil (pl. pupils) - masculine</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">تِلْمِيذَةٌ (ج تِلْمِيذَاتٌ)</div>
+            <div class="vocab-en">pupil (pl. pupils) - feminine</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">هَاتِفٌ (ج هَوَاتِفُ)</div>
+            <div class="vocab-en">telephone (pl. telephones)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">عَمَلٌ (ج أَعْمَالٌ)</div>
+            <div class="vocab-en">work (pl. works)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">وَاجِبَاتٌ</div>
+            <div class="vocab-en">homework / duties</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">وَزِيرُ الخَارِجِيَّةِ</div>
+            <div class="vocab-en">foreign minister</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">شَهِدَ يَشْهَدُ</div>
+            <div class="vocab-en">(i-a) to bear witness / testify</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">ضَحِكَ يَضْحَكُ</div>
+            <div class="vocab-en">(i-a) to laugh</div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 8: Word and its Plural -->
+<div class="section" id="plurals">
+    <h2 class="section-title">الكَلِمَةُ وَجَمْعُهَا - Word and its Plural</h2>
+    <p class="english-text">Singular words and their plural forms from this lesson</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>الكَلِمَةُ (Singular)</th>
+                <th>الجَمْعُ (Plural)</th>
+                <th>المَعْنَى (Meaning)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>دَوَاءٌ</td>
+                <td>أَدْوِيَةٌ</td>
+                <td class="english-text">medicine</td>
+            </tr>
+            <tr>
+                <td>أُسْبُوعٌ</td>
+                <td>أَسَابِيعُ</td>
+                <td class="english-text">week</td>
+            </tr>
+            <tr>
+                <td>جَارٌ</td>
+                <td>جِيرَانٌ</td>
+                <td class="english-text">neighbor</td>
+            </tr>
+            <tr>
+                <td>وَاجِبٌ</td>
+                <td>وَاجِبَاتٌ</td>
+                <td class="english-text">homework / duty</td>
+            </tr>
+            <tr>
+                <td>خَالَةٌ</td>
+                <td>خَالَاتٌ</td>
+                <td class="english-text">maternal aunt</td>
+            </tr>
+            <tr>
+                <td>تِلْمِيذٌ</td>
+                <td>تَلَامِيذُ (تَلَامِذَةٌ)</td>
+                <td class="english-text">pupil</td>
+            </tr>
+            <tr>
+                <td>وَقْتٌ</td>
+                <td>أَوْقَاتٌ</td>
+                <td class="english-text">time</td>
+            </tr>
+            <tr>
+                <td>وَزِيرٌ</td>
+                <td>وُزَرَاءُ</td>
+                <td class="english-text">minister</td>
+            </tr>
+            <tr>
+                <td>رَقَمٌ</td>
+                <td>أَرْقَامٌ</td>
+                <td class="english-text">number</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- SECTION 9: MCQ Quiz -->
+<div class="section" id="mcq">
+    <h2 class="section-title">اِخْتِبِرْ نَفْسَكَ - Test Yourself</h2>
+    <p class="english-text">8 Multiple Choice Questions on Module 7 topics</p>
+
+    <!-- MCQ 1 -->
+    <div class="mcq-question" data-correct="b" data-explanation="وَزْنُ فِعَالَة يَدُلُّ عَلَى حِرْفَةٍ أَوْ عَمَلٍ. The fi'aalah pattern indicates a profession or occupation.">
+        <p class="arabic-text">١) مَا هُوَ وَزْنُ المَصْدَرِ الَّذِي يَدُلُّ عَلَى حِرْفَةٍ أَوْ عَمَلٍ؟</p>
+        <p class="english-text">What is the masdar pattern that indicates a profession or occupation?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"> فَعَلَ</label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"> فِعَالَة</label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"> فُعُول</label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"> تَفْعِيل</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 2 -->
+    <div class="mcq-question" data-correct="c" data-explanation="مَصْدَرُ صَنَعَ هُوَ صِنَاعَة عَلَى وَزْنِ فِعَالَة. The masdar of sana'a is sinaa'ah on the pattern fi'aalah.">
+        <p class="arabic-text">٢) مَا مَصْدَرُ الفِعْلِ «صَنَعَ»؟</p>
+        <p class="english-text">What is the masdar of the verb sana'a (to make)?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"> صُنْعٌ</label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"> مَصْنَعٌ</label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"> صِنَاعَةٌ</label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"> صَانِعٌ</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 3 -->
+    <div class="mcq-question" data-correct="a" data-explanation="إِنَّ بِالكَسْرَةِ تَأْتِي فِي بِدَايَةِ الجُمْلَةِ وَبَعْدَ قَالَ. Inna with kasrah comes at the beginning of a sentence and after qaala.">
+        <p class="arabic-text">٣) قَالَ المُدَرِّسُ ___ الطَّالِبَ مُجْتَهِدٌ. مَا الصَّوَابُ؟</p>
+        <p class="english-text">The teacher said ___ the student is diligent. What is correct?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"> إِنَّ</label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"> أَنَّ</label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"> أَنْ</label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"> إِنْ</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 4 -->
+    <div class="mcq-question" data-correct="b" data-explanation="بَعْدَ سَمِعْتُ نَسْتَخْدِمُ أَنَّ بِالفَتْحَةِ. After sami'tu, we use anna with fathah.">
+        <p class="arabic-text">٤) سَمِعْتُ ___ المُدَرِّسَ مَا جَاءَ اليَوْمَ. مَا الصَّوَابُ؟</p>
+        <p class="english-text">I heard ___ the teacher didn't come today. What is correct?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"> إِنَّ</label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"> أَنَّ</label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"> أَنْ</label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"> إِنْ</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 5 -->
+    <div class="mcq-question" data-correct="d" data-explanation="عِنْدَ مُخَاطَبَةِ المُؤَنَّثِ المُفْرَدِ نَسْتَخْدِمُ تَفْعَلِينَ. When addressing a single female, we use taf'aleena.">
+        <p class="arabic-text">٥) مَاذَا ـــ يَا فَاطِمَةُ؟ (لِلْمُؤَنَّثِ المُفْرَدِ)</p>
+        <p class="english-text">What are you doing, Fatimah? (for singular feminine)</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"> تَفْعَلُ</label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"> تَفْعَلُونَ</label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"> تَفْعَلْنَ</label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"> تَفْعَلِينَ</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 6 -->
+    <div class="mcq-question" data-correct="c" data-explanation="جَمْعُ جَارٍ هُوَ جِيرَانٌ. The plural of jaar (neighbor) is jeeraan.">
+        <p class="arabic-text">٦) مَا جَمْعُ كَلِمَةِ «جَارٌ»؟</p>
+        <p class="english-text">What is the plural of the word "jaar" (neighbor)?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"> جَارَاتٌ</label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"> جَوَارٌ</label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"> جِيرَانٌ</label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"> أَجْيَارٌ</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 7 -->
+    <div class="mcq-question" data-correct="b" data-explanation="لِجَمْعِ المُؤَنَّثِ نَسْتَخْدِمُ تَفْعَلْنَ. For the feminine plural, we use taf'alna.">
+        <p class="arabic-text">٧) أَيْنَ ـــ يَا أَخَوَاتُ؟ (جَمْعُ المُؤَنَّثِ)</p>
+        <p class="english-text">Where are you going, sisters? (feminine plural)</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"> تَذْهَبُونَ</label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"> تَذْهَبْنَ</label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"> تَذْهَبِينَ</label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"> يَذْهَبْنَ</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <!-- MCQ 8 -->
+    <div class="mcq-question" data-correct="a" data-explanation="يَوْمُ السَّبْتِ هُوَ Saturday. Yawm as-Sabt is Saturday.">
+        <p class="arabic-text">٨) مَا تَرْجَمَةُ «يَوْمُ السَّبْتِ» بِالإِنْجِلِيزِيَّةِ؟</p>
+        <p class="english-text">What is the English translation of "Yawm as-Sabt"?</p>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"> Saturday</label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"> Sunday</label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"> Friday</label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"> Monday</label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ السَّابِعَةُ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 7</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => {
+                if (opt.querySelector('input').value === correct) { opt.classList.add('correct'); }
+            });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 \u0625\u0650\u062C\u064E\u0627\u0628\u064E\u0629\u064C \u0635\u064E\u062D\u0650\u064A\u062D\u064E\u0629\u064C! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 \u0625\u0650\u062C\u064E\u0627\u0628\u064E\u0629\u064C \u062E\u064E\u0627\u0637\u0650\u0626\u064E\u0629\u064C - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
