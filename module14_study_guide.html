@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 14 - ARB303 Study Guide | المحاضرة الرابعة عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) { .arabic-large { font-size: 32px; } .arabic-medium { font-size: 26px; } .section-title { font-size: 28px; } table { font-size: 18px; } }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
+
+<nav class="nav-container">
+    <div class="nav-title">المحاضرة الرابعة عشرة - Lecture 14</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a>
+        <a href="#dialogue"><span class="nav-ar">الحوار</span><span class="nav-en">Dialogue</span></a>
+        <a href="#colors"><span class="nav-ar">الألوان</span><span class="nav-en">Colors</span></a>
+        <a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a>
+        <a href="#mamnu-sarf"><span class="nav-ar">الممنوع من الصرف</span><span class="nav-en">Diptotes</span></a>
+        <a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الرَّابِعَةَ عَشْرَةَ</h1>
+    <div class="subtitle">Lecture 14 - الدَّرْسُ السَّادِسَ عَشَرَ (Lesson 16 - cont.)</div>
+</div>
+
+<!-- Verb -->
+<section class="section" id="verb">
+    <h2 class="section-title">الفِعْلُ: أَرَادَ - يُرِيدُ</h2>
+    <p class="english-text">The Verb: To want / Volition (Hollow verb)</p>
+
+    <div class="formula-box">
+        <div class="formula">أَرَادَ - يُرِيدُ - لَمْ يُرِدْ - أَرِدْ - إِرَادَةً</div>
+        <p class="english-text">Past - Present - Jussive - Imperative - Masdar: Will/Volition</p>
+    </div>
+
+    <table>
+        <tr><th>الضَّمِير</th><th>المَاضِي</th><th>المُضَارِع</th><th>لَمْ + المُضَارِع</th><th>الأَمْر</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>أَرَدْتُ</td><td>أُرِيدُ</td><td>لَمْ أُرِدْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>أَرَدْنَا</td><td>نُرِيدُ</td><td>لَمْ نُرِدْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>أَرَدْتَ</td><td>تُرِيدُ</td><td>لَمْ تُرِدْ</td><td>أَرِدْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>أَرَدْتِ</td><td>تُرِيدِينَ</td><td>لَمْ تُرِيدِي</td><td>أَرِيدِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>أَرَدْتُمَا</td><td>تُرِيدَانِ</td><td>لَمْ تُرِيدَا</td><td>أَرِيدَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>أَرَدْتُمْ</td><td>تُرِيدُونَ</td><td>لَمْ تُرِيدُوا</td><td>أَرِيدُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>أَرَدْتُنَّ</td><td>تُرِدْنَ</td><td>لَمْ تُرِدْنَ</td><td>أَرِدْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>أَرَادَ</td><td>يُرِيدُ</td><td>لَمْ يُرِدْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>أَرَادَتْ</td><td>تُرِيدُ</td><td>لَمْ تُرِدْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>أَرَادَا</td><td>يُرِيدَانِ</td><td>لَمْ يُرِيدَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>أَرَادَتَا</td><td>تُرِيدَانِ</td><td>لَمْ تُرِيدَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>أَرَادُوا</td><td>يُرِيدُونَ</td><td>لَمْ يُرِيدُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>أَرَدْنَ</td><td>يُرِدْنَ</td><td>لَمْ يُرِدْنَ</td><td>-</td></tr>
+    </table>
+
+    <div class="example-box">
+        <div class="example-ar">أَرَدْتُ العِلْمَ</div>
+        <div class="example-en">I wanted knowledge</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَرِدِ الخَيْرَ لِلنَّاسِ</div>
+        <div class="example-en">Want goodness for people</div>
+    </div>
+</section>
+
+<!-- Dialogue -->
+<section class="section" id="dialogue">
+    <h2 class="section-title">الحِوَارُ - Dialogue</h2>
+    <p class="english-text">Father with his daughters about wanting items</p>
+
+    <div style="background: #f8f9fa; border-radius: 15px; padding: 25px; margin: 20px 0;">
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>الأَبُ:</strong> مَاذَا تُرِيدِينَ يَا سُعَادُ؟</div>
+            <div class="example-en">Father: What do you want, Suad?</div>
+        </div>
+        <div class="example-box" style="background: #e3f2fd; border-right-color: #2196f3;">
+            <div class="example-ar"><strong>سُعَادُ:</strong> عِنْدِي مِسْطَرَةٌ صَغِيرَةٌ، أُرِيدُ أُخْرَى كَبِيرَةً</div>
+            <div class="example-en">Suad: I have a small ruler, I want another big one</div>
+        </div>
+        <div class="example-box" style="background: #e8f5e9; border-right-color: #4caf50;">
+            <div class="example-ar"><strong>الأَبُ:</strong> وَمَاذَا تُرِيدِينَ أَنْتِ يَا لَيْلَى؟</div>
+            <div class="example-en">Father: And what do you want, Layla?</div>
+        </div>
+        <div class="example-box" style="background: #fff3e0; border-right-color: #ff9800;">
+            <div class="example-ar"><strong>لَيْلَى:</strong> أُرِيدُ مُصْحَفًا ذَا حُرُوفٍ كَبِيرٍ</div>
+            <div class="example-en">Layla: I want a Quran with big letters</div>
+        </div>
+        <div class="example-box" style="background: #e3f2fd; border-right-color: #2196f3;">
+            <div class="example-ar"><strong>سَلْمَى:</strong> بَلْ أُرِيدُ مُعْجَمًا إِنْكِلِيزِيًّا وَآخَرَ فَرَنْسِيًّا</div>
+            <div class="example-en">Salma: Rather, I want an English dictionary and another French one</div>
+        </div>
+    </div>
+</section>
+
+<!-- Colors -->
+<section class="section" id="colors">
+    <h2 class="section-title">الأَلْوَانُ - Colors</h2>
+    <p class="english-text">Masculine pattern: أَفْعَل | Feminine pattern: فَعْلَاء</p>
+
+    <table>
+        <tr><th>المُذَكَّر (أَفْعَل)</th><th>المُؤَنَّث (فَعْلَاء)</th><th>English</th></tr>
+        <tr><td>أَحْمَرُ</td><td>حَمْرَاءُ</td><td>Red</td></tr>
+        <tr><td>أَسْوَدُ</td><td>سَوْدَاءُ</td><td>Black</td></tr>
+        <tr><td>أَصْفَرُ</td><td>صَفْرَاءُ</td><td>Yellow</td></tr>
+        <tr><td>أَخْضَرُ</td><td>خَضْرَاءُ</td><td>Green</td></tr>
+        <tr><td>أَسْمَرُ</td><td>سَمْرَاءُ</td><td>Brown</td></tr>
+        <tr><td>أَبْيَضُ</td><td>بَيْضَاءُ</td><td>White</td></tr>
+        <tr><td>أَزْرَقُ</td><td>زَرْقَاءُ</td><td>Blue</td></tr>
+    </table>
+
+    <div class="example-box">
+        <div class="example-ar">قَلَمٌ <strong>أَحْمَرُ</strong> ← حَقِيبَةٌ <strong>حَمْرَاءُ</strong></div>
+        <div class="example-en">A red pen → A red bag</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">شَعْرٌ <strong>أَسْوَدُ</strong> ← لِحْيَةٌ <strong>سَوْدَاءُ</strong></div>
+        <div class="example-en">Black hair → A black beard</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">مِنْدِيلٌ <strong>أَبْيَضُ</strong> ← وَرَقَةٌ <strong>بَيْضَاءُ</strong></div>
+        <div class="example-en">A white handkerchief → A white paper</div>
+    </div>
+</section>
+
+<!-- Exercises -->
+<section class="section" id="exercises">
+    <h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الثَّانِي - Exercise 2: Correct the Sentences</h3>
+    <div class="example-box">
+        <div class="example-ar">(١) يُرِيدُ عُمَرُ قَلَمًا أَزْرَقَ → <span style="color:#c62828;font-weight:bold;">يُرِيدُ عُمَرُ قَلَمًا أَحْمَرَ</span></div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) يُرِيدُ هِشَامٌ أَشْيَاءَ كَثِيرَةً → <span style="color:#c62828;font-weight:bold;">مَا يُرِيدُ هِشَامٌ شَيْئًا الآنَ</span></div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) حَفْصَةُ عِنْدَهَا حَقِيبَةٌ سَوْدَاءُ → <span style="color:#c62828;font-weight:bold;">حَفْصَةُ عِنْدَهَا حَقِيبَةٌ حَمْرَاءُ</span></div>
+    </div>
+</section>
+
+<!-- Diptotes Review -->
+<section class="section" id="mamnu-sarf">
+    <h2 class="section-title">الاسْمُ المَمْنُوعُ مِنَ الصَّرْفِ - Diptote Nouns Review</h2>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الثَّامِنُ - Exercise 8: Contemplate</h3>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلْ: خَالِدٌ. حَامِدٌ. عَلِيٌّ. هِشَامٌ. ← هَذِهِ أَسْمَاءٌ عَرَبِيَّةٌ تُنَوَّنُ</p>
+        <p class="english-text">These are Arabic names - they take tanween (fully declined)</p>
+        <p class="arabic-text"><strong>عُمَرُ. زُفَرُ. هُبَلُ. زُحَلُ.</strong> ← هَذِهِ عَلَى وَزْنِ فُعَل - لَا تُنَوَّنُ</p>
+        <p class="english-text">These are on the pattern فُعَل - they DON'T take tanween (diptote)</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text"><strong>هُبَلُ:</strong> اسْمُ صَنَمٍ فِي الجَاهِلِيَّةِ (A name of an idol in pre-Islam)</p>
+        <p class="arabic-text"><strong>زُحَلُ:</strong> اسْمُ كَوْكَبٍ (Saturn - name of a planet)</p>
+    </div>
+</section>
+
+<!-- MCQ -->
+<section class="section" id="mcq">
+    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
+
+    <div class="mcq-question" data-correct="b" data-explanation="مَصْدَرُ أَرَادَ هُوَ إِرَادَة. - The masdar of أَرَادَ is إِرَادَة.">
+        <h4 class="arabic-medium">١. مَا مَصْدَرُ الفِعْلِ "أَرَادَ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) رِيَادَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) إِرَادَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) مُرَاد</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) رَوْد</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="مُؤَنَّثُ أَحْمَر هُوَ حَمْرَاء عَلَى وَزْنِ فَعْلَاء. - Feminine of أَحْمَر is حَمْرَاء.">
+        <h4 class="arabic-medium">٢. مُؤَنَّثُ "أَحْمَرُ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) أَحْمَرَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) حُمْرَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) حَمْرَاء</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) حَمْرَى</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="وَزْنُ الألوانِ المُذَكَّرِ هُوَ أَفْعَل. - Masculine color pattern is أَفْعَل.">
+        <h4 class="arabic-medium">٣. وَزْنُ الأَلْوَانِ فِي المُذَكَّرِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) أَفْعَل</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) فَعِيل</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) فَاعِل</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) فُعَال</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="الفِعْلُ أَرَادَ أَجْوَفٌ (حَرْفُ العِلَّةِ فِي الوَسَطِ). - أَرَادَ is hollow (weak letter in the middle).">
+        <h4 class="arabic-medium">٤. الفِعْلُ "أَرَادَ" مِنْ نَوْعِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) صَحِيح</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) نَاقِص</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) مِثَال</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) أَجْوَف</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="مُؤَنَّثُ أَبْيَض هُوَ بَيْضَاء. - Feminine of أَبْيَض is بَيْضَاء.">
+        <h4 class="arabic-medium">٥. مُؤَنَّثُ "أَبْيَضُ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) أَبْيَضَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) بَيْضَاء</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) بِيضَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) بَيْضَى</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="زُحَلُ مَمْنُوعٌ مِنَ الصَّرْفِ لأَنَّهُ عَلَى وَزْنِ فُعَل. - زُحَل is diptote because it's on the pattern فُعَل.">
+        <h4 class="arabic-medium">٦. أَيٌّ مِمَّا يَلِي مَمْنُوعٌ مِنَ الصَّرْفِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) حَامِدٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) خَالِدٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) زُحَلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) عَلِيٌّ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="'ذُو حُرُوفٍ كَبِيرٍ' تَعْنِي 'that has big letters' - ذُو بِمَعْنَى صَاحِب. - ذو means 'possessor of / that has'.">
+        <h4 class="arabic-medium">٧. "مُصْحَفًا ذَا حُرُوفٍ كَبِيرٍ" - "ذَا" بِمَعْنَى:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) صَاحِب</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) هَذَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) الَّذِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) ذَلِكَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="'مِنْدِيلٌ أَبْيَضُ' - أَبْيَض صِفَة مَمْنُوعَة مِنَ الصَّرْفِ عَلَى وَزْنِ أَفْعَل. - أَبْيَض is diptote (color on أَفْعَل pattern).">
+        <h4 class="arabic-medium">٨. لِمَاذَا "أَبْيَضُ" مَمْنُوعٌ مِنَ الصَّرْفِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) عَلَمٌ أَعْجَمِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) عَلَمٌ عَلَى وَزْنِ فُعَل</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) مُنْتَهًى بِأَلِفِ التَّأْنِيثِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) صِفَةٌ عَلَى وَزْنِ أَفْعَل</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الرَّابِعَةَ عَشْرَةَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 14</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

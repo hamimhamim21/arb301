@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 12 - ARB303 Study Guide | المحاضرة الثانية عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) { .arabic-large { font-size: 32px; } .arabic-medium { font-size: 26px; } .section-title { font-size: 28px; } table { font-size: 18px; } }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
+
+<nav class="nav-container">
+    <div class="nav-title">المحاضرة الثانية عشرة - Lecture 12</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a>
+        <a href="#kaada"><span class="nav-ar">كَادَ</span><span class="nav-en">Be Near</span></a>
+        <a href="#irab-practice"><span class="nav-ar">تدريب الإعراب</span><span class="nav-en">I'rab Practice</span></a>
+        <a href="#innama"><span class="nav-ar">إنّما</span><span class="nav-en">Indeed/Only</span></a>
+        <a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a>
+        <a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الثَّانِيَةَ عَشْرَةَ</h1>
+    <div class="subtitle">Lecture 12 - الدَّرْسُ الخَامِسَ عَشَرَ (Lesson 15)</div>
+</div>
+
+<!-- Verb Section -->
+<section class="section" id="verb">
+    <h2 class="section-title">الفِعْلُ: صَامَ - يَصُومُ</h2>
+    <p class="english-text">The Verb: To fast (Hollow verb - أَجْوَف - middle letter is weak واو)</p>
+
+    <div class="formula-box">
+        <div class="formula">صَامَ - يَصُومُ - لَمْ يَصُمْ - صُمْ - صِيَامًا / صَوْمًا</div>
+        <p class="english-text">Past - Present - Jussive - Imperative - Masdar: Fasting</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ التَّصْرِيفِ - Conjugation Table</h3>
+    <table>
+        <tr><th>الضَّمِير</th><th>المَاضِي</th><th>المُضَارِع</th><th>لَمْ + المُضَارِع</th><th>الأَمْر</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>صُمْتُ</td><td>أَصُومُ</td><td>لَمْ أَصُمْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>صُمْنَا</td><td>نَصُومُ</td><td>لَمْ نَصُمْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>صُمْتَ</td><td>تَصُومُ</td><td>لَمْ تَصُمْ</td><td>صُمْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>صُمْتِ</td><td>تَصُومِينَ</td><td>لَمْ تَصُومِي</td><td>صُومِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>صُمْتُمَا</td><td>تَصُومَانِ</td><td>لَمْ تَصُومَا</td><td>صُومَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>صُمْتُمْ</td><td>تَصُومُونَ</td><td>لَمْ تَصُومُوا</td><td>صُومُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>صُمْتُنَّ</td><td>تَصُمْنَ</td><td>لَمْ تَصُمْنَ</td><td>صُمْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>صَامَ</td><td>يَصُومُ</td><td>لَمْ يَصُمْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>صَامَتْ</td><td>تَصُومُ</td><td>لَمْ تَصُمْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>صَامَا</td><td>يَصُومَانِ</td><td>لَمْ يَصُومَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>صَامَتَا</td><td>تَصُومَانِ</td><td>لَمْ تَصُومَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>صَامُوا</td><td>يَصُومُونَ</td><td>لَمْ يَصُومُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>صُمْنَ</td><td>يَصُمْنَ</td><td>لَمْ يَصُمْنَ</td><td>-</td></tr>
+    </table>
+
+    <div class="example-box">
+        <div class="example-ar">صُمْتُ رَمَضَانَ كَامِلًا</div>
+        <div class="example-en">I fasted the entire Ramadan</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">صُمْ يَوْمَ الخَمِيسِ</div>
+        <div class="example-en">Fast on Thursday</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">صُومُوا تَصِحُّوا</div>
+        <div class="example-en">Fast and you will be healthy</div>
+    </div>
+</section>
+
+<!-- Verb كَادَ -->
+<section class="section" id="kaada">
+    <h2 class="section-title">الفِعْلُ "كَادَ" - The Verb "كَادَ"</h2>
+    <p class="english-text">Be near / Be close to (almost did something)</p>
+
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>كَادَ</strong> فِعْلٌ مَاضٍ بِمَعْنَى "قَارَبَ" أَوْ "أَوْشَكَ"</p>
+        <p class="english-text">كَادَ is a past tense verb meaning "was about to" or "almost"</p>
+        <p class="arabic-text">يَأْتِي بَعْدَهُ المُضَارِعُ بِدُونِ "أَنْ"</p>
+        <p class="english-text">It is followed by the present tense WITHOUT "أَنْ"</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">كَادَ الطِّفْلُ يَسْقُطُ</div>
+        <div class="example-en">The child almost fell</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كَادَ المُدَرِّسُ يَغْضَبُ</div>
+        <div class="example-en">The teacher almost got angry</div>
+    </div>
+
+    <div class="warning-box">
+        <h4>تَنْبِيهٌ - Note</h4>
+        <p class="arabic-text">كَادَ يَفْعَلُ = لَمْ يَفْعَلْ (قَرُبَ مِنَ الفِعْلِ وَلَكِنْ لَمْ يَفْعَلْ)</p>
+        <p class="english-text">كَادَ يَفْعَلُ means he ALMOST did it but DIDN'T actually do it</p>
+    </div>
+</section>
+
+<!-- I'rab Practice -->
+<section class="section" id="irab-practice">
+    <h2 class="section-title">تَدْرِيبٌ عَلَى الإِعْرَابِ - I'rab Practice</h2>
+    <p class="english-text">Practice parsing Arabic sentences from Lesson 15</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">نَمُوذَجٌ - Model Parse</h4>
+        <p class="arabic-text"><strong>صَامَ</strong>: فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى الفَتْحِ</p>
+        <p class="english-text">صَامَ: Past tense verb, built on fathah</p>
+        <p class="arabic-text"><strong>المُسْلِمُ</strong>: فَاعِلٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ</p>
+        <p class="english-text">المسلم: Subject, nominative, sign is apparent dammah</p>
+        <p class="arabic-text"><strong>رَمَضَانَ</strong>: مَفْعُولٌ فِيهِ (ظَرْفُ زَمَانٍ) مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</p>
+        <p class="english-text">رمضان: Adverb of time, accusative, sign is fathah</p>
+    </div>
+</section>
+
+<!-- إنّما -->
+<section class="section" id="innama">
+    <h2 class="section-title">دُخُولُ "مَا" عَلَى "إِنَّ" - Adding "مَا" to "إِنَّ"</h2>
+    <p class="english-text">When "ما" enters upon "إنّ" → إنّما (only / indeed / it is nothing but)</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">القَاعِدَةُ - The Rule</h4>
+        <p class="arabic-text">إِذَا دَخَلَتْ "مَا" عَلَى "إِنَّ" أَبْطَلَتْ عَمَلَهَا</p>
+        <p class="english-text">When "ما" enters upon "إنّ", it cancels its grammatical effect</p>
+        <p class="arabic-text">"إِنَّمَا" تُفِيدُ الحَصْرَ وَالقَصْرَ بِمَعْنَى "فَقَطْ" أَوْ "لَيْسَ إِلَّا"</p>
+        <p class="english-text">"إنّما" indicates restriction/exclusivity meaning "only" or "nothing but"</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ</div>
+        <div class="example-en">Indeed, actions are (judged) by intentions (Hadith)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">إِنَّمَا المُؤْمِنُونَ إِخْوَةٌ</div>
+        <div class="example-en">The believers are nothing but brothers (Quran - Al-Hujurat 49:10)</div>
+    </div>
+
+    <div class="info-box">
+        <h4>مُقَارَنَةٌ - Comparison</h4>
+        <p class="arabic-text">إِنَّ المُؤْمِنِينَ إِخْوَةٌ ← "المؤمنين" مَنْصُوبٌ (اسْمُ إِنَّ)</p>
+        <p class="arabic-text">إِنَّمَا المُؤْمِنُونَ إِخْوَةٌ ← "المؤمنون" مَرْفُوعٌ (مُبْتَدَأٌ لِأَنَّ "مَا" أَبْطَلَتْ عَمَلَ إِنَّ)</p>
+        <p class="english-text">With إنّ: المؤمنين is accusative (noun of إنّ). With إنّما: المؤمنون is nominative (subject, because ما cancelled إنّ's effect)</p>
+    </div>
+</section>
+
+<!-- Exercises -->
+<section class="section" id="exercises">
+    <h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الأَوَّلُ - Exercise 1: Correct the Sentences</h3>
+    <div class="example-box">
+        <div class="example-ar">(١) أَبُو بَكْرٍ مَعَهُ مَجَلَّةٌ → <span style="color:#c62828;font-weight:bold;">أَبُو بَكْرٍ مَعَهُ مَجَلَّةٌ ✓</span></div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) فَيْصَلٌ طَالِبٌ جَدِيدٌ → <span style="color:#c62828;font-weight:bold;">فَيْصَلُ طَالِبٌ جَدِيدٌ ✓</span></div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) بَشِيرٌ كَتَبَ الأَجْوِبَةَ بِالقَلَمِ الأَحْمَرِ</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) حَمْزَةُ غَائِبٌ اليَوْمَ</div>
+    </div>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الرَّابِعُ - Exercise 4: لَا النَّاهِيَةُ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلْ مَا يَلِي:</p>
+        <p class="english-text">Contemplate the following examples of prohibition (لا الناهية):</p>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">يَا أَحْمَدُ لَا تَذْهَبْ &nbsp;|&nbsp; يَا إِخْوَانُ لَا تَذْهَبُوا</div>
+        <div class="example-en">Ahmad, don't go! | Brothers, don't go!</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">يَا مَرْيَمُ لَا تَذْهَبِي &nbsp;|&nbsp; يَا أَخَوَاتُ لَا تَذْهَبْنَ</div>
+        <div class="example-en">Maryam, don't go! | Sisters, don't go!</div>
+    </div>
+</section>
+
+<!-- MCQ -->
+<section class="section" id="mcq">
+    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
+
+    <div class="mcq-question" data-correct="b" data-explanation="مَصْدَرُ صَامَ هُوَ صِيَام أَوْ صَوْم. - The masdar of صَامَ is صِيَام or صَوْم.">
+        <h4 class="arabic-medium">١. مَا مَصْدَرُ الفِعْلِ "صَامَ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) صَوَام</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) صِيَام / صَوْم</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) صِيَامَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) صَائِم</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="كَادَ يَفْعَلُ = قَارَبَ الفِعْلَ وَلَمْ يَفْعَلْ. - كَادَ means 'almost' - he was close to doing but didn't.">
+        <h4 class="arabic-medium">٢. "كَادَ الطِّفْلُ يَسْقُطُ" تَعْنِي:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) سَقَطَ الطِّفْلُ فِعْلًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) لَنْ يَسْقُطَ الطِّفْلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) قَارَبَ السُّقُوطَ وَلَمْ يَسْقُطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) يُرِيدُ أَنْ يَسْقُطَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="إِذَا دَخَلَتْ 'مَا' عَلَى 'إِنَّ' أَبْطَلَتْ عَمَلَهَا. - When ما enters upon إنّ, it cancels its grammatical effect.">
+        <h4 class="arabic-medium">٣. مَاذَا يَحْدُثُ عِنْدَمَا تَدْخُلُ "مَا" عَلَى "إِنَّ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) تُبْطِلُ عَمَلَ إِنَّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) تُؤَكِّدُ عَمَلَ إِنَّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) لَا تُغَيِّرُ شَيْئًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) تَجْعَلُهَا لِلاسْتِفْهَامِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="صَامَ فِعْلٌ أَجْوَف (الحَرْفُ الثَّانِي حَرْفُ عِلَّةٍ). - صَامَ is a hollow verb (second letter is weak).">
+        <h4 class="arabic-medium">٤. صَامَ فِعْلٌ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) صَحِيح</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) نَاقِص</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) مِثَال</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) أَجْوَف</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="أَمْرُ صَامَ لِلمُخَاطَبِ هُوَ صُمْ. - The imperative of صَامَ for 'you (m)' is صُمْ.">
+        <h4 class="arabic-medium">٥. مَا أَمْرُ "صَامَ" لِلمُخَاطَبِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) صَامْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) صُمْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) صُومْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) اِصُمْ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="إِنَّمَا تُفِيدُ الحَصْرَ وَالقَصْرَ (فقط/ليس إلا). - إنّما indicates restriction (only/nothing but).">
+        <h4 class="arabic-medium">٦. "إِنَّمَا" تُفِيدُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) النَّفْيَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) الاسْتِفْهَامَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) الحَصْرَ وَالقَصْرَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) التَّمَنِّيَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="لَا النَّاهِيَة تَجْزِمُ الفِعْلَ المُضَارِعَ. - Prohibitive لا makes the present verb jussive.">
+        <h4 class="arabic-medium">٧. "لَا" النَّاهِيَةُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) تَجْزِمُ المُضَارِعَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) تَنْصِبُ المُضَارِعَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) تَرْفَعُ المُضَارِعَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) لَا تُؤَثِّرُ فِي المُضَارِعِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="'إِنَّمَا المُؤْمِنُونَ إِخْوَةٌ' - المؤمنون مرفوع لأن 'ما' أبطلت عمل إنّ. - المؤمنون is nominative because ما cancelled إنّ.">
+        <h4 class="arabic-medium">٨. "إِنَّمَا المُؤْمِنُونَ إِخْوَةٌ" - المُؤْمِنُونَ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) اسْمُ إِنَّ مَنْصُوبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) خَبَرُ إِنَّ مَرْفُوعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) مَفْعُولٌ بِهِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مُبْتَدَأٌ مَرْفُوعٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الثَّانِيَةَ عَشْرَةَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 12</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
