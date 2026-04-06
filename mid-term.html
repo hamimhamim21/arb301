@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 31 - ARB301 Study Guide | المحاضرة الحادية والثلاثون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Amiri', serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 2;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .nav-container {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a {
+            color: white; text-decoration: none; padding: 10px 18px;
+            background: rgba(255,255,255,0.2); border-radius: 12px;
+            font-size: 14px; transition: all 0.3s; text-align: center;
+            display: flex; flex-direction: column; gap: 2px;
+        }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title {
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%);
+            color: white; padding: 40px; border-radius: 15px;
+            margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section {
+            background: white; border-radius: 15px; padding: 30px;
+            margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 36px; color: #00695c;
+            border-bottom: 4px solid #00897b;
+            padding-bottom: 15px; margin-bottom: 25px;
+        }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        .rule-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn {
+            position: fixed; top: 20px; left: 20px; width: 45px; height: 45px;
+            background: linear-gradient(135deg, #00695c 0%, #00897b 100%);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4);
+            z-index: 1001; transition: all 0.3s;
+        }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center;
+        }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .step-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-right: 5px solid #9c27b0; padding: 20px; border-radius: 10px; margin: 20px 0;
+        }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.selected { border-color: #2196f3; background: #e3f2fd; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) {
+            .arabic-large { font-size: 32px; }
+            .arabic-medium { font-size: 26px; }
+            .section-title { font-size: 28px; }
+            table { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="home-btn" title="Back to Home">
+    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+</a>
+
+<nav class="nav-container">
+    <div class="nav-title">المُحَاضَرَةُ - مُرَاجَعَةٌ شَامِلَةٌ لِلنَّحْوِ</div>
+    <div class="nav-links">
+        <a href="#mudari"><span class="nav-ar">الفِعْلُ المُضَارِعُ</span><span class="nav-en">Present Verb</span></a>
+        <a href="#verb-types"><span class="nav-ar">أَنْوَاعُ الأَفْعَالِ</span><span class="nav-en">Verb Types</span></a>
+        <a href="#masdar"><span class="nav-ar">المَصْدَرُ</span><span class="nav-en">Masdar</span></a>
+        <a href="#future"><span class="nav-ar">سوف / سـ</span><span class="nav-en">Future</span></a>
+        <a href="#negation"><span class="nav-ar">النَّفْيُ</span><span class="nav-en">Negation</span></a>
+        <a href="#irab"><span class="nav-ar">إِعْرَابُ المُضَارِعِ</span><span class="nav-en">I'rab</span></a>
+        <a href="#raf"><span class="nav-ar">الرَّفْعُ</span><span class="nav-en">Raf'</span></a>
+        <a href="#jazm"><span class="nav-ar">الجَزْمُ</span><span class="nav-en">Jazm</span></a>
+        <a href="#nasb"><span class="nav-ar">النَّصْبُ</span><span class="nav-en">Nasb</span></a>
+        <a href="#amr"><span class="nav-ar">فِعْلُ الأَمْرِ</span><span class="nav-en">Imperative</span></a>
+        <a href="#jumlah"><span class="nav-ar">الجُمْلَةُ الاسْمِيَّةُ</span><span class="nav-en">Nominal</span></a>
+        <a href="#fainna"><span class="nav-ar">فإنَّ</span><span class="nav-en">Fa-inna</span></a>
+        <a href="#kaada"><span class="nav-ar">كادَ</span><span class="nav-en">Kaada</span></a>
+        <a href="#inna-ma"><span class="nav-ar">مَا الكَافَّةُ</span><span class="nav-en">Ma Kaffa</span></a>
+        <a href="#ma-mawsul"><span class="nav-ar">مَا المَوْصُولَةُ</span><span class="nav-en">Ma Relative</span></a>
+        <a href="#sarf"><span class="nav-ar">المَمْنُوعُ مِنَ الصَّرْفِ</span><span class="nav-en">Diptote</span></a>
+        <a href="#matuf"><span class="nav-ar">الأَعْدَادُ المَعْطُوفَةُ</span><span class="nav-en">Numbers</span></a>
+        <a href="#time"><span class="nav-ar">الوَقْتُ</span><span class="nav-en">Time</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>مُرَاجَعَةٌ شَامِلَةٌ لِلنَّحْوِ</h1>
+    <div class="subtitle">Comprehensive Grammar Review - ARB301</div>
+</div>
+
+<!-- ==================== TOPIC 1: الفعل المضارع ==================== -->
+<section class="section" id="mudari">
+    <h2 class="section-title">١. الفِعْلُ المُضَارِعُ - The Present Tense Verb</h2>
+    <p class="english-text">The present/imperfect tense verb (al-fi'l al-mudari') is one of the three main verb forms in Arabic. Unlike the past tense (al-madi) which describes completed actions, the present tense describes actions that are currently happening or will happen in the future. It is the most flexible verb form because it can be made nominative (marfu'), accusative (mansub), or jussive (majzum) depending on what precedes it.</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">القَاعِدَةُ الأَسَاسِيَّةُ</h4>
+        <p class="arabic-text">يبدأُ الفعلُ المُضَارِعُ بأحدِ الحروفِ الأربعةِ المجموعةِ في كلمةِ <strong>(أَنَيْتُ)</strong> وهي: أ - ن - ي - ت</p>
+        <p class="english-text">The present tense verb ALWAYS begins with one of four letters collected in the word (ANAYTU): Hamza (أ), Nun (ن), Ya (ي), Ta (ت)</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">مَعْنَى الفِعْلِ المُضَارِعِ</h4>
+        <p class="arabic-text">يدلُّ على حدثٍ يقعُ الآنَ (الحاضر) أو سيقعُ في المُسْتَقْبَلِ</p>
+        <p class="english-text">It indicates an event happening NOW (present) or WILL happen (future)</p>
+        <p class="arabic-text">فَإِذَا قُلْتَ: <strong>يَكْتُبُ الطَّالِبُ</strong> — فَهَذَا يَعْنِي أَنَّهُ يَكْتُبُ الآنَ أَوْ سَيَكْتُبُ</p>
+        <p class="english-text">For example, if you say "the student writes" — it means he is writing now OR he will write</p>
+    </div>
+
+    <div class="info-box">
+        <h4>كَيْفَ نُحَوِّلُ الفِعْلَ المَاضِي إِلَى مُضَارِعٍ؟</h4>
+        <p class="arabic-text">نَأْخُذُ الفِعْلَ المَاضِي وَنُضِيفُ أَحَدَ حُرُوفِ المُضَارَعَةِ (أَنَيْتُ) فِي البِدَايَةِ. كُلُّ حَرْفٍ يَدُلُّ عَلَى ضَمِيرٍ مُعَيَّنٍ:</p>
+        <p class="arabic-text">• <strong>أ</strong> = أَنَا (المُتَكَلِّمُ) &nbsp;&nbsp; • <strong>ن</strong> = نَحْنُ (المُتَكَلِّمُونَ) &nbsp;&nbsp; • <strong>ي</strong> = هُوَ (الغَائِبُ) &nbsp;&nbsp; • <strong>ت</strong> = أَنْتَ / هِيَ</p>
+        <p class="english-text">Take the past verb and add one of the mudaraah letters at the beginning. Each letter corresponds to a specific pronoun: أ = I, ن = We, ي = He, ت = You/She</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ عَلَى حُرُوفِ المُضَارَعَةِ</h3>
+
+    <table>
+        <tr><th>الفِعْلُ المَاضِي</th><th>أ (أنا)</th><th>ن (نحن)</th><th>ي (هو)</th><th>ت (أنتَ/هي)</th></tr>
+        <tr><td class="pronoun-cell">لَعِبَ</td><td>أَلْعَبُ</td><td>نَلْعَبُ</td><td>يَلْعَبُ</td><td>تَلْعَبُ</td></tr>
+        <tr><td class="pronoun-cell">خَرَجَ</td><td>أَخْرُجُ</td><td>نَخْرُجُ</td><td>يَخْرُجُ</td><td>تَخْرُجُ</td></tr>
+        <tr><td class="pronoun-cell">شَرَحَ</td><td>أَشْرَحُ</td><td>نَشْرَحُ</td><td>يَشْرَحُ</td><td>تَشْرَحُ</td></tr>
+        <tr><td class="pronoun-cell">فَهِمَ</td><td>أَفْهَمُ</td><td>نَفْهَمُ</td><td>يَفْهَمُ</td><td>تَفْهَمُ</td></tr>
+    </table>
+
+    <div class="info-box">
+        <h4>حُرُوفُ المُضَارَعَةِ مَعَ أَفْعَالٍ تَبْدَأُ بِالهَمْزَةِ</h4>
+        <p class="arabic-text">إذا كانَ الفعلُ الماضي يبدأُ بالهمزةِ (مثل: أَكَلَ، أَخَذَ)، فإنَّ المضارعَ مع (أنا) يصبحُ بمدّةٍ: <strong>آكُلُ، آخُذُ، آمُلُ</strong></p>
+        <p class="english-text">When the past verb starts with Hamza, the first person present gets a Madda: أَأْكُلُ becomes آكُلُ (to avoid two consecutive hamzas)</p>
+    </div>
+
+    <!-- MCQ for Topic 1 -->
+    <div class="mcq-question" data-correct="b" data-explanation="حروف المضارعة مجموعة في كلمة (أَنَيْتُ) وهي: أ - ن - ي - ت. The present tense letters are collected in ANAYTU: أ ن ي ت">
+        <h4 class="arabic-medium">اخْتَبِرْ نَفْسَكَ: مَا هِيَ حُرُوفُ المُضَارَعَةِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) أ - ب - ت - ث</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) أ - ن - ي - ت</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) س - ن - ي - ت</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) أ - ن - و - ت</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="الفعل المضارع يدلّ على حدثٍ يقعُ الآن أو في المستقبل. The present verb indicates an action happening now or in the future.">
+        <h4 class="arabic-medium">اخْتَبِرْ نَفْسَكَ: الفِعْلُ المُضَارِعُ يَدُلُّ عَلَى:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) حَدَثٌ وَقَعَ فِي المَاضِي فَقَطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) أَمْرٌ أَوْ طَلَبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) حَدَثٌ يَقَعُ الآنَ أَوْ فِي المُسْتَقْبَلِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) حَدَثٌ غَيْرُ مُرْتَبِطٍ بِزَمَنٍ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="المضارع من أَكَلَ مع (أنا) هو آكُلُ بالمدّة لتجنب همزتين متتاليتين. The present of أَكَلَ with 'I' is آكُلُ (madda replaces two hamzas).">
+        <h4 class="arabic-medium">اخْتَبِرْ نَفْسَكَ: مَا المُضَارِعُ مِنْ (أَكَلَ) مَعَ أَنَا؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) آكُلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) أَأْكُلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) يَأْكُلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) نَأْكُلُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 2: أنواع الأفعال ==================== -->
+<section class="section" id="verb-types">
+    <h2 class="section-title">٢. أَنْوَاعُ الأَفْعَالِ - Types of Verbs by Letter Count</h2>
+    <p class="english-text">Arabic verbs are classified by the number of root letters they contain. This classification is important because each type follows different patterns for conjugation, forming the masdar (verbal noun), and deriving other verb forms. The triliteral (3-letter) verbs are the most common and form the foundation of Arabic morphology.</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">لِمَاذَا هَذَا التَّقْسِيمُ مُهِمٌّ؟</h4>
+        <p class="arabic-text">مَعْرِفَةُ عَدَدِ حُرُوفِ الفِعْلِ تُسَاعِدُكَ عَلَى مَعْرِفَةِ وَزْنِهِ وَكَيْفِيَّةِ تَصْرِيفِهِ وَاشْتِقَاقِ المَصْدَرِ مِنْهُ</p>
+        <p class="english-text">Knowing the letter count helps you identify the verb's pattern (wazn), how to conjugate it, and how to derive its masdar</p>
+        <p class="arabic-text">• الأَفْعَالُ الثُّلَاثِيَّةُ هِيَ الأَكْثَرُ شُيُوعاً فِي اللُّغَةِ العَرَبِيَّةِ</p>
+        <p class="arabic-text">• الأَفْعَالُ الرُّبَاعِيَّةُ غَالِباً تَكُونُ مَزِيدَةً بِحَرْفٍ (مِثْلُ التَّضْعِيفِ أَوِ الهَمْزَةِ)</p>
+        <p class="arabic-text">• الأَفْعَالُ الخُمَاسِيَّةُ وَالسُّدَاسِيَّةُ تَبْدَأُ دَائِماً بِهَمْزَةِ الوَصْلِ (ا)</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+        <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 20px; text-align: center; border: 2px solid #4caf50;">
+            <div style="font-size: 28px; font-weight: bold; color: #2e7d32;">الفعلُ الثُّلَاثِيُّ</div>
+            <div class="english-text" style="text-align: center;">Triliteral (3 letters)</div>
+            <div style="background: white; padding: 12px; border-radius: 10px; margin-top: 10px;">
+                <span class="arabic-text">نَصَرَ - خَرَجَ - سَأَلَ</span>
+            </div>
+        </div>
+        <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-radius: 15px; padding: 20px; text-align: center; border: 2px solid #2196f3;">
+            <div style="font-size: 28px; font-weight: bold; color: #1565c0;">الفعلُ الرُّبَاعِيُّ</div>
+            <div class="english-text" style="text-align: center;">Quadriliteral (4 letters)</div>
+            <div style="background: white; padding: 12px; border-radius: 10px; margin-top: 10px;">
+                <span class="arabic-text">سَلَّمَ - أَفْطَرَ</span>
+            </div>
+        </div>
+        <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-radius: 15px; padding: 20px; text-align: center; border: 2px solid #ff9800;">
+            <div style="font-size: 28px; font-weight: bold; color: #e65100;">الفعلُ الخُمَاسِيُّ</div>
+            <div class="english-text" style="text-align: center;">Quinquiliteral (5 letters)</div>
+            <div style="background: white; padding: 12px; border-radius: 10px; margin-top: 10px;">
+                <span class="arabic-text">اِنْتَصَرَ - تَعَلَّمَ</span>
+            </div>
+        </div>
+        <div style="background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%); border-radius: 15px; padding: 20px; text-align: center; border: 2px solid #9c27b0;">
+            <div style="font-size: 28px; font-weight: bold; color: #6a1b9a;">الفعلُ السُّدَاسِيُّ</div>
+            <div class="english-text" style="text-align: center;">Sexiliteral (6 letters)</div>
+            <div style="background: white; padding: 12px; border-radius: 10px; margin-top: 10px;">
+                <span class="arabic-text">اِسْتَخْدَمَ - اِسْتَقْبَلَ</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MCQ for Topic 2 -->
+    <div class="mcq-question" data-correct="c" data-explanation="الفعل (اِنْتَصَرَ) يتكوّن من خمسة حروف: ا-ن-ت-ص-ر فهو فعل خماسي. The verb intasara has 5 letters, making it quinquiliteral.">
+        <h4 class="arabic-medium">اختبر نفسك: الفعل (اِنْتَصَرَ) هو فعل:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) ثُلَاثِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) رُبَاعِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) خُمَاسِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) سُدَاسِيٌّ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="الفعل (اِسْتَقْبَلَ) يتكوّن من ستة حروف: ا-س-ت-ق-ب-ل فهو فعل سداسي. The verb istaqbala has 6 letters.">
+        <h4 class="arabic-medium">اختبر نفسك: الفعل (اِسْتَقْبَلَ) هو فعل:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) ثُلَاثِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) رُبَاعِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) خُمَاسِيٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) سُدَاسِيٌّ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 3: المصدر ==================== -->
+<section class="section" id="masdar">
+    <h2 class="section-title">٣. المَصْدَرُ - The Verbal Noun (Masdar)</h2>
+    <p class="english-text">The Masdar (verbal noun) is a noun that indicates an event or action WITHOUT being tied to any specific time. Think of it like the English "-ing" form used as a noun (e.g., "swimming is fun" — here "swimming" is the masdar). Every Arabic verb has a masdar form, and learning it is essential because it appears frequently in everyday Arabic and in the Quran.</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">تَعْرِيفُ المَصْدَرِ</h4>
+        <p class="arabic-text">المصدرُ هو اسمٌ يدلُّ على حدثٍ غيرِ مُرتبطٍ بزمنٍ معيّنٍ، وهو يشتملُ على حروفِ فعلِهِ</p>
+        <p class="english-text">The Masdar is a noun indicating an event NOT linked to any time, and it contains the letters of its verb</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ</h3>
+    <table>
+        <tr><th>الفِعْلُ</th><th>المَصْدَرُ</th><th>English</th></tr>
+        <tr><td>ضَرَبَ</td><td class="pronoun-cell">ضَرْبًا</td><td>hitting/striking</td></tr>
+        <tr><td>لَعِبَ</td><td class="pronoun-cell">لَعِبًا</td><td>playing</td></tr>
+        <tr><td>رَكَعَ</td><td class="pronoun-cell">رُكُوعًا</td><td>bowing (in prayer)</td></tr>
+    </table>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">الفَرْقُ بَيْنَ الفِعْلِ وَالمَصْدَرِ</h4>
+        <p class="arabic-text"><strong>الفعل:</strong> كلمةٌ تدلُّ على حدثٍ <u>في الزمنِ</u> — الماضي يدلُّ على الزمن الماضي، والمضارعُ على الحاضرِ أو المستقبلِ</p>
+        <p class="arabic-text"><strong>المصدر:</strong> يدلُّ على <u>الحدثِ فقط</u> بدونِ زمنٍ</p>
+        <p class="english-text"><strong>Verb:</strong> indicates action + TIME (past/present/future)</p>
+        <p class="english-text"><strong>Masdar:</strong> indicates action ONLY, no time element</p>
+    </div>
+
+    <!-- MCQ for Topic 3 -->
+    <div class="mcq-question" data-correct="b" data-explanation="المصدر يدلّ على الحدث فقط بدون زمن. The Masdar indicates only the event without any time reference.">
+        <h4 class="arabic-medium">اختبر نفسك: ما الفرق بين الفعل والمصدر؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) لَا فَرْقَ بَيْنَهُمَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) الفِعْلُ مُرْتَبِطٌ بِالزَّمَنِ وَالمَصْدَرُ غَيْرُ مُرْتَبِطٍ بِالزَّمَنِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) المَصْدَرُ مُرْتَبِطٌ بِالزَّمَنِ وَالفِعْلُ غَيْرُ مُرْتَبِطٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) كِلَاهُمَا مُرْتَبِطٌ بِالزَّمَنِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 4: حرف الاستقبال ==================== -->
+<section class="section" id="future">
+    <h2 class="section-title">٤. حَرْفُ الاسْتِقْبَالِ (سَوْفَ / سَـ) - Future Particles</h2>
+    <p class="english-text">Arabic uses two particles to indicate the future tense with present verbs.</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">القَاعِدَةُ</h4>
+        <p class="arabic-text"><strong>السين (سَـ):</strong> تُستخدمُ للمُسْتَقْبَلِ <u>القريبِ</u></p>
+        <p class="arabic-text"><strong>سَوْفَ:</strong> تُستخدمُ للمُسْتَقْبَلِ <u>البعيدِ</u></p>
+        <p class="english-text"><strong>سَـ (sa-):</strong> for NEAR future &nbsp;&nbsp;|&nbsp;&nbsp; <strong>سَوْفَ (sawfa):</strong> for DISTANT future</p>
+        <p class="arabic-text">فَإِذَا أَرَدْتَ أَنْ تَقُولَ إِنَّكَ سَتَفْعَلُ شَيْئاً قَرِيباً — اسْتَخْدِمِ <strong>السِّينَ</strong>. وَإِذَا كَانَ الفِعْلُ بَعِيداً فِي المُسْتَقْبَلِ — اسْتَخْدِمْ <strong>سَوْفَ</strong></p>
+        <p class="english-text">Simple rule: If the action is soon (today, tomorrow) → use سَـ. If the action is far away (next week, next year) → use سَوْفَ. Both are placed directly before the present tense verb with no space issues.</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>سَـ</strong>أُسَافِرُ إلى القاهرةِ <u>غداً</u></div>
+        <div class="example-en">I WILL travel to Cairo tomorrow (near future = سَـ)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>سَوْفَ</strong> أُسَافِرُ إليها <u>بعدَ أسبوعٍ</u></div>
+        <div class="example-en">I WILL travel to it after a week (distant future = سَوْفَ)</div>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">الإِعْرَابُ</h4>
+        <p class="arabic-text">السينُ وسوفَ: حرفُ استقبالٍ مبنيٌّ على الفتحِ لا عملَ لهُ من الإعرابِ — ليسَ لهما تأثيرٌ على الفعلِ المضارعِ</p>
+        <p class="english-text">Both are particles of future, built on fat-ha, with NO grammatical effect on the verb</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">قالَ تعالى: ﴿وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَى﴾</p>
+        <p class="english-text">"And your Lord will give you, and you will be satisfied" [Quran 93:5]</p>
+    </div>
+
+    <!-- MCQ for Topic 4 -->
+    <div class="mcq-question" data-correct="a" data-explanation="السين تُستخدم للمستقبل القريب وسوف للمستقبل البعيد. Sa- is for near future, Sawfa for distant future.">
+        <h4 class="arabic-medium">اختبر نفسك: السين تُستخدم لـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) المُسْتَقْبَلُ القَرِيبُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) المُسْتَقْبَلُ البَعِيدُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) المَاضِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) الأَمْرُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="السين وسوف ليس لهما أي تأثير إعرابي على الفعل المضارع. Both particles have NO grammatical effect on the present verb.">
+        <h4 class="arabic-medium">اختبر نفسك: ما تأثير السين وسوف على الفعل المضارع؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) تَنْصِبُهُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) تَجْزِمُهُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) تَبْنِيهِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) لَا تَأْثِيرَ لَهُمَا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 5: النفي ==================== -->
+<section class="section" id="negation">
+    <h2 class="section-title">٥. مَا النَّافِيَةُ وَلَا النَّافِيَةُ - Negation Particles</h2>
+    <p class="english-text">Arabic uses different negation particles depending on the verb tense. This is a key concept: you CANNOT use the same negation word for all verbs. The past tense has its own negator (ما), and the present tense has its own (لا). Mixing them up is a common mistake, so make sure to memorize which goes with which.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+        <div class="rule-box">
+            <h4 class="arabic-medium">مَا النافية — للفعل الماضي</h4>
+            <p class="arabic-text">نضعُ (ما) قبلَ الفعلِ <u>الماضي</u> لنفيِهِ</p>
+            <p class="english-text">(ما) is placed before the PAST verb to negate it</p>
+            <div class="example-box" style="margin-top: 15px;">
+                <div class="example-ar">ذهبَ الولدُ ← <strong>ما</strong> ذهبَ الولدُ</div>
+                <div class="example-en">The boy went ← The boy did NOT go</div>
+            </div>
+        </div>
+        <div class="grammar-box">
+            <h4 class="arabic-medium">لَا النافية — للفعل المضارع</h4>
+            <p class="arabic-text">نضعُ (لا) قبلَ الفعلِ <u>المضارعِ</u> لنفيِهِ</p>
+            <p class="english-text">(لا) is placed before the PRESENT verb to negate it</p>
+            <div class="example-box" style="margin-top: 15px;">
+                <div class="example-ar">يذهبُ الولدُ ← <strong>لا</strong> يذهبُ الولدُ</div>
+                <div class="example-en">The boy goes ← The boy does NOT go</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <h4>تَنْبِيهٌ مُهِمٌّ</h4>
+        <p class="arabic-text">(لا) النافيةُ ليسَ لها تأثيرٌ على الفعلِ المضارعِ — الفعلُ يبقى مرفوعاً</p>
+        <p class="english-text">(لا) has NO grammatical effect on the present verb — the verb stays in the nominative (marfu') case</p>
+        <p class="arabic-text">إعرابها: لا نافيةٌ مبنيةٌ على السكونِ لا محلَّ لها من الإعرابِ</p>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="(ما) تُستخدم لنفي الفعل الماضي، و(لا) تُستخدم لنفي الفعل المضارع. Ma negates past, La negates present.">
+        <h4 class="arabic-medium">اختبر نفسك: لنفي الفعل الماضي نستخدم:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q9" value="a"><span>أ) ما</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="b"><span>ب) لا</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="c"><span>ج) لم</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="d"><span>د) لن</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="لا النافية ليس لها أي تأثير إعرابي على الفعل المضارع، فيبقى مرفوعاً. La nafiya has no grammatical effect on the present verb.">
+        <h4 class="arabic-medium">اختبر نفسك: ما تأثير (لا) النافية على الفعل المضارع؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q10" value="a"><span>أ) تَنْصِبُهُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="b"><span>ب) تَجْزِمُهُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="c"><span>ج) تَبْنِيهِ عَلَى السُّكُونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="d"><span>د) لَا تَأْثِيرَ لَهَا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 6: إعراب الفعل المضارع ==================== -->
+<section class="section" id="irab">
+    <h2 class="section-title">٦. إِعْرَابُ الفِعْلِ المُضَارِعِ - Grammatical States of Present Verb</h2>
+    <p class="english-text">The present tense verb has three possible grammatical states (i'rab). This is one of the most important topics in Arabic grammar. By default, the present verb is nominative (marfu'). It only changes to accusative (mansub) or jussive (majzum) when a specific particle appears before it. Understanding these three states and their signs is the foundation for correctly analyzing any Arabic sentence containing a present tense verb.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
+        <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 20px; border-radius: 15px; text-align: center; border: 3px solid #4caf50;">
+            <div style="font-size: 30px; font-weight: bold; color: #2e7d32;">مَرْفُوع</div>
+            <div class="english-text" style="text-align: center;">Nominative (default)</div>
+            <div style="font-size: 18px; margin-top: 10px;">يَقْرَأُ المسلمُ القرآنَ</div>
+        </div>
+        <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 20px; border-radius: 15px; text-align: center; border: 3px solid #2196f3;">
+            <div style="font-size: 30px; font-weight: bold; color: #1565c0;">مَنْصُوب</div>
+            <div class="english-text" style="text-align: center;">Accusative (with nasb tools)</div>
+            <div style="font-size: 18px; margin-top: 10px;">أُرِيدُ أَنْ أَقْرَأَ</div>
+        </div>
+        <div style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 20px; border-radius: 15px; text-align: center; border: 3px solid #ff9800;">
+            <div style="font-size: 30px; font-weight: bold; color: #e65100;">مَجْزُوم</div>
+            <div class="english-text" style="text-align: center;">Jussive (with jazm tools)</div>
+            <div style="font-size: 18px; margin-top: 10px;">لَمْ يَقْرَأْ</div>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">القَاعِدَةُ الأَسَاسِيَّةُ</h4>
+        <p class="arabic-text">الأَصْلُ فِي الفِعْلِ المُضَارِعِ أن يكونَ <strong>مرفوعاً</strong>. ولا يكونُ منصوباً إلا إذا سبقتهُ أداةُ نصبٍ، ولا مجزوماً إلا إذا سبقتهُ أداةُ جزمٍ</p>
+        <p class="english-text">The DEFAULT state of the present verb is NOMINATIVE (marfu'). It becomes accusative only with a nasb particle, and jussive only with a jazm particle.</p>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="الأصل في الفعل المضارع أن يكون مرفوعاً. The default state of the present verb is marfu' (nominative).">
+        <h4 class="arabic-medium">اختبر نفسك: ما الأصل في إعراب الفعل المضارع؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q11" value="a"><span>أ) مَرْفُوعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="b"><span>ب) مَنْصُوبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="c"><span>ج) مَجْزُومٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="d"><span>د) مَبْنِيٌّ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 7: رفع الفعل المضارع ==================== -->
+<section class="section" id="raf">
+    <h2 class="section-title">٧. رَفْعُ الفِعْلِ المُضَارِعِ - Nominative of Present Verb</h2>
+    <p class="english-text">There are 3 ways the present verb is made nominative (marfu'), plus one special case. The present verb is marfu' by DEFAULT — meaning if no nasb or jazm particle comes before it, it stays nominative. The sign of raf' depends on what the verb ends with: a sound letter, a weak letter, or if it is one of the Five Verbs (al-af'al al-khamsa).</p>
+
+    <div class="info-box">
+        <h4>مَا هِيَ الحُرُوفُ الصَّحِيحَةُ وَحُرُوفُ العِلَّةِ؟</h4>
+        <p class="arabic-text"><strong>الحُرُوفُ الصَّحِيحَةُ:</strong> هِيَ كُلُّ الحُرُوفِ العَرَبِيَّةِ <u>مَا عَدَا</u> الأَلِفَ وَالوَاوَ وَاليَاءَ</p>
+        <p class="arabic-text"><strong>حُرُوفُ العِلَّةِ (Weak Letters):</strong> هِيَ ثَلَاثَةٌ فَقَطْ: <strong>الأَلِفُ (ا) — الوَاوُ (و) — اليَاءُ (ي)</strong></p>
+        <p class="english-text"><strong>Sound letters:</strong> ALL Arabic letters EXCEPT alif, waw, ya. <strong>Weak letters:</strong> ONLY three: Alif (ا), Waw (و), Ya (ي). This distinction is critical for understanding raf', nasb, and jazm signs.</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">١. بالضمة الظاهرة — إذا كان صحيح الآخر</h4>
+        <p class="arabic-text">إذا كانَ آخرُ الفعلِ حرفاً صحيحاً (أي ليسَ ألفاً ولا واواً ولا ياءً)</p>
+        <p class="english-text">If the last letter is a sound letter (NOT alif, waw, or ya)</p>
+        <div class="example-box">
+            <div class="example-ar">يَدْخُلُ الطلّابُ الفصلَ</div>
+            <div class="example-en">The students enter the classroom — يَدْخُلُ is marfu' with apparent dammah</div>
+        </div>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">٢. بالضمة المُقدّرة — إذا كان معتلّ الآخر</h4>
+        <p class="arabic-text">إذا كانَ آخرُ الفعلِ حرفَ عِلّةٍ (الألف أو الواو أو الياء)</p>
+        <p class="english-text">If the last letter is a weak letter (alif, waw, or ya) — the dammah is estimated/implied</p>
+        <div class="example-box">
+            <div class="example-ar">يَدْعُو المسلمُ (واو) — يمشي إلى المدرسةِ (ياء) — يَخْشَى (ألف)</div>
+            <div class="example-en">The Muslim supplicates — He walks to school — He fears</div>
+        </div>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">٣. بثبوت النون — إذا كان من الأفعال الخمسة</h4>
+        <p class="arabic-text">الأفعال الخمسة هي: يفعلان - تفعلان - يفعلون - تفعلون - تفعلين</p>
+        <p class="english-text">The Five Verbs: raised by keeping the nun (ن) at the end</p>
+        <div class="example-box">
+            <div class="example-ar">الطلّابُ يَتَعَلَّمُو<strong>نَ</strong> في الحلقةِ</div>
+            <div class="example-en">The students learn in the circle — marfu' by keeping the nun</div>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <h4>حَالَةٌ خَاصَّةٌ: نُونُ النِّسْوَةِ</h4>
+        <p class="arabic-text">إذا اتصلتْ بالفعلِ المضارعِ <strong>نونُ النسوةِ</strong> فإنّهُ يُبنى على السكونِ (ليس معرباً!)</p>
+        <p class="english-text">If nun al-niswah is attached, the verb is BUILT on sukoon (indeclinable, not i'rab)</p>
+        <div class="example-box">
+            <div class="example-ar">البناتُ يَلْعَبْنَ في الحديقةِ</div>
+            <div class="example-en">The girls play in the garden — BUILT on sukoon (not marfu')</div>
+        </div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="الفعل (يمشي) آخره ياء وهو حرف علة، فيُرفع بالضمة المقدّرة. Yamshi ends with ya (weak letter), so it's raised with estimated dammah.">
+        <h4 class="arabic-medium">اختبر نفسك: الفعل (يمشي) مرفوع بـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q12" value="a"><span>أ) الضَّمَّةُ الظَّاهِرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="b"><span>ب) الضَّمَّةُ المُقَدَّرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="c"><span>ج) ثُبُوتُ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="d"><span>د) السُّكُونُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="(يتعلّمون) من الأفعال الخمسة فيُرفع بثبوت النون. Yata'allamoon is one of the Five Verbs, raised by keeping the nun.">
+        <h4 class="arabic-medium">اختبر نفسك: (يتعلّمون) مرفوع بـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q13" value="a"><span>أ) الضَّمَّةُ الظَّاهِرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q13" value="b"><span>ب) الضَّمَّةُ المُقَدَّرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q13" value="c"><span>ج) ثُبُوتُ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q13" value="d"><span>د) مَبْنِيٌّ عَلَى السُّكُونِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="الفعل المتصل بنون النسوة مبني على السكون وليس معرباً. Verb with nun al-niswah is BUILT on sukoon (indeclinable).">
+        <h4 class="arabic-medium">اختبر نفسك: (يَلْعَبْنَ) حكمه:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q14" value="a"><span>أ) مَرْفُوعٌ بِالضَّمَّةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q14" value="b"><span>ب) مَرْفُوعٌ بِثُبُوتِ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q14" value="c"><span>ج) مَجْزُومٌ بِالسُّكُونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q14" value="d"><span>د) مَبْنِيٌّ عَلَى السُّكُونِ لِاتِّصَالِهِ بِنُونِ النِّسْوَةِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 8: جزم الفعل المضارع ==================== -->
+<section class="section" id="jazm">
+    <h2 class="section-title">٨. جَزْمُ الفِعْلِ المُضَارِعِ - Jussive of Present Verb</h2>
+    <p class="english-text">The present verb becomes jussive (majzoom) when preceded by a jazm particle like (لَمْ), which means "did not". The jussive case is important because it appears in negation with لَمْ, in conditional sentences, and in commands. The sign of jazm depends on the verb ending — just like raf', you need to check if the verb ends with a sound letter, weak letter, or is one of the Five Verbs.</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">أَدَوَاتُ الجَزْمِ الرَّئِيسِيَّةُ</h4>
+        <p class="arabic-text">• <strong>لَمْ</strong> — لِلنَّفْيِ فِي المَاضِي (did not): لَمْ يَذْهَبْ = هُوَ لَمْ يَذْهَبْ</p>
+        <p class="arabic-text">• <strong>لَمَّا</strong> — لِلنَّفْيِ المُسْتَمِرِّ (has not yet): لَمَّا يَصِلْ = هُوَ لَمْ يَصِلْ بَعْدُ</p>
+        <p class="arabic-text">• <strong>لَا</strong> النَّاهِيَةُ — لِلنَّهْيِ (don't!): لَا تَذْهَبْ = لَا تَفْعَلْ ذَلِكَ</p>
+        <p class="english-text">Main jazm particles: لَمْ (did not — past negation), لَمَّا (has not yet), لَا النَّاهِية (don't! — prohibition)</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">١. بالسكون — إذا كان صحيح الآخر</h4>
+        <p class="english-text">If the last letter is sound (not a weak letter)</p>
+        <div class="example-box">
+            <div class="example-ar">لم يَلْعَبْ الولدُ — لم يُسَافِرْ محمدٌ</div>
+            <div class="example-en">The boy did not play — Muhammad did not travel — jazm with sukoon</div>
+        </div>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">٢. بحذف حرف العلة — إذا كان معتلّ الآخر</h4>
+        <p class="english-text">If the last letter is a weak letter (alif/waw/ya), it gets DELETED</p>
+        <div class="example-box">
+            <div class="example-ar">يمش<strong>ي</strong> ← لم يمشِ (حُذفت الياء)</div>
+            <div class="example-en">He walks ← He did not walk (ya deleted)</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">يدع<strong>و</strong> ← لم يدعُ (حُذفت الواو)</div>
+            <div class="example-en">He supplicates ← He did not supplicate (waw deleted)</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">يخش<strong>ى</strong> ← لم يخشَ (حُذفت الألف)</div>
+            <div class="example-en">He fears ← He did not fear (alif deleted)</div>
+        </div>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">٣. بحذف النون — إذا كان من الأفعال الخمسة</h4>
+        <p class="english-text">If it's one of the Five Verbs, the nun (ن) gets DELETED</p>
+        <div class="example-box">
+            <div class="example-ar">يستطيعو<strong>نَ</strong> ← لم يستطيعوا (حُذفت النون)</div>
+            <div class="example-en">They can ← They could not (nun deleted)</div>
+        </div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="الفعل (يدعو) معتلّ الآخر بالواو، فيُجزم بحذف حرف العلة: لم يدعُ. Yad'u ends with waw, so jazm is by deleting the weak letter.">
+        <h4 class="arabic-medium">اختبر نفسك: كيف يُجزم الفعل (يدعو)؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q15" value="a"><span>أ) بالسكون: لم يدعوْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q15" value="b"><span>ب) بحذف حرف العلة: لم يدعُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q15" value="c"><span>ج) بحذف النون: لم يدعوا</span></label>
+            <label class="mcq-option"><input type="radio" name="q15" value="d"><span>د) بالفتحة: لم يدعوَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="(يستطيعون) من الأفعال الخمسة فتُجزم بحذف النون: لم يستطيعوا. Yastati'oon is from the Five Verbs, jazm by deleting nun.">
+        <h4 class="arabic-medium">اختبر نفسك: ما جزم (يستطيعون)؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q16" value="a"><span>أ) لم يستطيعونْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q16" value="b"><span>ب) لم يستطيعْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q16" value="c"><span>ج) لم يستطيعوا</span></label>
+            <label class="mcq-option"><input type="radio" name="q16" value="d"><span>د) لم يستطيعونَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 9: نصب الفعل المضارع ==================== -->
+<section class="section" id="nasb">
+    <h2 class="section-title">٩. نَصْبُ الفِعْلِ المُضَارِعِ - Accusative of Present Verb</h2>
+    <p class="english-text">The present verb becomes accusative (mansub) when preceded by a nasb particle like (أَنْ) meaning "to/that" or (لَنْ) meaning "will never". The accusative is commonly seen after أَنْ (I want TO go), لَنْ (I will NEVER go), كَيْ (in order to), and لِـ (so that). Just like the other cases, the sign of nasb depends on the verb's ending.</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">أَدَوَاتُ النَّصْبِ الرَّئِيسِيَّةُ</h4>
+        <p class="arabic-text">• <strong>أَنْ</strong> — حَرْفٌ مَصْدَرِيٌّ وَنَصْبٌ (to/that): أُرِيدُ <strong>أَنْ</strong> أَذْهَبَ</p>
+        <p class="arabic-text">• <strong>لَنْ</strong> — لِلنَّفْيِ فِي المُسْتَقْبَلِ (will never): <strong>لَنْ</strong> أَذْهَبَ</p>
+        <p class="arabic-text">• <strong>كَيْ</strong> — لِلتَّعْلِيلِ (in order to): جِئْتُ <strong>كَيْ</strong> أَتَعَلَّمَ</p>
+        <p class="arabic-text">• <strong>لِـ</strong> — لَامُ التَّعْلِيلِ (so that): أَدْرُسُ <strong>لِـ</strong>أَنْجَحَ</p>
+        <p class="english-text">Main nasb particles: أَنْ (to/that), لَنْ (will never), كَيْ (in order to), لِـ (so that)</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">١. بالفتحة الظاهرة — حالتان</h4>
+        <p class="arabic-text"><strong>أ)</strong> إذا كانَ صحيحَ الآخرِ:</p>
+        <div class="example-box">
+            <div class="example-ar">أتعلّمُ اللغةَ العربيةَ <strong>لأَفْهَمَ</strong> القرآنَ الكريمَ</div>
+            <div class="example-en">I learn Arabic TO understand the Quran — أَفْهَمَ is mansub with apparent fathah</div>
+        </div>
+        <p class="arabic-text"><strong>ب)</strong> إذا كانَ معتلَّ الآخرِ بالواوِ أو الياءِ:</p>
+        <div class="example-box">
+            <div class="example-ar">يحبُّ أنْ <strong>يَدْعُوَ</strong> اللهَ ليلاً — يريدُ أنْ <strong>يَمْشِيَ</strong> إلى الجامعةِ</div>
+            <div class="example-en">He loves to supplicate to Allah at night — He wants to walk to university</div>
+        </div>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">٢. بالفتحة المقدّرة — حالة واحدة فقط</h4>
+        <p class="arabic-text">إذا كانَ الفعلُ معتلَّ الآخرِ <strong>بالألفِ</strong> فقط</p>
+        <p class="english-text">ONLY when the verb ends with Alif — the fathah is estimated (can't appear on alif)</p>
+        <div class="example-box">
+            <div class="example-ar">أُرِيدُ <strong>أَنْ أَسْعَى</strong></div>
+            <div class="example-en">I want to strive — أسعى is mansub with estimated fathah (prevented by ta'adhdhur)</div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h4>مُلَخَّصُ النَّصْبِ</h4>
+        <table>
+            <tr><th>نَوْعُ الفِعْلِ</th><th>عَلَامَةُ النَّصْبِ</th><th>مِثَالٌ</th></tr>
+            <tr><td>صَحِيحُ الآخِرِ</td><td>الفَتْحَةُ الظَّاهِرَةُ</td><td>أنْ يَكْتُبَ</td></tr>
+            <tr><td>مُعْتَلُّ بِالوَاوِ</td><td>الفَتْحَةُ الظَّاهِرَةُ</td><td>أنْ يَدْعُوَ</td></tr>
+            <tr><td>مُعْتَلُّ بِاليَاءِ</td><td>الفَتْحَةُ الظَّاهِرَةُ</td><td>أنْ يَمْشِيَ</td></tr>
+            <tr><td>مُعْتَلُّ بِالأَلِفِ</td><td>الفَتْحَةُ المُقَدَّرَةُ</td><td>أنْ يَسْعَى</td></tr>
+            <tr><td>الأَفْعَالُ الخَمْسَةُ</td><td>حَذْفُ النُّونِ</td><td>لن يَكْتُبُوا</td></tr>
+        </table>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="الفعل (يسعى) معتلّ الآخر بالألف فيُنصب بالفتحة المقدّرة منع من ظهورها التعذّر. Yas'a ends with alif, so nasb with estimated fathah.">
+        <h4 class="arabic-medium">اختبر نفسك: الفعل (يسعى) يُنصب بـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q17" value="a"><span>أ) الفَتْحَةُ الظَّاهِرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q17" value="b"><span>ب) حَذْفُ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q17" value="c"><span>ج) الفَتْحَةُ المُقَدَّرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q17" value="d"><span>د) حَذْفُ حَرْفِ العِلَّةِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="الفعل (يدعوَ) معتلّ الآخر بالواو فيُنصب بالفتحة الظاهرة على الواو. Yad'uwa ends with waw, nasb with apparent fathah.">
+        <h4 class="arabic-medium">اختبر نفسك: الفعل (يدعو) يُنصب بـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q18" value="a"><span>أ) الفَتْحَةُ الظَّاهِرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q18" value="b"><span>ب) الفَتْحَةُ المُقَدَّرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q18" value="c"><span>ج) حَذْفُ حَرْفِ العِلَّةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q18" value="d"><span>د) السُّكُونُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 10: فعل الأمر ==================== -->
+<section class="section" id="amr">
+    <h2 class="section-title">١٠. تَكْوِينُ فِعْلِ الأَمْرِ - Forming the Imperative Verb</h2>
+    <p class="english-text">How to derive the imperative (command) verb from the present tense. The imperative (fi'l al-amr) is used to give commands or requests like "Write!", "Read!", "Go!". Arabic has a simple 3-step formula to form the imperative from ANY verb. Once you master these steps, you can create the command form of any verb in the language.</p>
+
+    <div class="step-box">
+        <h4 class="arabic-medium">الخُطُوَاتُ الثَّلَاثُ لِتَكْوِينِ فِعْلِ الأَمْرِ</h4>
+        <p class="arabic-text" style="font-size: 30px;">١. نأتي بالفعلِ المضارعِ</p>
+        <p class="arabic-text" style="font-size: 30px;">٢. نجزمُ الفعلَ المضارعَ</p>
+        <p class="arabic-text" style="font-size: 30px;">٣. نحذفُ حرفَ المضارعةِ</p>
+        <p class="english-text">1. Get the present tense → 2. Make it jussive → 3. Remove the mudaraah letter</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ</h3>
+
+    <div class="formula-box">
+        <div class="formula">تَعَلَّمَ: يَتَعَلَّمُ → يَتَعَلَّمْ → تَعَلَّمْ</div>
+        <p class="english-text">ta'allama → yata'allamu → yata'allam → ta'allam (Learn!)</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">إذا بدأت الكلمة بحرف ساكن</h4>
+        <p class="arabic-text">لا يمكنُ أن تبدأَ كلمةٌ عربيةٌ بحرفٍ ساكنٍ، فنضعُ <strong>همزةَ الوصلِ</strong> في البدايةِ</p>
+        <p class="english-text">Arabic words CANNOT start with a sukoon letter, so we add a hamzat al-wasl</p>
+        <div class="example-box">
+            <div class="example-ar">خَفَضَ: يَخْفِضُ → يَخْفِضْ → خْفِضْ → <strong>اخْفِضْ</strong></div>
+            <div class="example-en">khafada → yakhfidu → yakhfid → khfid → ikhfid (Lower!)</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">نَظَرَ: يَنْظُرُ → يَنْظُرْ → نْظُرْ → <strong>اُنْظُرْ</strong></div>
+            <div class="example-en">nadhara → yandhuru → yandhur → ndhur → undhur (Look!)</div>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <h4>حَالَةٌ خَاصَّةٌ: أَفْعَالٌ تَبْدَأُ بِالهَمْزَةِ فِي المَاضِي</h4>
+        <p class="arabic-text">مثل: أَكَلَ وأَخَذَ — نحذفُ حرفَ المضارعةِ <strong>والهمزةَ</strong> التي بعدَهُ</p>
+        <p class="english-text">For verbs like أَكَلَ and أَخَذَ — remove BOTH the mudaraah letter AND the hamza after it</p>
+        <div class="example-box">
+            <div class="example-ar">أَكَلَ → يَأْكُلُ → يَأْكُلْ → <strong>كُلْ</strong> (Eat!)</div>
+            <div class="example-en">akala → ya'kulu → ya'kul → kul</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">أَخَذَ → يَأْخُذُ → يَأْخُذْ → <strong>خُذْ</strong> (Take!)</div>
+            <div class="example-en">akhadha → ya'khudhu → ya'khudh → khudh</div>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">تدريب على الإعراب: يا طلابُ؛ افهموا الدرسَ</h3>
+    <table>
+        <tr><th>الكلمة</th><th>الإعراب</th></tr>
+        <tr><td class="pronoun-cell">يا</td><td>أداةُ نداءٍ مبنيةٌ على السكونِ لا محلَّ لها من الإعرابِ</td></tr>
+        <tr><td class="pronoun-cell">طلابُ</td><td>منادى مبنيٌّ على الضمِّ في محلِّ نصبٍ لأنّهُ نكرةٌ مقصودةٌ</td></tr>
+        <tr><td class="pronoun-cell">افهموا</td><td>فعلُ أمرٍ مبنيٌّ على حذفِ النونِ، وواوُ الجماعةِ ضميرٌ مبنيٌّ على السكونِ في محلِّ رفعِ فاعلٍ</td></tr>
+        <tr><td class="pronoun-cell">الدرسَ</td><td>مفعولٌ بهِ منصوبٌ وعلامةُ نصبِهِ الفتحةُ الظاهرةُ</td></tr>
+    </table>
+
+    <div class="mcq-question" data-correct="b" data-explanation="خطوات تكوين الأمر: المضارع ← الجزم ← حذف حرف المضارعة. Steps: present → jazm → remove mudaraah letter.">
+        <h4 class="arabic-medium">اختبر نفسك: ما فعل الأمر من (كَتَبَ)؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q19" value="a"><span>أ) كَتَبْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q19" value="b"><span>ب) اكْتُبْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q19" value="c"><span>ج) يَكْتُبْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q19" value="d"><span>د) كُتِبْ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="أَكَلَ: نحذف حرف المضارعة والهمزة معاً فيصبح الأمر (كُلْ). For akala, remove both mudaraah letter and hamza = kul.">
+        <h4 class="arabic-medium">اختبر نفسك: ما فعل الأمر من (أَكَلَ)؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q20" value="a"><span>أ) اأْكُلْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q20" value="b"><span>ب) أُكُلْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q20" value="c"><span>ج) كُلْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q20" value="d"><span>د) آكُلْ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 11: الجملة الاسمية ==================== -->
+<section class="section" id="jumlah">
+    <h2 class="section-title">١١. الجُمْلَةُ الاسْمِيَّةُ - The Nominal Sentence</h2>
+    <p class="english-text">Review of the nominal sentence (al-jumla al-ismiyya) structure. Arabic has two types of sentences: nominal (starts with a noun) and verbal (starts with a verb). The nominal sentence is made up of two essential parts: the subject (mubtada') and the predicate (khabar). Usually the mubtada' is definite (ma'rifa), like الكِتَابُ (the book), but there are special cases where it can be indefinite (nakirah).</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">التَّرْكِيبُ الأَسَاسِيُّ</h4>
+        <p class="arabic-text">الجملةُ الاسميةُ تتكوّنُ من رُكنينِ أساسيينِ: <strong>المبتدأ</strong> + <strong>الخبر</strong></p>
+        <p class="english-text">The nominal sentence has two pillars: Subject (Mubtada') + Predicate (Khabar)</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">المُبْتَدَأُ عَادَةً مَعْرِفَةٌ</h4>
+        <div class="example-box">
+            <div class="example-ar"><strong>العلمُ</strong> نورٌ — <strong>الكتابُ</strong> مفيدٌ</div>
+            <div class="example-en">Knowledge is light — The book is useful (Mubtada' = definite/ma'rifa)</div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">مَتَى يَكُونُ المُبْتَدَأُ نَكِرَةً؟</h4>
+        <p class="arabic-text">يمكنُ أن تبدأَ الجملةُ الاسميةُ بنكرةٍ إذا كانَ المبتدأُ مسبوقاً بـ <strong>استفهامٍ</strong> (ما / أَ / هل)</p>
+        <p class="english-text">The Mubtada' can be indefinite (nakirah) if preceded by a question particle</p>
+        <div class="example-box">
+            <div class="example-ar"><strong>أَ</strong>رَجُلٌ في البيتِ؟</div>
+            <div class="example-en">Is there a man in the house? (رجل is nakirah, allowed because of أ)</div>
+        </div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="الجملة الاسمية تتكوّن من المبتدأ والخبر. The nominal sentence consists of Mubtada' and Khabar.">
+        <h4 class="arabic-medium">اختبر نفسك: ركنا الجملة الاسمية هما:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q21" value="a"><span>أ) الفِعْلُ وَالفَاعِلُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q21" value="b"><span>ب) المُبْتَدَأُ وَالخَبَرُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q21" value="c"><span>ج) الاسْمُ وَالحَرْفُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q21" value="d"><span>د) المُضَافُ وَالمُضَافُ إِلَيْهِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 12: فإنّ ==================== -->
+<section class="section" id="fainna">
+    <h2 class="section-title">١٢. التَّعْبِيرُ (فَإِنَّ) - The Expression "For/Because"</h2>
+    <p class="english-text">The expression (فإنّ) means "for" or "because" and is used to give a reason or justification after a command. This is a very common pattern in Arabic: you give a command first, then explain WHY using فَإِنَّ. It follows the pattern: [Command] + فَإِنَّ + [reason]. This structure appears frequently in the Quran and classical Arabic texts.</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">التَّرْكِيبُ</h4>
+        <p class="arabic-text" style="font-size: 30px; text-align: center;"><strong>فِعْلُ أَمْرٍ</strong> + <strong>فَإِنَّ</strong> + <strong>السَّبَبُ</strong></p>
+        <p class="english-text" style="text-align: center;">Command + فَإِنَّ + The Reason</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">المَعْنَى وَالاسْتِخْدَامُ</h4>
+        <p class="arabic-text"><strong>فإنَّ</strong> = لأنَّ / بسبب أنَّ — تأتي بعدَ فعلِ الأمرِ لتعطيَ السببَ</p>
+        <p class="english-text">فإنَّ = "for / because" — comes after an imperative to give the reason</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">ادْخُلْ <strong>فإنَّ</strong> الدَّرْسَ قدْ بَدَأَ</div>
+        <div class="example-en">Get in, FOR the lesson has already started</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">اغْسِلِ القَمِيصَ <strong>فإنَّهُ</strong> وَسِخٌ</div>
+        <div class="example-en">Wash the shirt, FOR it is dirty</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">اقْرَأِ الدَّرْسَ <strong>فإنَّهُ</strong> سَهْلٌ</div>
+        <div class="example-en">Read the lesson, FOR it is easy</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">زُرْ عَمَّكَ <strong>فإنَّهُ</strong> مَرِيضٌ</div>
+        <div class="example-en">Visit your uncle, FOR he is sick</div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="التعبير (فإنَّ) يُستخدم لإعطاء السبب بعد فعل الأمر ومعناه (لأنّ / for). Fa-inna gives the reason after a command, meaning 'for/because'.">
+        <h4 class="arabic-medium">اختبر نفسك: ما معنى (فإنَّ) في الجملة؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q22" value="a"><span>أ) ثم / then</span></label>
+            <label class="mcq-option"><input type="radio" name="q22" value="b"><span>ب) لكنّ / but</span></label>
+            <label class="mcq-option"><input type="radio" name="q22" value="c"><span>ج) لأنّ / for/because</span></label>
+            <label class="mcq-option"><input type="radio" name="q22" value="d"><span>د) أو / or</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 13: كاد وأفعال المقاربة ==================== -->
+<section class="section" id="kaada">
+    <h2 class="section-title">١٣. كَادَ وَأَفْعَالُ المُقَارَبَةِ - Verbs of Nearest Approach</h2>
+    <p class="english-text">Kaada (كَادَ) and similar verbs are called "Verbs of Nearest Approach" (af'al al-muqaraba). They work like كَانَ and its sisters — they enter a nominal sentence and affect the mubtada' (making it their ism) and the khabar. However, they have a unique meaning: they indicate that an action was ABOUT TO happen or ALMOST happened, but ultimately did NOT happen. For example, "He almost fell" means he was very close to falling but didn't actually fall.</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">مَا هِيَ أَفْعَالُ المُقَارَبَةِ؟</h4>
+        <p class="arabic-text">هي أفعالٌ تعملُ عملَ (كانَ) وأخواتِها — تدخلُ على المبتدأِ والخبرِ</p>
+        <p class="arabic-text">معناها: أنَّ الخبرَ <strong>على وشكِ الوقوعِ</strong> ولكنّهُ <u>لم يقعْ</u> إلى الآنِ</p>
+        <p class="english-text">Meaning: the action is ABOUT TO happen but has NOT happened yet</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">كادَ الولدُ يضحكُ</div>
+        <div class="example-en">The boy was ABOUT TO laugh / The boy ALMOST laughed (but didn't actually laugh)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كادَ الجرسُ يرنُّ</div>
+        <div class="example-en">The bell is ABOUT TO ring (but hasn't rung yet)</div>
+    </div>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">الفَرْقُ بَيْنَ كَادَ وَكَانَ</h4>
+        <p class="arabic-text"><strong>كان وأخواتها:</strong> الخبرُ قد يكونُ مفرداً أو جملةً (فعلية بماضٍ أو مضارعٍ) أو شبهَ جملةٍ</p>
+        <p class="arabic-text"><strong>أفعال المقاربة (كاد):</strong> الخبرُ يجبُ أن يكونَ <u>جملةً فعليةً فعلُها مضارعٌ فقط</u></p>
+        <p class="english-text"><strong>Kana:</strong> khabar can be single word, sentence, or semi-sentence</p>
+        <p class="english-text"><strong>Kaada:</strong> khabar MUST be a verbal sentence with a PRESENT tense verb ONLY</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4>أَمْثِلَةٌ صَحِيحَةٌ</h4>
+        <div class="example-box">
+            <div class="example-ar">كادَ محمدٌ <strong>يحفظُ</strong> القرآنَ الكريمَ</div>
+            <div class="example-en">Muhammad almost memorized the Quran (khabar = present verb sentence)</div>
+        </div>
+        <div class="example-box">
+            <div class="example-ar">كادَ الأولادُ <strong>يلعبونَ</strong></div>
+            <div class="example-en">The children were about to play (khabar = present verb sentence)</div>
+        </div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="كاد تدلّ على أنّ الفعل على وشك الوقوع ولكنه لم يقع. Kaada means the action is about to happen but hasn't happened.">
+        <h4 class="arabic-medium">اختبر نفسك: (كادَ الولدُ يضحكُ) تعني:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q23" value="a"><span>أ) الوَلَدُ ضَحِكَ فِعْلاً</span></label>
+            <label class="mcq-option"><input type="radio" name="q23" value="b"><span>ب) الوَلَدُ اقْتَرَبَ مِنَ الضَّحِكِ وَلَكِنَّهُ لَمْ يَضْحَكْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q23" value="c"><span>ج) الوَلَدُ سَيَضْحَكُ غَداً</span></label>
+            <label class="mcq-option"><input type="radio" name="q23" value="d"><span>د) الوَلَدُ لَا يُرِيدُ أَنْ يَضْحَكَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="خبر أفعال المقاربة يجب أن يكون جملة فعلية فعلها مضارع فقط. Khabar of kaada MUST be a verbal sentence with present tense verb only.">
+        <h4 class="arabic-medium">اختبر نفسك: خبر (كادَ) يجب أن يكون:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q24" value="a"><span>أ) مُفْرَداً</span></label>
+            <label class="mcq-option"><input type="radio" name="q24" value="b"><span>ب) شِبْهَ جُمْلَةٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q24" value="c"><span>ج) جُمْلَةً فِعْلِيَّةً فِعْلُهَا مُضَارِعٌ فَقَطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q24" value="d"><span>د) جُمْلَةً فِعْلِيَّةً فِعْلُهَا مَاضٍ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 14: إنّ وما الكافة ==================== -->
+<section class="section" id="inna-ma">
+    <h2 class="section-title">١٤. إِنَّ وَأَخَوَاتُهَا وَمَا الكَافَّة - Inna and Ma Al-Kaffa</h2>
+    <p class="english-text">Review of Inna and its sisters, and the special role of Ma Al-Kaffa (the preventer).</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">مُرَاجَعَةٌ: إِنَّ وَأَخَوَاتُهَا</h4>
+        <p class="arabic-text">إنَّ وأخواتُها حروفٌ تدخلُ على الجملةِ الاسميةِ فتنصبُ المبتدأَ (اسم إنّ) وترفعُ الخبرَ (خبر إنّ)</p>
+        <p class="english-text">Inna and its sisters enter the nominal sentence: make mubtada' accusative (ism inna) and keep khabar nominative (khabar inna). Remember the sisters of إِنَّ: إِنَّ (indeed), أَنَّ (that), كَأَنَّ (as if), لَكِنَّ (but), لَيْتَ (I wish), لَعَلَّ (perhaps). All of them follow the same rule: accusative ism + nominative khabar.</p>
+        <p class="arabic-text"><strong>إنَّ</strong> تأتي في أولِ الكلامِ — <strong>أنَّ</strong> تأتي في وسطِ الكلامِ</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">ما الكافّة (The Preventer)</h4>
+        <p class="arabic-text">إذا اتصلتْ <strong>(ما)</strong> بـ(إنَّ) فإنّها <u>تُبطلُ عملَ إنَّ</u> — أي تمنعُها من النصبِ والرفعِ</p>
+        <p class="english-text">When (ما) is attached to (إنَّ), it CANCELS Inna's grammatical effect — called "Ma Al-Kaffa" (the preventer). This is a very important concept: normally إِنَّ changes the i'rab of the sentence, but when ما is attached to it, إنَّ loses ALL its power. The sentence goes back to being a normal nominal sentence with a marfu' mubtada' and marfu' khabar. The meaning also changes to "only" or "indeed only".</p>
+        <p class="arabic-text"><strong>إنَّ + ما = إنَّما</strong> — معناها: فقط / only</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>إنَّما</strong> الكتابُ سهلٌ</div>
+        <div class="example-en">ONLY the book is easy — (الكتابُ is marfu' as mubtada', not mansub as ism inna!)</div>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">بدون (ما): إنَّ الكتابَ سهلٌ — (الكتابَ منصوب = اسم إنّ)</p>
+        <p class="arabic-text">مع (ما): إنّما الكتابُ سهلٌ — (الكتابُ مرفوع = مبتدأ، لأنّ ما أبطلت عمل إنّ)</p>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="(ما) الكافّة تُبطل عمل إنّ فتعود الجملة اسمية عادية (مبتدأ مرفوع + خبر مرفوع). Ma Al-Kaffa cancels Inna's effect.">
+        <h4 class="arabic-medium">اختبر نفسك: ما عمل (ما) في (إنّما)؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q25" value="a"><span>أ) تُبطل عمل إنّ (كافّة)</span></label>
+            <label class="mcq-option"><input type="radio" name="q25" value="b"><span>ب) نافية</span></label>
+            <label class="mcq-option"><input type="radio" name="q25" value="c"><span>ج) موصولة</span></label>
+            <label class="mcq-option"><input type="radio" name="q25" value="d"><span>د) استفهامية</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 15: ما الموصولة ==================== -->
+<section class="section" id="ma-mawsul">
+    <h2 class="section-title">١٥. مَا المَوْصُولَة - The Relative Pronoun "Ma"</h2>
+    <p class="english-text">Ma Al-Mawsula (مَا المَوْصُولَة) is a relative pronoun meaning "what" or "that which". It is used specifically for non-rational beings (animals, objects, concepts) — similar to "what" in English. Unlike الَّذِي and الَّتِي which change based on gender and number, مَا is universal — it stays the same regardless of whether the noun is masculine, feminine, singular, dual, or plural. This makes it very easy to use once you understand it.</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">خَصَائِصُ (مَا) المَوْصُولَةِ</h4>
+        <p class="arabic-text">• تُستخدمُ مع <strong>غيرِ العاقلينَ</strong></p>
+        <p class="arabic-text">• تُستخدمُ مع المذكرِ والمؤنثِ والمفردِ والمثنى والجمعِ (لا تتغيّر)</p>
+        <p class="english-text">Used for non-rational beings, works with all genders and numbers (invariable)</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">فَهِمْتُ <strong>مَا</strong> قُلْتَ لِي</div>
+        <div class="example-en">I understood WHAT you told me</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">آكُلُ <strong>مَا</strong> تَأْكُلُونَ</div>
+        <div class="example-en">I eat WHAT you eat</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">قال تعالى: ﴿لَا أَعْبُدُ <strong>مَا</strong> تَعْبُدُونَ﴾</div>
+        <div class="example-en">"I do not worship WHAT you worship" [Quran 109:2]</div>
+    </div>
+
+    <div class="grammar-box">
+        <h4>إِعْرَابُ (مَا) المَوْصُولَةِ</h4>
+        <p class="arabic-text">ما: اسمٌ موصولٌ مبنيٌّ في محلِّ نصبِ مفعولٍ بهِ (أو حسب موقعها في الجملة)</p>
+        <p class="english-text">Ma: relative pronoun, built (indeclinable), in the position of accusative as object (or according to its position)</p>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="(ما) الموصولة تُستخدم مع غير العاقلين بمعنى (الذي/التي) لغير العاقل. Ma mawsula is used for non-rational beings.">
+        <h4 class="arabic-medium">اختبر نفسك: (ما) الموصولة تُستخدم مع:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q26" value="a"><span>أ) العَاقِلِينَ فَقَطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q26" value="b"><span>ب) غَيْرِ العَاقِلِينَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q26" value="c"><span>ج) المُذَكَّرِ فَقَطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q26" value="d"><span>د) الجَمْعِ فَقَطْ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 16: الممنوع من الصرف ==================== -->
+<section class="section" id="sarf">
+    <h2 class="section-title">١٦. الاسْمُ المُنْصَرِفُ وَالمَمْنُوعُ مِنَ الصَّرْفِ - Diptotes</h2>
+    <p class="english-text">Arabic nouns are divided into two types based on their ability to take full declension (case endings). Most nouns are "triptotes" (munsarif) — they accept all three case endings (dammah, fathah, kasrah) AND tanween. However, some nouns are "diptotes" (mamnu' min al-sarf) — they do NOT accept tanween or kasrah. Instead, diptotes use fathah in place of kasrah when in the genitive case. Common diptotes include: foreign proper names (إِبْرَاهِيم), names ending in feminine alif (سَلْمَى), colors/physical traits (أَحْمَر), and plural patterns like مَسَاجِد.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+        <div class="grammar-box">
+            <h4 class="arabic-medium">الاسم المُنْصَرِف (Triptote)</h4>
+            <p class="arabic-text">يظهرُ عليهِ <strong>جميعُ</strong> علاماتِ الإعرابِ + التنوين</p>
+            <p class="english-text">Takes ALL case endings + tanween</p>
+            <p class="arabic-text">مرفوع بالضمة ، منصوب بالفتحة ، مجرور بالكسرة</p>
+            <div class="example-box" style="margin-top: 10px;">
+                <div class="example-ar">هذا مَحْمُودٌ — رأيتُ مَحْمُوداً — مررتُ بِمَحْمُودٍ</div>
+            </div>
+        </div>
+        <div class="rule-box">
+            <h4 class="arabic-medium">الاسم الممنوع من الصَّرْف (Diptote)</h4>
+            <p class="arabic-text">لا يلحقُ بـ<strong>التنوينِ</strong> ولا <strong>الكسرةِ</strong> (إذا لم يكن مضافاً)</p>
+            <p class="english-text">Does NOT take tanween or kasrah (when not in idafa)</p>
+            <p class="arabic-text">مرفوع بالضمة ، منصوب <strong>بالفتحة</strong> ، مجرور <strong>بالفتحة</strong> (بدل الكسرة)</p>
+            <div class="example-box" style="margin-top: 10px;">
+                <div class="example-ar">هذا إبراهيمُ — رأيتُ إبراهيمَ — مررتُ بإبراهيمَ</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="الاسم الممنوع من الصرف يُجرّ بالفتحة بدلاً من الكسرة. Diptotes take fathah instead of kasrah in the genitive case.">
+        <h4 class="arabic-medium">اختبر نفسك: الاسم الممنوع من الصرف يُجرّ بـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q27" value="a"><span>أ) الكَسْرَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q27" value="b"><span>ب) الضَّمَّةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q27" value="c"><span>ج) الفَتْحَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q27" value="d"><span>د) السُّكُونُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 17: الأعداد المعطوفة ==================== -->
+<section class="section" id="matuf">
+    <h2 class="section-title">١٧. الأَعْدَادُ المَعْطُوفَة - Conjoined Numbers (21-99)</h2>
+    <p class="english-text">Numbers formed with two parts joined by the conjunction و (waw). These are called "conjoined numbers" (al-a'dad al-ma'tufa) and cover all numbers from 21 to 99 (except the round decades like 20, 30, 40, etc.). They are called "conjoined" because they consist of two parts connected by the letter واو. The first part is a single digit (1-9) and the second part is a decade (20-90). Understanding the gender agreement rules for the first part is essential for using these numbers correctly.</p>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">ما هي الأعداد المعطوفة؟</h4>
+        <p class="arabic-text">هي الأعدادُ من ٢١ إلى ٩٩ (ما عدا ألفاظ العقود: ٢٠، ٣٠، ٤٠...)</p>
+        <p class="arabic-text">تتكوّنُ من <strong>جزأين</strong> بينهما حرفُ العطفِ <strong>(الواو)</strong></p>
+        <p class="english-text">Numbers 21-99 (except round decades), made of two parts joined by و</p>
+    </div>
+
+    <div class="formula-box">
+        <div class="formula">عدد مفرد (١-٩) + وَ + لفظ عقد (٢٠-٩٠)</div>
+        <p class="english-text">Single digit + وَ + Decade = Conjoined Number</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">قَاعِدَةُ الجُزْءِ الأَوَّلِ</h4>
+        <p class="arabic-text">إذا كانَ العددُ <strong>واحداً أو اثنينِ</strong> فإنّهُ <u>يوافقُ</u> المعدودَ (مذكر مع مذكر، مؤنث مع مؤنث)</p>
+        <p class="arabic-text">إذا كانَ العددُ من <strong>٣ إلى ٩</strong> فإنّهُ <u>يخالفُ</u> المعدودَ</p>
+        <p class="english-text">1-2: AGREES with counted noun | 3-9: DISAGREES with counted noun</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">واحدٌ وعشرونَ كتاباً (٢١) — واحدةٌ وعشرونَ سيارةً (٢١)</div>
+        <div class="example-en">21 books (واحد agrees with كتاب) — 21 cars (واحدة agrees with سيارة)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">ثلاثةٌ وعشرونَ كتاباً (٢٣) — ثلاثٌ وعشرونَ سيارةً (٢٣)</div>
+        <div class="example-en">23 books (ثلاثة disagrees with كتاب) — 23 cars (ثلاث disagrees with سيارة)</div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="الأعداد المعطوفة تتكوّن من جزأين بينهما حرف العطف (الواو). Conjoined numbers have two parts joined by waw.">
+        <h4 class="arabic-medium">اختبر نفسك: لماذا سُمّيت الأعداد المعطوفة بهذا الاسم؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q28" value="a"><span>أ) لأنها تتكوّن من جزأين بينهما حرف العطف (الواو)</span></label>
+            <label class="mcq-option"><input type="radio" name="q28" value="b"><span>ب) لأنها مبنية على الفتح</span></label>
+            <label class="mcq-option"><input type="radio" name="q28" value="c"><span>ج) لأنها لا تتغير</span></label>
+            <label class="mcq-option"><input type="radio" name="q28" value="d"><span>د) لأنها تأتي بعد العدد المركب</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<!-- ==================== TOPIC 18: معرفة الوقت ==================== -->
+<section class="section" id="time">
+    <h2 class="section-title">١٨. مَعْرِفَةُ الوَقْتِ - Telling Time in Arabic</h2>
+    <p class="english-text">How to express time in Arabic using key vocabulary. Telling time in Arabic follows a specific pattern. You start with the hour (using the ordinal feminine form because سَاعَة is feminine), then add the minutes using special vocabulary. The key words to memorize are: تَمَاماً (exactly), النِّصْفُ (half/30 min), الرُّبْعُ (quarter/15 min), الثُّلُثُ (third/20 min). For time AFTER the hour use وَ (and), and for time BEFORE the next hour use إِلَّا (except/to).</p>
+
+    <div class="info-box">
+        <h4>نَصِيحَةٌ لِلحِفْظِ</h4>
+        <p class="arabic-text">• إِذَا كَانَتِ الدَّقَائِقُ <strong>أَقَلَّ مِنْ ٣٠</strong> — اسْتَخْدِمْ <strong>وَ</strong> (بَعْدَ السَّاعَةِ): الخَامِسَةُ <strong>وَ</strong>الرُّبْعُ = 5:15</p>
+        <p class="arabic-text">• إِذَا كَانَتِ الدَّقَائِقُ <strong>أَكْثَرَ مِنْ ٣٠</strong> — اسْتَخْدِمْ <strong>إِلَّا</strong> (قَبْلَ السَّاعَةِ التَّالِيَةِ): السَّادِسَةُ <strong>إِلَّا</strong> رُبْعاً = 5:45</p>
+        <p class="english-text">Tip: If minutes are LESS than 30, use وَ (past the hour). If minutes are MORE than 30, use إِلَّا (to the next hour). This is the same logic as English "quarter past five" vs "quarter to six".</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">المُفْرَدَاتُ الأَسَاسِيَّةُ</h4>
+        <p class="arabic-text">• <strong>تَمَامًا</strong> = exactly / on the dot</p>
+        <p class="arabic-text">• <strong>وَالنِّصْفُ</strong> = and half (30 min)</p>
+        <p class="arabic-text">• <strong>وَالرُّبْعُ</strong> = and quarter (15 min)</p>
+        <p class="arabic-text">• <strong>وَالثُّلُثُ</strong> = and third (20 min)</p>
+        <p class="arabic-text">• <strong>إِلَّا</strong> = except / to (before the hour)</p>
+        <p class="english-text">Use "وَ" (and) for time PAST the hour, "إلّا" (except/to) for time BEFORE the hour</p>
+    </div>
+
+    <table>
+        <tr><th>العَرَبِيَّةُ</th><th>English</th><th>الرقمي</th></tr>
+        <tr><td>الوَاحِدَةُ تَمَامًا</td><td>One o'clock</td><td>1:00</td></tr>
+        <tr><td>الثَّانِيَةُ إِلَّا رُبْعًا</td><td>A quarter to two</td><td>1:45</td></tr>
+        <tr><td>الخَامِسَةُ وَالنِّصْفُ</td><td>Half past five</td><td>5:30</td></tr>
+        <tr><td>السَّابِعَةُ إِلَّا عَشْرَ دَقَائِقَ</td><td>Ten minutes to seven</td><td>6:50</td></tr>
+        <tr><td>العَاشِرَةُ وَالثُّلُثُ</td><td>Twenty minutes past ten</td><td>10:20</td></tr>
+        <tr><td>الخَامِسَةُ وَخَمْسٌ وَثَلَاثُونَ دَقِيقَةً</td><td>Thirty-five minutes past five</td><td>5:35</td></tr>
+        <tr><td>السَّابِعَةُ وَخَمْسُ دَقَائِقَ</td><td>Five minutes past seven</td><td>7:05</td></tr>
+        <tr><td>التَّاسِعَةُ وَالرُّبْعُ</td><td>A quarter past nine</td><td>9:15</td></tr>
+        <tr><td>الرَّابِعَةُ إِلَّا ثُلُثًا</td><td>Twenty minutes to four</td><td>3:40</td></tr>
+    </table>
+
+    <div class="mcq-question" data-correct="b" data-explanation="الساعة 5:30 = الخامسة والنصف. النصف = ٣٠ دقيقة. 5:30 = the fifth and a half.">
+        <h4 class="arabic-medium">اختبر نفسك: كيف نقول 5:30 بالعربية؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q29" value="a"><span>أ) الخامسة والربع</span></label>
+            <label class="mcq-option"><input type="radio" name="q29" value="b"><span>ب) الخامسة والنصف</span></label>
+            <label class="mcq-option"><input type="radio" name="q29" value="c"><span>ج) الخامسة إلّا ربعاً</span></label>
+            <label class="mcq-option"><input type="radio" name="q29" value="d"><span>د) الخامسة تماماً</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="(إلّا) تُستخدم للتعبير عن الوقت قبل الساعة. Illa is used for time BEFORE the hour (like 'to' in English).">
+        <h4 class="arabic-medium">اختبر نفسك: (الثانية إلّا ربعاً) تعني:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q30" value="a"><span>أ) 2:15</span></label>
+            <label class="mcq-option"><input type="radio" name="q30" value="b"><span>ب) 2:30</span></label>
+            <label class="mcq-option"><input type="radio" name="q30" value="c"><span>ج) 1:45</span></label>
+            <label class="mcq-option"><input type="radio" name="q30" value="d"><span>د) 1:30</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer id="page-footer" style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB301 - مراجعة شاملة للنحو</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Comprehensive Arabic Grammar Review</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => {
+                if (opt.querySelector('input').value === correct) {
+                    opt.classList.add('correct');
+                }
+            });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إجابة صحيحة! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إجابة خاطئة - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
