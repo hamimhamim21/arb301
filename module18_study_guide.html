@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 18 - ARB303 Study Guide | المحاضرة الثامنة عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .flowchart { display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 20px 0; }
+        .flow-top { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px 30px; border-radius: 15px; font-size: 28px; font-weight: bold; text-align: center; }
+        .flow-branches { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .flow-branch { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 15px 20px; border-radius: 15px; text-align: center; flex: 1; min-width: 200px; border: 2px solid #00897b; }
+        .flow-branch-title { font-size: 22px; font-weight: bold; color: #00695c; margin-bottom: 8px; }
+        .flow-branch-examples { font-size: 20px; color: #2c3e50; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) { .arabic-large { font-size: 32px; } .arabic-medium { font-size: 26px; } .section-title { font-size: 28px; } table { font-size: 18px; } .flow-branches { flex-direction: column; } }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
+
+<nav class="nav-container">
+    <div class="nav-title">المحاضرة الثامنة عشرة - Lecture 18</div>
+    <div class="nav-links">
+        <a href="#verb-akhadha"><span class="nav-ar">أَخَذَ</span><span class="nav-en">To Take</span></a>
+        <a href="#verb-akala"><span class="nav-ar">أَكَلَ</span><span class="nav-en">To Eat</span></a>
+        <a href="#examples"><span class="nav-ar">أَمْثِلَة</span><span class="nav-en">Examples</span></a>
+        <a href="#yumkin"><span class="nav-ar">يُمْكِنُ</span><span class="nav-en">It's Possible</span></a>
+        <a href="#lesson18"><span class="nav-ar">الدَّرْسُ ١٨</span><span class="nav-en">Lesson 18</span></a>
+        <a href="#kaaf"><span class="nav-ar">الكَافُ</span><span class="nav-en">Kaaf (Like)</span></a>
+        <a href="#alla"><span class="nav-ar">أَلَّا</span><span class="nav-en">Not to</span></a>
+        <a href="#tawkeed"><span class="nav-ar">التَّوْكِيدُ</span><span class="nav-en">Emphasis</span></a>
+        <a href="#exercises"><span class="nav-ar">تَمَارِين</span><span class="nav-en">Exercises</span></a>
+        <a href="#vocabulary"><span class="nav-ar">المُفْرَدَات</span><span class="nav-en">Vocabulary</span></a>
+        <a href="#mcq"><span class="nav-ar">أَسْئِلَة</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الثَّامِنَةَ عَشْرَةَ</h1>
+    <div class="subtitle">Lecture 18 - الدَّرْسُ السَّابِعَ عَشَرَ (Lesson 17 cont.)</div>
+</div>
+
+<!-- ===================== VERB: أَخَذَ ===================== -->
+<section class="section" id="verb-akhadha">
+    <h2 class="section-title">الفِعْلُ: أَخَذَ - يَأْخُذُ (To Take)</h2>
+    <p class="english-text">A special verb where the hamza is deleted in the imperative form: أَخَذَ becomes خُذْ</p>
+
+    <div class="formula-box">
+        <div class="formula">أَخَذَ - يَأْخُذُ - لَنْ يَأْخُذَ - لَمْ يَأْخُذْ - خُذْ - أَخْذًا</div>
+        <p class="english-text">Past - Present - Subjunctive (لَنْ) - Jussive (لَمْ) - Imperative - Masdar: Taking</p>
+    </div>
+
+    <table>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ + المُضَارِعُ</th><th>لَمْ + المُضَارِعُ</th><th>الأَمْرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>أَخَذْتُ</td><td>آخُذُ</td><td>لَنْ آخُذَ</td><td>لَمْ آخُذْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>أَخَذْنَا</td><td>نَأْخُذُ</td><td>لَنْ نَأْخُذَ</td><td>لَمْ نَأْخُذْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>أَخَذْتَ</td><td>تَأْخُذُ</td><td>لَنْ تَأْخُذَ</td><td>لَمْ تَأْخُذْ</td><td>خُذْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>أَخَذْتِ</td><td>تَأْخُذِينَ</td><td>لَنْ تَأْخُذِي</td><td>لَمْ تَأْخُذِي</td><td>خُذِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>أَخَذْتُمَا</td><td>تَأْخُذَانِ</td><td>لَنْ تَأْخُذَا</td><td>لَمْ تَأْخُذَا</td><td>خُذَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>أَخَذْتُمْ</td><td>تَأْخُذُونَ</td><td>لَنْ تَأْخُذُوا</td><td>لَمْ تَأْخُذُوا</td><td>خُذُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>أَخَذْتُنَّ</td><td>تَأْخُذْنَ</td><td>لَنْ تَأْخُذْنَ</td><td>لَمْ تَأْخُذْنَ</td><td>خُذْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>أَخَذَ</td><td>يَأْخُذُ</td><td>لَنْ يَأْخُذَ</td><td>لَمْ يَأْخُذْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>أَخَذَتْ</td><td>تَأْخُذُ</td><td>لَنْ تَأْخُذَ</td><td>لَمْ تَأْخُذْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>أَخَذَا</td><td>يَأْخُذَانِ</td><td>لَنْ يَأْخُذَا</td><td>لَمْ يَأْخُذَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>أَخَذَتَا</td><td>تَأْخُذَانِ</td><td>لَنْ تَأْخُذَا</td><td>لَمْ تَأْخُذَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>أَخَذُوا</td><td>يَأْخُذُونَ</td><td>لَنْ يَأْخُذُوا</td><td>لَمْ يَأْخُذُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>أَخَذْنَ</td><td>يَأْخُذْنَ</td><td>لَنْ يَأْخُذْنَ</td><td>لَمْ يَأْخُذْنَ</td><td>-</td></tr>
+    </table>
+
+    <div class="warning-box">
+        <h4>حَالَةٌ خَاصَّةٌ - Special Case</h4>
+        <p class="arabic-text">فِي فِعْلِ الأَمْرِ تُحْذَفُ الهَمْزَةُ فَيَصِيرُ (<strong>خُذْ</strong>) - مِثْلُ: أَكَلَ ← <strong>كُلْ</strong></p>
+        <p class="english-text">In the imperative, the hamza is deleted, so it becomes خُذْ - just like أَكَلَ becomes كُلْ</p>
+    </div>
+</section>
+
+<!-- ===================== VERB: أَكَلَ ===================== -->
+<section class="section" id="verb-akala">
+    <h2 class="section-title">الفِعْلُ: أَكَلَ - يَأْكُلُ (To Eat)</h2>
+    <p class="english-text">Another special verb where the hamza is deleted in the imperative form: أَكَلَ becomes كُلْ</p>
+
+    <div class="formula-box">
+        <div class="formula">أَكَلَ - يَأْكُلُ - لَنْ يَأْكُلَ - لَمْ يَأْكُلْ - كُلْ - أَكْلًا</div>
+        <p class="english-text">Past - Present - Subjunctive (لَنْ) - Jussive (لَمْ) - Imperative - Masdar: Eating</p>
+    </div>
+
+    <table>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ + المُضَارِعُ</th><th>لَمْ + المُضَارِعُ</th><th>الأَمْرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>أَكَلْتُ</td><td>آكُلُ</td><td>لَنْ آكُلَ</td><td>لَمْ آكُلْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>أَكَلْنَا</td><td>نَأْكُلُ</td><td>لَنْ نَأْكُلَ</td><td>لَمْ نَأْكُلْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>أَكَلْتَ</td><td>تَأْكُلُ</td><td>لَنْ تَأْكُلَ</td><td>لَمْ تَأْكُلْ</td><td>كُلْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>أَكَلْتِ</td><td>تَأْكُلِينَ</td><td>لَنْ تَأْكُلِي</td><td>لَمْ تَأْكُلِي</td><td>كُلِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>أَكَلْتُمَا</td><td>تَأْكُلَانِ</td><td>لَنْ تَأْكُلَا</td><td>لَمْ تَأْكُلَا</td><td>كُلَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>أَكَلْتُمْ</td><td>تَأْكُلُونَ</td><td>لَنْ تَأْكُلُوا</td><td>لَمْ تَأْكُلُوا</td><td>كُلُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>أَكَلْتُنَّ</td><td>تَأْكُلْنَ</td><td>لَنْ تَأْكُلْنَ</td><td>لَمْ تَأْكُلْنَ</td><td>كُلْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>أَكَلَ</td><td>يَأْكُلُ</td><td>لَنْ يَأْكُلَ</td><td>لَمْ يَأْكُلْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>أَكَلَتْ</td><td>تَأْكُلُ</td><td>لَنْ تَأْكُلَ</td><td>لَمْ تَأْكُلْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>أَكَلَا</td><td>يَأْكُلَانِ</td><td>لَنْ يَأْكُلَا</td><td>لَمْ يَأْكُلَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>أَكَلَتَا</td><td>تَأْكُلَانِ</td><td>لَنْ تَأْكُلَا</td><td>لَمْ تَأْكُلَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>أَكَلُوا</td><td>يَأْكُلُونَ</td><td>لَنْ يَأْكُلُوا</td><td>لَمْ يَأْكُلُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>أَكَلْنَ</td><td>يَأْكُلْنَ</td><td>لَنْ يَأْكُلْنَ</td><td>لَمْ يَأْكُلْنَ</td><td>-</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةُ الأَمْرِ - Imperative Examples</h3>
+    <div class="example-box">
+        <div class="example-ar">كُلِ الطَّعَامَ</div>
+        <div class="example-en">Eat the food! (to a male)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كُلِي البُرْتُقَالَةَ</div>
+        <div class="example-en">Eat the orange! (to a female)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كُلَا الأُرْزَ</div>
+        <div class="example-en">Eat the rice! (to two people - dual)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كُلُوا الطَّعَامَ</div>
+        <div class="example-en">Eat the food! (to a group of males)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كُلْنَ الطَّعَامَ</div>
+        <div class="example-en">Eat the food! (to a group of females)</div>
+    </div>
+
+    <div class="info-box">
+        <h4>المَصْدَرُ - Masdar (Verbal Noun)</h4>
+        <p class="arabic-text">أَكْلٌ = Eating</p>
+        <p class="english-text">The masdar of أَكَلَ is أَكْلٌ (eating), on the pattern فَعْل</p>
+    </div>
+</section>
+
+<!-- ===================== EXAMPLES ===================== -->
+<section class="section" id="examples">
+    <h2 class="section-title">أَمْثِلَةٌ تَطْبِيقِيَّةٌ - Practical Examples</h2>
+    <p class="english-text">Examples using the verbs أَخَذَ and أَكَلَ in different contexts</p>
+
+    <div class="example-box">
+        <div class="example-ar">مَاذَا تَفْعَلُ يَا عَلِيُّ؟ أَنَا آكُلُ الطَّعَامَ</div>
+        <div class="example-en">What are you doing, O Ali? I am eating the food.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">خُذِ الكِتَابَ مِنْ أَخِيكَ</div>
+        <div class="example-en">Take the book from your brother!</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">لَا تَأْكُلْ كَثِيرًا حَتَّى لَا تُصْبِحَ مَرِيضًا</div>
+        <div class="example-en">Don't eat a lot so that you don't become sick.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَخَذْتُ الحَقِيبَةَ مِنْ أُخْتِي</div>
+        <div class="example-en">I took the bag from my sister.</div>
+    </div>
+</section>
+
+<!-- ===================== يُمْكِنُ ===================== -->
+<section class="section" id="yumkin">
+    <h2 class="section-title">يُمْكِنُ / لَا يُمْكِنُ - It's Possible / Not Possible</h2>
+    <p class="english-text">Using يُمْكِنُ with أَنْ + present tense verb (accusative)</p>
+
+    <div class="grammar-box">
+        <p class="arabic-text">يُمْكِنُ + أَنْ + الفِعْلُ المُضَارِعُ المَنْصُوبُ</p>
+        <p class="english-text">يُمْكِنُ + أَنْ + accusative present tense verb</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">لَا يُمْكِنُكَ أَنْ تَجْلِسَ هُنَا. هَذَا مَقْعَدُ عُثْمَانَ</div>
+        <div class="example-en">It is not possible for you to sit here. This is Othman's seat.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">يُمْكِنُكَ الخُرُوجُ مِنَ الفَصْلِ الآنَ</div>
+        <div class="example-en">It is possible for you to leave the classroom now.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيُمْكِنُنِي أَنْ آخُذَ هَذِهِ المَجَلَّةَ إِلَى البَيْتِ؟</div>
+        <div class="example-en">Is it possible for me to take this magazine to the house?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَبِي مَرِيضٌ جِدًّا. لَا يُمْكِنُهُ أَنْ يَذْهَبَ إِلَى المَصْنَعِ</div>
+        <div class="example-en">My father is very sick. It's not possible for him to go to the factory.</div>
+    </div>
+</section>
+
+<!-- ===================== LESSON 18 DIALOGUE ===================== -->
+<section class="section" id="lesson18">
+    <h2 class="section-title">شَرْحُ الدَّرْسِ الثَّامِنَ عَشَرَ - Lesson 18 Dialogue</h2>
+    <p class="english-text">A family dialogue between Hamid, his wife Aminah, and their children about daily plans</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">الحِوَارُ - The Dialogue</h4>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">حَامِدٌ (لِزَوْجَتِهِ): أَيْنَ تُرِيدِينَ أَنْ تَذْهَبِي بَعْدَ صَلَاةِ العَصْرِ؟</div>
+        <div class="example-en">Hamid (to his wife): Where do you want to go after the Asr prayer?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">آمِنَةُ: أُرِيدُ أَنْ أَزُورَ جَارَتَنَا الَّتِي زَارَتْنِي أَمْسِ.</div>
+        <div class="example-en">Aminah: I want to visit our neighbor (f.) who visited me yesterday.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">حَامِدٌ: أَيُمْكِنُكِ أَنْ تَرْجِعِي قَبْلَ صَلَاةِ المَغْرِبِ؟</div>
+        <div class="example-en">Hamid: Is it possible for you to come back before the Maghrib prayer?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">آمِنَةُ: يُمْكِنُ إِنْ شَاءَ اللهُ.</div>
+        <div class="example-en">Aminah: It is possible, God willing.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">حَامِدٌ: أَرْجُو أَنْ تَغْسِلِي قَمِيصِيَ الأَبْيَضَ بَعْدَ رُجُوعِكِ مِنْ عِنْدِ الجَارَةِ.</div>
+        <div class="example-en">Hamid: I hope you will wash my white shirt after your return from the neighbor's.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">آمِنَةُ: سَأَغْسِلُهُ وَأَكْوِيهِ إِنْ شَاءَ اللهُ.</div>
+        <div class="example-en">Aminah: I will wash it and iron it, God willing.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">حَامِدٌ: أَيْنَ تُرِيدُونَ أَنْ تَذْهَبُوا الآنَ يَا أَبْنَائِي؟</div>
+        <div class="example-en">Hamid: Where do you want to go now, O my sons?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">الأَبْنَاءُ: نَذْهَبُ الآنَ إِلَى المَسْجِدِ. وَبَعْدَ الصَّلَاةِ نُرِيدُ أَنْ نَذْهَبَ إِلَى السُّوقِ لِنَشْتَرِيَ أَقْلَامًا وَدَفَاتِرَ وَمَسَاطِرَ.</div>
+        <div class="example-en">The sons: We are going now to the mosque. And after the prayer, we want to go to the market to buy pens, notebooks, and rulers.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">حَامِدٌ: أَيْنَ زُمَلَاؤُكُمْ؟ مَا جَاءُوا اليَوْمَ لِزِيَارَتِكُمْ كَعَادَتِهِمْ كُلَّ أُسْبُوعٍ.</div>
+        <div class="example-en">Hamid: Where are your classmates? They did not come today to visit you as is their habit every week.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">الأَبْنَاءُ: أَرَادُوا أَنْ يَذْهَبُوا اليَوْمَ إِلَى المُتْحَفِ.</div>
+        <div class="example-en">The sons: They wanted to go today to the museum.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">حَامِدٌ: يَا بَنَاتِي، أَنَا الآنَ أَذْهَبُ إِلَى المُسْتَشْفَى لِعِيَادَةِ سَلْمَى. أَتُرِدْنَ أَنْ تَذْهَبْنَ مَعِي؟</div>
+        <div class="example-en">Hamid: O my daughters, I am now going to the hospital to visit Salma. Do you want to go with me?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">البَنَاتُ: نَعَمْ.</div>
+        <div class="example-en">The daughters: Yes.</div>
+    </div>
+
+    <div class="info-box">
+        <h4>فَوَائِدُ نَحْوِيَّةٌ - Grammar Points from the Dialogue</h4>
+        <p class="arabic-text">لَاحِظْ اسْتِخْدَامَ أَنْ + المُضَارِعِ المَنْصُوبِ بَعْدَ: أُرِيدُ، أَيُمْكِنُكِ، أَرْجُو، أَرَادُوا، أَتُرِدْنَ</p>
+        <p class="english-text">Notice the use of أَنْ + accusative present tense after: I want, is it possible for you, I hope, they wanted, do you (f.pl.) want</p>
+        <p class="arabic-text" style="margin-top:10px;">لَاحِظْ اسْتِخْدَامَ لَامِ التَّعْلِيلِ: لِنَشْتَرِيَ، لِزِيَارَتِكُمْ، لِعِيَادَةِ</p>
+        <p class="english-text">Notice the use of لام التعليل (lam of purpose): to buy, for visiting you, for visiting (the sick)</p>
+    </div>
+</section>
+
+<!-- ===================== KAAF - حَرْفُ الجَرِّ الكَافُ ===================== -->
+<section class="section" id="kaaf">
+    <h2 class="section-title">حَرْفُ الجَرِّ الكَافُ - The Preposition Kaaf (Like / As)</h2>
+    <p class="english-text">The Kaaf is a preposition that indicates simile (تَشْبِيه) - meaning "like" or "as"</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">القَاعِدَةُ - The Rule</h4>
+        <p class="arabic-text">الكَافُ تُفِيدُ التَّشْبِيهَ (as / like)</p>
+        <p class="english-text">The Kaaf indicates simile/comparison - it means "like" or "as"</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">الإِعْرَابُ - Grammatical Analysis</h4>
+        <p class="arabic-text">حَرْفُ جَرٍّ مَبْنِيٌّ عَلَى الفَتْحِ لَا مَحَلَّ لَهُ مِنَ الإِعْرَابِ</p>
+        <p class="english-text">A preposition (harf al-jarr), built on fathah, with no grammatical position (i'raab)</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="example-box">
+        <div class="example-ar">السَّيَّارَةُ سَرِيعَةٌ كَالطَّائِرَةِ</div>
+        <div class="example-en">The car is fast like the airplane.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">القِطُّ كَالأَسَدِ</div>
+        <div class="example-en">The cat is like the lion.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">مَا جَاءُوا اليَوْمَ لِزِيَارَتِكُمْ <strong>كَعَادَتِهِمْ</strong> كُلَّ أُسْبُوعٍ</div>
+        <div class="example-en">They did not come today to visit you <strong>as is their habit</strong> every week. (from the dialogue)</div>
+    </div>
+
+    <div class="info-box">
+        <h4>شَاهِدٌ قُرْآنِيٌّ - Quranic Evidence</h4>
+        <p class="arabic-large" style="text-align:center;">﴿فَجَعَلَهُمْ كَعَصْفٍ مَأْكُولٍ﴾</p>
+        <p class="english-text" style="text-align:center;">And He made them like eaten straw. (Surah Al-Fil: 5)</p>
+    </div>
+</section>
+
+<!-- ===================== أَلَّا = أَنْ + لَا ===================== -->
+<section class="section" id="alla">
+    <h2 class="section-title">أَلَّا = أَنْ + لَا - Contraction of "Not To"</h2>
+    <p class="english-text">When negating the verb after أَنْ, the نون ساكنة of أَنْ merges with the لام of لَا through إدغام (assimilation)</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">القَاعِدَةُ - The Rule</h4>
+        <p class="arabic-text">أَنْ + لَا = أَلَّا (إِدْغَامُ النُّونِ السَّاكِنَةِ فِي اللَّامِ)</p>
+        <p class="english-text">أَنْ + لَا = أَلَّا (The silent noon merges/assimilates into the lam)</p>
+    </div>
+
+    <h3 class="section-subtitle">الإِثْبَاتُ وَالنَّفْيُ - Affirmative vs. Negative</h3>
+    <table>
+        <tr><th>الإِثْبَاتُ (Affirmative)</th><th>النَّفْيُ (Negative)</th></tr>
+        <tr>
+            <td>أُرِيدُ أَنْ أَشْرَبَ الشَّايَ</td>
+            <td>أُرِيدُ أَلَّا أَشْرَبَ الشَّايَ</td>
+        </tr>
+        <tr>
+            <td class="english-text">I want to drink tea</td>
+            <td class="english-text">I want not to drink tea</td>
+        </tr>
+        <tr>
+            <td>أَرْجُو أَنْ تَدْخُلَ</td>
+            <td>أَرْجُو أَلَّا تَدْخُلَ</td>
+        </tr>
+        <tr>
+            <td class="english-text">I hope you enter</td>
+            <td class="english-text">I hope you do not enter</td>
+        </tr>
+        <tr>
+            <td>يُمْكِنُكَ أَنْ تَذْهَبَ</td>
+            <td>يُمْكِنُكَ أَلَّا تَذْهَبَ</td>
+        </tr>
+        <tr>
+            <td class="english-text">It is possible for you to go</td>
+            <td class="english-text">It is possible for you not to go</td>
+        </tr>
+    </table>
+
+    <div class="warning-box">
+        <h4>تَنْبِيهٌ - Important Note</h4>
+        <p class="arabic-text">الفِعْلُ بَعْدَ أَلَّا يَبْقَى مَنْصُوبًا لِأَنَّ أَنْ لَا تَزَالُ مَوْجُودَةً</p>
+        <p class="english-text">The verb after أَلَّا remains in the accusative (mansoob) because أَنْ is still present in the contraction.</p>
+    </div>
+</section>
+
+<!-- ===================== التَّوْكِيدُ - EMPHASIS ===================== -->
+<section class="section" id="tawkeed">
+    <h2 class="section-title">التَّوْكِيدُ - Emphasis (Introduction)</h2>
+    <p class="english-text">Emphasis (التوكيد) is a way to strengthen the meaning of a word or sentence. It has two types:</p>
+
+    <div class="flowchart">
+        <div class="flow-top">التَّوْكِيدُ - Emphasis</div>
+        <div style="font-size: 30px; color: #00695c;">&#8595;</div>
+        <div class="flow-branches">
+            <div class="flow-branch">
+                <div class="flow-branch-title">التَّوْكِيدُ اللَّفْظِيُّ</div>
+                <div class="flow-branch-examples">Verbal Emphasis<br>(Repeating the word itself)</div>
+                <div class="flow-branch-examples" style="margin-top:10px; font-size:24px;">جَاءَ جَاءَ الطَّالِبُ</div>
+                <div class="flow-branch-examples" style="font-size:14px; font-family:Georgia,serif; color:#666;">The student came, came (indeed)!</div>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">التَّوْكِيدُ المَعْنَوِيُّ</div>
+                <div class="flow-branch-examples">Emphasis through Meaning<br>(Using specific words like نَفْس، عَيْن، كُلّ، جَمِيع)</div>
+                <div class="flow-branch-examples" style="margin-top:10px; font-size:24px;">جَاءَ المُدِيرُ نَفْسُهُ</div>
+                <div class="flow-branch-examples" style="font-size:14px; font-family:Georgia,serif; color:#666;">The director himself came.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">سَيَأْتِي تَفْصِيلُ هَذَا المَوْضُوعِ فِي الدُّرُوسِ القَادِمَةِ إِنْ شَاءَ اللهُ</p>
+        <p class="english-text">The detailed explanation of this topic will come in the upcoming lessons, God willing.</p>
+    </div>
+</section>
+
+<!-- ===================== EXERCISES ===================== -->
+<section class="section" id="exercises">
+    <h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2>
+
+    <!-- Exercise 5 -->
+    <h3 class="section-subtitle">التَّمْرِينُ الخَامِسُ - Exercise 5: لَامُ التَّعْلِيلِ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">اقْرَأِ الأَمْثِلَةَ الآتِيَةَ (خَرَجْتُ لِـ...):</p>
+        <p class="english-text">Read the following examples using لام التعليل (lam of purpose: "in order to"):</p>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">خَرَجْتُ لِأَشْرَبَ المَاءَ</div>
+        <div class="example-en">I went out in order to drink water.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">خَرَجْتُ لِأَغْسِلَ وَجْهِي</div>
+        <div class="example-en">I went out in order to wash my face.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">خَرَجْتُ لِأَذْهَبَ إِلَى المَكْتَبَةِ</div>
+        <div class="example-en">I went out in order to go to the library.</div>
+    </div>
+
+    <!-- Exercise 6 -->
+    <h3 class="section-subtitle">التَّمْرِينُ السَّادِسُ - Exercise 6: اقْرَأِ الجُمَلَ الآتِيَةَ (أَنْ)</h3>
+    <div class="rule-box">
+        <p class="arabic-text">اقْرَأِ الجُمَلَ الآتِيَةَ الَّتِي تَحْتَوِي عَلَى "أَنْ":</p>
+        <p class="english-text">Read the following sentences containing "أَنْ":</p>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(١) أُرِيدُ أَنْ أَذْهَبَ إِلَى مِصْرَ فِي عُطْلَةِ الصَّيْفِ</div>
+        <div class="example-en">I want to go to Egypt during the summer holiday.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) أُرِيدُ أَنْ أَزُورَ أَهْلِي</div>
+        <div class="example-en">I want to visit my family.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) أُرِيدُ أَنْ أَسْمَعَ الأَخْبَارَ مِنَ الإِذَاعَةِ</div>
+        <div class="example-en">I want to listen to the news from the radio.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) يُمْكِنُكَ أَنْ تَجْلِسَ هُنَا</div>
+        <div class="example-en">It is possible for you to sit here.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٥) لَا يُمْكِنُكَ أَنْ تَأْخُذَ هَذَا الكِتَابَ</div>
+        <div class="example-en">It is not possible for you to take this book.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٦) أَيُمْكِنُنِي أَنْ آخُذَ هَذِهِ المَجَلَّةَ إِلَى البَيْتِ؟</div>
+        <div class="example-en">Is it possible for me to take this magazine to the house?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٧) هُوَ لَا يُرِيدُ أَنْ يَدْرُسَ الطِّبَّ</div>
+        <div class="example-en">He does not want to study medicine.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٨) أَرَادَ أَنْ يَذْهَبَ إِلَى السُّوقِ</div>
+        <div class="example-en">He wanted to go to the market.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٩) أَرْجُو أَنْ تَكْتُبَ الوَاجِبَ</div>
+        <div class="example-en">I hope you write the homework.</div>
+    </div>
+
+    <!-- Exercise 7 -->
+    <h3 class="section-subtitle">التَّمْرِينُ السَّابِعُ - Exercise 7</h3>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ مُسْتَعْمِلًا "أَنْ":</p>
+        <p class="english-text">Answer the following questions using "أَنْ":</p>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(١) أَيْنَ تُرِيدُ أَنْ تَذْهَبَ فِي عُطْلَةِ الصَّيْفِ؟</div>
+        <div class="example-en">Where do you want to go on summer holiday?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) لِمَ تُرِيدُ أَنْ تَدْرُسَ اللُّغَةَ العَرَبِيَّةَ؟</div>
+        <div class="example-en">Why do you want to study the Arabic language?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) مَعَ مَنْ تُرِيدُ أَنْ تَلْعَبَ؟</div>
+        <div class="example-en">With whom do you want to play?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) مِنْ أَيِّ إِذَاعَةٍ تُرِيدُ أَنْ تَسْمَعَ الأَخْبَارَ؟</div>
+        <div class="example-en">From which radio station do you want to hear the news?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٧) مَاذَا تُرِيدُ أَنْ تَأْكُلَ فِي العَشَاءِ؟</div>
+        <div class="example-en">What do you want to eat for dinner?</div>
+    </div>
+
+    <!-- Exercise 8 -->
+    <h3 class="section-subtitle">التَّمْرِينُ الثَّامِنُ - Exercise 8: لَامُ التَّعْلِيلِ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">اقْرَأِ الجُمَلَ الآتِيَةَ مَعَ لَامِ التَّعْلِيلِ:</p>
+        <p class="english-text">Read the following sentences with لام التعليل (lam of purpose):</p>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(١) ذَهَبْتُ إِلَى السُّوقِ لِأَشْتَرِيَ كُتُبًا</div>
+        <div class="example-en">I went to the market to buy books.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) ذَهَبَ إِلَى المُسْتَشْفَى لِيَزُورَ أَخَاهُ المَرِيضَ</div>
+        <div class="example-en">He went to the hospital to visit his sick brother.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) جَلَسَ أَمَامَ المُدَرِّسِ لِيَرَى مَا يَكْتُبُ عَلَى السَّبُّورَةِ</div>
+        <div class="example-en">He sat in front of the teacher to see what he writes on the board.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) خَرَجَ مِنَ الفَصْلِ لِيَشْرَبَ المَاءَ</div>
+        <div class="example-en">He left the classroom to drink water.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٥) ذَهَبْنَا إِلَى المَطَارِ لِنَسْتَقْبِلَ ضُيُوفَنَا</div>
+        <div class="example-en">We went to the airport to receive our guests.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٦) جَاءَ إِلَى المَدِينَةِ المُنَوَّرَةِ لِيَدْرُسَ فِي الجَامِعَةِ الإِسْلَامِيَّةِ</div>
+        <div class="example-en">He came to Madinah to study at the Islamic University.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٧) فَتَحْتُ النَّافِذَةَ لِيَدْخُلَ الهَوَاءُ</div>
+        <div class="example-en">I opened the window so that the air would enter.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٨) أَغْلَقْتُ النَّافِذَةَ لِيَخْرُجَ الذُّبَابُ</div>
+        <div class="example-en">I closed the window so that the flies would leave.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٩) ذَهَبَ إِلَى البَرِيدِ لِيُرْسِلَ ظَرْفًا إِلَى أَبِيهِ</div>
+        <div class="example-en">He went to the post office to send an envelope to his father.</div>
+    </div>
+
+    <!-- Exercise 9 -->
+    <h3 class="section-subtitle">التَّمْرِينُ التَّاسِعُ - Exercise 9: أَجِبْ بِاسْتِعْمَالِ لَامِ التَّعْلِيلِ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ مُسْتَعْمِلًا لَامَ التَّعْلِيلِ:</p>
+        <p class="english-text">Answer the following questions using لام التعليل (lam of purpose):</p>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(١) لِمَ ذَهَبْتَ إِلَى المُسْتَشْفَى؟ — ذَهَبْتُ إِلَى المُسْتَشْفَى لِأَزُورَ صَدِيقِي المَرِيضَ</div>
+        <div class="example-en">Why did you go to the hospital? — I went to the hospital to visit my sick friend.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) لِمَ ذَهَبْتَ إِلَى السُّوقِ؟ — ذَهَبْتُ إِلَى السُّوقِ لِأَشْتَرِيَ ثِيَابًا جَدِيدَةً</div>
+        <div class="example-en">Why did you go to the market? — I went to the market to buy new clothes.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) لِمَ فَتَحْتَ النَّافِذَةَ؟ — فَتَحْتُ النَّافِذَةَ لِيَدْخُلَ الهَوَاءُ</div>
+        <div class="example-en">Why did you open the window? — I opened the window so that the air would enter.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) لِمَ خَرَجْتَ مِنَ الفَصْلِ؟ — خَرَجْتُ مِنَ الفَصْلِ لِأَشْرَبَ المَاءَ</div>
+        <div class="example-en">Why did you leave the classroom? — I left the classroom to drink water.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٥) لِمَ ذَهَبْتَ إِلَى المَطَارِ؟ — ذَهَبْتُ إِلَى المَطَارِ لِأَسْتَقْبِلَ ضُيُوفِي</div>
+        <div class="example-en">Why did you go to the airport? — I went to the airport to receive my guests.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٦) لِمَ جِئْتَ إِلَى المَدِينَةِ المُنَوَّرَةِ؟ — جِئْتُ إِلَى المَدِينَةِ لِأَدْرُسَ فِي الجَامِعَةِ</div>
+        <div class="example-en">Why did you come to Madinah? — I came to Madinah to study at the university.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٧) لِمَ ذَهَبْتَ إِلَى البَرِيدِ؟ — ذَهَبْتُ إِلَى البَرِيدِ لِأُرْسِلَ ظَرْفًا</div>
+        <div class="example-en">Why did you go to the post office? — I went to the post office to send an envelope.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٨) لِمَ أَغْلَقْتَ النَّافِذَةَ؟ — أَغْلَقْتُ النَّافِذَةَ لِيَخْرُجَ الذُّبَابُ</div>
+        <div class="example-en">Why did you close the window? — I closed the window so the flies would leave.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٩) لِمَ جَلَسْتَ أَمَامَ المُدَرِّسِ؟ — جَلَسْتُ أَمَامَهُ لِأَرَى مَا يَكْتُبُ عَلَى السَّبُّورَةِ</div>
+        <div class="example-en">Why did you sit in front of the teacher? — I sat in front of him to see what he writes on the board.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(١٠) لِمَ ذَهَبْتَ إِلَى المَكْتَبَةِ؟ — ذَهَبْتُ إِلَى المَكْتَبَةِ لِأَقْرَأَ كِتَابًا</div>
+        <div class="example-en">Why did you go to the library? — I went to the library to read a book.</div>
+    </div>
+
+    <!-- Exercise 10 -->
+    <h3 class="section-subtitle">التَّمْرِينُ العَاشِرُ - Exercise 10: يُمْكِنُ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">أَمْثِلَةٌ عَلَى اسْتِخْدَامِ يُمْكِنُ:</p>
+        <p class="english-text">Examples of using يُمْكِنُ (it is possible):</p>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(١) أَيُمْكِنُنِي أَنْ أَجْلِسَ هُنَا؟ — نَعَمْ، يُمْكِنُكَ أَنْ تَجْلِسَ هُنَا</div>
+        <div class="example-en">Is it possible for me to sit here? — Yes, it is possible for you to sit here.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) أَيُمْكِنُنِي أَنْ آخُذَ هَذَا الكِتَابَ؟ — لَا، لَا يُمْكِنُكَ أَنْ تَأْخُذَهُ</div>
+        <div class="example-en">Is it possible for me to take this book? — No, it is not possible for you to take it.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) أَيُمْكِنُهُ أَنْ يَخْرُجَ مِنَ المُسْتَشْفَى؟ — لَا يُمْكِنُهُ، هُوَ مَرِيضٌ جِدًّا</div>
+        <div class="example-en">Is it possible for him to leave the hospital? — It is not possible for him, he is very sick.</div>
+    </div>
+
+    <!-- Exercise 14 -->
+    <h3 class="section-subtitle">التَّمْرِينُ الرَّابِعَ عَشَرَ - Exercise 14: الفُصُولُ الأَرْبَعَةُ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">الفُصُولُ الأَرْبَعَةُ - The Four Seasons:</p>
+        <p class="english-text">Learn the names of the four seasons in Arabic:</p>
+    </div>
+
+    <div class="vocab-grid">
+        <div class="vocab-item">
+            <div class="vocab-ar">الشِّتَاءُ</div>
+            <div class="vocab-en">Winter</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">الرَّبِيعُ</div>
+            <div class="vocab-en">Spring</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">الصَّيْفُ</div>
+            <div class="vocab-en">Summer</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">الخَرِيفُ</div>
+            <div class="vocab-en">Autumn / Fall</div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== VOCABULARY ===================== -->
+<section class="section" id="vocabulary">
+    <h2 class="section-title">الكَلِمَاتُ الجَدِيدَةُ - New Vocabulary</h2>
+
+    <div class="vocab-grid">
+        <div class="vocab-item"><div class="vocab-ar">عُطْلَةٌ</div><div class="vocab-en">Holiday / Vacation</div></div>
+        <div class="vocab-item"><div class="vocab-ar">مِصْرُ</div><div class="vocab-en">Egypt</div></div>
+        <div class="vocab-item"><div class="vocab-ar">أَهْلٌ</div><div class="vocab-en">Family / People</div></div>
+        <div class="vocab-item"><div class="vocab-ar">عَشَاءٌ</div><div class="vocab-en">Dinner</div></div>
+        <div class="vocab-item"><div class="vocab-ar">العَامُ المُقْبِلُ</div><div class="vocab-en">Next year</div></div>
+        <div class="vocab-item"><div class="vocab-ar">هُدُوءٌ</div><div class="vocab-en">Quietness</div></div>
+        <div class="vocab-item"><div class="vocab-ar">ظَرْفٌ</div><div class="vocab-en">Envelope / Circumstance</div></div>
+        <div class="vocab-item"><div class="vocab-ar">عِلَاجٌ</div><div class="vocab-en">Treatment / Cure</div></div>
+        <div class="vocab-item"><div class="vocab-ar">ذُبَابٌ</div><div class="vocab-en">Flies</div></div>
+        <div class="vocab-item"><div class="vocab-ar">إِعْلَانٌ</div><div class="vocab-en">Announcement</div></div>
+        <div class="vocab-item"><div class="vocab-ar">ضَوْضَاءُ</div><div class="vocab-en">Noise</div></div>
+        <div class="vocab-item"><div class="vocab-ar">أَمْكَنَ (يُمْكِنُ)</div><div class="vocab-en">To be possible</div></div>
+        <div class="vocab-item"><div class="vocab-ar">سَمَحَ (يَسْمَحُ)</div><div class="vocab-en">To allow</div></div>
+        <div class="vocab-item"><div class="vocab-ar">بَصَقَ (يَبْصُقُ)</div><div class="vocab-en">To spit</div></div>
+        <div class="vocab-item"><div class="vocab-ar">جَارَةٌ</div><div class="vocab-en">Neighbor (f.)</div></div>
+        <div class="vocab-item"><div class="vocab-ar">قَمِيصٌ</div><div class="vocab-en">Shirt</div></div>
+        <div class="vocab-item"><div class="vocab-ar">غَسَلَ (يَغْسِلُ)</div><div class="vocab-en">To wash</div></div>
+        <div class="vocab-item"><div class="vocab-ar">كَوَى (يَكْوِي)</div><div class="vocab-en">To iron</div></div>
+        <div class="vocab-item"><div class="vocab-ar">مُتْحَفٌ</div><div class="vocab-en">Museum</div></div>
+        <div class="vocab-item"><div class="vocab-ar">عِيَادَةٌ</div><div class="vocab-en">Visit (to the sick) / Clinic</div></div>
+    </div>
+
+    <h3 class="section-subtitle">الجُمُوعُ - Plurals</h3>
+    <table>
+        <tr><th>المُفْرَدُ (Singular)</th><th>الجَمْعُ (Plural)</th><th>English</th></tr>
+        <tr><td>ظَرْفٌ</td><td>أَظْرُفٌ وَظُرُوفٌ</td><td class="english-text">Envelope(s) / Circumstance(s)</td></tr>
+        <tr><td>ذُبَابٌ</td><td>ذِبَّانٌ</td><td class="english-text">Fly / Flies</td></tr>
+        <tr><td>عُطْلَةٌ</td><td>عُطْلَاتٌ</td><td class="english-text">Holiday(s)</td></tr>
+        <tr><td>أَهْلٌ</td><td>أَهْلُونَ</td><td class="english-text">Family / Families</td></tr>
+        <tr><td>شَيْءٌ</td><td>أَشْيَاءُ</td><td class="english-text">Thing(s)</td></tr>
+        <tr><td>مَرِيضٌ</td><td>مَرْضَى</td><td class="english-text">Sick person / Sick people</td></tr>
+        <tr><td>حَمَّامٌ</td><td>حَمَّامَاتٌ</td><td class="english-text">Bathroom(s)</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">الأَضْدَادُ - Opposites</h3>
+    <table>
+        <tr><th>الكَلِمَةُ</th><th>المَعْنَى</th><th>الضِّدُّ</th><th>المَعْنَى</th></tr>
+        <tr><td>المُقْبِلُ / القَادِمُ / التَّالِي</td><td class="english-text">Next / Coming / Following</td><td>المَاضِي / السَّابِقُ</td><td class="english-text">Past / Previous</td></tr>
+    </table>
+</section>
+
+<!-- ===================== MCQ ===================== -->
+<section class="section" id="mcq">
+    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
+
+    <div class="mcq-question" data-correct="b" data-explanation="أَمْرُ أَخَذَ هُوَ خُذْ (تُحْذَفُ الهَمْزَةُ). - The imperative of أَخَذَ is خُذْ.">
+        <h4 class="arabic-medium">١. مَا أَمْرُ "أَخَذَ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) اُؤْخُذْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) خُذْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) أَخِذْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) اِئْخُذْ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="يُمْكِنُ يَأْتِي بَعْدَهَا أَنْ + المضارع المنصوب. - يُمْكِنُ is followed by أَنْ + accusative verb.">
+        <h4 class="arabic-medium">٢. "يُمْكِنُكَ أَنْ ..." - الفِعْلُ بَعْدَ "أَنْ" يَكُونُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) مَرْفُوعًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) مَجْزُومًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) مَنْصُوبًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) مَبْنِيًّا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="مَصْدَرُ أَخَذَ هُوَ أَخْذ. - The masdar of أَخَذَ is أَخْذ.">
+        <h4 class="arabic-medium">٣. مَا مَصْدَرُ "أَخَذَ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) أَخْذٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) مَأْخُوذٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) آخِذٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) أَخْذَةٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="عُطْلَة تَعْنِي Holiday/Vacation. - عُطْلَة means holiday.">
+        <h4 class="arabic-medium">٤. مَعْنَى "عُطْلَة":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) Dinner</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) Treatment</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) Noise</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) Holiday</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="لَا يُمْكِنُهُ أَنْ يَذْهَبَ = It's not possible for him to go. - Negation with لا.">
+        <h4 class="arabic-medium">٥. "لَا يُمْكِنُهُ أَنْ يَذْهَبَ" تَعْنِي:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) يُرِيدُ أَنْ يَذْهَبَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) لَا يَسْتَطِيعُ الذَّهَابَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) سَيَذْهَبُ قَرِيبًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) ذَهَبَ بِالفِعْلِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="ضَوْضَاء تَعْنِي Noise. - ضَوْضَاء means noise.">
+        <h4 class="arabic-medium">٦. مَعْنَى "ضَوْضَاء":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) Quietness</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) Darkness</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) Noise</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) Announcement</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="أَنْ تَأْكُلَ: الفعل منصوب بالفتحة بعد أَنْ. - تَأْكُلَ is accusative with fathah after أَنْ.">
+        <h4 class="arabic-medium">٧. "مَاذَا تُرِيدُ أَنْ تَأْكُلَ" - "تَأْكُلَ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) مَنْصُوبٌ بِالفَتْحَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) مَرْفُوعٌ بِالضَّمَّةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) مَجْزُومٌ بِالسُّكُونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) مَبْنِيٌّ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="الذُّبَاب جَمْعُهَا ذِبَّان. - The plural of ذُبَاب is ذِبَّان.">
+        <h4 class="arabic-medium">٨. جَمْعُ "ذُبَاب":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) ذُبَابَاتٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) ذَبَائِبُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) أَذْبِبَةٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) ذِبَّانٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="الكَافُ حَرْفُ جَرٍّ يُفِيدُ التَّشْبِيهَ (as/like). - The Kaaf is a preposition indicating simile.">
+        <h4 class="arabic-medium">٩. مَاذَا تُفِيدُ الكَافُ فِي "القِطُّ كَالأَسَدِ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q9" value="a"><span>أ) التَّعْلِيل (Reasoning)</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="b"><span>ب) التَّشْبِيه (Simile)</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="c"><span>ج) الاسْتِفْهَام (Questioning)</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="d"><span>د) النَّفْي (Negation)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="أَلَّا = أَنْ + لَا (إِدْغَامُ النُّونِ السَّاكِنَةِ فِي اللَّامِ). - أَلَّا is a contraction of أَنْ + لَا.">
+        <h4 class="arabic-medium">١٠. "أَلَّا" هِيَ اخْتِصَارٌ لِـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q10" value="a"><span>أ) أَنَّ + لَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="b"><span>ب) إِلَّا + لَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="c"><span>ج) أَنْ + لَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="d"><span>د) أَلَا + لَا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الثَّامِنَةَ عَشْرَةَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 18</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

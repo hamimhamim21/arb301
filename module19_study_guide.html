@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 19 - ARB303 Study Guide | المحاضرة التاسعة عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .flowchart { display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 20px 0; }
+        .flow-top { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px 30px; border-radius: 15px; font-size: 28px; font-weight: bold; text-align: center; }
+        .flow-branches { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .flow-branch { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 15px 20px; border-radius: 15px; text-align: center; flex: 1; min-width: 200px; border: 2px solid #00897b; }
+        .flow-branch-title { font-size: 22px; font-weight: bold; color: #00695c; margin-bottom: 8px; }
+        .flow-branch-examples { font-size: 20px; color: #2c3e50; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .irab-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 20px; }
+        .irab-table th { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 12px; text-align: center; }
+        .irab-table td { padding: 12px 15px; border: 1px solid #ddd; text-align: right; font-size: 22px; }
+        .irab-table tr:nth-child(even) { background: #f8f9fa; }
+        .irab-word { font-size: 26px; color: #00695c; font-weight: bold; }
+        .irab-detail { font-size: 20px; color: #2c3e50; }
+        .dialogue-box { background: #fafafa; border-radius: 10px; padding: 20px; margin: 15px 0; border: 2px solid #e0e0e0; }
+        .dialogue-speaker { font-size: 24px; color: #00695c; font-weight: bold; margin-bottom: 5px; }
+        .dialogue-text { font-size: 26px; color: #2c3e50; margin-bottom: 5px; }
+        .dialogue-en { font-family: Georgia, serif; font-size: 16px; color: #888; direction: ltr; text-align: left; }
+        @media (max-width: 768px) { .arabic-large { font-size: 32px; } .arabic-medium { font-size: 26px; } .section-title { font-size: 28px; } table { font-size: 18px; } .flow-branches { flex-direction: column; } .irab-table td { font-size: 18px; } }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
+
+<nav class="nav-container">
+    <div class="nav-title">المحاضرة التاسعة عشرة - Lecture 19</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a>
+        <a href="#examples"><span class="nav-ar">أمثلة</span><span class="nav-en">Examples</span></a>
+        <a href="#tawkeed"><span class="nav-ar">التوكيد</span><span class="nav-en">Emphasis</span></a>
+        <a href="#tawkeed-irab"><span class="nav-ar">إعراب التوكيد</span><span class="nav-en">Tawkeed I'rab</span></a>
+        <a href="#asmaa-afaal"><span class="nav-ar">أسماء الأفعال</span><span class="nav-en">Verbal Nouns</span></a>
+        <a href="#lesson18"><span class="nav-ar">الدرس ١٨</span><span class="nav-en">Lesson 18</span></a>
+        <a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ التَّاسِعَةَ عَشْرَةَ</h1>
+    <div class="subtitle">Lecture 19 - الدَّرْسُ الثَّامِنَ عَشَرَ (Lesson 18)</div>
+</div>
+
+<!-- ===================== SECTION 1: VERB رَجَا ===================== -->
+<section class="section" id="verb">
+    <h2 class="section-title">الفِعْلُ: رَجَا - يَرْجُو</h2>
+    <p class="english-text">The Verb: To hope / To wish / To request -- This is a defective verb (فِعْلٌ نَاقِصٌ) ending in a weak letter (واو). The واو is deleted (تُحْذَفُ) in certain conjugated forms.</p>
+
+    <div class="formula-box">
+        <div class="formula">رَجَا - يَرْجُو - لَنْ يَرْجُوَ - لَمْ يَرْجُ - اُرْجُ - رَجَاءً</div>
+        <p class="english-text">Past - Present - Subjunctive (لَنْ) - Jussive (لَمْ) - Imperative - Masdar</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">المَصْدَرُ: الرَّجَاءُ</h4>
+        <p class="english-text">Masdar: الرَّجَاءُ (Hope / Request) -- Note: الواو تُحْذَفُ (the waaw is deleted) in the jussive (لَمْ يَرْجُ) and imperative (اُرْجُ) forms.</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ تَصْرِيفِ الفِعْلِ - Full 14-Pronoun Conjugation Table</h3>
+
+    <table>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ + المُضَارِعُ</th><th>لَمْ + المُضَارِعُ</th><th>الأَمْرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>رَجَوْتُ</td><td>أَرْجُو</td><td>لَنْ أَرْجُوَ</td><td>لَمْ أَرْجُ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>رَجَوْنَا</td><td>نَرْجُو</td><td>لَنْ نَرْجُوَ</td><td>لَمْ نَرْجُ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>رَجَوْتَ</td><td>تَرْجُو</td><td>لَنْ تَرْجُوَ</td><td>لَمْ تَرْجُ</td><td>اُرْجُ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>رَجَوْتِ</td><td>تَرْجِينَ</td><td>لَنْ تَرْجِي</td><td>لَمْ تَرْجِي</td><td>اُرْجِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا (مُذَكَّر)</td><td>رَجَوْتُمَا</td><td>تَرْجُوَانِ</td><td>لَنْ تَرْجُوَا</td><td>لَمْ تَرْجُوَا</td><td>اُرْجُوَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا (مُؤَنَّث)</td><td>رَجَوْتُمَا</td><td>تَرْجُوَانِ</td><td>لَنْ تَرْجُوَا</td><td>لَمْ تَرْجُوَا</td><td>اُرْجُوَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>رَجَوْتُمْ</td><td>تَرْجُونَ</td><td>لَنْ تَرْجُوا</td><td>لَمْ تَرْجُوا</td><td>اُرْجُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>رَجَوْتُنَّ</td><td>تَرْجُونَ</td><td>لَنْ تَرْجُونَ</td><td>لَمْ تَرْجُونَ</td><td>اُرْجُونَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>رَجَا</td><td>يَرْجُو</td><td>لَنْ يَرْجُوَ</td><td>لَمْ يَرْجُ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>رَجَتْ</td><td>تَرْجُو</td><td>لَنْ تَرْجُوَ</td><td>لَمْ تَرْجُ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مُذَكَّر)</td><td>رَجَوَا</td><td>يَرْجُوَانِ</td><td>لَنْ يَرْجُوَا</td><td>لَمْ يَرْجُوَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مُؤَنَّث)</td><td>رَجَتَا</td><td>تَرْجُوَانِ</td><td>لَنْ تَرْجُوَا</td><td>لَمْ تَرْجُوَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>رَجَوْا</td><td>يَرْجُونَ</td><td>لَنْ يَرْجُوا</td><td>لَمْ يَرْجُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>رَجَوْنَ</td><td>يَرْجُونَ</td><td>لَنْ يَرْجُونَ</td><td>لَمْ يَرْجُونَ</td><td>-</td></tr>
+    </table>
+</section>
+
+<!-- ===================== SECTION 2: EXAMPLES ===================== -->
+<section class="section" id="examples">
+    <h2 class="section-title">أَمْثِلَةٌ عَلَى الفِعْلِ رَجَا - Examples of the Verb رَجَا</h2>
+
+    <div class="example-box">
+        <div class="example-ar">المُسْلِمُ يَرْجُو الخَيْرَ دَائِمًا لِلنَّاسِ</div>
+        <div class="example-en">The Muslim always hopes for good for people</div>
+    </div>
+
+    <div class="example-box" style="border-right-color: #ff9800;">
+        <div class="example-ar">﴿إِنَّهُمْ كَانُوا لَا يَرْجُونَ حِسَابًا﴾</div>
+        <div class="example-en">Indeed, they did not expect any reckoning (Surah An-Naba' 78:27)</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">نَرْجُو أَنْ نَذْهَبَ إِلَى مَكَّةَ غَدًا</div>
+        <div class="example-en">We hope to go to Makkah tomorrow</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">أَرْجُو أَنْ تُسَاعِدَنِي</div>
+        <div class="example-en">I hope that you help me</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">نَرْجُو مِنَ اللهِ العَفْوَ وَالعَافِيَةَ</div>
+        <div class="example-en">We hope from Allah for forgiveness and well-being</div>
+    </div>
+</section>
+
+<!-- ===================== SECTION 3: التَّوْكِيدُ ===================== -->
+<section class="section" id="tawkeed">
+    <h2 class="section-title">التَّوْكِيدُ - Emphasis / Intensifying Apposition</h2>
+    <p class="english-text">Grammar from Lesson 18 -- التَّوْكِيدُ (Emphasis) is a type of تَابِع (follower) that reinforces the meaning of the word before it.</p>
+
+    <!-- Flowchart: Two Types -->
+    <h3 class="section-subtitle">أَنْوَاعُ التَّوْكِيدِ - Types of Emphasis</h3>
+    <div class="flowchart">
+        <div class="flow-top">التَّوْكِيدُ</div>
+        <div style="font-size: 30px; color: #00695c;">&#8595;</div>
+        <div class="flow-branches">
+            <div class="flow-branch">
+                <div class="flow-branch-title">التَّوْكِيدُ اللَّفْظِيُّ</div>
+                <div class="flow-branch-examples">Verbal Emphasis<br>(Repeating the word itself)</div>
+                <div class="flow-branch-examples" style="margin-top:8px; font-size:18px;">جَاءَ مُحَمَّدٌ مُحَمَّدٌ</div>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">التَّوْكِيدُ المَعْنَوِيُّ</div>
+                <div class="flow-branch-examples">Emphasis through Meaning<br>(Using specific words)</div>
+                <div class="flow-branch-examples" style="margin-top:8px; font-size:18px;">كُلّ - نَفْس - عَيْن - جَمِيع</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Explanation of التوكيد المعنوي with كُلّ -->
+    <h3 class="section-subtitle">التَّوْكِيدُ المَعْنَوِيُّ بِـ "كُلّ" - Emphasis with كُلّ</h3>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">أَلْفَاظُ التَّوْكِيدِ المَعْنَوِيِّ</h4>
+        <p class="arabic-text">التَّوْكِيدُ المَعْنَوِيُّ يَكُونُ بِأَلْفَاظٍ مَعْرُوفَةٍ مِنْهَا:</p>
+        <p class="arabic-large" style="text-align:center;">نَفْسُ - عَيْنُ - كُلُّ - جَمِيعُ</p>
+        <p class="english-text">Semantic emphasis uses specific words: نَفْس (self/same), عَيْن (very/same), كُلّ (all/every), جَمِيع (all/entirety)</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">كَيْفَ يَعْمَلُ التَّوْكِيدُ بِـ "كُلّ"؟</h4>
+        <p class="arabic-text">جَاءَ الأَوْلَادُ ← (بِدُونِ تَوْكِيدٍ - without emphasis)</p>
+        <p class="arabic-text">جَاءَ الأَوْلَادُ <strong>كُلُّهُمْ</strong> ← (بِتَوْكِيدٍ - with emphasis: ALL the boys came)</p>
+        <p class="english-text">The word كُلّ must be followed by a pronoun (ضَمِير) as مُضَافٌ إِلَيْهِ. The word before كُلّ is called المُؤَكَّد (the emphasized word).</p>
+    </div>
+
+    <!-- CRITICAL RULE -->
+    <div class="warning-box">
+        <h4 class="arabic-medium">قَاعِدَةٌ مُهِمَّةٌ جِدًّا - Critical Rule</h4>
+        <p class="arabic-text"><strong>كُلّ + ضَمِير = تَوْكِيدٌ</strong></p>
+        <p class="arabic-text"><strong>كُلّ + اسْم = لَيْسَ تَوْكِيدًا!</strong> (بَلْ هُوَ مُبْتَدَأٌ أَوْ فَاعِلٌ أَوْ غَيْرُ ذَلِكَ)</p>
+        <p class="english-text">When كُلّ is followed by a PRONOUN (ضمير) = it is تَوْكِيد (emphasis).</p>
+        <p class="english-text">When كُلّ is followed by a NOUN (اسم) = it is NOT تَوْكِيد (it may be مبتدأ, فاعل, etc.)</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">حَضَرَ الطُّلَّابُ <strong>كُلُّهُمْ</strong> ← تَوْكِيدٌ (كُلّ + ضَمِير هُمْ)</div>
+        <div class="example-en">All the students attended -- كُلُّهُمْ is tawkeed because it's followed by the pronoun هُمْ</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>كُلُّ</strong> الطُّلَّابِ فِي الفَصْلِ ← لَيْسَ تَوْكِيدًا (كُلّ + اسْم الطُّلَّابِ)</div>
+        <div class="example-en">All the students are in the classroom -- كُلّ is NOT tawkeed; it is مُبْتَدَأ because it's followed by the noun الطُّلَّاب</div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">جَاءَ المُدِيرُ <strong>نَفْسُهُ</strong></div>
+        <div class="example-en">The director himself came (نَفْسُهُ is tawkeed - marfoo' following المُدِيرُ)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">رَأَيْتُ المُدِيرَ <strong>نَفْسَهُ</strong></div>
+        <div class="example-en">I saw the director himself (نَفْسَهُ is tawkeed - mansoob following المُدِيرَ)</div>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">القَاعِدَةُ - The Rule</h4>
+        <p class="arabic-text">التَّوْكِيدُ يَتْبَعُ المُؤَكَّدَ فِي الإِعْرَابِ (رَفْعًا وَنَصْبًا وَجَرًّا)</p>
+        <p class="english-text">The emphasis word follows the emphasized word in grammatical case (nominative, accusative, genitive). If المُؤَكَّد is مَرْفُوع, then التَّوْكِيد is also مَرْفُوع, and so on.</p>
+    </div>
+</section>
+
+<!-- ===================== SECTION 4: I'RAB ANALYSIS TABLES ===================== -->
+<section class="section" id="tawkeed-irab">
+    <h2 class="section-title">إِعْرَابُ التَّوْكِيدِ - I'rab Analysis of Emphasis</h2>
+    <p class="english-text">Six detailed I'rab analysis tables comparing كُلّ as a regular word vs. كُلّ as tawkeed in all three grammatical cases (مرفوع / منصوب / مجرور). This is the core content of this lecture.</p>
+
+    <!-- TABLE 1: كُلّ as Subject (NOT tawkeed) - مرفوع -->
+    <h3 class="section-subtitle">١. كُلّ كَفَاعِلٍ (لَيْسَ تَوْكِيدًا) - مَرْفُوعٌ</h3>
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align:center;">دَخَلَ كُلُّ الرِّجَالِ المَسْجِدَ</p>
+        <p class="english-text">All the men entered the mosque (كُلّ is the SUBJECT, NOT tawkeed -- it is followed by a noun)</p>
+    </div>
+    <table class="irab-table">
+        <tr><th>الكَلِمَةُ</th><th>الإِعْرَابُ</th></tr>
+        <tr><td class="irab-word">دَخَلَ</td><td class="irab-detail">فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى الفَتْحِ<br><span class="english-text">Past tense verb, built on fathah</span></td></tr>
+        <tr><td class="irab-word">كُلُّ</td><td class="irab-detail">فَاعِلٌ مَرْفُوعٌ بِالضَّمَّةِ، وَهُوَ مُضَافٌ<br><span class="english-text">Subject, nominative with dammah (NOT tawkeed -- followed by noun). It is mudaaf.</span></td></tr>
+        <tr><td class="irab-word">الرِّجَالِ</td><td class="irab-detail">مُضَافٌ إِلَيْهِ مَجْرُورٌ بِالكَسْرَةِ<br><span class="english-text">Mudaaf ilayhi, genitive with kasrah</span></td></tr>
+        <tr><td class="irab-word">المَسْجِدَ</td><td class="irab-detail">مَفْعُولٌ بِهِ مَنْصُوبٌ بِالفَتْحَةِ<br><span class="english-text">Direct object, accusative with fathah</span></td></tr>
+    </table>
+
+    <!-- TABLE 2: كُلّ as Tawkeed - مرفوع -->
+    <h3 class="section-subtitle">٢. كُلّ كَتَوْكِيدٍ - مَرْفُوعٌ</h3>
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align:center;">الرِّجَالُ كُلُّهُمْ دَخَلُوا المَسْجِدَ</p>
+        <p class="english-text">The men, all of them, entered the mosque (كُلُّهُمْ is TAWKEED -- followed by pronoun هُمْ)</p>
+    </div>
+    <table class="irab-table">
+        <tr><th>الكَلِمَةُ</th><th>الإِعْرَابُ</th></tr>
+        <tr><td class="irab-word">الرِّجَالُ</td><td class="irab-detail">مُبْتَدَأٌ مَرْفُوعٌ بِالضَّمَّةِ (المُؤَكَّدُ)<br><span class="english-text">Subject (mubtada), nominative with dammah -- this is the emphasized word (المؤكّد)</span></td></tr>
+        <tr><td class="irab-word">كُلُّهُمْ</td><td class="irab-detail">تَوْكِيدٌ مَعْنَوِيٌّ مَرْفُوعٌ بِالضَّمَّةِ، وَهُوَ مُضَافٌ، وَ"هُمْ" مُضَافٌ إِلَيْهِ<br><span class="english-text">Semantic emphasis (tawkeed ma'nawi), nominative with dammah. It is mudaaf, and هُمْ is mudaaf ilayhi.</span></td></tr>
+        <tr><td class="irab-word">دَخَلُوا المَسْجِدَ</td><td class="irab-detail">الجُمْلَةُ الفِعْلِيَّةُ خَبَرُ المُبْتَدَأِ<br><span class="english-text">The verbal sentence is the predicate (khabar) of the mubtada</span></td></tr>
+    </table>
+
+    <!-- TABLE 3: كُلّ as اسم إنّ (NOT tawkeed) - منصوب -->
+    <h3 class="section-subtitle">٣. كُلّ كَاسْمِ إِنَّ (لَيْسَ تَوْكِيدًا) - مَنْصُوبٌ</h3>
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align:center;">إِنَّ كُلَّ الكُتُبِ فِي الحَقِيبَةِ</p>
+        <p class="english-text">Indeed, all the books are in the bag (كُلّ is اسم إنّ, NOT tawkeed -- followed by noun)</p>
+    </div>
+    <table class="irab-table">
+        <tr><th>الكَلِمَةُ</th><th>الإِعْرَابُ</th></tr>
+        <tr><td class="irab-word">إِنَّ</td><td class="irab-detail">حَرْفُ تَوْكِيدٍ وَنَصْبٍ<br><span class="english-text">Particle of emphasis and accusative (inna)</span></td></tr>
+        <tr><td class="irab-word">كُلَّ</td><td class="irab-detail">اسْمُ إِنَّ مَنْصُوبٌ بِالفَتْحَةِ، وَهُوَ مُضَافٌ<br><span class="english-text">Ism of inna, accusative with fathah (NOT tawkeed). It is mudaaf.</span></td></tr>
+        <tr><td class="irab-word">الكُتُبِ</td><td class="irab-detail">مُضَافٌ إِلَيْهِ مَجْرُورٌ بِالكَسْرَةِ<br><span class="english-text">Mudaaf ilayhi, genitive with kasrah</span></td></tr>
+        <tr><td class="irab-word">فِي الحَقِيبَةِ</td><td class="irab-detail">جَارٌّ وَمَجْرُورٌ - خَبَرُ إِنَّ<br><span class="english-text">Prepositional phrase -- khabar of inna</span></td></tr>
+    </table>
+
+    <!-- TABLE 4: كُلّ as Tawkeed - منصوب -->
+    <h3 class="section-subtitle">٤. كُلّ كَتَوْكِيدٍ - مَنْصُوبٌ</h3>
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align:center;">إِنَّ الكُتُبَ كُلَّهَا فِي الحَقِيبَةِ</p>
+        <p class="english-text">Indeed, the books, all of them, are in the bag (كُلَّهَا is TAWKEED -- followed by pronoun هَا)</p>
+    </div>
+    <table class="irab-table">
+        <tr><th>الكَلِمَةُ</th><th>الإِعْرَابُ</th></tr>
+        <tr><td class="irab-word">إِنَّ</td><td class="irab-detail">حَرْفُ تَوْكِيدٍ وَنَصْبٍ<br><span class="english-text">Particle of emphasis and accusative</span></td></tr>
+        <tr><td class="irab-word">الكُتُبَ</td><td class="irab-detail">اسْمُ إِنَّ مَنْصُوبٌ بِالفَتْحَةِ (المُؤَكَّدُ)<br><span class="english-text">Ism of inna, accusative with fathah -- this is the emphasized word (المؤكّد)</span></td></tr>
+        <tr><td class="irab-word">كُلَّهَا</td><td class="irab-detail">تَوْكِيدٌ مَعْنَوِيٌّ مَنْصُوبٌ بِالفَتْحَةِ، وَهُوَ مُضَافٌ، وَ"هَا" مُضَافٌ إِلَيْهِ<br><span class="english-text">Semantic emphasis, accusative with fathah. It is mudaaf, and هَا is mudaaf ilayhi.</span></td></tr>
+        <tr><td class="irab-word">فِي الحَقِيبَةِ</td><td class="irab-detail">جَارٌّ وَمَجْرُورٌ - خَبَرُ إِنَّ<br><span class="english-text">Prepositional phrase -- khabar of inna</span></td></tr>
+    </table>
+
+    <!-- TABLE 5: كُلّ as مجرور (NOT tawkeed) -->
+    <h3 class="section-subtitle">٥. كُلّ مَجْرُورٌ (لَيْسَ تَوْكِيدًا)</h3>
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align:center;">مَرَرْتُ بِكُلِّ الرِّجَالِ</p>
+        <p class="english-text">I passed by all the men (كُلّ is مجرور by the preposition بِ, NOT tawkeed -- followed by noun)</p>
+    </div>
+    <table class="irab-table">
+        <tr><th>الكَلِمَةُ</th><th>الإِعْرَابُ</th></tr>
+        <tr><td class="irab-word">مَرَرْتُ</td><td class="irab-detail">فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى السُّكُونِ، وَالتَّاءُ ضَمِيرٌ مُتَّصِلٌ فِي مَحَلِّ رَفْعٍ فَاعِلٌ<br><span class="english-text">Past tense verb built on sukoon. التاء is a connected pronoun in the position of nominative (subject/faa'il).</span></td></tr>
+        <tr><td class="irab-word">بِكُلِّ</td><td class="irab-detail">البَاءُ حَرْفُ جَرٍّ، كُلّ اسْمٌ مَجْرُورٌ بِالكَسْرَةِ، وَهُوَ مُضَافٌ<br><span class="english-text">الباء is a preposition. كُلّ is a noun, genitive with kasrah. It is mudaaf.</span></td></tr>
+        <tr><td class="irab-word">الرِّجَالِ</td><td class="irab-detail">مُضَافٌ إِلَيْهِ مَجْرُورٌ بِالكَسْرَةِ<br><span class="english-text">Mudaaf ilayhi, genitive with kasrah</span></td></tr>
+    </table>
+
+    <!-- TABLE 6: كُلّ as Tawkeed - مجرور -->
+    <h3 class="section-subtitle">٦. كُلّ كَتَوْكِيدٍ - مَجْرُورٌ</h3>
+    <div class="grammar-box">
+        <p class="arabic-large" style="text-align:center;">مَرَرْتُ بِالرِّجَالِ كُلِّهِمْ</p>
+        <p class="english-text">I passed by the men, all of them (كُلِّهِمْ is TAWKEED -- followed by pronoun هِمْ)</p>
+    </div>
+    <table class="irab-table">
+        <tr><th>الكَلِمَةُ</th><th>الإِعْرَابُ</th></tr>
+        <tr><td class="irab-word">مَرَرْتُ</td><td class="irab-detail">فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى السُّكُونِ، وَالتَّاءُ ضَمِيرٌ مُتَّصِلٌ فِي مَحَلِّ رَفْعٍ فَاعِلٌ<br><span class="english-text">Past tense verb built on sukoon. التاء is a connected pronoun as subject (faa'il).</span></td></tr>
+        <tr><td class="irab-word">بِالرِّجَالِ</td><td class="irab-detail">البَاءُ حَرْفُ جَرٍّ، الرِّجَالُ اسْمٌ مَجْرُورٌ بِالكَسْرَةِ (المُؤَكَّدُ)<br><span class="english-text">الباء is a preposition. الرِّجَال is genitive with kasrah -- this is the emphasized word (المؤكّد).</span></td></tr>
+        <tr><td class="irab-word">كُلِّهِمْ</td><td class="irab-detail">تَوْكِيدٌ مَعْنَوِيٌّ مَجْرُورٌ بِالكَسْرَةِ، وَهُوَ مُضَافٌ، وَ"هِمْ" مُضَافٌ إِلَيْهِ<br><span class="english-text">Semantic emphasis, genitive with kasrah. It is mudaaf, and هِمْ is mudaaf ilayhi.</span></td></tr>
+    </table>
+
+    <!-- Summary Box -->
+    <div class="rule-box">
+        <h4 class="arabic-medium">خُلَاصَةٌ - Summary</h4>
+        <table>
+            <tr><th>الحَالَةُ</th><th>كُلّ + اسْم (لَيْسَ تَوْكِيدًا)</th><th>كُلّ + ضَمِير (تَوْكِيدٌ)</th></tr>
+            <tr><td class="pronoun-cell">مَرْفُوعٌ</td><td>دَخَلَ <strong>كُلُّ</strong> الرِّجَالِ المَسْجِدَ</td><td>الرِّجَالُ <strong>كُلُّهُمْ</strong> دَخَلُوا</td></tr>
+            <tr><td class="pronoun-cell">مَنْصُوبٌ</td><td>إِنَّ <strong>كُلَّ</strong> الكُتُبِ فِي الحَقِيبَةِ</td><td>إِنَّ الكُتُبَ <strong>كُلَّهَا</strong> فِي الحَقِيبَةِ</td></tr>
+            <tr><td class="pronoun-cell">مَجْرُورٌ</td><td>مَرَرْتُ <strong>بِكُلِّ</strong> الرِّجَالِ</td><td>مَرَرْتُ بِالرِّجَالِ <strong>كُلِّهِمْ</strong></td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- ===================== SECTION 5: أَسْمَاءُ الأَفْعَالِ ===================== -->
+<section class="section" id="asmaa-afaal">
+    <h2 class="section-title">أَسْمَاءُ الأَفْعَالِ - Verbal Nouns (Nouns that Function as Verbs)</h2>
+    <p class="english-text">These are indeclinable nouns (أَسْمَاءٌ مَبْنِيَّةٌ) that carry the meaning of verbs and function like verbs (تَعْمَلُ عَمَلَ الفِعْلِ). However, they do NOT accept verb markers such as لَمْ, لَنْ, سَوْفَ, etc.</p>
+
+    <h3 class="section-subtitle">أَنْوَاعُ أَسْمَاءِ الأَفْعَالِ - Types of Verbal Nouns</h3>
+    <div class="flowchart">
+        <div class="flow-top">أَسْمَاءُ الأَفْعَالِ</div>
+        <div style="font-size: 30px; color: #00695c;">&#8595;</div>
+        <div class="flow-branches">
+            <div class="flow-branch">
+                <div class="flow-branch-title">اسْمُ فِعْلٍ مَاضٍ</div>
+                <div class="flow-branch-examples">Past tense verbal noun</div>
+                <div class="flow-branch-examples" style="margin-top:8px; font-size:18px;">هَيْهَاتَ = بَعُدَ (far away!)</div>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">اسْمُ فِعْلٍ مُضَارِعٍ</div>
+                <div class="flow-branch-examples">Present tense verbal noun</div>
+                <div class="flow-branch-examples" style="margin-top:8px; font-size:18px;">أُفٍّ = أَتَضَجَّرُ (Ugh!)</div>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">اسْمُ فِعْلِ أَمْرٍ</div>
+                <div class="flow-branch-examples">Imperative verbal noun</div>
+                <div class="flow-branch-examples" style="margin-top:8px; font-size:18px;">هَيَّا / هَاتِ</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- هَيَّا -->
+    <h3 class="section-subtitle">هَيَّا = أَسْرِعْ (Hurry!)</h3>
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>هَيَّا</strong>: اسْمُ فِعْلِ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ لَا مَحَلَّ لَهُ مِنَ الإِعْرَابِ</p>
+        <p class="arabic-text">وَالفَاعِلُ ضَمِيرٌ مُسْتَتِرٌ (أَنْتَ / أَنْتِ / أَنْتُمْ / أَنْتُمَا / أَنْتُنَّ)</p>
+        <p class="english-text">هَيَّا is an imperative verbal noun, built on sukoon, with no grammatical position (la mahalla lahu min al-i'raab). The subject is a hidden pronoun (you - singular/dual/plural, masculine/feminine).</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">يَا مُحَمَّدُ، هَيَّا إِلَى العَمَلِ!</div>
+        <div class="example-en">O Muhammad, hurry to work!</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">يَا رِجَالُ، هَيَّا إِلَى العَمَلِ!</div>
+        <div class="example-en">O men, hurry to work!</div>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">لَاحِظْ: هَيَّا لَا تَتَغَيَّرُ مَعَ تَغَيُّرِ الضَّمَائِرِ</p>
+        <p class="english-text">Notice: هَيَّا does NOT change with different pronouns. Whether addressing one man, one woman, two people, or a group, the word remains هَيَّا.</p>
+    </div>
+
+    <!-- هَاتِ -->
+    <h3 class="section-subtitle">هَاتِ = أَعْطِ (Give!)</h3>
+    <div class="grammar-box">
+        <p class="arabic-text"><strong>هَاتِ</strong>: اسْمُ فِعْلِ أَمْرٍ بِمَعْنَى أَعْطِ</p>
+        <p class="english-text">هَاتِ is an imperative verbal noun meaning "Give!" It is also indeclinable and does not accept verb markers.</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">هَاتِ الكِتَابَ يَا أَحْمَدُ!</div>
+        <div class="example-en">Give (me) the book, O Ahmad!</div>
+    </div>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">لِمَاذَا هِيَ أَسْمَاءٌ وَلَيْسَتْ أَفْعَالًا؟</h4>
+        <p class="arabic-text">لِأَنَّهَا لَا تَقْبَلُ عَلَامَاتِ الفِعْلِ:</p>
+        <p class="arabic-text">لَا نَقُولُ: لَمْ هَيَّا ✗ / لَنْ هَيَّا ✗ / سَوْفَ هَيَّا ✗</p>
+        <p class="english-text">Why are they NOUNS and not VERBS? Because they do NOT accept verb markers. We cannot say: لَمْ هَيَّا / لَنْ هَيَّا / سَوْفَ هَيَّا -- these are all incorrect.</p>
+    </div>
+</section>
+
+<!-- ===================== SECTION 6: LESSON 18 DIALOGUE ===================== -->
+<section class="section" id="lesson18">
+    <h2 class="section-title">مِنَ الدَّرْسِ الثَّامِنَ عَشَرَ - From Lesson 18 Dialogue</h2>
+    <p class="english-text">Dialogue from the textbook featuring Haamid, his wife Aaminah, and their family.</p>
+
+    <h3 class="section-subtitle">حَامِدٌ وَزَوْجَتُهُ آمِنَةُ - Haamid and his wife Aaminah</h3>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">حَامِدٌ (لِزَوْجَتِهِ):</div>
+        <div class="dialogue-text">أَيْنَ تُرِيدِينَ أَنْ تَذْهَبِي بَعْدَ صَلَاةِ العَصْرِ؟</div>
+        <div class="dialogue-en">Where do you want to go after Asr prayer?</div>
+    </div>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">آمِنَةُ:</div>
+        <div class="dialogue-text">أُرِيدُ أَنْ أَزُورَ جَارَتَنَا الَّتِي زَارَتْنِي أَمْسِ.</div>
+        <div class="dialogue-en">I want to visit our neighbor (f.) who visited me yesterday.</div>
+    </div>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">حَامِدٌ:</div>
+        <div class="dialogue-text">أَيُمْكِنُكِ أَنْ تَرْجِعِي قَبْلَ صَلَاةِ المَغْرِبِ؟</div>
+        <div class="dialogue-en">Can you come back before Maghrib prayer?</div>
+    </div>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">آمِنَةُ:</div>
+        <div class="dialogue-text">يُمْكِنُ إِنْ شَاءَ اللهُ.</div>
+        <div class="dialogue-en">It is possible, in shaa Allah.</div>
+    </div>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">حَامِدٌ:</div>
+        <div class="dialogue-text">أَرْجُو أَنْ تَغْسِلِي قَمِيصِيَ الأَبْيَضَ بَعْدَ رُجُوعِكِ.</div>
+        <div class="dialogue-en">I hope you wash my white shirt after your return.</div>
+    </div>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">آمِنَةُ:</div>
+        <div class="dialogue-text">سَأَغْسِلُهُ وَأَكْوِيهِ إِنْ شَاءَ اللهُ.</div>
+        <div class="dialogue-en">I will wash it and iron it, in shaa Allah.</div>
+    </div>
+
+    <h3 class="section-subtitle">حَامِدٌ وَأَبْنَاؤُهُ - Haamid and his sons</h3>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">حَامِدٌ (لِأَبْنَائِهِ):</div>
+        <div class="dialogue-text">هَيَّا إِلَى المَسْجِدِ يَا أَوْلَادُ!</div>
+        <div class="dialogue-en">Hurry to the mosque, O boys!</div>
+    </div>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">الأَبْنَاءُ:</div>
+        <div class="dialogue-text">أَنُرِيدُ أَنْ نَذْهَبَ إِلَى السُّوقِ بَعْدَ الصَّلَاةِ.</div>
+        <div class="dialogue-en">We want to go to the market after the prayer.</div>
+    </div>
+
+    <h3 class="section-subtitle">الأَصْدِقَاءُ فِي المَتْحَفِ - Friends at the Museum</h3>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">الأَصْدِقَاءُ:</div>
+        <div class="dialogue-text">هَيَّا إِلَى المَتْحَفِ! نُرِيدُ أَنْ نَزُورَهُ كُلَّنَا.</div>
+        <div class="dialogue-en">Hurry to the museum! We all want to visit it.</div>
+    </div>
+
+    <h3 class="section-subtitle">حَامِدٌ وَالمُسْتَشْفَى - Haamid and the Hospital</h3>
+
+    <div class="dialogue-box">
+        <div class="dialogue-speaker">حَامِدٌ (لِبَنَاتِهِ):</div>
+        <div class="dialogue-text">أُرِيدُ أَنْ أَذْهَبَ إِلَى المُسْتَشْفَى لِأَعُودَ سَلْمَى. هَلْ تُرِدْنَ أَنْ تَذْهَبْنَ مَعِي؟</div>
+        <div class="dialogue-en">I want to go to the hospital to visit Salma (who is sick). Do you want to go with me?</div>
+    </div>
+
+    <!-- Vocabulary Note -->
+    <h3 class="section-subtitle">فَائِدَةٌ لُغَوِيَّةٌ - Vocabulary Note</h3>
+    <div class="rule-box">
+        <h4 class="arabic-medium">عَادَ يَعُودُ - Two Different Meanings!</h4>
+        <table>
+            <tr><th>الفِعْلُ</th><th>المَصْدَرُ</th><th>المَعْنَى</th><th>المُرَادِفُ</th></tr>
+            <tr><td class="pronoun-cell">عَادَ يَعُودُ</td><td>عَوْدَة</td><td>To return</td><td>= رَجَعَ</td></tr>
+            <tr><td class="pronoun-cell">عَادَ يَعُودُ</td><td>عِيَادَة</td><td>To visit the sick</td><td>= زَارَ المَرِيضَ</td></tr>
+        </table>
+        <p class="english-text">The same verb عَادَ يَعُودُ has two different meanings depending on the masdar: with عَوْدَة it means "to return" (like رَجَعَ), and with عِيَادَة it means "to visit the sick" (like زَارَ المَرِيضَ). The word مُسْتَشْفَى (hospital) and عِيَادَة (clinic/visit) share this connection.</p>
+    </div>
+</section>
+
+<!-- ===================== SECTION 7: MCQ ===================== -->
+<section class="section" id="mcq">
+    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
+
+    <div class="mcq-question" data-correct="a" data-explanation="مَصْدَرُ رَجَا هُوَ رَجَاء. - The masdar of رَجَا is رَجَاء (Hope/Request).">
+        <h4 class="arabic-medium">١. مَا مَصْدَرُ "رَجَا"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) رَجَاءٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) رُجُوعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) رَاجٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) مَرْجُوٌّ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="رَجَا فِعْلٌ نَاقِصٌ (حَرْفُ العِلَّةِ فِي الآخِرِ). - رَجَا is a defective verb (weak letter at the end).">
+        <h4 class="arabic-medium">٢. "رَجَا" فِعْلٌ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) صَحِيحٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) أَجْوَفُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) نَاقِصٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) مِثَالٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="التَّوْكِيدُ يَتْبَعُ المُؤَكَّدَ فِي الإِعْرَابِ (رَفْعًا وَنَصْبًا وَجَرًّا). - Emphasis follows the emphasized word in grammatical case.">
+        <h4 class="arabic-medium">٣. التَّوْكِيدُ يَتْبَعُ المُؤَكَّدَ فِي:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) الجِنْسِ فَقَطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) الإِعْرَابِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) العَدَدِ فَقَطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) لَا يَتْبَعُهُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="'جَاءَ المُدِيرُ نَفْسُهُ' - نَفْسُهُ تَوْكِيدٌ مَعْنَوِيٌّ مَرْفُوعٌ بِالضَّمَّةِ. - نَفْسُهُ is semantic emphasis, nominative (following المدير).">
+        <h4 class="arabic-medium">٤. "جَاءَ المُدِيرُ نَفْسُهُ" - "نَفْسُهُ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) فَاعِلٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) مَفْعُولٌ بِهِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) حَالٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) تَوْكِيدٌ مَرْفُوعٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="أَلْفَاظُ التَّوْكِيدِ المَعْنَوِيِّ: نَفْس، عَيْن، كُلّ، جَمِيع. - Semantic emphasis words: self, same, all, entirety.">
+        <h4 class="arabic-medium">٥. أَيٌّ مِمَّا يَلِي مِنْ أَلْفَاظِ التَّوْكِيدِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) نَفْسُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) غَيْرُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) بَعْضُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) آخَرُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="لَنْ يَرْجُوَ: مَنْصُوبٌ بِالفَتْحَةِ الظَّاهِرَةِ. - لَنْ يَرْجُوَ is accusative (mansoob) with the apparent fathah.">
+        <h4 class="arabic-medium">٦. "لَنْ يَرْجُوَ" - "يَرْجُوَ" مَنْصُوبٌ بِـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) الضَّمَّةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) السُّكُونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) الفَتْحَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) حَذْفِ النُّونِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="'حَضَرَ الطُّلَّابُ كُلُّهُمْ' - كُلُّهُمْ تَوْكِيدٌ مَعْنَوِيٌّ لِلطُّلَّابِ (كُلّ + ضَمِير = تَوْكِيد). - كُلُّهُمْ is tawkeed because it's followed by a pronoun.">
+        <h4 class="arabic-medium">٧. "حَضَرَ الطُّلَّابُ كُلُّهُمْ" - "كُلُّهُمْ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) بَدَلٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) تَوْكِيدٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) نَعْتٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) عَطْفٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="رَجَا يَرْجُو: مَعْنَاهُ رَغِبَ / تَمَنَّى / طَلَبَ. - رَجَا means to hope/wish/request.">
+        <h4 class="arabic-medium">٨. مَعْنَى "رَجَا":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) To return</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) To refuse</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) To fear</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) To hope</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="هَيَّا اسْمُ فِعْلِ أَمْرٍ بِمَعْنَى أَسْرِعْ. - هَيَّا is an imperative verbal noun meaning 'Hurry!' (= أَسْرِعْ).">
+        <h4 class="arabic-medium">٩. اسْمُ فِعْلِ الأَمْرِ "هَيَّا" بِمَعْنَى:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q9" value="a"><span>أ) أَسْرِعْ (Hurry)</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="b"><span>ب) اجْلِسْ (Sit)</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="c"><span>ج) اُكْتُبْ (Write)</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="d"><span>د) اذْهَبْ (Go)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="كُلّ يَكُونُ تَوْكِيدًا إِذَا جَاءَ بَعْدَهُ ضَمِيرٌ (مِثْل: كُلُّهُمْ، كُلَّهَا). أَمَّا إِذَا جَاءَ بَعْدَهُ اسْمٌ فَلَيْسَ تَوْكِيدًا. - كُلّ is tawkeed only when followed by a pronoun (e.g., كُلُّهُمْ), not when followed by a noun.">
+        <h4 class="arabic-medium">١٠. مَتَى تَكُونُ "كُلّ" تَوْكِيدًا؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q10" value="a"><span>أ) إِذَا جَاءَ بَعْدَهَا اسْمٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="b"><span>ب) إِذَا جَاءَ بَعْدَهَا ضَمِيرٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="c"><span>ج) إِذَا جَاءَتْ فِي أَوَّلِ الجُمْلَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="d"><span>د) دَائِمًا تَكُونُ تَوْكِيدًا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ التَّاسِعَةَ عَشْرَةَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 19</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
