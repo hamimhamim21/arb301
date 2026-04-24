@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 16 - ARB303 Study Guide | المحاضرة السادسة عشرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        .flowchart { display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 20px 0; }
+        .flow-top { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px 30px; border-radius: 15px; font-size: 28px; font-weight: bold; text-align: center; }
+        .flow-branches { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .flow-branch { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 15px 20px; border-radius: 15px; text-align: center; flex: 1; min-width: 200px; border: 2px solid #00897b; }
+        .flow-branch-title { font-size: 22px; font-weight: bold; color: #00695c; margin-bottom: 8px; }
+        .flow-branch-examples { font-size: 20px; color: #2c3e50; }
+        @media (max-width: 768px) { .arabic-large { font-size: 32px; } .arabic-medium { font-size: 26px; } .section-title { font-size: 28px; } table { font-size: 18px; } .flow-branches { flex-direction: column; } }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
+
+<nav class="nav-container">
+    <div class="nav-title">المحاضرة السادسة عشرة - Lecture 16</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a>
+        <a href="#nasb"><span class="nav-ar">نصب المضارع</span><span class="nav-en">Accusative</span></a>
+        <a href="#adawat"><span class="nav-ar">أدوات النصب</span><span class="nav-en">Nasb Particles</span></a>
+        <a href="#masdar"><span class="nav-ar">المصدر</span><span class="nav-en">Infinitive</span></a>
+        <a href="#irab"><span class="nav-ar">إعراب</span><span class="nav-en">I'rab Practice</span></a>
+        <a href="#feminine"><span class="nav-ar">الفاعل المؤنث</span><span class="nav-en">Fem. Subject</span></a>
+        <a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ السَّادِسَةَ عَشْرَةَ</h1>
+    <div class="subtitle">Lecture 16 - الدَّرْسُ السَّابِعَ عَشَرَ (Lesson 17)</div>
+</div>
+
+<!-- Verb Section -->
+<section class="section" id="verb">
+    <h2 class="section-title">الفِعْلُ: غَابَ - يَغِيبُ (فِعْلٌ أَجْوَفُ)</h2>
+    <p class="english-text">The Verb: To disappear / To be absent / To fail to see (Hollow verb - the middle root letter is a weak letter)</p>
+
+    <div class="formula-box">
+        <div class="formula">غَابَ - يَغِيبُ - لَنْ يَغِيبَ - لَمْ يَغِبْ - غِبْ - غِيَابًا</div>
+        <p class="english-text">Past - Present - Accusative - Jussive - Imperative - Masdar</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ التَّصْرِيفِ - Conjugation Table</h3>
+    <table>
+        <tr><th>الضَّمِير</th><th>المَاضِي</th><th>المُضَارِع</th><th>لَنْ + المُضَارِع</th><th>لَمْ + المُضَارِع</th><th>المَصْدَر</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>غِبْتُ</td><td>أَغِيبُ</td><td>لَنْ أَغِيبَ</td><td>لَمْ أَغِبْ</td><td rowspan="14" style="font-size:28px; font-weight:bold; color:#00695c;">غِيَابٌ<br><span style="font-family:Georgia,serif;font-size:14px;color:#666;">Absence</span></td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>غِبْنَا</td><td>نَغِيبُ</td><td>لَنْ نَغِيبَ</td><td>لَمْ نَغِبْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>غِبْتَ</td><td>تَغِيبُ</td><td>لَنْ تَغِيبَ</td><td>لَمْ تَغِبْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>غِبْتِ</td><td>تَغِيبِينَ</td><td>لَنْ تَغِيبِي</td><td>لَمْ تَغِيبِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>غِبْتُمَا</td><td>تَغِيبَانِ</td><td>لَنْ تَغِيبَا</td><td>لَمْ تَغِيبَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>غِبْتُمْ</td><td>تَغِيبُونَ</td><td>لَنْ تَغِيبُوا</td><td>لَمْ تَغِيبُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>غِبْتُنَّ</td><td>تَغِبْنَ</td><td>لَنْ تَغِبْنَ</td><td>لَمْ تَغِبْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>غَابَ</td><td>يَغِيبُ</td><td>لَنْ يَغِيبَ</td><td>لَمْ يَغِبْ</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>غَابَتْ</td><td>تَغِيبُ</td><td>لَنْ تَغِيبَ</td><td>لَمْ تَغِبْ</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>غَابَا</td><td>يَغِيبَانِ</td><td>لَنْ يَغِيبَا</td><td>لَمْ يَغِيبَا</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>غَابَتَا</td><td>تَغِيبَانِ</td><td>لَنْ تَغِيبَا</td><td>لَمْ تَغِيبَا</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>غَابُوا</td><td>يَغِيبُونَ</td><td>لَنْ يَغِيبُوا</td><td>لَمْ يَغِيبُوا</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>غِبْنَ</td><td>يَغِبْنَ</td><td>لَنْ يَغِبْنَ</td><td>لَمْ يَغِبْنَ</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="example-box">
+        <div class="example-ar">المُدَرِّسُ: مَنْ غَابَ اليَوْمَ يَا طُلَّابُ؟</div>
+        <div class="example-en">The teacher: Who was absent today, students?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">الطُّلَّابُ: غَابَ اليَوْمَ أَرْبَعَةُ طُلَّابٍ</div>
+        <div class="example-en">The students: Four students were absent today</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيْنَ مَحْمُودٌ؟ لَقَدْ غَابَ عَنِ النَّظَرِ</div>
+        <div class="example-en">Where is Mahmoud? He has disappeared from sight</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">قَالَ اللهُ تَعَالَى عَلَى لِسَانِ سَيِّدِنَا سُلَيْمَانَ: ﴿وَتَفَقَّدَ الطَّيْرَ فَقَالَ مَا لِيَ لَا أَرَى الْهُدْهُدَ أَمْ كَانَ مِنَ الْغَائِبِينَ﴾</div>
+        <div class="example-en">"[One day] he reviewed the birds, and said, 'Why do I not see the hoopoe? Or is he absent?'" (An-Naml 27:20)</div>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">غِبْتُ مِنَ المَدْرَسَةِ / غِبْتَ مِنَ الجَامِعَةِ اليَوْمَ</h4>
+        <p class="english-text">I was absent from school / You were absent from the university today</p>
+        <p class="arabic-text">غِيبِي اليَوْمَ مِنَ الجَامِعَةِ / غِيبُوا غَدًا يَا أَوْلَادُ</p>
+        <p class="english-text">Be absent today from the university (f) / Be absent tomorrow, children (m.pl)</p>
+    </div>
+</section>
+
+<!-- Nasb of Mudari' -->
+<section class="section" id="nasb">
+    <h2 class="section-title">نَصْبُ الفِعْلِ المُضَارِعِ - Accusative of the Present Tense Verb</h2>
+    <p class="english-text">The present tense verb in the accusative case - from Lesson 17 (الدَّرْسُ السَّابِعَ عَشَرَ)</p>
+
+    <div class="grammar-box">
+        <p class="arabic-text">اِبْتِدَاءً مِنْ هَذِهِ المُحَاضَرَةِ فَسَنَدْرُسُ الفِعْلَ المُضَارِعَ المَنْصُوبَ</p>
+        <p class="english-text">Starting from this lecture, we will study the present tense verb in the accusative (mansoob) case</p>
+    </div>
+
+    <h3 class="section-subtitle">إِعْرَابُ الفِعْلِ المُضَارِعِ - I'rab of the Present Tense Verb</h3>
+    <div class="flowchart">
+        <div class="flow-top">إِعْرَابُ الفِعْلِ المُضَارِعِ</div>
+        <div class="flow-branches">
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَرْفُوعٌ</div>
+                <div class="flow-branch-examples">إِذَا لَمْ يُسْبَقْ بِشَيْءٍ</div>
+                <p class="english-text">Nominative: when not preceded by anything</p>
+                <p class="arabic-text" style="font-size:18px;">يَحْفَظُ الوَلَدُ القُرْآنَ</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَنْصُوبٌ</div>
+                <div class="flow-branch-examples">إِذَا سُبِقَ بِأَدَاةِ نَصْبٍ</div>
+                <p class="english-text">Accusative: when preceded by a nasb particle</p>
+                <p class="arabic-text" style="font-size:18px;">أَنْ أَذْهَبَ لِلْعَمَلِ اليَوْمَ</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَجْزُومٌ</div>
+                <div class="flow-branch-examples">إِذَا سُبِقَ بِأَدَاةِ جَزْمٍ</div>
+                <p class="english-text">Jussive: when preceded by a jazm particle</p>
+                <p class="arabic-text" style="font-size:18px;">مُحَمَّدٌ لَمْ يَذْهَبْ إِلَى المَتْجَرِ</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">عَلَامَاتُ نَصْبِ الفِعْلِ المُضَارِعِ - Signs of Nasb</h3>
+    <p class="english-text">The vowel signs of the present verb in the accusative case</p>
+
+    <div class="flowchart">
+        <div class="flow-top">نَصْبُ الفِعْلِ المُضَارِعِ</div>
+        <div class="flow-branches">
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَنْصُوبٌ بِالفَتْحَةِ الظَّاهِرَةِ</div>
+                <div class="flow-branch-examples">إِذَا لَمْ يَتَّصِلْ بِشَيْءٍ</div>
+                <p class="english-text">With apparent fatha (default - when not connected to special endings)</p>
+                <p class="arabic-text" style="font-size:18px;">لَنْ يَحْفَظَ الطَّالِبُ القُرْآنَ</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَنْصُوبٌ بِحَذْفِ النُّونِ</div>
+                <div class="flow-branch-examples">الأَفْعَالُ الخَمْسَةُ</div>
+                <p class="english-text">By deleting nun (the five verbs)</p>
+                <p class="arabic-text" style="font-size:18px;">لَنْ يَحْفَظُوا / لَنْ تَحْفَظِي</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَبْنِيٌّ عَلَى السُّكُونِ فِي مَحَلِّ نَصْبٍ</div>
+                <div class="flow-branch-examples">إِذَا اتَّصَلَتْ بِهِ نُونُ النِّسْوَةِ</div>
+                <p class="english-text">Built on sukoon in position of nasb (with nun of fem. plural)</p>
+                <p class="arabic-text" style="font-size:18px;">لَنْ يَحْفَظْنَ الفِقْهَ</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Adawat al-Nasb -->
+<section class="section" id="adawat">
+    <h2 class="section-title">أَدَوَاتُ النَّصْبِ - Nasb Particles</h2>
+    <p class="english-text">The particles that put the present tense verb into the accusative case</p>
+
+    <div class="vocab-grid">
+        <div class="vocab-item">
+            <div class="vocab-ar">أَنْ</div>
+            <div class="vocab-en">That / To (masdariyya - forms technical infinitive)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">لَنْ</div>
+            <div class="vocab-en">Will not (negation + future - nasb + nafi + istiqbal)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">لَامُ التَّعْلِيلِ</div>
+            <div class="vocab-en">Lam of Causing / Purpose (in order to)</div>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">لَنْ - حَرْفُ نَصْبٍ وَنَفْيٍ وَاسْتِقْبَالٍ</h4>
+        <p class="arabic-text">(لَنْ) تُفِيدُ أَنَّ الفِعْلَ لَنْ يَحْدُثَ فِي المُسْتَقْبَلِ، وَتُعْرَبُ عَلَى أَنَّهَا حَرْفُ نَصْبٍ وَنَفْيٍ وَاسْتِقْبَالٍ، أَيْ أَنَّهَا تَجْعَلُ الفِعْلَ مَنْصُوبًا</p>
+        <p class="english-text">(lan) indicates that the action will NOT happen in the future. It is parsed as a particle of nasb, negation, and futurity - it makes the verb mansoob (accusative)</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">أَنْ - حَرْفٌ مَصْدَرِيٌّ وَنَصْبٌ</h4>
+        <p class="arabic-text">(أَنْ) حَرْفٌ مَصْدَرِيٌّ مَبْنِيٌّ عَلَى السُّكُونِ لَا مَحَلَّ لَهُ مِنَ الإِعْرَابِ</p>
+        <p class="english-text">(an) is a masdariyya particle, built on sukoon, with no position in i'rab. The verb after (an) is mansoob with fatha.</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">لَامُ التَّعْلِيلِ - Lam of Causing</h4>
+        <p class="arabic-text">لَامُ التَّعْلِيلِ تُفِيدُ التَّعْلِيلَ (بِمَعْنَى: لِكَيْ / مِنْ أَجْلِ أَنْ)، وَالفِعْلُ المُضَارِعُ بَعْدَهَا يَكُونُ مَنْصُوبًا</p>
+        <p class="english-text">The Lam of Causing means "in order to / so that". The present tense verb after it is mansoob (accusative).</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ عَلَى (أَنْ) - Examples with أَنْ</h3>
+    <div class="example-box">
+        <div class="example-ar">أُرِيدُ <strong>أَنْ</strong> أَذْهَبَ لِلْعَمَلِ اليَوْمَ</div>
+        <div class="example-en">I want <strong>to</strong> go to work today (أَنْ + mansoob verb)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">يُحِبُّ المُسْلِمُ <strong>أَنْ</strong> يَدْعُوَ رَبَّهُ</div>
+        <div class="example-en">The Muslim loves <strong>to</strong> supplicate to his Lord</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أُرِيدُ <strong>أَنْ</strong> أَحْفَظَ أَلْفِيَّةَ ابْنِ مَالِكٍ</div>
+        <div class="example-en">I want <strong>to</strong> memorize the Alfiyya of Ibn Malik</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَتَمَنَّى <strong>أَنْ</strong> أُصَلِّيَ فِي المَسْجِدِ الأَقْصَى</div>
+        <div class="example-en">I wish <strong>to</strong> pray in Masjid al-Aqsa</div>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ عَلَى (لَنْ) - Examples with لَنْ</h3>
+    <div class="example-box">
+        <div class="example-ar"><strong>لَنْ</strong> يَغِيبَ مُحَمَّدٌ عَنِ الدَّرْسِ</div>
+        <div class="example-en">Muhammad <strong>will not</strong> be absent from the lesson</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>لَنْ</strong> أَتْرُكَ دِرَاسَةَ اللُّغَةِ العَرَبِيَّةِ</div>
+        <div class="example-en">I <strong>will not</strong> abandon studying the Arabic language</div>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ عَلَى لَامِ التَّعْلِيلِ - Examples with Lam of Causing</h3>
+    <div class="example-box">
+        <div class="example-ar">ذَهَبْتُ إِلَى المَكْتَبَةِ <strong>لِ</strong>أَقْرَأَ كِتَابًا</div>
+        <div class="example-en">I went to the library <strong>in order to</strong> read a book (لِ + أَقْرَأَ mansoob)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">جِئْتُ إِلَى الجَامِعَةِ <strong>لِ</strong>أَتَعَلَّمَ اللُّغَةَ العَرَبِيَّةَ</div>
+        <div class="example-en">I came to the university <strong>in order to</strong> learn the Arabic language</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">دَرَسْتُ <strong>لِ</strong>أَنْجَحَ فِي الامْتِحَانِ</div>
+        <div class="example-en">I studied <strong>in order to</strong> succeed in the exam</div>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ مِنَ القُرْآنِ الكَرِيمِ - Quranic Examples</h3>
+    <div class="example-box">
+        <div class="example-ar">﴿إِنَّ اللَّهَ لَا يَسْتَحْيِي <strong>أَنْ</strong> يَضْرِبَ مَثَلًا مَّا بَعُوضَةً فَمَا فَوْقَهَا﴾</div>
+        <div class="example-en">"Indeed Allah is not ashamed to draw a parable whether it is that of a gnat or something above it" (Al-Baqarah 2:26)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">﴿وَيَقْطَعُونَ مَا أَمَرَ اللَّهُ بِهِ <strong>أَنْ</strong> يُوصَلَ وَيُفْسِدُونَ فِي الْأَرْضِ﴾</div>
+        <div class="example-en">"And sever what Allah has commanded to be joined, and cause corruption on the earth" (Al-Baqarah 2:27)</div>
+        <div class="example-en">أَنْ: حرف مصدري ونصب. يُوصَلَ: فعل مضارع منصوب بالفتحة بعد (أَنْ). المصدر المؤول (أَنْ يُوصَلَ) في محل جر بدل من الهاء</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">﴿يُرِيدُونَ <strong>أَنْ</strong> يَتَحَاكَمُوا إِلَى الطَّاغُوتِ وَقَدْ أُمِرُوا <strong>أَنْ</strong> يَكْفُرُوا بِهِ﴾</div>
+        <div class="example-en">"They desire to seek the judgment of false deities, though they were commanded to reject them" (An-Nisa 4:60)</div>
+        <div class="example-en">أَنْ: حرف مصدري ونصب. يَتَحَاكَمُوا: فعل مضارع منصوب بحذف النون (من الأفعال الخمسة). المصدر المؤول في محل نصب مفعول به</div>
+    </div>
+</section>
+
+<!-- Masdar Section -->
+<section class="section" id="masdar">
+    <h2 class="section-title">المَصْدَرُ الصَّرِيحُ وَالمَصْدَرُ المُؤَوَّلُ - The Essential and Technical Infinitive</h2>
+    <p class="english-text">Two types of infinitives (masdar) in Arabic grammar</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">أَوَّلًا: المَصْدَرُ الصَّرِيحُ - The Essential Infinitive</h4>
+        <p class="arabic-text">عَرَفْنَا قَبْلَ ذَلِكَ المَصْدَرَ الصَّرِيحَ: إِنَّ المَصْدَرَ الصَّرِيحَ اسْمٌ مَأْخُوذٌ مِنْ نَفْسِ حُرُوفِ الفِعْلِ</p>
+        <p class="english-text">The essential infinitive is a noun derived from the same root letters of the verb</p>
+        <p class="arabic-text">كَمَا فِي: دَخَلَ: دُخُولٌ، وَخَرَجَ: خُرُوجٌ، وَفَهِمَ: فَهْمٌ، وَزَارَ: زِيَارَةٌ، وَعَلِمَ: عِلْمٌ، وَلَعِبَ: لَعِبٌ، وَقَرَأَ: قِرَاءَةٌ</p>
+        <p class="english-text">Such as: entered: entering, went out: exit, understood: understanding, visited: visit, knew: knowledge, played: play, read: reading</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">ثَانِيًا: المَصْدَرُ المُؤَوَّلُ - The Technical (Interpreted) Infinitive</h4>
+        <p class="arabic-text">أَمَّا النَّوْعُ الآخَرُ مِنَ المَصَادِرِ، وَهُوَ المَصْدَرُ المُؤَوَّلُ، فَلَا يُؤْخَذُ مِنْ نَفْسِ حُرُوفِ الفِعْلِ وَلَكِنْ تُوجَدُ مِنْهُ عِدَّةُ أَنْوَاعٍ</p>
+        <p class="english-text">The technical infinitive is NOT taken from the root letters of the verb. It is formed by (an) + present tense verb</p>
+        <p class="arabic-text">المَصْدَرُ المُؤَوَّلُ = <strong>أَنْ + الفِعْلُ المُضَارِعُ</strong></p>
+        <p class="english-text">Technical infinitive = an + present tense verb (mansoob)</p>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">الفِعْلُ (أَرَادَ) قَدْ يَأْتِي بَعْدَهُ المَصْدَرُ الصَّرِيحُ، تَقُولُ: أُرِيدُ زِيَارَةَ مَحْمُودٍ</p>
+        <p class="english-text">The verb (arada - to want) can be followed by the essential infinitive: "I want the visiting of Mahmoud"</p>
+        <p class="arabic-text">وَاليَوْمَ سَنَعْرِفُ أَنَّ الفِعْلَ (أَرَادَ) يُمْكِنُ أَنْ يَأْتِيَ بَعْدَهُ المَصْدَرُ المُؤَوَّلُ: أُرِيدُ أَنْ أَقْرَأَ كِتَابَ المَدِينَةِ</p>
+        <p class="english-text">Today we learn that (arada) can also be followed by the technical infinitive: "I want to read the Madinah book"</p>
+    </div>
+
+    <h3 class="section-subtitle">مُقَارَنَةٌ: الصَّرِيحُ وَالمُؤَوَّلُ - Comparison: Essential vs. Technical</h3>
+    <table>
+        <tr><th>المَصْدَرُ الصَّرِيحُ (Essential)</th><th>المَصْدَرُ المُؤَوَّلُ (Technical)</th></tr>
+        <tr><td>أُحِبُّ <strong>قِرَاءَةَ</strong> القُرْآنِ الكَرِيمِ</td><td>أُحِبُّ <strong>أَنْ أَقْرَأَ</strong> القُرْآنَ الكَرِيمَ</td></tr>
+        <tr><td>أُرِيدُ <strong>حِفْظَ</strong> أَلْفِيَّةِ ابْنِ مَالِكٍ</td><td>أُرِيدُ <strong>أَنْ أَحْفَظَ</strong> أَلْفِيَّةَ ابْنِ مَالِكٍ</td></tr>
+        <tr><td>أَتَمَنَّى <strong>الصَّلَاةَ</strong> فِي المَسْجِدِ الأَقْصَى</td><td>أَتَمَنَّى <strong>أَنْ أُصَلِّيَ</strong> فِي المَسْجِدِ الأَقْصَى</td></tr>
+    </table>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">إِعْرَابُ المَصْدَرِ المُؤَوَّلِ</h4>
+        <p class="arabic-text">يُعْرَبُ المَصْدَرُ المُؤَوَّلُ نَفْسَ إِعْرَابِ المَصْدَرِ الصَّرِيحِ الَّذِي يَأْخُذُ مَكَانَهُ</p>
+        <p class="english-text">The technical infinitive takes the same i'rab as the essential infinitive it replaces</p>
+        <p class="arabic-text">فَإِذَا كَانَ المَصْدَرُ الصَّرِيحُ مُبْتَدَأً فَإِنَّ المَصْدَرَ المُؤَوَّلَ يُعْرَبُ فِي مَحَلِّ رَفْعٍ مُبْتَدَأً</p>
+        <p class="english-text">If the essential infinitive is a subject, the technical infinitive is in the position of raf' as a subject</p>
+        <p class="arabic-text">وَإِذَا كَانَ المَصْدَرُ الصَّرِيحُ يُعْرَبُ مَفْعُولًا بِهِ فَإِنَّ المَصْدَرَ المُؤَوَّلَ يَكُونُ فِي مَحَلِّ نَصْبٍ مَفْعُولًا بِهِ</p>
+        <p class="english-text">If the essential infinitive is a direct object, the technical infinitive is in the position of nasb as a direct object</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ قُرْآنِيَّةٌ - Quranic Examples</h3>
+    <div class="example-box">
+        <div class="example-ar">﴿وَأَنْ تَصُومُوا خَيْرٌ لَّكُمْ﴾</div>
+        <div class="example-en">"And to fast is better for you, should you know" (Al-Baqarah 2:184)</div>
+        <div class="example-en">أَنْ: حرف مصدري ونصب مبني على السكون لا محل له من الإعراب</div>
+        <div class="example-en">تَصُومُوا: فعل مضارع منصوب بحذف النون. والمصدر المؤول في محل رفع مبتدأ</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">﴿لَقَدْ كُنتُمْ تَمَنَّوْنَ الْمَوْتَ مِن قَبْلِ <strong>أَنْ</strong> تَلْقَوْهُ﴾</div>
+        <div class="example-en">"Certainly you were longing for death before you had encountered it" (Aal Imran 3:143)</div>
+        <div class="example-en">أَنْ: حرف مصدري ونصب. تَلْقَوْهُ: فعل مضارع منصوب بحذف النون. والمصدر المؤول في محل جر مضاف إليه</div>
+    </div>
+</section>
+
+<!-- I'rab Practice -->
+<section class="section" id="irab">
+    <h2 class="section-title">إِعْرَابٌ تَطْبِيقِيٌّ - Applied I'rab Practice</h2>
+    <p class="english-text">Detailed grammatical analysis of key sentences</p>
+
+    <h3 class="section-subtitle">١. أُحِبُّ قِرَاءَةَ القُرْآنِ الكَرِيمِ (المَصْدَرُ الصَّرِيحُ)</h3>
+    <table>
+        <tr><th>الكَلِمَةُ</th><th>إِعْرَابُهَا</th></tr>
+        <tr><td style="font-weight:bold; color:#00695c;">أُحِبُّ</td><td style="text-align:right;">فِعْلٌ مُضَارِعٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ، وَالفَاعِلُ ضَمِيرٌ مُسْتَتِرٌ تَقْدِيرُهُ (أَنَا)</td></tr>
+        <tr><td style="font-weight:bold; color:#00695c;">قِرَاءَةَ</td><td style="text-align:right;">مَفْعُولٌ بِهِ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ</td></tr>
+        <tr><td style="font-weight:bold; color:#00695c;">القُرْآنِ</td><td style="text-align:right;">مُضَافٌ إِلَيْهِ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ الظَّاهِرَةُ</td></tr>
+        <tr><td style="font-weight:bold; color:#00695c;">الكَرِيمِ</td><td style="text-align:right;">نَعْتٌ مَجْرُورٌ وَعَلَامَةُ جَرِّهِ الكَسْرَةُ الظَّاهِرَةُ</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">٢. أُحِبُّ أَنْ أَقْرَأَ القُرْآنَ الكَرِيمَ (المَصْدَرُ المُؤَوَّلُ)</h3>
+    <table>
+        <tr><th>الكَلِمَةُ</th><th>إِعْرَابُهَا</th></tr>
+        <tr><td style="font-weight:bold; color:#00695c;">أُحِبُّ</td><td style="text-align:right;">فِعْلٌ مُضَارِعٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ، وَالفَاعِلُ ضَمِيرٌ مُسْتَتِرٌ تَقْدِيرُهُ (أَنَا)</td></tr>
+        <tr><td style="font-weight:bold; color:#00695c;">أَنْ أَقْرَأَ</td><td style="text-align:right;">أَنْ: حَرْفٌ مَصْدَرِيٌّ وَنَصْبٌ مَبْنِيٌّ عَلَى السُّكُونِ لَا مَحَلَّ لَهُ مِنَ الإِعْرَابِ. أَقْرَأَ: فِعْلٌ مُضَارِعٌ مَنْصُوبٌ بِالفَتْحَةِ بَعْدَ (أَنْ). وَالمَصْدَرُ المُؤَوَّلُ مِنْ (أَنْ) وَالفِعْلِ المُضَارِعِ فِي مَحَلِّ نَصْبٍ مَفْعُولٌ بِهِ. وَالتَّقْدِيرُ: أُحِبُّ قِرَاءَةً</td></tr>
+        <tr><td style="font-weight:bold; color:#00695c;">القُرْآنَ</td><td style="text-align:right;">مَفْعُولٌ بِهِ مَنْصُوبٌ بِالفَتْحَةِ، وَالكَرِيمَ نَعْتٌ مَنْصُوبٌ بِالفَتْحَةِ</td></tr>
+    </table>
+</section>
+
+<!-- Feminine Subject -->
+<section class="section" id="feminine">
+    <h2 class="section-title">الفِعْلُ مَعَ الفَاعِلِ المُؤَنَّثِ - The Verb with the Feminine Subject</h2>
+    <p class="english-text">Third grammar topic: Review of how the verb changes with a feminine subject</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">الفِعْلُ المَاضِي مَعَ المُؤَنَّثِ</h4>
+        <p class="arabic-text">عَرَفْنَا قَبْلَ ذَلِكَ أَنَّ الفِعْلَ المَاضِيَ يَكُونُ مُؤَنَّثًا إِذَا اتَّصَلَتْ بِآخِرِهِ تَاءُ التَّأْنِيثِ</p>
+        <p class="english-text">The past tense verb becomes feminine when ta' at-ta'neeth is attached to its end</p>
+        <p class="arabic-text">وَهَذِهِ التَّاءُ تَكُونُ سَاكِنَةً إِذَا كَانَ الفَاعِلُ المُؤَنَّثُ يَبْدَأُ بِحَرْفٍ مُتَحَرِّكٍ (مَضْمُومٍ أَوْ مَفْتُوحٍ أَوْ مَكْسُورٍ)</p>
+        <p class="english-text">This ta' is sakin when the feminine subject starts with a voweled letter</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">قَالَتْ هِنْدُ، وَنَجَحَتْ فَاطِمَةُ</div>
+        <div class="example-en">Hind said, and Fatimah succeeded (ta' is sakin)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">دَخَلَتِ المُدَرِّسَةُ، وَأَكَلَتِ الجَدَّةُ</div>
+        <div class="example-en">The teacher (f) entered, and the grandmother ate (ta' has kasra due to meeting of two sakins with al)</div>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">الفِعْلُ المُضَارِعُ مَعَ المُؤَنَّثِ</h4>
+        <p class="arabic-text">الفِعْلُ المُضَارِعُ يَكُونُ مُؤَنَّثًا إِذَا جَاءَ فِي أَوَّلِهِ تَاءُ المُضَارَعَةِ (التَّأْنِيثُ) الَّتِي تَكُونُ مَفْتُوحَةً فِي أَوَّلِ الفِعْلِ الثُّلَاثِيِّ وَالخُمَاسِيِّ وَالسُّدَاسِيِّ، وَمَضْمُومَةً فِي أَوَّلِ الفِعْلِ الرُّبَاعِيِّ</p>
+        <p class="english-text">The present tense verb becomes feminine with ta' al-mudaara'a (feminization prefix) - fatha for 3/5/6-letter verbs, damma for 4-letter verbs</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>تَقْرَأُ</strong> هِنْدُ، وَ<strong>تَسْتَخْدِمُ</strong> نَوَالُ حَاسُوبَهَا، وَ<strong>تُذَاكِرُ</strong> نُورٌ دُرُوسَهَا</div>
+        <div class="example-en">Hind reads, Nawal uses her computer, and Noor reviews her lessons</div>
+    </div>
+</section>
+
+<!-- MCQ Section -->
+<section class="section" id="mcq">
+    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
+
+    <div class="mcq-question" data-correct="b" data-explanation="أَدَوَاتُ نَصْبِ الفِعْلِ المُضَارِعِ ثَلَاثٌ: أَنْ، لَنْ، لَامُ التَّعْلِيلِ. - The nasb particles are three: an, lan, and lam of causing.">
+        <h4 class="arabic-medium">١. كَمْ عَدَدُ أَدَوَاتِ نَصْبِ الفِعْلِ المُضَارِعِ الَّتِي دَرَسْنَاهَا؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) اثْنَتَانِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) ثَلَاثٌ (أَنْ، لَنْ، لَامُ التَّعْلِيلِ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) أَرْبَعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) وَاحِدَةٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="(لَنْ) حَرْفُ نَصْبٍ وَنَفْيٍ وَاسْتِقْبَالٍ، أَيْ أَنَّهَا تَنْفِي حُدُوثَ الفِعْلِ فِي المُسْتَقْبَلِ. - (lan) is a particle of nasb, negation, and futurity.">
+        <h4 class="arabic-medium">٢. مَا وَظِيفَةُ (لَنْ)؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) حَرْفُ جَزْمٍ فَقَطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) حَرْفُ نَفْيٍ فَقَطْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) حَرْفُ نَصْبٍ وَنَفْيٍ وَاسْتِقْبَالٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) حَرْفُ نَصْبٍ فَقَطْ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="غَابَ فِعْلٌ أَجْوَفُ (حَرْفُ العِلَّةِ فِي وَسَطِ الفِعْلِ). - غَابَ is a hollow verb (the weak letter is in the middle).">
+        <h4 class="arabic-medium">٣. الفِعْلُ (غَابَ) هُوَ فِعْلٌ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) أَجْوَفُ (Hollow)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) نَاقِصٌ (Defective)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) مِثَالٌ (Assimilated)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) صَحِيحٌ (Sound)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="المَصْدَرُ الصَّرِيحُ مَأْخُوذٌ مِنْ حُرُوفِ الفِعْلِ نَفْسِهِ، مِثْلُ: دَخَلَ → دُخُولٌ. - The essential infinitive is derived from the verb's own root letters.">
+        <h4 class="arabic-medium">٤. المَصْدَرُ الصَّرِيحُ هُوَ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) أَنْ + الفِعْلُ المُضَارِعُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) لَنْ + الفِعْلُ المُضَارِعُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) لَمْ + الفِعْلُ المُضَارِعُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) اسْمٌ مَأْخُوذٌ مِنْ حُرُوفِ الفِعْلِ (مِثْلُ: قِرَاءَةٌ مِنْ قَرَأَ)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="أُحِبُّ أَنْ أَقْرَأَ = المَصْدَرُ المُؤَوَّلُ (أَنْ + فِعْل مُضَارِع). أُحِبُّ قِرَاءَةَ = المَصْدَرُ الصَّرِيحُ. - 'an + verb' = technical infinitive; the plain masdar = essential infinitive.">
+        <h4 class="arabic-medium">٥. "أُحِبُّ أَنْ أَقْرَأَ القُرْآنَ" تَحْتَوِي عَلَى:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) مَصْدَرٌ صَرِيحٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) مَصْدَرٌ مُؤَوَّلٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) فِعْلُ أَمْرٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) فِعْلٌ مَجْزُومٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="المَصْدَرُ المُؤَوَّلُ يُعْرَبُ نَفْسَ إِعْرَابِ المَصْدَرِ الصَّرِيحِ الَّذِي يَأْخُذُ مَكَانَهُ. - The technical infinitive takes the same i'rab as the essential infinitive it replaces.">
+        <h4 class="arabic-medium">٦. إِعْرَابُ المَصْدَرِ المُؤَوَّلِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) يُعْرَبُ نَفْسَ إِعْرَابِ المَصْدَرِ الصَّرِيحِ الَّذِي يَأْخُذُ مَكَانَهُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) يُعْرَبُ دَائِمًا مَرْفُوعًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) يُعْرَبُ دَائِمًا مَنْصُوبًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) لَا مَحَلَّ لَهُ مِنَ الإِعْرَابِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="فِي الآيَةِ ﴿وَأَنْ تَصُومُوا خَيْرٌ لَّكُمْ﴾، المَصْدَرُ المُؤَوَّلُ (أَنْ تَصُومُوا) فِي مَحَلِّ رَفْعٍ مُبْتَدَأً. - The technical infinitive (an tasoumoo) is in the position of raf' as mubtada'.">
+        <h4 class="arabic-medium">٧. فِي ﴿وَأَنْ تَصُومُوا خَيْرٌ لَّكُمْ﴾، المَصْدَرُ المُؤَوَّلُ فِي مَحَلِّ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) نَصْبٍ مَفْعُولٌ بِهِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) جَرٍّ مُضَافٌ إِلَيْهِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) رَفْعٍ مُبْتَدَأً</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) رَفْعٍ خَبَرًا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="تَاءُ التَّأْنِيثِ فِي الفِعْلِ المَاضِي تُكْسَرُ عِنْدَ الْتِقَاءِ السَّاكِنَيْنِ (إِذَا كَانَ الفَاعِلُ يَبْدَأُ بِـ ال). - The ta' gets kasra when two sakins meet (when the subject starts with al-).">
+        <h4 class="arabic-medium">٨. فِي "دَخَلَتِ المُدَرِّسَةُ"، تَاءُ التَّأْنِيثِ مَكْسُورَةٌ بِسَبَبِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) لِأَنَّ الفِعْلَ مُؤَنَّثٌ دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) الْتِقَاءُ السَّاكِنَيْنِ (التَّاءُ سَاكِنَةٌ وَالأَلِفُ وَاللَّامُ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) لِأَنَّ الفَاعِلَ مُذَكَّرٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) لِأَنَّ الفِعْلَ مَنْصُوبٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ السَّادِسَةَ عَشْرَةَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 16</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
