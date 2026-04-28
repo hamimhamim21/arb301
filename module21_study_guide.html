@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 21 - ARB303 Study Guide | المحاضرة الحادية والعشرون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        .flowchart { display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 20px 0; }
+        .flow-top { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px 30px; border-radius: 15px; font-size: 28px; font-weight: bold; text-align: center; }
+        .flow-branches { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .flow-branch { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 15px 20px; border-radius: 15px; text-align: center; flex: 1; min-width: 200px; border: 2px solid #00897b; }
+        .flow-branch-title { font-size: 22px; font-weight: bold; color: #00695c; margin-bottom: 8px; }
+        .flow-branch-examples { font-size: 20px; color: #2c3e50; }
+        @media (max-width: 768px) { .arabic-large { font-size: 32px; } .arabic-medium { font-size: 26px; } .section-title { font-size: 28px; } table { font-size: 18px; } .flow-branches { flex-direction: column; } }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
+
+<nav class="nav-container">
+    <div class="nav-title">المُحَاضَرَةُ الحَادِيَةُ وَالعِشْرُونَ - Lecture 21</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفِعْلُ</span><span class="nav-en">Verb</span></a>
+        <a href="#lan"><span class="nav-ar">لَنْ النَّاصِبَةُ</span><span class="nav-en">Particle LAN</span></a>
+        <a href="#negation-tools"><span class="nav-ar">أَدَوَاتُ النَّفْيِ</span><span class="nav-en">Negation Tools</span></a>
+        <a href="#quran"><span class="nav-ar">أَمْثِلَةٌ قُرْآنِيَّةٌ</span><span class="nav-en">Quranic Examples</span></a>
+        <a href="#hadith"><span class="nav-ar">حَدِيثٌ نَبَوِيٌّ</span><span class="nav-en">Hadith</span></a>
+        <a href="#lesson-text"><span class="nav-ar">نَصُّ الدَّرْسِ</span><span class="nav-en">Lesson Text</span></a>
+        <a href="#exercises"><span class="nav-ar">تَمَارِينُ</span><span class="nav-en">Exercises</span></a>
+        <a href="#vocab"><span class="nav-ar">كَلِمَاتٌ جَدِيدَةٌ</span><span class="nav-en">Vocabulary</span></a>
+        <a href="#mcq"><span class="nav-ar">أَسْئِلَةٌ</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الحَادِيَةُ وَالعِشْرُونَ</h1>
+    <div class="subtitle">Lecture 21 - الدَّرْسُ التَّاسِعَ عَشَرَ (Lesson 19) - مِنَ الجُزْءِ الثَّانِي</div>
+</div>
+
+<!-- Verb Section -->
+<section class="section" id="verb">
+    <h2 class="section-title">الفِعْلُ: اِعْتَمَرَ - يَعْتَمِرُ (البَابُ الثَّامِنُ - Form VIII)</h2>
+    <p class="english-text">The Verb: To perform Umra (Form VIII - اِفْتَعَلَ)</p>
+
+    <div class="formula-box">
+        <div class="formula">اِعْتَمَرَ - يَعْتَمِرُ - لَنْ يَعْتَمِرَ - لَمْ يَعْتَمِرْ - اِعْتَمِرْ - اِعْتِمَارًا</div>
+        <p class="english-text">Past - Present - Subjunctive - Jussive - Imperative - Masdar</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ التَّصْرِيفِ - Conjugation Table</h3>
+    <table>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ + المُضَارِع</th><th>لَمْ + المُضَارِع</th><th>الأَمْرُ</th><th>المَصْدَرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>اِعْتَمَرْتُ</td><td>أَعْتَمِرُ</td><td>لَنْ أَعْتَمِرَ</td><td>لَمْ أَعْتَمِرْ</td><td>-</td><td rowspan="14" style="vertical-align:middle; font-size:28px; font-weight:bold; color:#00695c;">اِعْتِمَارًا</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>اِعْتَمَرْنَا</td><td>نَعْتَمِرُ</td><td>لَنْ نَعْتَمِرَ</td><td>لَمْ نَعْتَمِرْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>اِعْتَمَرْتَ</td><td>تَعْتَمِرُ</td><td>لَنْ تَعْتَمِرَ</td><td>لَمْ تَعْتَمِرْ</td><td>اِعْتَمِرْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>اِعْتَمَرْتِ</td><td>تَعْتَمِرِينَ</td><td>لَنْ تَعْتَمِرِي</td><td>لَمْ تَعْتَمِرِي</td><td>اِعْتَمِرِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>اِعْتَمَرْتُمَا</td><td>تَعْتَمِرَانِ</td><td>لَنْ تَعْتَمِرَا</td><td>لَمْ تَعْتَمِرَا</td><td>اِعْتَمِرَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>اِعْتَمَرْتُمْ</td><td>تَعْتَمِرُونَ</td><td>لَنْ تَعْتَمِرُوا</td><td>لَمْ تَعْتَمِرُوا</td><td>اِعْتَمِرُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>اِعْتَمَرْتُنَّ</td><td>تَعْتَمِرْنَ</td><td>لَنْ تَعْتَمِرْنَ</td><td>لَمْ تَعْتَمِرْنَ</td><td>اِعْتَمِرْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>اِعْتَمَرَ</td><td>يَعْتَمِرُ</td><td>لَنْ يَعْتَمِرَ</td><td>لَمْ يَعْتَمِرْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>اِعْتَمَرَتْ</td><td>تَعْتَمِرُ</td><td>لَنْ تَعْتَمِرَ</td><td>لَمْ تَعْتَمِرْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>اِعْتَمَرَا</td><td>يَعْتَمِرَانِ</td><td>لَنْ يَعْتَمِرَا</td><td>لَمْ يَعْتَمِرَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>اِعْتَمَرَتَا</td><td>تَعْتَمِرَانِ</td><td>لَنْ تَعْتَمِرَا</td><td>لَمْ تَعْتَمِرَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>اِعْتَمَرُوا</td><td>يَعْتَمِرُونَ</td><td>لَنْ يَعْتَمِرُوا</td><td>لَمْ يَعْتَمِرُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>اِعْتَمَرْنَ</td><td>يَعْتَمِرْنَ</td><td>لَنْ يَعْتَمِرْنَ</td><td>لَمْ يَعْتَمِرْنَ</td><td>-</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="example-box">
+        <div class="example-ar">اِعْتَمَرَ رَسُولُ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ أَرْبَعَ عُمَرٍ</div>
+        <div class="example-en">The Messenger of Allah (peace be upon him) performed Umra four times</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">لَقَدِ اعْتَمَرْتُ عُمْرَةً وَاحِدَةً</div>
+        <div class="example-en">I have performed Umra once</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">يَأْتِي النَّاسُ مِنْ كُلِّ مَكَانٍ مِنَ العَالَمِ إِلَى مَكَّةَ فِي رَمَضَانَ لِيَعْتَمِرُوا</div>
+        <div class="example-en">People come from everywhere in the world to Makkah in Ramadan to perform Umra</div>
+    </div>
+</section>
+
+<!-- LAN Section -->
+<section class="section" id="lan">
+    <h2 class="section-title">"لَنْ" النَّاصِبَةُ لِلْفِعْلِ المُضَارِعِ</h2>
+    <p class="english-text">The particle "LAN" which puts the present verb in the accusative case (nasb) - negation of the future</p>
+
+    <div class="grammar-box">
+        <p class="arabic-text">دَرَسْنَا قَبْلَ ذَلِكَ (أَنْ) النَّاصِبَةَ لِلْفِعْلِ المُضَارِعِ، وَعَرَفْنَا أَنَّهَا حَرْفٌ مَصْدَرِيٌّ وَنَصْبٌ</p>
+        <p class="english-text">We previously studied "AN" which puts the present verb in nasb, and we knew it is a masdariyy and nasb particle</p>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text">كَمَا عَرَفْنَا أَنَّ (أَنْ) وَالفِعْلَ المُضَارِعَ الَّذِي يَأْتِي بَعْدَهَا تَكُونُ فِي تَأْوِيلِ مَصْدَرٍ صَرِيحٍ</p>
+        <p class="english-text">We also knew that "AN" + the present verb that follows it can be interpreted as an explicit masdar</p>
+        <p class="arabic-text">تَقُولُ: أَرْجُو أَنْ أَذْهَبَ إِلَى مَكَّةَ لِلْحَجِّ</p>
+        <p class="english-text">You say: I hope to go to Makkah for Hajj - (أَنْ) and the subjunctive verb = مَفْعُولٌ بِهِ</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">وَدَرَسْنَا قَبْلَ ذَلِكَ لَامَ التَّعْلِيلِ</h4>
+        <p class="arabic-text">وَعَرَفْنَا أَنَّهَا تَنْصِبُ الفِعْلَ المُضَارِعَ الَّذِي بَعْدَهَا</p>
+        <p class="english-text">We also previously studied Lam al-Ta'leel (لام التعليل) and knew it puts the verb in nasb</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">الأَدَاةُ الثَّالِثَةُ: لَنْ</h4>
+        <p class="arabic-text">وَالآنَ سَنَدْرُسُ إِنْ شَاءَ اللهُ الأَدَاةَ الثَّالِثَةَ الَّتِي تَنْصِبُ الفِعْلَ المُضَارِعَ، وَهِيَ (لَنْ) وَقُلْنَا إِنَّهَا حَرْفُ نَفْيٍ وَنَصْبٍ وَاسْتِقْبَالٍ</p>
+        <p class="english-text">Now we will study the third tool that puts the present verb in nasb: "LAN" - it is a particle of negation, nasb, and future tense</p>
+        <p class="arabic-text">وَهَذِهِ الأَدَاةُ هَامَّةٌ جِدًّا لِكَثْرَةِ اسْتِخْدَامِهَا</p>
+        <p class="english-text">This tool is very important due to its frequent usage</p>
+    </div>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">مَتَى نَسْتَخْدِمُ "لَنْ"؟</h4>
+        <p class="arabic-text">وَحِينَمَا نَسْتَخْدِمُ الأَدَاةَ (لَنْ) فَإِنَّهَا تُفِيدُ نَفْيَ الفِعْلِ فِي الزَّمَنِ المُسْتَقْبَلِ</p>
+        <p class="english-text">"LAN" is used to negate the verb in the FUTURE tense</p>
+        <p class="arabic-text">فَتَقُولُ: <strong>لَنْ أَذْهَبَ</strong> إِلَى المَكْتَبَةِ غَدًا</p>
+        <p class="english-text">Example: I will NOT go to the library tomorrow</p>
+    </div>
+</section>
+
+<!-- Negation Tools Comparison -->
+<section class="section" id="negation-tools">
+    <h2 class="section-title">أَدَوَاتُ النَّفْيِ الثَّلَاثُ - The Three Negation Tools</h2>
+    <p class="english-text">Comparing the three negation particles for past, present, and future</p>
+
+    <div class="flowchart">
+        <div class="flow-top">أَدَوَاتُ النَّفْيِ - Negation Tools</div>
+        <div class="flow-branches">
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَا - المَاضِي (Past)</div>
+                <div class="flow-branch-examples">مَا ذَهَبْتُ إِلَى السُّوقِ أَمْسِ</div>
+                <p class="english-text">I did not go to the market yesterday</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">لَا - الحَالُ / المُضَارِعُ (Present)</div>
+                <div class="flow-branch-examples">لَا أَذْهَبُ إِلَى السُّوقِ كُلَّ يَوْمٍ</div>
+                <p class="english-text">I do not go to the market every day</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">لَنْ - المُسْتَقْبَلُ (Future)</div>
+                <div class="flow-branch-examples">لَنْ أَذْهَبَ إِلَى السُّوقِ غَدًا</div>
+                <p class="english-text">I will not go to the market tomorrow</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">قَاعِدَةٌ هَامَّةٌ - Important Rule</h4>
+        <p class="arabic-text">أَمَّا إِذَا كَانَ الفِعْلُ فِي المَاضِي وَأَرَدْنَا أَنْ نَنْفِيَهُ فَإِنَّنَا نَسْتَخْدِمُ الأَدَاةَ (مَا) حَيْثُ نَقُولُ: <strong>مَا ذَهَبْتُ</strong></p>
+        <p class="english-text">To negate the past, use "MA": I did not go</p>
+        <p class="arabic-text">وَأَمَّا إِذَا كَانَ الفِعْلُ فِي الحَالِ فَإِنَّنَا نَسْتَخْدِمُ الأَدَاةَ (لَا) تَقُولُ: <strong>لَا أَذْهَبُ</strong></p>
+        <p class="english-text">To negate the present, use "LA": I do not go</p>
+        <p class="arabic-text">وَلِنَفْيِ المُسْتَقْبَلِ نَسْتَخْدِمُ (لَنْ) تَقُولُ: <strong>لَنْ أَذْهَبَ</strong></p>
+        <p class="english-text">To negate the future, use "LAN": I will not go</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">تَأْثِيرُ "لَنْ" عَلَى الفِعْلِ - Effect of "LAN" on the Verb</h4>
+        <p class="arabic-text">"لَنْ" تَنْصِبُ الفِعْلَ المُضَارِعَ (تَجْعَلُ آخِرَهُ فَتْحَةً)</p>
+        <p class="english-text">"LAN" puts the present verb in nasb (its ending becomes fatha)</p>
+        <p class="arabic-text">يَذْهَبُ ← <strong>لَنْ يَذْهَبَ</strong> &nbsp;|&nbsp; يَكْتُبُ ← <strong>لَنْ يَكْتُبَ</strong> &nbsp;|&nbsp; يَعْتَمِرُ ← <strong>لَنْ يَعْتَمِرَ</strong></p>
+    </div>
+</section>
+
+<!-- Quranic Examples -->
+<section class="section" id="quran">
+    <h2 class="section-title">أَمْثِلَةٌ مِنَ القُرْآنِ الكَرِيمِ - Quranic Examples</h2>
+
+    <div class="example-box">
+        <div class="example-ar">قَالَ اللهُ تَعَالَى: ﴿وَإِذْ قُلْتُمْ يَا مُوسَى لَنْ نُؤْمِنَ لَكَ حَتَّى نَرَى اللهَ جَهْرَةً فَأَخَذَتْكُمُ الصَّاعِقَةُ وَأَنْتُمْ تَنْظُرُونَ﴾</div>
+        <div class="example-en">"And when you said, 'O Moses, we will not believe you until we see Allah visibly.' Thereupon a thunderbolt seized you as you looked on." (Al-Baqarah 2:55)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">قَالَ اللهُ تَعَالَى: ﴿وَإِذْ قُلْتُمْ يَا مُوسَى لَنْ نَصْبِرَ عَلَى طَعَامٍ وَاحِدٍ﴾</div>
+        <div class="example-en">"And when you said, 'O Moses, we will not put up with one kind of food.'" (Al-Baqarah 2:61)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">قَالَ اللهُ تَعَالَى: ﴿فَذُوقُوا فَلَنْ نَزِيدَكُمْ إِلَّا عَذَابًا﴾</div>
+        <div class="example-en">"So [now] taste! We shall increase you in nothing but punishment!" (An-Naba' 78:30)</div>
+    </div>
+
+    <div class="info-box">
+        <p class="arabic-text">لَاحِظْ أَنَّ "لَنْ" فِي كُلِّ هَذِهِ الآيَاتِ تَنْفِي الفِعْلَ فِي المُسْتَقْبَلِ وَتَنْصِبُهُ (آخِرُهُ فَتْحَةٌ)</p>
+        <p class="english-text">Notice that "LAN" in all these verses negates the verb in the future and puts it in nasb (ending with fatha)</p>
+    </div>
+</section>
+
+<!-- Hadith -->
+<section class="section" id="hadith">
+    <h2 class="section-title">مِنْ أَقْوَالِ الرَّسُولِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ</h2>
+    <p class="english-text">From the sayings of the Prophet (peace be upon him)</p>
+
+    <div class="example-box">
+        <div class="example-ar">جَاءَ فِي صَحِيحِ الإِمَامِ البُخَارِيِّ أَنَّ رَسُولَ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ قَالَ: "مَنْ لَبِسَ الحَرِيرَ فِي الدُّنْيَا <strong>فَلَنْ يَلْبَسَهُ</strong> فِي الآخِرَةِ"</div>
+        <div class="example-en">"Whoever wears silk in this world shall not wear it in the Hereafter." (Narrated by Al-Bukhari)</div>
+    </div>
+
+    <div class="grammar-box">
+        <p class="arabic-text">الشَّاهِدُ: <strong>فَلَنْ يَلْبَسَهُ</strong> - "لَنْ" نَصَبَتِ الفِعْلَ المُضَارِعَ "يَلْبَسَ" وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ</p>
+        <p class="english-text">The key point: "fa-LAN yalbasaHU" - LAN put the present verb "yalbasa" in nasb, the sign of which is fatha</p>
+    </div>
+</section>
+
+<!-- Lesson Text -->
+<section class="section" id="lesson-text">
+    <h2 class="section-title">قِرَاءَةُ الدَّرْسِ - Lesson Reading (الدَّرْسُ التَّاسِعَ عَشَرَ)</h2>
+    <p class="english-text">Dialogue between Amr and Ayyub about summer holiday plans</p>
+
+    <div class="example-box">
+        <div class="example-ar">عَمْرٌو: أَرْجُو أَنْ تَشْتَرِيَ لِي هَذَا الكِتَابَ مِنَ الهِنْدِ عِنْدَمَا تَذْهَبُ إِلَى هُنَاكَ فِي عُطْلَةِ الصَّيْفِ. إِنَّهُ بِاللُّغَةِ الأُرْدِيَّةِ، وَمَا وَجَدْتُهُ فِي المَكْتَبَاتِ هُنَا.</div>
+        <div class="example-en">Amr: I hope that you will buy me this book from India when you go there in the summer holiday. It is in the Urdu language, and I have not found it in the bookstores here.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيُّوبُ: أَنَا آسِفٌ. إِنِّي <strong>لَنْ أَذْهَبَ</strong> إِلَى الهِنْدِ فِي عُطْلَةِ الصَّيْفِ. أُرِيدُ أَنْ أَذْهَبَ إِلَى بَغْدَادَ لِأَزُورَ خَالِي الَّذِي يَعْمَلُ فِي سِفَارَةِ الهِنْدِ هُنَاكَ.</div>
+        <div class="example-en">Ayyub: I am sorry. I will not go to India in the summer holiday. I want to go to Baghdad to visit my uncle who works in the Indian Embassy there.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">عَمْرٌو: وَإِخْوَتُكَ، أَلَا يَذْهَبُونَ إِلَى الهِنْدِ؟</div>
+        <div class="example-en">Amr: And your brothers, are they not going to India?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيُّوبُ: نَعَمْ. هُمْ أَيْضًا <strong>لَنْ يَذْهَبُوا</strong> هَذَا العَامَ. يُرِيدُونَ أَنْ يَبْقَوْا بِالمَدِينَةِ المُنَوَّرَةِ <strong>لِيَحْفَظُوا</strong> القُرْآنَ الكَرِيمَ.</div>
+        <div class="example-en">Ayyub: Yes. They also will not go this year. They want to stay in Madinah al-Munawwarah to memorize the Noble Quran.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">عَمْرٌو: وَأَخَوَاتُكَ؟</div>
+        <div class="example-en">Amr: And your sisters?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيُّوبُ: هُنَّ أَيْضًا <strong>لَنْ يَذْهَبْنَ</strong> إِلَى الهِنْدِ فِي هَذِهِ العُطْلَةِ. يُرِدْنَ أَنْ يَذْهَبْنَ إِلَى مَكَّةَ أَوَّلًا <strong>لِيَعْتَمِرْنَ</strong> وَيَبْقَيْنَ هُنَاكَ شَهْرًا عِنْدَ خَالَتِنَا. ثُمَّ سَيَذْهَبْنَ إِلَى الرِّيَاضِ لِزِيَارَةِ عَمَّتِنَا الَّذِي يَعْمَلُ فِي أَحَدِ المَصَارِفِ هُنَاكَ.</div>
+        <div class="example-en">Ayyub: They also will not go to India this holiday. They want to go to Makkah first to perform Umra and stay there for a month at our aunt's. Then they will go to Riyadh to visit our uncle who works in one of the banks there.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">عَمْرٌو: أَتَعْرِفُ أَحَدًا مِنَ الطُّلَّابِ الهُنُودِ يَذْهَبُ إِلَى الهِنْدِ فِي هَذِهِ العُطْلَةِ؟ سَمِعْتُ أَنَّ طَالِبًا هِنْدِيًّا اسْمُهُ خَالِدٌ سَيَذْهَبُ إِلَى الهِنْدِ قَرِيبًا.</div>
+        <div class="example-en">Amr: Do you know anyone from the Indian students going to India this holiday? I heard that an Indian student named Khalid will go to India soon.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيُّوبُ: نَعَمْ. أَنَا أَعْرِفُهُ. هُوَ سَيَذْهَبُ فِي الأُسْبُوعِ المُقْبِلِ، وَلَكِنَّهُ <strong>لَنْ يَرْجِعَ</strong>.</div>
+        <div class="example-en">Ayyub: Yes. I know him. He will go next week, but he will not return.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">عَمْرٌو: لِمَهْ؟</div>
+        <div class="example-en">Amr: Why?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيُّوبُ: لِأَنَّهُ مَرِيضٌ وَسَيَبْقَى فِي الهِنْدِ لِلْعِلَاجِ... أَتَعْرِفُ جَعْفَرًا؟</div>
+        <div class="example-en">Ayyub: Because he is sick and will remain in India for treatment... Do you know Ja'far?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">عَمْرٌو: نَعَمْ. أَعْرِفُهُ، لَكِنَّهُ مِنْ بَاكِسْتَانَ.</div>
+        <div class="example-en">Amr: Yes. I know him, but he is from Pakistan.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيُّوبُ: يُمْكِنُهُ أَنْ يَشْتَرِيَ هَذَا الكِتَابَ مِنْ بَاكِسْتَانَ فَإِنَّ الكُتُبَ الأُرْدِيَّةَ مَوْجُودَةٌ فِي الهِنْدِ وَبَاكِسْتَانَ.</div>
+        <div class="example-en">Ayyub: He can buy this book from Pakistan, for Urdu books are found in India and Pakistan.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">عَمْرٌو: أَشْكُرُكَ يَا أَيُّوبُ جَزَاكَ اللهُ خَيْرًا. سَأَذْهَبُ إِلَيْهِ الآنَ وَأَقُولُ لَهُ. السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ.</div>
+        <div class="example-en">Amr: I thank you, Ayyub. May Allah reward you with good. I will go to him now and tell him. Assalamu alaikum wa rahmatullahi wa barakatuh.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">أَيُّوبُ: وَعَلَيْكُمُ السَّلَامُ. فِي أَمَانِ اللهِ.</div>
+        <div class="example-en">Ayyub: Wa alaikum assalam. In Allah's protection.</div>
+    </div>
+</section>
+
+<!-- Exercises -->
+<section class="section" id="exercises">
+    <h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الأَوَّلُ - Exercise 1: أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ:</p>
+        <p class="english-text">Answer the following questions:</p>
+    </div>
+    <table>
+        <tr><th>السُّؤَالُ</th><th>الإِجَابَةُ</th></tr>
+        <tr><td>١) أَيْنَ يُرِيدُ أَيُّوبُ أَنْ يَذْهَبَ فِي عُطْلَةِ الصَّيْفِ؟</td><td style="color:#c62828;font-weight:bold;">يُرِيدُ أَيُّوبُ أَنْ يَذْهَبَ إِلَى بَغْدَادَ</td></tr>
+        <tr><td>٢) أَيْنَ يَعْمَلُ خَالُهُ؟</td><td style="color:#c62828;font-weight:bold;">يَعْمَلُ خَالُهُ فِي سِفَارَةِ الهِنْدِ فِي بَغْدَادَ</td></tr>
+        <tr><td>٣) لِمَاذَا يُرِيدُ إِخْوَتُهُ أَنْ يَبْقَوْا بِالمَدِينَةِ المُنَوَّرَةِ؟</td><td style="color:#c62828;font-weight:bold;">يُرِيدُونَ أَنْ يَبْقَوْا فِي المَدِينَةِ المُنَوَّرَةِ لِيَحْفَظُوا القُرْآنَ الكَرِيمَ</td></tr>
+        <tr><td>٤) لِمَاذَا تُرِيدُ أَخَوَاتُهُ أَنْ يَذْهَبْنَ إِلَى مَكَّةَ؟</td><td style="color:#c62828;font-weight:bold;">تُرِيدُ أَخَوَاتُهُ أَنْ يَذْهَبْنَ إِلَى مَكَّةَ لِيَعْتَمِرْنَ وَيَبْقَيْنَ شَهْرًا عِنْدَ خَالَتِهِنَّ</td></tr>
+        <tr><td>٥) لِزِيَارَةِ مَنْ يَذْهَبْنَ إِلَى الرِّيَاضِ؟</td><td style="color:#c62828;font-weight:bold;">يَذْهَبْنَ لِزِيَارَةِ عَمَّتِهِنَّ فِي الرِّيَاضِ</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الثَّانِي - Exercise 2: صَحِّحْ مَا يَلِي</h3>
+    <div class="rule-box">
+        <p class="arabic-text">صَحِّحْ مَا يَلِي:</p>
+        <p class="english-text">Correct the following:</p>
+    </div>
+    <table>
+        <tr><th>الخَطَأُ</th><th>التَّصْحِيحُ</th></tr>
+        <tr><td>١) يُرِيدُ عَمْرٌو أَنْ يَشْتَرِيَ كِتَابًا فَرَنْسِيًّا مِنَ الهِنْدِ</td><td style="color:#c62828;font-weight:bold;">كِتَابًا أُرْدِيًّا / كِتَابًا بِاللُّغَةِ الأُرْدِيَّةِ</td></tr>
+        <tr><td>٢) جَعْفَرٌ مِنَ الهِنْدِ</td><td style="color:#c62828;font-weight:bold;">جَعْفَرٌ مِنْ بَاكِسْتَانَ</td></tr>
+        <tr><td>٣) لَنْ يَرْجِعَ خَالِدٌ إِلَى الجَامِعَةِ لِأَنَّهُ لَا يُرِيدُ أَنْ يَدْرُسَ</td><td style="color:#c62828;font-weight:bold;">لِأَنَّهُ مَرِيضٌ وَسَيَبْقَى فِي الهِنْدِ لِلْعِلَاجِ</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الثَّالِثُ - Exercise 3: أَجِبْ بِالنَّفْيِ مُسْتَعْمِلًا (لَنْ)</h3>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ بِالنَّفْيِ مُسْتَعْمِلًا (لَنْ):</p>
+        <p class="english-text">Answer the following questions in the negative using (لَنْ):</p>
+    </div>
+    <table>
+        <tr><th>السُّؤَالُ</th><th>الإِجَابَةُ بِـ "لَنْ"</th></tr>
+        <tr><td>١) أَتَذْهَبُ إِلَى بَلَدِكَ فِي عُطْلَةِ الصَّيْفِ؟</td><td style="color:#c62828;font-weight:bold;">لَا، لَنْ أَذْهَبَ إِلَى بَلَدِي فِي عُطْلَةِ الصَّيْفِ</td></tr>
+        <tr><td>٢) أَتَذْهَبُونَ إِلَى المَلْعَبِ هَذَا المَسَاءَ يَا إِخْوَانُ؟</td><td style="color:#c62828;font-weight:bold;">لَا، لَنْ نَذْهَبَ إِلَى المَلْعَبِ هَذَا المَسَاءَ</td></tr>
+        <tr><td>٣) أَيَذْهَبُ زُمَلَاؤُكَ إِلَى المُتَحَفِ غَدًا يَا عَلِيُّ؟</td><td style="color:#c62828;font-weight:bold;">لَا، لَنْ يَذْهَبُوا إِلَى المُتَحَفِ غَدًا</td></tr>
+        <tr><td>٤) أَتَلْعَبُونَ كُرَةَ القَدَمِ هَذَا المَسَاءَ يَا إِخْوَانُ؟</td><td style="color:#c62828;font-weight:bold;">لَا، لَنْ نَلْعَبَ كُرَةَ القَدَمِ هَذَا المَسَاءَ</td></tr>
+        <tr><td>٥) أَيَرْجِعُ المُدِيرُ مِنْ جُدَّةَ غَدًا يَا أُسْتَاذُ؟</td><td style="color:#c62828;font-weight:bold;">لَا، لَنْ يَرْجِعَ المُدِيرُ مِنْ جُدَّةَ غَدًا</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الرَّابِعُ - Exercise 4: تَأَمَّلْ أَدَوَاتِ النَّفْيِ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلْ أَدَوَاتِ النَّفْيِ الآتِيَةَ:</p>
+        <p class="english-text">Contemplate the following negation tools:</p>
+    </div>
+    <table>
+        <tr><th>الجُمْلَةُ</th><th>النَّفْيُ</th><th>الزَّمَنُ</th></tr>
+        <tr><td>ذَهَبْتُ إِلَى السُّوقِ أَمْسِ</td><td style="color:#c62828;font-weight:bold;">مَا ذَهَبْتُ إِلَى السُّوقِ أَمْسِ</td><td>المَاضِي</td></tr>
+        <tr><td>أَذْهَبُ إِلَى السُّوقِ كُلَّ يَوْمٍ</td><td style="color:#c62828;font-weight:bold;">لَا أَذْهَبُ إِلَى السُّوقِ كُلَّ يَوْمٍ</td><td>الحَالُ (المُضَارِعُ)</td></tr>
+        <tr><td>سَأَذْهَبُ إِلَى السُّوقِ غَدًا</td><td style="color:#c62828;font-weight:bold;">لَنْ أَذْهَبَ إِلَى السُّوقِ غَدًا</td><td>المُسْتَقْبَلُ</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">التَّمْرِينُ الخَامِسُ - Exercise 5: اِقْرَأِ الأَمْثِلَةَ الآتِيَةَ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">اِقْرَأِ الأَمْثِلَةَ الآتِيَةَ:</p>
+        <p class="english-text">Read the following examples:</p>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">١) لَنْ أَذْهَبَ إِلَى قَرْيَتِي فِي عُطْلَةِ الصَّيْفِ هَذَا العَامَ</div>
+        <div class="example-en">I will not go to my village in the summer holiday this year</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">٢) إِنِّي مُتْعَبٌ جِدًّا. فَلَنْ أَخْرُجَ مِنَ البَيْتِ اليَوْمَ</div>
+        <div class="example-en">Certainly I am very tired, so I will not leave the house today</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">٣) لَنْ أَتْرُكَ الصَّلَاةَ أَبَدًا</div>
+        <div class="example-en">I will never leave the prayer (salah)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">٤) قَالَ المُدَرِّسُ: لَنْ أَسْمَحَ لَكُمْ بِالدُّخُولِ بَعْدَ بَدْءِ الدَّرْسِ فِي المُسْتَقْبَلِ</div>
+        <div class="example-en">The teacher said: I will not allow you to enter after the lesson has started in the future</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">٥) لَنْ أَحْلِقَ لِحْيَتِي أَبَدًا</div>
+        <div class="example-en">I will never shave my beard</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">٦) لَنْ يَرْجِعَ أَبِي مِنْ لَنْدَنَ قَبْلَ رَمَضَانَ</div>
+        <div class="example-en">My father will not return from London before Ramadan</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">٧) لَنْ نَشْرَبَ الخَمْرَ أَبَدًا</div>
+        <div class="example-en">We will never drink wine</div>
+    </div>
+
+    <h3 class="section-subtitle">التَّمْرِينُ السَّادِسُ - Exercise 6: أَدْخِلْ (لَنْ) عَلَى الأَفْعَالِ</h3>
+    <div class="rule-box">
+        <p class="arabic-text">أَدْخِلْ (لَنْ) عَلَى الأَفْعَالِ الآتِيَةِ وَاضْبِطْ أَوَاخِرَهَا:</p>
+        <p class="english-text">Add (لَنْ) to the following verbs and put the proper vowel signs on their endings:</p>
+    </div>
+    <table>
+        <tr><th>الفِعْلُ المُضَارِعُ</th><th>بَعْدَ إِدْخَالِ "لَنْ"</th></tr>
+        <tr><td>يَخْرُجُ</td><td style="color:#c62828;font-weight:bold;">لَنْ يَخْرُجَ</td></tr>
+        <tr><td>تَكْتُبِينَ</td><td style="color:#c62828;font-weight:bold;">لَنْ تَكْتُبِي</td></tr>
+        <tr><td>يَشْرَبُونَ</td><td style="color:#c62828;font-weight:bold;">لَنْ يَشْرَبُوا</td></tr>
+        <tr><td>يَغْسِلْنَ</td><td style="color:#c62828;font-weight:bold;">لَنْ يَغْسِلْنَ</td></tr>
+        <tr><td>أَدْخُلُ</td><td style="color:#c62828;font-weight:bold;">لَنْ أَدْخُلَ</td></tr>
+        <tr><td>تَفْتَحْنَ</td><td style="color:#c62828;font-weight:bold;">لَنْ تَفْتَحْنَ</td></tr>
+        <tr><td>تَأْكُلِينَ</td><td style="color:#c62828;font-weight:bold;">لَنْ تَأْكُلِي</td></tr>
+        <tr><td>تَجْلِسُ</td><td style="color:#c62828;font-weight:bold;">لَنْ تَجْلِسَ</td></tr>
+    </table>
+</section>
+
+<!-- Vocabulary -->
+<section class="section" id="vocab">
+    <h2 class="section-title">الكَلِمَاتُ الجَدِيدَةُ - New Vocabulary</h2>
+
+    <div class="vocab-grid">
+        <div class="vocab-item">
+            <div class="vocab-ar">آسِفٌ</div>
+            <div class="vocab-en">Sorry</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">سِفَارَةٌ</div>
+            <div class="vocab-en">Embassy</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">عَامٌ (ج أَعْوَامٌ)</div>
+            <div class="vocab-en">Year (pl. years)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">هِنْدِيٌّ (ج هُنُودٌ)</div>
+            <div class="vocab-en">Indian (pl. Indians)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">مُتْعَبٌ</div>
+            <div class="vocab-en">Tired</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">مَوْجُودٌ</div>
+            <div class="vocab-en">Existing / Found</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">خَمْرٌ (ج خُمُورٌ)</div>
+            <div class="vocab-en">Wine (pl. wines)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">حَرِيرٌ</div>
+            <div class="vocab-en">Silk</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">الدُّنْيَا</div>
+            <div class="vocab-en">The world / This life</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">الآخِرَةُ</div>
+            <div class="vocab-en">The Hereafter</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">مُسْتَقْبَلٌ</div>
+            <div class="vocab-en">Future</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">بِدَايَةٌ / بَدْءٌ</div>
+            <div class="vocab-en">Beginning</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">أَبَدًا</div>
+            <div class="vocab-en">Never / Ever</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">أَحَدٌ</div>
+            <div class="vocab-en">One / Someone</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">لَبِسَ (يَلْبَسُ)</div>
+            <div class="vocab-en">To wear</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">تَرَكَ (يَتْرُكُ)</div>
+            <div class="vocab-en">To leave / abandon</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">اِعْتَمَرَ (يَعْتَمِرُ)</div>
+            <div class="vocab-en">To perform Umra</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">عُمْرَةٌ</div>
+            <div class="vocab-en">Umra (minor pilgrimage)</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">صَبَرَ (يَصْبِرُ)</div>
+            <div class="vocab-en">To be patient</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">مَصْرِفٌ - مَصَارِفُ</div>
+            <div class="vocab-en">Bank - Banks</div>
+        </div>
+    </div>
+</section>
+
+<!-- MCQ Section -->
+<section class="section" id="mcq">
+    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
+
+    <div class="mcq-question" data-correct="c" data-explanation="'لَنْ' حَرْفُ نَفْيٍ وَنَصْبٍ وَاسْتِقْبَالٍ، تُسْتَخْدَمُ لِنَفْيِ الفِعْلِ فِي المُسْتَقْبَلِ. - 'LAN' is a particle of negation, nasb, and future tense.">
+        <h4 class="arabic-medium">١. مَا وَظِيفَةُ "لَنْ" فِي الجُمْلَةِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) نَفْيُ المَاضِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) نَفْيُ الحَالِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) نَفْيُ المُسْتَقْبَلِ وَنَصْبُ الفِعْلِ المُضَارِعِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) جَزْمُ الفِعْلِ المُضَارِعِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="'مَا' تُسْتَخْدَمُ لِنَفْيِ الفِعْلِ فِي المَاضِي. مِثَالٌ: مَا ذَهَبْتُ. - 'MA' is used to negate the past tense.">
+        <h4 class="arabic-medium">٢. أَيُّ أَدَاةٍ نَسْتَخْدِمُ لِنَفْيِ المَاضِي؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) لَنْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) مَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) لَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) لَمْ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="'لَنْ' تَنْصِبُ الفِعْلَ المُضَارِعَ فَيَصِيرُ آخِرُهُ فَتْحَةً: يَذْهَبُ ← لَنْ يَذْهَبَ. - 'LAN' puts the verb in nasb (fatha on the end).">
+        <h4 class="arabic-medium">٣. مَا الصَّحِيحُ: "لَنْ يَذْهَبَ" أَمْ "لَنْ يَذْهَبُ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) لَنْ يَذْهَبَ (بِالفَتْحَةِ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) لَنْ يَذْهَبُ (بِالضَّمَّةِ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) لَنْ يَذْهَبْ (بِالسُّكُونِ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) لَنْ يَذْهَبِ (بِالكَسْرَةِ)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="فِي الحَدِيثِ: 'مَنْ لَبِسَ الحَرِيرَ فِي الدُّنْيَا فَلَنْ يَلْبَسَهُ فِي الآخِرَةِ'. الحَرِيرُ = Silk. - The Hadith forbids wearing silk in this world.">
+        <h4 class="arabic-medium">٤. مَاذَا قَالَ النَّبِيُّ ﷺ عَنْ لُبْسِ الحَرِيرِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) مَنْ لَبِسَهُ فِي الدُّنْيَا يَلْبَسُهُ فِي الآخِرَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) لَنْ يَلْبَسَهُ أَحَدٌ فِي الدُّنْيَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) مَنْ لَبِسَهُ غُفِرَ لَهُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) مَنْ لَبِسَهُ فِي الدُّنْيَا فَلَنْ يَلْبَسَهُ فِي الآخِرَةِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="أَيُّوبُ قَالَ: لَنْ أَذْهَبَ إِلَى الهِنْدِ. يُرِيدُ أَنْ يَذْهَبَ إِلَى بَغْدَادَ لِزِيَارَةِ خَالِهِ. - Ayyub wants to go to Baghdad to visit his uncle.">
+        <h4 class="arabic-medium">٥. لِمَاذَا لَنْ يَذْهَبَ أَيُّوبُ إِلَى الهِنْدِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) لِأَنَّهُ مَرِيضٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) لِأَنَّهُ يُرِيدُ أَنْ يَذْهَبَ إِلَى بَغْدَادَ لِزِيَارَةِ خَالِهِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) لِأَنَّهُ يُرِيدُ أَنْ يَحْفَظَ القُرْآنَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) لِأَنَّهُ لَا يَمْلِكُ المَالَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="الأَدَوَاتُ الثَّلَاثُ النَّاصِبَةُ لِلْفِعْلِ المُضَارِعِ هِيَ: أَنْ، لَامُ التَّعْلِيلِ، وَلَنْ. - The three nasb particles are: AN, Lam al-Ta'leel, and LAN.">
+        <h4 class="arabic-medium">٦. كَمْ أَدَاةً تَنْصِبُ الفِعْلَ المُضَارِعَ دَرَسْنَاهَا؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) أَدَاةٌ وَاحِدَةٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) أَدَاتَانِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) ثَلَاثُ أَدَوَاتٍ (أَنْ، لَامُ التَّعْلِيلِ، لَنْ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) أَرْبَعُ أَدَوَاتٍ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="اِعْتَمَرَ فِعْلٌ مِنَ البَابِ الثَّامِنِ (اِفْتَعَلَ) وَمَعْنَاهُ: أَدَّى العُمْرَةَ. - اِعْتَمَرَ is a Form VIII verb meaning to perform Umra.">
+        <h4 class="arabic-medium">٧. مَا مَعْنَى الفِعْلِ "اِعْتَمَرَ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) أَدَّى العُمْرَةَ (To perform Umra)</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) بَنَى بَيْتًا (To build a house)</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) سَافَرَ (To travel)</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) أَدَّى الحَجَّ (To perform Hajj)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="'لَنْ يَشْرَبُوا' هِيَ الصِّيغَةُ الصَّحِيحَةُ لِأَنَّ لَنْ تَحْذِفُ النُّونَ مِنَ الأَفْعَالِ الخَمْسَةِ (يَشْرَبُونَ ← لَنْ يَشْرَبُوا). - LAN deletes the nun from the five verbs.">
+        <h4 class="arabic-medium">٨. مَا نَفْيُ "يَشْرَبُونَ" بِـ "لَنْ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) لَنْ يَشْرَبُونَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) لَنْ يَشْرَبَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) لَنْ يَشْرَبْنَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) لَنْ يَشْرَبُوا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الحَادِيَةُ وَالعِشْرُونَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 2 - Lecture 21 (Lesson 19)</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

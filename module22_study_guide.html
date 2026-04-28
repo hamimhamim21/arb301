@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 22 - ARB303 Study Guide | المحاضرة الثانية والعشرون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-large { font-size: 42px; color: #00695c; font-weight: 700; line-height: 2.2; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        .flowchart { display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 20px 0; }
+        .flow-top { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px 30px; border-radius: 15px; font-size: 28px; font-weight: bold; text-align: center; }
+        .flow-branches { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .flow-branch { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 15px 20px; border-radius: 15px; text-align: center; flex: 1; min-width: 200px; border: 2px solid #00897b; }
+        .flow-branch-title { font-size: 22px; font-weight: bold; color: #00695c; margin-bottom: 8px; }
+        .flow-branch-examples { font-size: 20px; color: #2c3e50; }
+        @media (max-width: 768px) { .arabic-large { font-size: 32px; } .arabic-medium { font-size: 26px; } .section-title { font-size: 28px; } table { font-size: 18px; } .flow-branches { flex-direction: column; } }
+    </style>
+</head>
+<body>
+<a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
+
+<nav class="nav-container">
+    <div class="nav-title">المُحَاضَرَةُ الثَّانِيَةُ وَالعِشْرُونَ - Lecture 22</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفِعْلُ</span><span class="nav-en">Verb</span></a>
+        <a href="#irtada"><span class="nav-ar">اِرْتَدَى</span><span class="nav-en">Synonym Verb</span></a>
+        <a href="#muthanna"><span class="nav-ar">صِيغَةُ المُثَنَّى</span><span class="nav-en">Dual Form</span></a>
+        <a href="#ahad"><span class="nav-ar">أَحَدٌ وَإِحْدَى</span><span class="nav-en">One (m/f)</span></a>
+        <a href="#kam"><span class="nav-ar">كَمْ</span><span class="nav-en">Kam Types</span></a>
+        <a href="#lesson-text"><span class="nav-ar">قِرَاءَةُ الدَّرْسِ</span><span class="nav-en">Lesson Text</span></a>
+        <a href="#mcq"><span class="nav-ar">أَسْئِلَة</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الثَّانِيَةُ وَالعِشْرُونَ</h1>
+    <div class="subtitle">Lecture 22 - الدَّرْسُ العِشْرُونَ (Lesson 20)</div>
+</div>
+
+<!-- Verb Section: لَبِسَ -->
+<section class="section" id="verb">
+    <h2 class="section-title">الفِعْلُ: لَبِسَ - يَلْبَسُ (To Wear / Dress)</h2>
+    <p class="english-text">The Verb: To wear / To dress - from Lesson 20</p>
+
+    <div class="formula-box">
+        <div class="formula">لَبِسَ - يَلْبَسُ - لَنْ يَلْبَسَ - لَمْ يَلْبَسْ - اِلْبَسْ - لُبْسًا</div>
+        <p class="english-text">Past - Present - Subjunctive - Jussive - Imperative - Masdar (Pattern: فُعْل)</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ التَّصْرِيفِ - Conjugation Table</h3>
+    <table>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ + المُضَارِع</th><th>لَمْ + المُضَارِع</th><th>الأَمْرُ</th><th>المَصْدَرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>لَبِسْتُ</td><td>أَلْبَسُ</td><td>لَنْ أَلْبَسَ</td><td>لَمْ أَلْبَسْ</td><td>-</td><td rowspan="14" style="font-size:28px; font-weight:bold; color:#00695c;">لُبْسًا<br><span class="english-text">Wearing</span></td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>لَبِسْنَا</td><td>نَلْبَسُ</td><td>لَنْ نَلْبَسَ</td><td>لَمْ نَلْبَسْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>لَبِسْتَ</td><td>تَلْبَسُ</td><td>لَنْ تَلْبَسَ</td><td>لَمْ تَلْبَسْ</td><td>اِلْبَسْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>لَبِسْتِ</td><td>تَلْبَسِينَ</td><td>لَنْ تَلْبَسِي</td><td>لَمْ تَلْبَسِي</td><td>اِلْبَسِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>لَبِسْتُمَا</td><td>تَلْبَسَانِ</td><td>لَنْ تَلْبَسَا</td><td>لَمْ تَلْبَسَا</td><td>اِلْبَسَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>لَبِسْتُمْ</td><td>تَلْبَسُونَ</td><td>لَنْ تَلْبَسُوا</td><td>لَمْ تَلْبَسُوا</td><td>اِلْبَسُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>لَبِسْتُنَّ</td><td>تَلْبَسْنَ</td><td>لَنْ تَلْبَسْنَ</td><td>لَمْ تَلْبَسْنَ</td><td>اِلْبَسْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>لَبِسَ</td><td>يَلْبَسُ</td><td>لَنْ يَلْبَسَ</td><td>لَمْ يَلْبَسْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>لَبِسَتْ</td><td>تَلْبَسُ</td><td>لَنْ تَلْبَسَ</td><td>لَمْ تَلْبَسْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>لَبِسَا</td><td>يَلْبَسَانِ</td><td>لَنْ يَلْبَسَا</td><td>لَمْ يَلْبَسَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>لَبِسَتَا</td><td>تَلْبَسَانِ</td><td>لَنْ تَلْبَسَا</td><td>لَمْ تَلْبَسَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>لَبِسُوا</td><td>يَلْبَسُونَ</td><td>لَنْ يَلْبَسُوا</td><td>لَمْ يَلْبَسُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>لَبِسْنَ</td><td>يَلْبَسْنَ</td><td>لَنْ يَلْبَسْنَ</td><td>لَمْ يَلْبَسْنَ</td><td>-</td></tr>
+    </table>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="example-box">
+        <div class="example-ar">مَنْ لَبِسَ الحَرِيرَ فِي الدُّنْيَا فَلَنْ يَلْبَسَهُ فِي الآخِرَةِ</div>
+        <div class="example-en">Whoever wears silk in this world will not wear it in the Hereafter (Hadith)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">هَذَا الرَّجُلُ يَلْبَسُ (يَرْتَدِي) قَمِيصًا جَدِيدًا</div>
+        <div class="example-en">This man is wearing a new shirt</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">يَا بِنْتُ لَا تَرْتَدِي (تَلْبَسِي) المَلَابِسَ الضَّيِّقَةَ</div>
+        <div class="example-en">O girl, do not wear narrow/tight clothes</div>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">أَمْرُ لَبِسَ - Imperative Forms</h4>
+        <p class="arabic-text">أَنْتَ: <strong>اِلْبَسْ</strong> &nbsp;|&nbsp; أَنْتِ: <strong>اِلْبَسِي الحِجَابَ يَا أُخْتَاهُ</strong></p>
+        <p class="arabic-text">أَنْتُمَا: <strong>اِلْبَسَا الثِّيَابَ</strong> &nbsp;|&nbsp; أَنْتُمْ: <strong>اِلْبَسُوا الثِّيَابَ</strong></p>
+        <p class="arabic-text">أَنْتُنَّ: <strong>اِلْبَسْنَ الحِجَابَ يَا بَنَاتُ</strong></p>
+        <p class="english-text">The imperative of لَبِسَ uses hamzat al-wasl with kasra (اِلْبَسْ) because the middle vowel of the present tense is fatha</p>
+    </div>
+</section>
+
+<!-- Synonym Verb: اِرْتَدَى -->
+<section class="section" id="irtada">
+    <h2 class="section-title">الفِعْلُ المُرَادِفُ: اِرْتَدَى - يَرْتَدِي (To Wear / Dress)</h2>
+    <p class="english-text">Synonym verb for wearing - also means "To wear / To dress"</p>
+
+    <div class="formula-box">
+        <div class="formula">اِرْتَدَى - يَرْتَدِي - لَنْ يَرْتَدِيَ - لَمْ يَرْتَدِ - اِرْتَدِ - اِرْتِدَاءً</div>
+        <p class="english-text">Past - Present - Subjunctive - Jussive - Imperative - Masdar</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ التَّصْرِيفِ - Conjugation Table</h3>
+    <table>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ + المُضَارِع</th><th>لَمْ + المُضَارِع</th><th>الأَمْرُ</th><th>المَصْدَرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>اِرْتَدَيْتُ</td><td>أَرْتَدِي</td><td>لَنْ أَرْتَدِيَ</td><td>لَمْ أَرْتَدِ</td><td>-</td><td rowspan="14" style="font-size:28px; font-weight:bold; color:#00695c;">اِرْتِدَاءً<br><span class="english-text">Wearing</span></td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>اِرْتَدَيْنَا</td><td>نَرْتَدِي</td><td>لَنْ نَرْتَدِيَ</td><td>لَمْ نَرْتَدِ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>اِرْتَدَيْتَ</td><td>تَرْتَدِي</td><td>لَنْ تَرْتَدِيَ</td><td>لَمْ تَرْتَدِ</td><td>اِرْتَدِ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>اِرْتَدَيْتِ</td><td>تَرْتَدِينَ</td><td>لَنْ تَرْتَدِي</td><td>لَمْ تَرْتَدِي</td><td>اِرْتَدِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>اِرْتَدَيْتُمَا</td><td>تَرْتَدِيَانِ</td><td>لَنْ تَرْتَدِيَا</td><td>لَمْ تَرْتَدِيَا</td><td>اِرْتَدِيَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>اِرْتَدَيْتُمْ</td><td>تَرْتَدُونَ</td><td>لَنْ تَرْتَدُوا</td><td>لَمْ تَرْتَدُوا</td><td>اِرْتَدُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>اِرْتَدَيْتُنَّ</td><td>تَرْتَدِينَ</td><td>لَنْ تَرْتَدِينَ</td><td>لَمْ تَرْتَدِينَ</td><td>اِرْتَدِينَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>اِرْتَدَى</td><td>يَرْتَدِي</td><td>لَنْ يَرْتَدِيَ</td><td>لَمْ يَرْتَدِ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>اِرْتَدَتْ</td><td>تَرْتَدِي</td><td>لَنْ تَرْتَدِيَ</td><td>لَمْ تَرْتَدِ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>اِرْتَدَيَا</td><td>يَرْتَدِيَانِ</td><td>لَنْ يَرْتَدِيَا</td><td>لَمْ يَرْتَدِيَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>اِرْتَدَتَا</td><td>تَرْتَدِيَانِ</td><td>لَنْ تَرْتَدِيَا</td><td>لَمْ تَرْتَدِيَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>اِرْتَدَوْا</td><td>يَرْتَدُونَ</td><td>لَنْ يَرْتَدُوا</td><td>لَمْ يَرْتَدُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>اِرْتَدَيْنَ</td><td>يَرْتَدِينَ</td><td>لَنْ يَرْتَدِينَ</td><td>لَمْ يَرْتَدِينَ</td><td>-</td></tr>
+    </table>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">مُلَاحَظَةٌ - Note</h4>
+        <p class="arabic-text">الفِعْلُ "اِرْتَدَى" مُرَادِفٌ لِلْفِعْلِ "لَبِسَ" وَكِلَاهُمَا بِمَعْنَى (To wear / Dress)</p>
+        <p class="english-text">The verb اِرْتَدَى is a synonym of لَبِسَ. Both mean "to wear / dress." You can use either interchangeably.</p>
+        <p class="arabic-text">أَنْتَ: <strong>اِرْتَدِ القَمِيصَ يَا وَلَدُ</strong> &nbsp;|&nbsp; أَنْتِ: <strong>اِرْتَدِي الحِجَابَ يَا بِنْتُ</strong></p>
+        <p class="arabic-text">أَنْتُمْ: <strong>اِرْتَدُوا القُمْصَانَ</strong> &nbsp;|&nbsp; أَنْتُنَّ: <strong>اِرْتَدِينَ الحِجَابَ يَا بَنَاتُ</strong></p>
+    </div>
+</section>
+
+<!-- Dual Form -->
+<section class="section" id="muthanna">
+    <h2 class="section-title">صِيغَةُ المُثَنَّى - The Dual Form (مُرَاجَعَةٌ - Review)</h2>
+    <p class="english-text">Review of the dual form from Lesson 20 - from Part 2 of the Madinah Book</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">تَعْرِيفُ المُثَنَّى - Definition of the Dual</h4>
+        <p class="arabic-text">المُثَنَّى هُوَ: الاسْمُ الَّذِي يَدُلُّ عَلَى اثْنَيْنِ أَوِ اثْنَتَيْنِ، وَذَلِكَ بِزِيَادَةِ أَلِفٍ وَنُونٍ أَوْ يَاءٍ وَنُونٍ عَلَى آخِرِ الاسْمِ المُفْرَدِ</p>
+        <p class="english-text">The dual is the noun that indicates two (masculine or feminine), formed by adding alif+nun or ya'+nun to the end of the singular noun</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">إِعْرَابُ المُثَنَّى - I'rab of the Dual</h4>
+        <p class="arabic-text">المُثَنَّى يُرْفَعُ بِالأَلِفِ وَيُنْصَبُ وَيُجَرُّ بِالْيَاءِ</p>
+        <p class="english-text">The dual is raised (nominative) with alif, and accusative/genitive with ya'</p>
+    </div>
+
+    <div class="flowchart">
+        <div class="flow-top">إِعْرَابُ المُثَنَّى</div>
+        <div class="flow-branches">
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَرْفُوعٌ بِالأَلِفِ</div>
+                <div class="flow-branch-examples">المُسْلِمَانِ يَفْعَلَانِ الخَيْرَ</div>
+                <p class="english-text">Nominative: with alif (ـَانِ)</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَنْصُوبٌ بِالْيَاءِ</div>
+                <div class="flow-branch-examples">إِنَّ المُسْلِمَيْنِ يَفْعَلَانِ الخَيْرَ</div>
+                <p class="english-text">Accusative: with ya' (ـَيْنِ)</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">مَجْرُورٌ بِالْيَاءِ</div>
+                <div class="flow-branch-examples">مَرَرْتُ بِالمُسْلِمَيْنِ</div>
+                <p class="english-text">Genitive: with ya' (ـَيْنِ)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">نُونُ المُثَنَّى مَكْسُورَةٌ - The Nun of the Dual is Kasra</h4>
+        <p class="arabic-text">نُلَاحِظُ أَنَّ نُونَ المُثَنَّى تَكُونُ مَكْسُورَةً (تَحْتَهَا كَسْرَةٌ): المُسْلِمَا<strong>نِ</strong> / المُسْلِمَيْ<strong>نِ</strong></p>
+        <p class="arabic-text">أَمَّا نُونُ جَمْعِ المُذَكَّرِ فَتَكُونُ مَفْتُوحَةً (فَوْقَهَا فَتْحَةٌ): المُسْلِمُو<strong>نَ</strong> / المُسْلِمِي<strong>نَ</strong></p>
+        <p class="english-text">The nun of the dual has kasra (ـنِ), while the nun of the masculine plural has fatha (ـنَ). This is a key distinction!</p>
+    </div>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">المُثَنَّى المُضَافُ - The Dual in Idafa</h4>
+        <p class="arabic-text">المُثَنَّى إِذَا كَانَ مُضَافًا وَجَاءَ بَعْدَهُ مُضَافٌ إِلَيْهِ فَيَجِبُ أَنْ نَحْذِفَ النُّونَ مِنْ آخِرِ المُثَنَّى</p>
+        <p class="english-text">When the dual is in idafa (possessive), the nun must be dropped</p>
+        <p class="arabic-text">مِثَالٌ: هَذَانِ الوَلَدَانِ ابْنَا المُعَلِّمِ &nbsp;|&nbsp; وَرَأَيْتُ ابْنَيْ صَدِيقِي</p>
+        <p class="english-text">Example: These two boys are the teacher's sons | I saw my friend's two sons</p>
+        <p class="arabic-text">مَرَرْتُ بِمُهَنْدِسَيْ شَرِكَةِ الكَهْرُبَاءِ</p>
+        <p class="english-text">I passed by the two engineers of the electricity company</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةُ المُثَنَّى - Dual Examples</h3>
+    <table>
+        <tr><th>المُفْرَدُ</th><th>المُثَنَّى (رَفْعٌ)</th><th>المُثَنَّى (نَصْبٌ / جَرٌّ)</th></tr>
+        <tr><td>رَجُلٌ</td><td>رَجُلَانِ</td><td>رَجُلَيْنِ</td></tr>
+        <tr><td>سَيِّدَةٌ</td><td>سَيِّدَتَانِ</td><td>سَيِّدَتَيْنِ</td></tr>
+        <tr><td>مُدَرِّسٌ</td><td>مُدَرِّسَانِ</td><td>مُدَرِّسَيْنِ</td></tr>
+        <tr><td>سُورَةٌ</td><td>سُورَتَانِ</td><td>سُورَتَيْنِ</td></tr>
+        <tr><td>كَلِمَةٌ</td><td>كَلِمَتَانِ</td><td>كَلِمَتَيْنِ</td></tr>
+        <tr><td>دَفْتَرٌ</td><td>دَفْتَرَانِ</td><td>دَفْتَرَيْنِ</td></tr>
+        <tr><td>مِلَفٌّ</td><td>مِلَفَّانِ</td><td>مِلَفَّيْنِ</td></tr>
+    </table>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">المُلْحَقُ بِالمُثَنَّى - Words Attached to the Dual</h4>
+        <p class="arabic-text">كَلِمَةٌ مِثْلَ: <strong>اثْنَانِ</strong> أَوْ <strong>اثْنَتَيْنِ</strong> - لَيْسَ لَهُمَا مُفْرَدٌ مِنْ لَفْظِهِمَا</p>
+        <p class="arabic-text">لِذَلِكَ نَقُولُ: إِنَّ هَاتَيْنِ الكَلِمَتَيْنِ <strong>مُلْحَقَتَانِ بِالمُثَنَّى</strong></p>
+        <p class="english-text">Words like اثْنَانِ (two) and اثْنَتَيْنِ have no singular form, so they are "attached to" (treated like) the dual</p>
+    </div>
+</section>
+
+<!-- أَحَدٌ وَإِحْدَى -->
+<section class="section" id="ahad">
+    <h2 class="section-title">أَحَدٌ وَإِحْدَى - One (Masculine & Feminine)</h2>
+    <p class="english-text">The words for "one" in Arabic - masculine and feminine forms</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">القَاعِدَةُ - The Rule</h4>
+        <p class="arabic-text">كَلِمَةُ (<strong>أَحَدٌ</strong>) تُسْتَخْدَمُ فِي اللُّغَةِ العَرَبِيَّةِ مَعَ المُذَكَّرِ وَمَعْنَاهَا "One"</p>
+        <p class="arabic-text">أَمَّا كَلِمَةُ (<strong>إِحْدَى</strong>) فَهِيَ تُسْتَخْدَمُ مَعَ المُؤَنَّثِ وَهِيَ تَكُونُ مُعْرَبَةً بِعَلَامَاتٍ مُقَدَّرَةٍ</p>
+        <p class="english-text">أَحَدٌ (ahad) is used with masculine nouns. إِحْدَى (ihda) is used with feminine nouns and has implied (muqaddara) case markers.</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">قَالَ <strong>أَحَدُ</strong> الطُّلَّابِ &nbsp;&nbsp;|&nbsp;&nbsp; وَقَالَتْ <strong>إِحْدَى</strong> الطَّالِبَاتِ</div>
+        <div class="example-en">One of the (male) students said | One of the (female) students said</div>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">أَحَدٌ + آخَرُ &nbsp;|&nbsp; إِحْدَى + أُخْرَى</h4>
+        <p class="arabic-text">يُمْكِنُ أَنْ نَسْتَخْدِمَ مَعَ كَلِمَةِ (أَحَدٌ) كَلِمَةَ (<strong>آخَرُ</strong>)</p>
+        <p class="arabic-text">أَمَّا كَلِمَةُ (إِحْدَى) فَنَسْتَخْدِمُ مَعَهَا كَلِمَةَ (<strong>أُخْرَى</strong>)</p>
+        <p class="english-text">With أَحَدٌ (one - masc.), use آخَرُ (another - masc.). With إِحْدَى (one - fem.), use أُخْرَى (another - fem.)</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">دَخَلَ أَحَدُ الطُّلَّابِ ثُمَّ دَخَلَ طَالِبٌ <strong>آخَرُ</strong></div>
+        <div class="example-en">One of the students entered, then another student entered</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">دَخَلَتْ إِحْدَى الطَّالِبَاتِ ثُمَّ دَخَلَتْ طَالِبَةٌ <strong>أُخْرَى</strong></div>
+        <div class="example-en">One of the (female) students entered, then another (female) student entered</div>
+    </div>
+</section>
+
+<!-- كَمْ الاسْتِفْهَامِيَّةُ وَكَمْ الخَبَرِيَّةُ -->
+<section class="section" id="kam">
+    <h2 class="section-title">كَمْ الاسْتِفْهَامِيَّةُ وَكَمْ الخَبَرِيَّةُ</h2>
+    <p class="english-text">Interrogative كَمْ (How many?) vs. Informative كَمْ (Many/Much)</p>
+
+    <div class="flowchart">
+        <div class="flow-top">كَمْ - نَوْعَانِ</div>
+        <div class="flow-branches">
+            <div class="flow-branch">
+                <div class="flow-branch-title">كَمْ الاسْتِفْهَامِيَّةُ</div>
+                <div class="flow-branch-examples">How many? - لِلسُّؤَالِ</div>
+                <p class="english-text">Interrogative: asks about quantity</p>
+            </div>
+            <div class="flow-branch">
+                <div class="flow-branch-title">كَمْ الخَبَرِيَّةُ</div>
+                <div class="flow-branch-examples">Many / Much - لِلإِخْبَارِ عَنِ الكَثْرَةِ</div>
+                <p class="english-text">Informative: tells about large quantity</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="section-subtitle">أَوَّلًا: كَمْ الاسْتِفْهَامِيَّةُ - Interrogative كَمْ</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text">كَمْ الاسْتِفْهَامِيَّةُ مَعْنَاهَا "How many" وَهِيَ تَأْتِي فِي أَوَّلِ السُّؤَالِ</p>
+        <p class="arabic-text">وَهِيَ اسْمُ اسْتِفْهَامٍ مَبْنِيٌّ عَلَى السُّكُونِ، وَتَسْأَلُ عَنِ العَدَدِ، وَتَحْتَاجُ إِلَى إِجَابَةٍ</p>
+        <p class="english-text">Interrogative كَمْ means "How many." It comes at the beginning of a question, asks about numbers, and requires an answer.</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">تَمْيِيزُ كَمْ الاسْتِفْهَامِيَّةِ - Its Specification (Tamyiz)</h4>
+        <p class="arabic-text">تَمْيِيزُهَا يَكُونُ دَائِمًا <strong>مُفْرَدًا مَنْصُوبًا</strong></p>
+        <p class="english-text">Its tamyiz (specification) is always singular and in the accusative (mansub)</p>
+        <p class="arabic-text">مِثَالٌ: كَمْ سَيَّارَةً فِي الطَّرِيقِ؟ وَكَمْ طَالِبًا فِي الفَصْلِ؟</p>
+        <p class="english-text">Example: How many cars on the road? How many students in the class?</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">كَمْ مَسْبُوقَةٌ بِحَرْفِ جَرٍّ - With a Preposition</h4>
+        <p class="arabic-text">قَدْ تَكُونُ مَسْبُوقَةً بِحَرْفِ جَرٍّ مِثْلَ البَاءِ، وَفِي هَذِهِ الحَالَةِ يَكُونُ تَمْيِيزُهَا مُفْرَدًا مَنْصُوبًا أَوْ مُفْرَدًا مَجْرُورًا</p>
+        <p class="english-text">When preceded by a preposition (like بِـ), the tamyiz can be singular accusative or singular genitive</p>
+        <p class="arabic-text">مِثَالٌ: بِكَمْ (دُولَارًا) اشْتَرَيْتَ الكِتَابَ؟</p>
+        <p class="english-text">Example: For how many (dollars) did you buy the book?</p>
+    </div>
+
+    <h3 class="section-subtitle">ثَانِيًا: كَمْ الخَبَرِيَّةُ - Informative كَمْ</h3>
+
+    <div class="grammar-box">
+        <p class="arabic-text">كَمْ الخَبَرِيَّةُ مَعْنَاهَا (<strong>كَثِيرٌ</strong>) "Much or Many" وَلَا تَأْتِي فِي جُمْلَةِ الاسْتِفْهَامِ</p>
+        <p class="arabic-text">فَلَا نَضَعُ عَلَامَةَ اسْتِفْهَامٍ (؟) فِي آخِرِ الجُمْلَةِ</p>
+        <p class="arabic-text">وَهِيَ لَا تَحْتَاجُ إِلَى إِجَابَةٍ</p>
+        <p class="english-text">Informative كَمْ means "many/much." It does NOT appear in a question. No question mark is used. It does not require an answer.</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">تَمْيِيزُ كَمْ الخَبَرِيَّةِ - Its Specification (Tamyiz)</h4>
+        <p class="arabic-text">تَمْيِيزُهَا يَكُونُ دَائِمًا <strong>مَجْرُورًا</strong> عَلَى أَنَّهُ مُضَافٌ إِلَيْهِ أَوْ يَكُونُ مَجْرُورًا بِحَرْفِ جَرٍّ</p>
+        <p class="arabic-text">وَلَا يَكُونُ مَنْصُوبًا، وَقَدْ يَكُونُ مُفْرَدًا أَوْ يَكُونُ جَمْعًا</p>
+        <p class="english-text">Its tamyiz is always in the genitive (majrur) - either as mudaf ilayhi or with a preposition (مِنْ). It is NEVER accusative. It can be singular or plural.</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">كَمْ مِنْ طَالِبٍ فِي الفَصْلِ &nbsp;&nbsp;(= There are many students in the class)</div>
+        <div class="example-en">Many a student in the class (tamyiz is مَجْرُور with مِنْ)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كَمْ طَالِبٍ فِي الفَصْلِ &nbsp;&nbsp;(= There are many students in the class)</div>
+        <div class="example-en">Many a student in the class (tamyiz is مَجْرُور as مُضَاف إِلَيْهِ - singular)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كَمْ طُلَّابٍ فِي الفَصْلِ &nbsp;&nbsp;(= There are many students in the class)</div>
+        <div class="example-en">Many students in the class (tamyiz is مَجْرُور as مُضَاف إِلَيْهِ - plural)</div>
+    </div>
+
+    <h3 class="section-subtitle">مُقَارَنَةٌ: كَمْ الاسْتِفْهَامِيَّةُ وَكَمْ الخَبَرِيَّةُ - Comparison</h3>
+    <table>
+        <tr><th></th><th>كَمْ الاسْتِفْهَامِيَّةُ</th><th>كَمْ الخَبَرِيَّةُ</th></tr>
+        <tr><td class="pronoun-cell">المَعْنَى</td><td>How many? (لِلسُّؤَالِ)</td><td>Many / Much (لِلإِخْبَارِ عَنِ الكَثْرَةِ)</td></tr>
+        <tr><td class="pronoun-cell">عَلَامَةُ الاسْتِفْهَامِ</td><td>نَعَمْ (؟)</td><td>لَا</td></tr>
+        <tr><td class="pronoun-cell">الإِجَابَةُ</td><td>تَحْتَاجُ إِلَى إِجَابَةٍ</td><td>لَا تَحْتَاجُ إِلَى إِجَابَةٍ</td></tr>
+        <tr><td class="pronoun-cell">التَّمْيِيزُ</td><td>مُفْرَدٌ مَنْصُوبٌ</td><td>مَجْرُورٌ (مُفْرَدٌ أَوْ جَمْعٌ)</td></tr>
+        <tr><td class="pronoun-cell">مِثَالٌ</td><td>كَمْ رَجُلًا فِي المَسْجِدِ؟</td><td>كَمْ رَجُلٍ (مِنْ رَجُلٍ) فِي المَسْجِدِ.</td></tr>
+        <tr><td class="pronoun-cell">مِثَالٌ</td><td>كَمْ كِتَابًا فِي الحَقِيبَةِ؟</td><td>كَمْ كِتَابٍ (مِنْ كِتَابٍ) فِي الحَقِيبَةِ.</td></tr>
+        <tr><td class="pronoun-cell">مِثَالٌ</td><td>فِي كَمْ سَيَّارَةً (سَيَّارَةٍ) رَكِبْتَ؟</td><td>كَمْ سَيَّارَةٍ (مِنْ سَيَّارَةٍ) رَكِبْتُ.</td></tr>
+        <tr><td class="pronoun-cell">مِثَالٌ</td><td>بِكَمْ جُنَيْهٍ (جُنَيْهًا) اشْتَرَيْتَ الكِتَابَ؟</td><td>كَمْ جُنَيْهٍ (مِنْ جُنَيْهَاتٍ) مَعِي.</td></tr>
+    </table>
+</section>
+
+<!-- Lesson Text -->
+<section class="section" id="lesson-text">
+    <h2 class="section-title">قِرَاءَةُ الدَّرْسِ - Lesson 20 Reading</h2>
+    <p class="english-text">Dialogue from Lesson 20 of Book 2 - A conversation between a father and his sons</p>
+
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبُ:</strong> كَمْ سُورَةً حَفِظْتَ يَا بَشِيرُ؟</div>
+        <div class="example-en">Father: How many chapters have you memorized, O Basheer?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>بَشِيرٌ:</strong> حَفِظْتُ سُورَةً وَاحِدَةً.</div>
+        <div class="example-en">Basheer: I memorized one chapter.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبُ:</strong> وَكَمْ سُورَةً حَفِظْتَ يَا عُمَرُ؟</div>
+        <div class="example-en">Father: And how many chapters have you memorized, O Omar?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>عُمَرُ:</strong> أَنَا حَفِظْتُ سُورَتَيْنِ.</div>
+        <div class="example-en">Omar: I memorized two chapters.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>مُعَاوِيَةُ:</strong> يَا أَبَتِ، جَاءَ اليَوْمَ مُدَرِّسَانِ جَدِيدَانِ، أَحَدُهُمَا لِلْفِقْهِ وَالآخَرُ لِلْحَدِيثِ.</div>
+        <div class="example-en">Mu'awiyah: O father, two new teachers came today, one of them for Fiqh and the other for Hadith.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>بَشِيرٌ:</strong> يَا أَبَتِ، قَرَأْتُ اليَوْمَ كَلِمَتَيْنِ جَدِيدَتَيْنِ فِي هَذَا الكِتَابِ.</div>
+        <div class="example-en">Basheer: O father, I read two new words in this book today.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبُ:</strong> مَا هُمَا؟</div>
+        <div class="example-en">Father: What are they?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>بَشِيرٌ:</strong> هُمَا (المُشْطُ) وَ(المِخَدَّةُ).</div>
+        <div class="example-en">Basheer: They are "the comb" and "the pillow."</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبُ:</strong> أَعَرَفْتَ مَعْنَاهُمَا؟</div>
+        <div class="example-en">Father: Did you know their meaning?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>بَشِيرٌ:</strong> نَعَمْ، سَأَلْتُ المُدَرِّسَ، فَشَرَحَ لِي مَعْنَاهُمَا.</div>
+        <div class="example-en">Basheer: Yes, I asked the teacher, and he explained their meaning to me.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبُ:</strong> أَنَا الآنَ أَذْهَبُ إِلَى السُّوقِ، أَتُرِيدُونَ شَيْئًا؟</div>
+        <div class="example-en">Father: I am going to the market now, do you want anything?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>عُمَرُ:</strong> أُرِيدُ دَفْتَرًا.</div>
+        <div class="example-en">Omar: I want a notebook.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>مُعَاوِيَةُ:</strong> عِنْدِي دَفْتَرَانِ وَأُرِيدُ دَفْتَرَيْنِ آخَرَيْنِ.</div>
+        <div class="example-en">Mu'awiyah: I have two notebooks and I want two more.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>بَشِيرٌ:</strong> عِنْدِي مِلَفَّانِ صَغِيرَانِ وَأُرِيدُ مِلَفَّيْنِ كَبِيرَيْنِ.</div>
+        <div class="example-en">Basheer: I have two small files and I want two big files.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبُ:</strong> مِنْ أَيْنَ لَكَ هَذَا القَلَمُ الجَمِيلُ ذُو اللَّوْنَيْنِ يَا بَشِيرُ؟</div>
+        <div class="example-en">Father: Where did you get this beautiful pen with two colors, O Basheer?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>بَشِيرٌ:</strong> اشْتَرَيْتُهُ.</div>
+        <div class="example-en">Basheer: I bought it.</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>الأَبُ:</strong> بِكَمْ اشْتَرَيْتَهُ؟</div>
+        <div class="example-en">Father: How much did you buy it for?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar"><strong>بَشِيرٌ:</strong> اشْتَرَيْتُهُ بِرِيَالَيْنِ.</div>
+        <div class="example-en">Basheer: I bought it for two riyals.</div>
+    </div>
+
+    <h3 class="section-subtitle">مُفْرَدَاتٌ جَدِيدَةٌ - New Vocabulary</h3>
+    <div class="vocab-grid">
+        <div class="vocab-item">
+            <div class="vocab-ar">المُشْطُ</div>
+            <div class="vocab-en">The comb</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">المِخَدَّةُ</div>
+            <div class="vocab-en">The pillow</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">دَفْتَرٌ / دَفْتَرَانِ</div>
+            <div class="vocab-en">Notebook / Two notebooks</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">مِلَفٌّ / مِلَفَّانِ</div>
+            <div class="vocab-en">File / Two files</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">ذُو اللَّوْنَيْنِ</div>
+            <div class="vocab-en">With two colors</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">رِيَالَيْنِ</div>
+            <div class="vocab-en">Two riyals</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">الحَرِيرُ</div>
+            <div class="vocab-en">Silk</div>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-ar">المَلَابِسُ الضَّيِّقَةُ</div>
+            <div class="vocab-en">Tight/narrow clothes</div>
+        </div>
+    </div>
+</section>
+
+<!-- MCQ Section -->
+<section class="section" id="mcq">
+    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
+
+    <div class="mcq-question" data-correct="b" data-explanation="تَمْيِيزُ كَمْ الاسْتِفْهَامِيَّةِ يَكُونُ دَائِمًا مُفْرَدًا مَنْصُوبًا. - The tamyiz of interrogative كَمْ is always singular and accusative (mansub).">
+        <h4 class="arabic-medium">١. تَمْيِيزُ كَمْ الاسْتِفْهَامِيَّةِ يَكُونُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) جَمْعًا مَجْرُورًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) مُفْرَدًا مَنْصُوبًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) مُفْرَدًا مَجْرُورًا دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) جَمْعًا مَنْصُوبًا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="المُثَنَّى يُرْفَعُ بِالأَلِفِ وَيُنْصَبُ وَيُجَرُّ بِالْيَاءِ. - The dual is nominative with alif, accusative and genitive with ya'.">
+        <h4 class="arabic-medium">٢. المُثَنَّى يُرْفَعُ بِـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) الضَّمَّةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) الوَاوِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) الأَلِفِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) الْيَاءِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="كَمْ الخَبَرِيَّةُ مَعْنَاهَا (كَثِيرٌ) أَيْ Many/Much وَلَا تَحْتَاجُ إِلَى إِجَابَةٍ. - Informative كَمْ means many/much and does not need an answer.">
+        <h4 class="arabic-medium">٣. كَمْ الخَبَرِيَّةُ مَعْنَاهَا:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) كَثِيرٌ (Many/Much)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) كَيْفَ (How)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) كَمْ العَدَدُ (How many)</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) أَيْنَ (Where)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="كَلِمَةُ (إِحْدَى) تُسْتَخْدَمُ مَعَ المُؤَنَّثِ، وَ(أَحَدٌ) مَعَ المُذَكَّرِ. - إِحْدَى is used with feminine nouns, while أَحَدٌ is for masculine.">
+        <h4 class="arabic-medium">٤. كَلِمَةُ "إِحْدَى" تُسْتَخْدَمُ مَعَ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) المُذَكَّرِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) المُثَنَّى</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) الجَمْعِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) المُؤَنَّثِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="المُثَنَّى إِذَا كَانَ مُضَافًا تُحْذَفُ النُّونُ مِنْ آخِرِهِ. نَقُولُ: ابْنَا المُعَلِّمِ (لَا: ابْنَانِ المُعَلِّمِ). - In idafa, the nun of the dual is dropped.">
+        <h4 class="arabic-medium">٥. المُثَنَّى فِي الإِضَافَةِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) تَبْقَى النُّونُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) تُحْذَفُ النُّونُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) تُضَافُ تَاءٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) يَبْقَى كَمَا هُوَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="نُونُ المُثَنَّى مَكْسُورَةٌ (ـنِ)، أَمَّا نُونُ جَمْعِ المُذَكَّرِ فَمَفْتُوحَةٌ (ـنَ). - The nun of dual has kasra, while the nun of masculine plural has fatha.">
+        <h4 class="arabic-medium">٦. نُونُ المُثَنَّى تَكُونُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) مَفْتُوحَةً (ـنَ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) مَضْمُومَةً (ـنُ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) مَكْسُورَةً (ـنِ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) سَاكِنَةً (ـنْ)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="الفِعْلُ لَبِسَ مَصْدَرُهُ لُبْسًا عَلَى وَزْنِ فُعْل. - The masdar of لَبِسَ is لُبْسًا on the pattern فُعْل.">
+        <h4 class="arabic-medium">٧. مَصْدَرُ الفِعْلِ "لَبِسَ" هُوَ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) لُبْسًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) لِبَاسًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) لَبْسًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) مَلْبَسًا</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="تَمْيِيزُ كَمْ الخَبَرِيَّةِ يَكُونُ دَائِمًا مَجْرُورًا (مُفْرَدًا أَوْ جَمْعًا)، وَلَا يَكُونُ مَنْصُوبًا. - The tamyiz of informative كَمْ is always genitive (singular or plural), never accusative.">
+        <h4 class="arabic-medium">٨. تَمْيِيزُ كَمْ الخَبَرِيَّةِ يَكُونُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) مُفْرَدًا مَنْصُوبًا دَائِمًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) جَمْعًا مَنْصُوبًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) مُفْرَدًا مَرْفُوعًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مَجْرُورًا (مُفْرَدًا أَوْ جَمْعًا)</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الثَّانِيَةُ وَالعِشْرُونَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 2 - Lecture 22 (Lesson 20)</p>
+</footer>
+
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
