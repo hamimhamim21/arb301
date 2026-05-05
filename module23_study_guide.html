@@ -5,67 +5,799 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 23 - ARB303 Study Guide | المحاضرة الثالثة والعشرون</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    <style>* { box-sizing: border-box; } body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; } .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); } .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; } .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; } .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; } .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); } .nav-links .nav-ar { font-size: 18px; font-weight: bold; } .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; } .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); } .main-title h1 { font-size: 48px; margin: 0 0 10px 0; } .main-title .subtitle { font-size: 24px; opacity: 0.9; } .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); } .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; } .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; } .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; } .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; } .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; } .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; } .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; } .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; } table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; } th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; } td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; } tr:nth-child(even) { background: #f8f9fa; } tr:hover { background: #e8f5e9; } .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; } .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; } .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; } .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; } .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; } .home-btn:hover { transform: scale(1.1); } .home-btn svg { width: 22px; height: 22px; fill: white; } .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; } .formula { font-size: 36px; color: #00695c; font-weight: bold; } .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; } .mcq-options { padding: 10px 20px; } .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; } .mcq-option:hover { border-color: #00897b; background: #f5f5f5; } .mcq-option input[type="radio"] { display: none; } .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; } .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; } .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; } .mcq-feedback.show { display: block; } .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; } .mcq-feedback.incorrect { background: #ffebee; color: #c62828; } @media (max-width: 768px) { .section-title { font-size: 28px; } table { font-size: 18px; } }</style>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .vocab-item { background: white; border-radius: 10px; padding: 15px; border: 2px solid #e0e0e0; text-align: center; transition: all 0.3s; }
+        .vocab-item:hover { border-color: #00897b; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .vocab-ar { font-size: 28px; color: #00695c; font-weight: bold; }
+        .vocab-en { font-family: Georgia, serif; font-size: 16px; color: #666; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        .exercise-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+        .exercise-q, .exercise-a { padding: 15px; border-radius: 10px; font-size: 24px; }
+        .exercise-q { background: #fff3e0; border-right: 3px solid #ff9800; }
+        .exercise-a { background: #e8f5e9; border-right: 3px solid #4caf50; }
+        @media (max-width: 768px) { .main-title h1 { font-size: 36px; } .section-title { font-size: 28px; } table { font-size: 18px; } .exercise-pair { grid-template-columns: 1fr; } .formula { font-size: 28px; } }
+    </style>
 </head>
 <body>
 <a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
-<nav class="nav-container"><div class="nav-title">المحاضرة الثالثة والعشرون - Lecture 23</div><div class="nav-links"><a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a><a href="#muthanna"><span class="nav-ar">المثنى</span><span class="nav-en">Dual</span></a><a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a><a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a></div></nav>
 
-<div class="main-title"><h1>المُحَاضَرَةُ الثَّالِثَةُ وَالعِشْرُونَ</h1><div class="subtitle">Lecture 23 - الدَّرْسُ التَّاسِعَ عَشَرَ (Lesson 19 - cont.)</div></div>
-
-<section class="section" id="verb">
-    <h2 class="section-title">الفِعْلُ: بَقِيَ - يَبْقَى</h2>
-    <p class="english-text">The Verb: To stay / To remain (Defective verb - نَاقِص)</p>
-    <div class="formula-box"><div class="formula">بَقِيَ - يَبْقَى - لَنْ يَبْقَى - لَمْ يَبْقَ - اِبْقَ - بَقَاءً</div><p class="english-text">Past - Present - Accusative - Jussive - Imperative - Masdar: Remaining</p></div>
-    <table>
-        <tr><th>الضَّمِير</th><th>المَاضِي</th><th>المُضَارِع</th><th>الأَمْر</th></tr>
-        <tr><td class="pronoun-cell">أَنَا</td><td>بَقِيتُ</td><td>أَبْقَى</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">نَحْنُ</td><td>بَقِينَا</td><td>نَبْقَى</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">أَنْتَ</td><td>بَقِيتَ</td><td>تَبْقَى</td><td>اِبْقَ</td></tr>
-        <tr><td class="pronoun-cell">أَنْتِ</td><td>بَقِيتِ</td><td>تَبْقَيْنَ</td><td>اِبْقَيْ</td></tr>
-        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>بَقِيتُمْ</td><td>تَبْقَوْنَ</td><td>اِبْقَوْا</td></tr>
-        <tr><td class="pronoun-cell">هُوَ</td><td>بَقِيَ</td><td>يَبْقَى</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هِيَ</td><td>بَقِيَتْ</td><td>تَبْقَى</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هُمْ</td><td>بَقُوا</td><td>يَبْقَوْنَ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هُنَّ</td><td>بَقِينَ</td><td>يَبْقَيْنَ</td><td>-</td></tr>
-    </table>
-    <div class="example-box"><div class="example-ar">بَقِيَ فِي البَيْتِ طَوَالَ اليَوْمِ</div><div class="example-en">He stayed at home all day</div></div>
-    <div class="example-box"><div class="example-ar">كَمْ دَرْسًا بَقِيَ فِي الكِتَابِ؟ بَقِيَ فِي الكِتَابِ دَرْسَانِ</div><div class="example-en">How many lessons remain in the book? Two lessons remain</div></div>
-</section>
-
-<section class="section" id="muthanna">
-    <h2 class="section-title">المُثَنَّى - The Dual</h2>
-    <p class="english-text">Using the dual form in answers (exercises with كَمْ)</p>
-    <div class="grammar-box">
-        <p class="arabic-text">المُثَنَّى يُرْفَعُ بِالأَلِفِ وَيُنْصَبُ وَيُجَرُّ بِاليَاءِ</p>
-        <p class="english-text">The dual is nominative with alif, and accusative/genitive with ya</p>
+<nav class="nav-container">
+    <div class="nav-title">المُحَاضَرَةُ الثَّالِثَةُ وَالعِشْرُونَ - Lecture 23</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفِعْلُ</span><span class="nav-en">Verb</span></a>
+        <a href="#dual-grammar"><span class="nav-ar">المُثَنَّى</span><span class="nav-en">Dual Rules</span></a>
+        <a href="#ex1"><span class="nav-ar">تمرين ١</span><span class="nav-en">Exercise 1</span></a>
+        <a href="#ex2"><span class="nav-ar">تمرين ٢</span><span class="nav-en">Exercise 2</span></a>
+        <a href="#ex3"><span class="nav-ar">تمرين ٣</span><span class="nav-en">Exercise 3</span></a>
+        <a href="#ex4"><span class="nav-ar">تمرين ٤</span><span class="nav-en">Exercise 4</span></a>
+        <a href="#ex5"><span class="nav-ar">تمرين ٥</span><span class="nav-en">Exercise 5</span></a>
+        <a href="#ex6"><span class="nav-ar">تمرين ٦</span><span class="nav-en">Exercise 6</span></a>
+        <a href="#ex78"><span class="nav-ar">تمرين ٧-٨</span><span class="nav-en">Ex 7-8</span></a>
+        <a href="#ex910"><span class="nav-ar">تمرين ٩-١٠</span><span class="nav-en">Ex 9-10</span></a>
+        <a href="#vocab"><span class="nav-ar">مُفْرَدَاتٌ</span><span class="nav-en">Vocabulary</span></a>
+        <a href="#mcq"><span class="nav-ar">أَسْئِلَة</span><span class="nav-en">MCQ</span></a>
     </div>
-    <div class="example-box"><div class="example-ar">(١) كَمْ أَخًا لَكَ؟ لِي <strong>أَخَوَانِ</strong> كَبِيرَانِ</div><div class="example-en">How many brothers do you have? I have two big brothers</div></div>
-    <div class="example-box"><div class="example-ar">(٢) كَمْ كِتَابًا عِنْدَكَ؟ عِنْدِي <strong>كِتَابَانِ</strong></div><div class="example-en">How many books do you have? I have two books</div></div>
-    <div class="example-box"><div class="example-ar">(٣) كَمْ طَالِبًا جَدِيدًا جَاءَ اليَوْمَ؟ جَاءَ اليَوْمَ <strong>طَالِبَانِ</strong> جَدِيدَانِ</div><div class="example-en">How many new students came today? Two new students came</div></div>
-    <div class="example-box"><div class="example-ar">(٦) كَمْ رَجُلًا مَاتَ فِي الحَادِثِ؟ مَاتَ فِي الحَادِثِ <strong>رَجُلَانِ</strong></div><div class="example-en">How many men died in the accident? Two men died</div></div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الثَّالِثَةُ وَالعِشْرُونَ</h1>
+    <div class="subtitle">Lecture 23 - الدَّرْسُ العِشْرُونَ (Lesson 20 - cont.)</div>
+</div>
+
+<!-- Verb Section: بَقِيَ -->
+<section class="section" id="verb">
+    <h2 class="section-title">الفِعْلُ: بَقِيَ - يَبْقَى (To Stay / Remain)</h2>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">نَوْعُ الفِعْلِ - Verb Type</h4>
+        <p class="arabic-text">بَقِيَ فِعْلٌ <strong>نَاقِصٌ</strong> - الحَرْفُ الأَخِيرُ مِنْ جَذْرِهِ (ب ق ي) حَرْفُ عِلَّةٍ (يَاء).</p>
+        <p class="english-text"><strong>بَقِيَ</strong> is a <strong>defective verb</strong> (فِعْلٌ نَاقِصٌ) — its last root letter (from the root ب-ق-ي) is a weak letter (yaa). This means it behaves differently from sound verbs in certain conjugations: the final weak letter may appear as alif maqsurah (ى), get dropped entirely, or change form depending on the grammatical mood.</p>
+    </div>
+
+    <div class="formula-box">
+        <div class="formula">بَقِيَ - يَبْقَى - لَنْ يَبْقَى - لَمْ يَبْقَ - اِبْقَ - بَقَاءً</div>
+        <p class="english-text">Past - Present - Subjunctive - Jussive - Imperative - Masdar (Remaining/Staying)</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">كَيْفَ تَتَغَيَّرُ النِّهَايَةُ؟ - How does the ending change?</h4>
+        <p class="arabic-text">• المُضَارِعُ المَرْفُوعُ: يَنْتَهِي بِأَلِفٍ مَقْصُورَةٍ (ى) ← <strong>يَبْقَى</strong></p>
+        <p class="arabic-text">• المُضَارِعُ المَنْصُوبُ: تَبْقَى الأَلِفُ ← <strong>لَنْ يَبْقَى</strong></p>
+        <p class="arabic-text">• المُضَارِعُ المَجْزُومُ: تُحْذَفُ الأَلِفُ ← <strong>لَمْ يَبْقَ</strong></p>
+        <p class="arabic-text">• الأَمْرُ: تُحْذَفُ الأَلِفُ أَيْضًا ← <strong>اِبْقَ</strong></p>
+        <p class="english-text">In the indicative present (marfoo'), it ends with alif maqsurah (ى). In the jussive (majzoom) and imperative, the alif is dropped entirely. This pattern applies to all defective verbs ending in yaa.</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ التَّصْرِيفِ - Conjugation Table</h3>
+    <table>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ + المُضَارِع</th><th>لَمْ + المُضَارِع</th><th>الأَمْرُ</th><th>المَصْدَرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>بَقِيتُ</td><td>أَبْقَى</td><td>لَنْ أَبْقَى</td><td>لَمْ أَبْقَ</td><td>-</td><td rowspan="14" style="font-size:28px; font-weight:bold; color:#00695c;">بَقَاءً<br><span class="english-text">Remaining</span></td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>بَقِينَا</td><td>نَبْقَى</td><td>لَنْ نَبْقَى</td><td>لَمْ نَبْقَ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>بَقِيتَ</td><td>تَبْقَى</td><td>لَنْ تَبْقَى</td><td>لَمْ تَبْقَ</td><td>اِبْقَ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>بَقِيتِ</td><td>تَبْقَيْنَ</td><td>لَنْ تَبْقَيْ</td><td>لَمْ تَبْقَيْ</td><td>اِبْقَيْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا (م)</td><td>بَقِيتُمَا</td><td>تَبْقَيَانِ</td><td>لَنْ تَبْقَيَا</td><td>لَمْ تَبْقَيَا</td><td>اِبْقَيَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا (مؤ)</td><td>بَقِيتُمَا</td><td>تَبْقَيَانِ</td><td>لَنْ تَبْقَيَا</td><td>لَمْ تَبْقَيَا</td><td>اِبْقَيَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>بَقِيتُمْ</td><td>تَبْقَوْنَ</td><td>لَنْ تَبْقَوْا</td><td>لَمْ تَبْقَوْا</td><td>اِبْقَوْا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>بَقِيتُنَّ</td><td>تَبْقَيْنَ</td><td>لَنْ تَبْقَيْنَ</td><td>لَمْ تَبْقَيْنَ</td><td>اِبْقَيْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>بَقِيَ</td><td>يَبْقَى</td><td>لَنْ يَبْقَى</td><td>لَمْ يَبْقَ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>بَقِيَتْ</td><td>تَبْقَى</td><td>لَنْ تَبْقَى</td><td>لَمْ تَبْقَ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>بَقِيَا</td><td>يَبْقَيَانِ</td><td>لَنْ يَبْقَيَا</td><td>لَمْ يَبْقَيَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>بَقِيَتَا</td><td>تَبْقَيَانِ</td><td>لَنْ تَبْقَيَا</td><td>لَمْ تَبْقَيَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>بَقُوا</td><td>يَبْقَوْنَ</td><td>لَنْ يَبْقَوْا</td><td>لَمْ يَبْقَوْا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>بَقِينَ</td><td>يَبْقَيْنَ</td><td>لَنْ يَبْقَيْنَ</td><td>لَمْ يَبْقَيْنَ</td><td>-</td></tr>
+    </table>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">مُلَاحَظَاتٌ مُهِمَّةٌ عَنِ التَّصْرِيفِ - Important Conjugation Notes</h4>
+        <p class="arabic-text">• فِي المَاضِي مَعَ الضَّمَائِرِ: تَظْهَرُ اليَاءُ ← بَقِ<strong>يَ</strong>، بَقِ<strong>يَ</strong>تْ، بَقِ<strong>ي</strong>تُ</p>
+        <p class="arabic-text">• فِي المَاضِي مَعَ وَاوِ الجَمَاعَةِ: تُحْذَفُ اليَاءُ ← بَقُ<strong>وا</strong> (لَيْسَ "بَقِيُوا")</p>
+        <p class="arabic-text">• فِي المُضَارِعِ: اليَاءُ تَصِيرُ أَلِفًا مَقْصُورَةً ← يَبْقَ<strong>ى</strong></p>
+        <p class="arabic-text">• مَعَ نُونِ النِّسْوَةِ: تَعُودُ اليَاءُ ← يَبْقَ<strong>يْنَ</strong>، تَبْقَ<strong>يْنَ</strong></p>
+        <p class="english-text">In the past tense, the yaa appears before consonant suffixes (بَقِيتُ). With waaw al-jamaa'ah, the yaa drops (بَقُوا). In the present, yaa becomes alif maqsurah (يَبْقَى). With noon an-niswah, the yaa returns (يَبْقَيْنَ).</p>
+    </div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="example-box">
+        <div class="example-ar">بَقِيَ الأُسْتَاذُ فِي الفَصْلِ ثَلَاثَ سَاعَاتٍ</div>
+        <div class="example-en">The teacher stayed in the classroom for three hours</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">بَقِيَتِ الأُمُّ بِجِوَارِ ابْنِهَا المَرِيضِ</div>
+        <div class="example-en">The mother stayed beside her sick son</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">بَقِينَا فِي المَسْجِدِ مِنْ صَلَاةِ المَغْرِبِ حَتَّى صَلَاةِ العِشَاءِ</div>
+        <div class="example-en">We stayed in the mosque from Maghrib prayer until Isha prayer</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">كَمْ دَرْسًا بَقِيَ فِي الكِتَابِ؟ بَقِيَ فِي الكِتَابِ دَرْسَانِ</div>
+        <div class="example-en">How many lessons remain in the book? Two lessons remain in the book</div>
+    </div>
 </section>
 
-<section class="section" id="exercises">
-    <h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2>
-    <h3 class="section-subtitle">التَّمْرِينُ الثَّالِثُ - Exercise 3</h3>
-    <div class="rule-box"><p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ مُسْتَعْمِلًا المُثَنَّى:</p><p class="english-text">Answer the following questions using the dual form:</p></div>
+<!-- Grammar: المُثَنَّى -->
+<section class="section" id="dual-grammar">
+    <h2 class="section-title">قَوَاعِدُ المُثَنَّى - Rules of the Dual</h2>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">مَا هُوَ المُثَنَّى؟ - What is the Dual?</h4>
+        <p class="arabic-text">المُثَنَّى هُوَ اسْمٌ يَدُلُّ عَلَى اثْنَيْنِ أَوِ اثْنَتَيْنِ، بِزِيَادَةِ أَلِفٍ وَنُونٍ (ـَانِ) أَوْ يَاءٍ وَنُونٍ (ـَيْنِ) فِي آخِرِهِ.</p>
+        <p class="english-text">The dual (المُثَنَّى) is a noun form that indicates exactly <strong>two</strong> of something. It is formed by adding a suffix to the singular noun. Unlike English, which only has singular and plural, Arabic has a third category specifically for pairs.</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">كَيْفَ نُثَنِّي الاسْمَ؟ - How to form the Dual</h4>
+        <p class="arabic-text"><strong>القَاعِدَةُ:</strong></p>
+        <p class="arabic-text">• المَرْفُوعُ (Nominative): اِسْمٌ + <strong>ـَانِ</strong> ← كِتَابٌ → كِتَاب<strong>َانِ</strong></p>
+        <p class="arabic-text">• المَنْصُوبُ (Accusative): اِسْمٌ + <strong>ـَيْنِ</strong> ← كِتَابًا → كِتَاب<strong>َيْنِ</strong></p>
+        <p class="arabic-text">• المَجْرُورُ (Genitive): اِسْمٌ + <strong>ـَيْنِ</strong> ← كِتَابٍ → كِتَاب<strong>َيْنِ</strong></p>
+        <p class="english-text"><strong>Key Rule:</strong> The dual has only TWO forms: ـَانِ (-aani) for nominative, and ـَيْنِ (-ayni) for both accusative AND genitive. If the word is the subject (فاعل) or predicate (خبر), use ـَانِ. If it's an object (مفعول به) or after a preposition (مجرور), use ـَيْنِ.</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">أَمْثِلَةٌ تَوْضِيحِيَّةٌ - Clarifying Examples</h4>
+        <table>
+            <tr><th>الحَالَةُ</th><th>المُفْرَدُ</th><th>المُثَنَّى</th><th>المِثَالُ</th></tr>
+            <tr><td class="pronoun-cell">مَرْفُوعٌ (subject)</td><td>طَالِبٌ</td><td>طَالِبَ<strong>انِ</strong></td><td>جَاءَ <strong>طَالِبَانِ</strong> جَدِيدَانِ</td></tr>
+            <tr><td class="pronoun-cell">مَنْصُوبٌ (object)</td><td>طَالِبًا</td><td>طَالِبَ<strong>يْنِ</strong></td><td>رَأَيْتُ <strong>طَالِبَيْنِ</strong> جَدِيدَيْنِ</td></tr>
+            <tr><td class="pronoun-cell">مَجْرُورٌ (after prep.)</td><td>طَالِبٍ</td><td>طَالِبَ<strong>يْنِ</strong></td><td>سَلَّمْتُ عَلَى <strong>طَالِبَيْنِ</strong></td></tr>
+        </table>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">تَثْنِيَةُ المُؤَنَّثِ - Dual of Feminine Nouns</h4>
+        <p class="arabic-text">إِذَا كَانَ الاسْمُ مُؤَنَّثًا بِتَاءٍ مَرْبُوطَةٍ (ة)، تُفْتَحُ التَّاءُ ثُمَّ نُضِيفُ عَلَامَةَ المُثَنَّى:</p>
+        <p class="arabic-text">• مَدْرَسَ<strong>ةٌ</strong> → مَدْرَسَ<strong>تَانِ</strong> / مَدْرَسَ<strong>تَيْنِ</strong></p>
+        <p class="arabic-text">• سَيَّارَ<strong>ةٌ</strong> → سَيَّارَ<strong>تَانِ</strong> / سَيَّارَ<strong>تَيْنِ</strong></p>
+        <p class="arabic-text">• صَيْدَلِيَّ<strong>ةٌ</strong> → صَيْدَلِيَّ<strong>تَانِ</strong> / صَيْدَلِيَّ<strong>تَيْنِ</strong></p>
+        <p class="english-text">For feminine nouns ending in taa marbutah (ة), the taa marbutah opens up (becomes تَ) before adding the dual suffix. Example: مَدْرَسَة → مَدْرَسَتَانِ (nominative) / مَدْرَسَتَيْنِ (accusative/genitive).</p>
+    </div>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">تَنْبِيهٌ - Watch Out!</h4>
+        <p class="arabic-text">الصِّفَةُ (النَّعْتُ) تَتْبَعُ المَوْصُوفَ فِي التَّثْنِيَةِ وَالإِعْرَابِ:</p>
+        <p class="arabic-text">• جَاءَ طَالِبَ<strong>انِ</strong> جَدِيدَ<strong>انِ</strong> (كِلَاهُمَا مَرْفُوعٌ)</p>
+        <p class="arabic-text">• رَأَيْتُ طَالِبَ<strong>يْنِ</strong> جَدِيدَ<strong>يْنِ</strong> (كِلَاهُمَا مَنْصُوبٌ)</p>
+        <p class="english-text">The adjective follows the noun in its dual form AND its grammatical case. If the noun is dual nominative (ـَانِ), the adjective must also be dual nominative (ـَانِ). This is a common mistake — always match both!</p>
+    </div>
 </section>
 
+<!-- Exercise 1 -->
+<section class="section" id="ex1">
+    <h2 class="section-title">التَّمْرِينُ الأَوَّلُ - Exercise 1</h2>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ:</p>
+        <p class="english-text">Answer the following questions (about Lesson 20 dialogue):</p>
+    </div>
+
+    <div class="exercise-pair">
+        <div class="exercise-q">(١) كَمْ سُورَةً حَفِظَ بَشِيرٌ؟</div>
+        <div class="exercise-a">حَفِظَ بَشِيرٌ سُورَةً وَاحِدَةً</div>
+    </div>
+    <p class="english-text">How many surahs did Bashir memorize? - Bashir memorized one surah.</p>
+
+    <div class="exercise-pair">
+        <div class="exercise-q">(٢) كَمْ سُورَةً حَفِظَ عُمَرُ؟</div>
+        <div class="exercise-a">حَفِظَ عُمَرُ سُورَتَيْنِ</div>
+    </div>
+    <p class="english-text">How many surahs did Umar memorize? - Umar memorized two surahs.</p>
+
+    <div class="exercise-pair">
+        <div class="exercise-q">(٣) بِكَمْ اشْتَرَى بَشِيرٌ القَلَمَ؟</div>
+        <div class="exercise-a">اشْتَرَى بَشِيرٌ القَلَمَ بِرِيَالَيْنِ</div>
+    </div>
+    <p class="english-text">How much did Bashir buy the pen for? - Bashir bought the pen for two riyals.</p>
+</section>
+
+<!-- Exercise 2 -->
+<section class="section" id="ex2">
+    <h2 class="section-title">التَّمْرِينُ الثَّانِي - Exercise 2: Dual Declension</h2>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلْ مَا يَلِي:</p>
+        <p class="english-text">Contemplate the following - how the dual changes across the three grammatical cases:</p>
+    </div>
+
+    <table>
+        <tr><th></th><th>المَرْفُوعُ (Nominative)</th><th>المَنْصُوبُ (Accusative)</th><th>المَجْرُورُ (Genitive)</th></tr>
+        <tr><td class="pronoun-cell">المُفْرَدُ</td><td>جَاءَ المُدَرِّسُ</td><td>رَأَيْتُ المُدَرِّسَ</td><td>ذَهَبْتُ إِلَى المُدَرِّسِ</td></tr>
+        <tr><td class="pronoun-cell">المُثَنَّى</td><td>جَاءَ المُدَرِّسَانِ</td><td>رَأَيْتُ المُدَرِّسَيْنِ</td><td>ذَهَبْتُ إِلَى المُدَرِّسَيْنِ</td></tr>
+    </table>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">القَاعِدَةُ - The Rule</h4>
+        <p class="arabic-text">المُفْرَدُ يُعْرَبُ بِالضَّمَّةِ وَالفَتْحَةِ وَالكَسْرَةِ</p>
+        <p class="arabic-text">المُثَنَّى يُرْفَعُ بِالأَلِفِ (<strong>ـَانِ</strong>) وَيُنْصَبُ وَيُجَرُّ بِالْيَاءِ (<strong>ـَيْنِ</strong>)</p>
+        <p class="english-text"><strong>Singular</strong> uses short vowel markers: dammah (ُ) for nominative, fathah (َ) for accusative, kasrah (ِ) for genitive.</p>
+        <p class="english-text"><strong>Dual</strong> uses letter-based markers: alif+noon (ـَانِ) for nominative, yaa+noon (ـَيْنِ) for BOTH accusative and genitive. This is a major simplification — you only need to decide: "Is this word the subject/predicate?" If yes → ـَانِ. Everything else → ـَيْنِ.</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">مَتَى نَسْتَخْدِمُ كُلَّ شَكْلٍ؟ - When to use each form?</h4>
+        <p class="arabic-text"><strong>ـَانِ</strong> (مَرْفُوع) يُسْتَخْدَمُ عِنْدَمَا يَكُونُ المُثَنَّى:</p>
+        <p class="arabic-text">• فَاعِلًا: جَاءَ المُدَرِّسَ<strong>انِ</strong> (The two teachers came)</p>
+        <p class="arabic-text">• مُبْتَدَأً: المُدَرِّسَ<strong>انِ</strong> مَوْجُودَانِ (The two teachers are present)</p>
+        <p class="arabic-text">• خَبَرًا: هُمَا مُدَرِّسَ<strong>انِ</strong> (They are two teachers)</p>
+        <p class="arabic-text"><strong>ـَيْنِ</strong> (مَنْصُوب/مَجْرُور) يُسْتَخْدَمُ عِنْدَمَا يَكُونُ المُثَنَّى:</p>
+        <p class="arabic-text">• مَفْعُولًا بِهِ: رَأَيْتُ المُدَرِّسَ<strong>يْنِ</strong> (I saw the two teachers)</p>
+        <p class="arabic-text">• بَعْدَ حَرْفِ جَرٍّ: ذَهَبْتُ إِلَى المُدَرِّسَ<strong>يْنِ</strong> (I went to the two teachers)</p>
+        <p class="english-text">Use ـَانِ when the dual is: a subject (فاعل), a mubtada (مبتدأ), or a predicate (خبر). Use ـَيْنِ when the dual is: a direct object (مفعول به), or after any preposition (حرف جر).</p>
+    </div>
+</section>
+
+<!-- Exercise 3 -->
+<section class="section" id="ex3">
+    <h2 class="section-title">التَّمْرِينُ الثَّالِثُ - Exercise 3</h2>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ مُسْتَعْمِلًا المُثَنَّى:</p>
+        <p class="english-text">Answer the following questions using the dual form:</p>
+    </div>
+
+    <div class="exercise-pair"><div class="exercise-q">(١) كَمْ أَخًا لَكَ؟</div><div class="exercise-a">لِي <strong>أَخَوَانِ</strong> كَبِيرَانِ</div></div>
+    <p class="english-text">How many brothers do you have? - I have two older brothers</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٢) كَمْ كِتَابًا عِنْدَكَ؟</div><div class="exercise-a">عِنْدِي <strong>كِتَابَانِ</strong></div></div>
+    <p class="english-text">How many books do you have? - I have two books</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٣) كَمْ طَالِبًا جَدِيدًا جَاءَ اليَوْمَ؟</div><div class="exercise-a">جَاءَ اليَوْمَ <strong>طَالِبَانِ</strong> جَدِيدَانِ</div></div>
+    <p class="english-text">How many new students came today? - Two new students came today</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٤) كَمْ دَرْسًا بَقِيَ فِي الكِتَابِ؟</div><div class="exercise-a">بَقِيَ فِي الكِتَابِ <strong>دَرْسَانِ</strong></div></div>
+    <p class="english-text">How many lessons remain in the book? - Two lessons remain in the book</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٥) كَمْ طَالِبًا خَرَجَ مِنَ الفَصْلِ؟</div><div class="exercise-a">خَرَجَ مِنَ الفَصْلِ <strong>طَالِبَانِ</strong></div></div>
+    <p class="english-text">How many students left the classroom? - Two students left the classroom</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٦) كَمْ رَجُلًا مَاتَ فِي الحَادِثِ؟</div><div class="exercise-a">مَاتَ فِي الحَادِثِ <strong>رَجُلَانِ</strong></div></div>
+    <p class="english-text">How many men died in the accident? - Two men died in the accident</p>
+</section>
+
+<!-- Exercise 4 -->
+<section class="section" id="ex4">
+    <h2 class="section-title">التَّمْرِينُ الرَّابِعُ - Exercise 4</h2>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ مُسْتَعْمِلًا المُثَنَّى:</p>
+        <p class="english-text">Answer the following questions using the dual form (including feminine nouns):</p>
+    </div>
+
+    <div class="exercise-pair"><div class="exercise-q">(١) كَمْ لُغَةً تَعْرِفُ؟</div><div class="exercise-a">أَعْرِفُ <strong>لُغَتَيْنِ</strong>: العَرَبِيَّةَ وَالإنْجِلِيزِيَّةَ</div></div>
+    <p class="english-text">How many languages do you know? - I know two languages: Arabic and English</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٢) كَمْ سُورَةً حَفِظْتِ يَا مَرْيَمُ؟</div><div class="exercise-a">حَفِظْتُ <strong>سُورَتَيْنِ</strong></div></div>
+    <p class="english-text">How many surahs have you memorized, O Maryam? - I memorized two surahs</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٣) كَمْ رِسَالَةً كَتَبْتَ يَا أَحْمَدُ؟</div><div class="exercise-a">كَتَبْتُ <strong>رِسَالَتَيْنِ</strong></div></div>
+    <p class="english-text">How many letters did you write, O Ahmad? - I wrote two letters</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٤) كَمْ حَيَّةً قَتَلْتَ يَا عَمِّي؟</div><div class="exercise-a">قَتَلْتُ <strong>حَيَّتَيْنِ</strong> كَبِيرَتَيْنِ</div></div>
+    <p class="english-text">How many snakes did you kill, O uncle? - I killed two large snakes</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٥) كَمْ دَفْتَرًا اشْتَرَيْتَ يَا أَخِي؟</div><div class="exercise-a">اشْتَرَيْتُ <strong>دَفْتَرَيْنِ</strong></div></div>
+    <p class="english-text">How many notebooks did you buy, O brother? - I bought two notebooks</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٦) كَمْ سُؤَالًا سَأَلَكَ المُدَرِّسُ؟</div><div class="exercise-a">سَأَلَنِي المُدَرِّسُ <strong>سُؤَالَيْنِ</strong></div></div>
+    <p class="english-text">How many questions did the teacher ask you? - The teacher asked me two questions</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٧) كَمْ طَائِرَةً رَأَيْتَ فِي المَطَارِ؟</div><div class="exercise-a">رَأَيْتُ فِي المَطَارِ <strong>طَائِرَتَيْنِ</strong></div></div>
+    <p class="english-text">How many planes did you see at the airport? - I saw two planes at the airport</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٨) كَمْ مِنْدِيلًا غَسَلَتْ أُخْتُكَ؟</div><div class="exercise-a">غَسَلَتْ أُخْتِي <strong>مِنْدِيلَيْنِ</strong></div></div>
+    <p class="english-text">How many handkerchiefs did your sister wash? - My sister washed two handkerchiefs</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٩) كَمْ مُشْطًا تُرِيدُ؟</div><div class="exercise-a">أُرِيدُ <strong>مُشْطَيْنِ</strong></div></div>
+    <p class="english-text">How many combs do you want? - I want two combs</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(١٠) كَمْ مِخَدَّةً عَلَى سَرِيرِكَ؟</div><div class="exercise-a">عَلَى سَرِيرِي <strong>مِخَدَّتَانِ</strong></div></div>
+    <p class="english-text">How many pillows on your bed? - There are two pillows on my bed</p>
+</section>
+
+<!-- Exercise 5 -->
+<section class="section" id="ex5">
+    <h2 class="section-title">التَّمْرِينُ الخَامِسُ - Exercise 5</h2>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ مُسْتَعْمِلًا المُثَنَّى:</p>
+        <p class="english-text">Answer the following questions using the dual form (with prepositions):</p>
+    </div>
+
+    <div class="exercise-pair"><div class="exercise-q">(١) بِكَمْ رِيَالًا اشْتَرَيْتِ هَذِهِ المَجَلَّةَ يَا آمِنَةُ؟</div><div class="exercise-a">اشْتَرَيْتُ هَذِهِ المَجَلَّةَ <strong>بِرِيَالَيْنِ</strong></div></div>
+    <p class="english-text">How many riyals did you buy this magazine for, O Aminah? - I bought it for two riyals</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٢) كَمْ دُولَارًا اشْتَرَيْتُمْ هَذِهِ الأَزْرَارَ؟</div><div class="exercise-a">اشْتَرَيْنَا هَذِهِ الأَزْرَارَ <strong>بِدُولَارَيْنِ</strong></div></div>
+    <p class="english-text">How many dollars did you buy these buttons for? - We bought them for two dollars</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٣) كَمْ رُوبِيَّةً اشْتَرَيْتُنَّ هَذَا المُشْطَ؟</div><div class="exercise-a">اشْتَرَيْنَا هَذَا المُشْطَ <strong>بِرُوبِيَّتَيْنِ</strong></div></div>
+    <p class="english-text">How many rupees did you buy this comb for? - We bought it for two rupees</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٤) كَمْ جُنَيْهًا اشْتَرَيْتِ هَذِهِ المِرْآةَ يَا أُمِّي؟</div><div class="exercise-a">اشْتَرَيْتُ هَذِهِ المِرْآةَ <strong>بِجُنَيْهَيْنِ</strong></div></div>
+    <p class="english-text">How many pounds did you buy this mirror for, O mother? - I bought it for two pounds</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٥) بِكَمْ لُغَةً كَتَبْتَ العُنْوَانَ عَلَى الظَّرْفِ يَا عَلِيُّ؟</div><div class="exercise-a">كَتَبْتُ العُنْوَانَ عَلَى الظَّرْفِ <strong>بِلُغَتَيْنِ</strong></div></div>
+    <p class="english-text">In how many languages did you write the address on the envelope, O Ali? - I wrote it in two languages</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٦) مِنْ كَمْ بَابًا خَرَجَ الطُّلَّابُ مِنَ الكُلِّيَّةِ؟</div><div class="exercise-a">خَرَجَ الطُّلَّابُ مِنَ الكُلِّيَّةِ مِنْ <strong>بَابَيْنِ</strong></div></div>
+    <p class="english-text">From how many doors did the students leave the college? - They left from two doors</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٧) إِلَى كَمْ صَيْدَلِيَّةٍ ذَهَبْتَ يَا حَامِدُ؟</div><div class="exercise-a">ذَهَبْتُ إِلَى <strong>صَيْدَلِيَّتَيْنِ</strong></div></div>
+    <p class="english-text">To how many pharmacies did you go, O Hamid? - I went to two pharmacies</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٨) فِي كَمْ صَحِيفَةٍ قَرَأْتَ هَذَا الخَبَرَ؟</div><div class="exercise-a">قَرَأْتُ هَذَا الخَبَرَ فِي <strong>صَحِيفَتَيْنِ</strong></div></div>
+    <p class="english-text">In how many newspapers did you read this news? - I read it in two newspapers</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٩) بِكَمْ جَامِعَةً دَرَسْتَ؟</div><div class="exercise-a">دَرَسْتُ بِ<strong>جَامِعَتَيْنِ</strong></div></div>
+    <p class="english-text">In how many universities did you study? - I studied in two universities</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(١٠) كَمْ جَامِعَةً فِي بَلَدِكُمْ؟</div><div class="exercise-a">فِي بَلَدِنَا <strong>جَامِعَتَانِ</strong></div></div>
+    <p class="english-text">How many universities in your country? - In our country there are two universities</p>
+
+    <div class="info-box">
+        <p class="arabic-text">مُلَاحَظَةٌ: «بِكَمْ رِيَالًا؟» وَ«بِكَمْ رِيَالٍ؟» كِلَاهُمَا صَحِيحٌ</p>
+        <p class="english-text">Note: Both "bikam riyaalan?" (accusative) and "bikam riyaalin?" (genitive) are correct when كَمْ is preceded by a preposition.</p>
+    </div>
+</section>
+
+<!-- Exercise 6 -->
+<section class="section" id="ex6">
+    <h2 class="section-title">التَّمْرِينُ السَّادِسُ - Exercise 6</h2>
+    <div class="rule-box">
+        <p class="arabic-text">ثَنِّ الكَلِمَاتِ الَّتِي تَحْتَهَا خَطٌّ:</p>
+        <p class="english-text">Convert the underlined words to the dual form:</p>
+    </div>
+
+    <table>
+        <tr><th>#</th><th>المُفْرَدُ (Singular)</th><th>المُثَنَّى (Dual)</th></tr>
+        <tr><td>(١)</td><td>فِي بَيْتِنَا <u>ثَلَّاجَةٌ</u></td><td>فِي بَيْتِنَا <strong>ثَلَّاجَتَانِ</strong></td></tr>
+        <tr><td>(٢)</td><td>دَخَلَ بَيْتِي البَارِحَةَ <u>لِصٌّ</u></td><td>دَخَلَ بَيْتِي البَارِحَةَ <strong>لِصَّانِ</strong></td></tr>
+        <tr><td>(٣)</td><td>رَأَيْتُ فِي مَكْتَبِ البَرِيدِ <u>بَرْقِيَّةً</u> لَكَ</td><td>رَأَيْتُ فِي مَكْتَبِ البَرِيدِ <strong>بَرْقِيَّتَيْنِ</strong> لَكَ</td></tr>
+        <tr><td>(٤)</td><td>سَأَشْتَرِي <u>مِتْرًا</u> مِنْ هَذَا القُمَاشِ</td><td>سَأَشْتَرِي <strong>مِتْرَيْنِ</strong> مِنْ هَذَا القُمَاشِ</td></tr>
+        <tr><td>(٥)</td><td>ذَبَحَ أَبِي <u>دَجَاجَةً</u></td><td>ذَبَحَ أَبِي <strong>دَجَاجَتَيْنِ</strong></td></tr>
+        <tr><td>(٦)</td><td>أَشْرَبُ <u>كُوبًا</u> مِنَ اللَّبَنِ كُلَّ يَوْمٍ</td><td>أَشْرَبُ <strong>كُوبَيْنِ</strong> مِنَ اللَّبَنِ كُلَّ يَوْمٍ</td></tr>
+        <tr><td>(٧)</td><td>عِنْدِي <u>رِيَالٌ</u></td><td>عِنْدِي <strong>رِيَالَانِ</strong></td></tr>
+        <tr><td>(٨)</td><td>أُرِيدُ <u>رِيَالًا</u></td><td>أُرِيدُ <strong>رِيَالَيْنِ</strong></td></tr>
+        <tr><td>(٩)</td><td>اشْتَرَيْتُ هَذَا الزِّرَّ بِ<u>رِيَالٍ</u></td><td>اشْتَرَيْتُ هَذَا الزِّرَّ بِ<strong>رِيَالَيْنِ</strong></td></tr>
+        <tr><td>(١٠)</td><td>أَعْرِفُ <u>لُغَةً</u></td><td>أَعْرِفُ <strong>لُغَتَيْنِ</strong></td></tr>
+        <tr><td>(١١)</td><td>فِي بَلَدِنَا <u>لُغَةٌ وَاحِدَةٌ</u></td><td>فِي بَلَدِنَا <strong>لُغَتَانِ اثْنَتَانِ</strong></td></tr>
+        <tr><td>(١٢)</td><td>هَذَا القَلَمُ بِ<u>دُولَارٍ</u></td><td>هَذَا القَلَمُ بِ<strong>دُولَارَيْنِ</strong></td></tr>
+        <tr><td>(١٣)</td><td>كَتَبْتُ <u>رِسَالَةً</u> إِلَى أَبِي</td><td>كَتَبْتُ <strong>رِسَالَتَيْنِ</strong> إِلَى أَبِي</td></tr>
+        <tr><td>(١٤)</td><td>يَكْفِينِي الآنَ <u>جُنَيْهٌ</u></td><td>يَكْفِينِي الآنَ <strong>جُنَيْهَانِ</strong></td></tr>
+    </table>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">لَاحِظْ - Notice the Pattern</h4>
+        <p class="arabic-text">المَرْفُوعُ يَأْخُذُ (<strong>ـَانِ</strong>): ثَلَّاجَتَانِ، لِصَّانِ، رِيَالَانِ، جُنَيْهَانِ</p>
+        <p class="arabic-text">المَنْصُوبُ وَالمَجْرُورُ يَأْخُذَانِ (<strong>ـَيْنِ</strong>): بَرْقِيَّتَيْنِ، مِتْرَيْنِ، رِيَالَيْنِ</p>
+        <p class="english-text"><strong>Why ـَانِ in (1), (2), (5), (7), (11), (14)?</strong> Because the dual word is the subject (فاعل) or comes after a preposition-less position where it's nominative. Example: فِي بَيْتِنَا ثَلَّاجَتَانِ — "two fridges" is the subject of the sentence.</p>
+        <p class="english-text"><strong>Why ـَيْنِ in (3), (4), (6), (8), (9), (10), (12), (13)?</strong> Because the dual word is either a direct object (I bought مِتْرَيْنِ), or follows a preposition (بِرِيَالَيْنِ — "for two riyals"). Both require the ـَيْنِ form.</p>
+    </div>
+</section>
+
+<!-- Exercises 7 & 8 -->
+<section class="section" id="ex78">
+    <h2 class="section-title">التَّمْرِينُ السَّابِعُ - Exercise 7</h2>
+    <div class="rule-box">
+        <p class="arabic-text">اجْعَلْ كُلًّا مِنَ الكَلِمَاتِ الآتِيَةِ فِي جُمْلَةٍ: <strong>كِتَابَانِ - كِتَابَيْنِ - طَالِبَيْنِ - طَالِبَانِ</strong></p>
+        <p class="english-text">Put each of the following words in a sentence:</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">هَذَانِ <strong>كِتَابَانِ</strong> جَدِيدَانِ</div>
+        <div class="example-en">These are two new books (كِتَابَانِ - nominative dual)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">قَرَأْتُ <strong>كِتَابَيْنِ</strong> جَدِيدَيْنِ</div>
+        <div class="example-en">I read two new books (كِتَابَيْنِ - accusative dual)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">رَأَيْتُ <strong>طَالِبَيْنِ</strong> هِنْدِيَّيْنِ</div>
+        <div class="example-en">I saw two Indian students (طَالِبَيْنِ - accusative dual)</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">هَذَانِ <strong>طَالِبَانِ</strong> أَمْرِيكِيَّانِ</div>
+        <div class="example-en">These are two American students (طَالِبَانِ - nominative dual)</div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:40px;">التَّمْرِينُ الثَّامِنُ - Exercise 8: أَحَدُهُمَا وَالآخَرُ</h2>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلِ الأَمْثِلَةَ الآتِيَةَ لِـ (<strong>أَحَدُهُمَا وَالآخَرُ</strong>):</p>
+        <p class="english-text">This expression is used when you mention two masculine things and want to describe each one separately. The pattern is:</p>
+        <p class="english-text"><strong>Structure:</strong> [two things mentioned], أَحَدُهُمَا [description 1] وَالآخَرُ [description 2]</p>
+        <p class="english-text"><strong>Meaning:</strong> "One of the two is... and the other is..."</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">(١) لِي أَخَوَانِ، <strong>أَحَدُهُمَا</strong> طَبِيبٌ <strong>وَالآخَرُ</strong> مُهَنْدِسٌ</div>
+        <div class="example-en">I have two brothers, one of them is a doctor and the other is an engineer</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) هَذِهِ الحَافِلَةُ لَهَا بَابَانِ، <strong>أَحَدُهُمَا</strong> لِلدُّخُولِ <strong>وَالآخَرُ</strong> لِلخُرُوجِ</div>
+        <div class="example-en">This bus has two doors, one for entering and the other for exiting</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) عِنْدِي قَلَمَانِ، <strong>أَحَدُهُمَا</strong> أَزْرَقُ <strong>وَالآخَرُ</strong> أَحْمَرُ</div>
+        <div class="example-en">I have two pens, one is blue and the other is red</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) عِنْدِي مُعْجَمَانِ، <strong>أَحَدُهُمَا</strong> إِنْكِلِيزِيٌّ <strong>وَالآخَرُ</strong> فَرَنْسِيٌّ</div>
+        <div class="example-en">I have two dictionaries, one is English and the other is French</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٥) لَنَا بَيْتَانِ، <strong>أَحَدُهُمَا</strong> فِي المَدِينَةِ <strong>وَالآخَرُ</strong> فِي القَرْيَةِ</div>
+        <div class="example-en">We have two houses, one in the city and the other in the village</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٦) اشْتَرَيْتُ قَمِيصَيْنِ، <strong>أَحَدُهُمَا</strong> لِي <strong>وَالآخَرُ</strong> لِأَخِي الصَّغِيرِ</div>
+        <div class="example-en">I bought two shirts, one for me and the other for my little brother</div>
+    </div>
+</section>
+
+<!-- Exercises 9 & 10 -->
+<section class="section" id="ex910">
+    <h2 class="section-title">التَّمْرِينُ التَّاسِعُ - Exercise 9: إِحْدَاهُمَا وَالأُخْرَى</h2>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلِ الأَمْثِلَةَ الآتِيَةَ لِـ (<strong>إِحْدَاهُمَا وَالأُخْرَى</strong>):</p>
+        <p class="english-text">This is the <strong>feminine</strong> version of the same pattern. When you mention two feminine things and want to describe each separately:</p>
+        <p class="english-text"><strong>Structure:</strong> [two feminine things], إِحْدَاهُمَا [description 1] وَالأُخْرَى [description 2]</p>
+        <p class="english-text"><strong>Meaning:</strong> "One of the two (fem.) is... and the other (fem.) is..."</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">(١) لِي أُخْتَانِ، <strong>إِحْدَاهُمَا</strong> مُدَرِّسَةٌ <strong>وَالأُخْرَى</strong> مُمَرِّضَةٌ</div>
+        <div class="example-en">I have two sisters, one is a teacher and the other is a nurse</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) عِنْدِي سَيَّارَتَانِ، <strong>إِحْدَاهُمَا</strong> حَمْرَاءُ <strong>وَالأُخْرَى</strong> بَيْضَاءُ</div>
+        <div class="example-en">I have two cars, one is red and the other is white</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) فِي قَرْيَتِنَا مَدْرَسَتَانِ، <strong>إِحْدَاهُمَا</strong> مُتَوَسِّطَةٌ <strong>وَالأُخْرَى</strong> ثَانَوِيَّةٌ</div>
+        <div class="example-en">In our village there are two schools, one is middle school and the other is secondary school</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) كَتَبْتُ اليَوْمَ رِسَالَتَيْنِ، <strong>إِحْدَاهُمَا</strong> لِأَبِي <strong>وَالأُخْرَى</strong> لِصَدِيقَتِي</div>
+        <div class="example-en">I wrote two letters today, one for my father and the other for my friend</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٥) جَاءَتْ مُدَرِّسَتَانِ جَدِيدَتَانِ، <strong>إِحْدَاهُمَا</strong> لِلسِّيرَةِ <strong>وَالأُخْرَى</strong> لِلتَّفْسِيرِ</div>
+        <div class="example-en">Two new female teachers came, one for Seerah (Prophet's biography) and the other for Tafseer (Quranic commentary)</div>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">القَاعِدَةُ الكَامِلَةُ - The Complete Rule</h4>
+        <table>
+            <tr><th></th><th>"One of the two"</th><th>"The other"</th><th>المِثَالُ</th></tr>
+            <tr><td class="pronoun-cell">المُذَكَّرُ</td><td><strong>أَحَدُهُمَا</strong></td><td><strong>وَالآخَرُ</strong></td><td>لِي أَخَوَانِ، أَحَدُهُمَا طَبِيبٌ وَالآخَرُ مُهَنْدِسٌ</td></tr>
+            <tr><td class="pronoun-cell">المُؤَنَّثُ</td><td><strong>إِحْدَاهُمَا</strong></td><td><strong>وَالأُخْرَى</strong></td><td>لِي أُخْتَانِ، إِحْدَاهُمَا مُدَرِّسَةٌ وَالأُخْرَى مُمَرِّضَةٌ</td></tr>
+        </table>
+        <p class="english-text"><strong>Summary:</strong> For masculine pairs use أَحَدُهُمَا...وَالآخَرُ. For feminine pairs use إِحْدَاهُمَا...وَالأُخْرَى. The word أَحَد (masculine) becomes إِحْدَى (feminine), and الآخَر (masculine) becomes الأُخْرَى (feminine).</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">مُلَاحَظَةٌ - Note on المُذَكَّر and المُؤَنَّث</h4>
+        <p class="arabic-text">المُذَكَّرُ: <strong>أَحَدُ</strong> &nbsp;&nbsp; المُؤَنَّثُ: <strong>إِحْدَى</strong></p>
+        <p class="english-text">The base form أَحَد is masculine. Its feminine counterpart is إِحْدَى. When combined with the dual pronoun هُمَا (referring back to the two items), they become أَحَدُهُمَا / إِحْدَاهُمَا respectively. Always match the gender to the noun being referred to.</p>
+    </div>
+
+    <h2 class="section-title" style="margin-top:40px;">التَّمْرِينُ العَاشِرُ - Exercise 10: ذُو + مُثَنَّى</h2>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلِ الأَمْثِلَةَ الآتِيَةَ لِاسْتِعْمَالِ (<strong>ذُو</strong>) مَعَ المُثَنَّى:</p>
+        <p class="english-text"><strong>ذُو</strong> means "possessor of / one who has." It is one of the five special nouns (الأَسْمَاءُ الخَمْسَةُ) that decline with long vowels instead of short ones. It always requires an إِضَافَة (possessive construction) after it.</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">تَصْرِيفُ "ذُو" - Declension of ذُو</h4>
+        <table>
+            <tr><th>الحَالَةُ</th><th>المُذَكَّرُ</th><th>المُؤَنَّثُ</th><th>المِثَالُ</th></tr>
+            <tr><td class="pronoun-cell">مَرْفُوعٌ</td><td><strong>ذُو</strong></td><td><strong>ذَاتُ</strong></td><td>هَذَا القَلَمُ <strong>ذُو</strong> اللَّوْنَيْنِ مُفِيدٌ</td></tr>
+            <tr><td class="pronoun-cell">مَنْصُوبٌ</td><td><strong>ذَا</strong></td><td><strong>ذَاتَ</strong></td><td>غَسَلْتُ القَمِيصَ <strong>ذَا</strong> الجَيْبَيْنِ</td></tr>
+            <tr><td class="pronoun-cell">مَجْرُورٌ</td><td><strong>ذِي</strong></td><td><strong>ذَاتِ</strong></td><td>المُدِيرُ فِي الغُرْفَةِ <strong>ذَاتِ</strong> النَّافِذَتَيْنِ</td></tr>
+        </table>
+        <p class="english-text"><strong>Key:</strong> ذُو changes form based on its grammatical position (ذُو/ذَا/ذِي for masculine, ذَاتُ/ذَاتَ/ذَاتِ for feminine). The noun after ذُو is always in the genitive (مَجْرُور) because it's part of an إِضَافَة. Since we're studying the dual, the noun after ذُو often takes ـَيْنِ (dual genitive).</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-ar">(١) هَذَا القَلَمُ <strong>ذُو اللَّوْنَيْنِ</strong> مُفِيدٌ جِدًّا</div>
+        <div class="example-en">This pen with two colors is very useful</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٢) أَيَّ قَمِيصٍ غَسَلْتِ يَا أُمِّي؟ غَسَلْتُ القَمِيصَ <strong>ذَا الجَيْبَيْنِ</strong></div>
+        <div class="example-en">Which shirt did you wash, O mother? I washed the shirt with two pockets</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٣) المُدِيرُ فِي تِلْكَ الغُرْفَةِ <strong>ذَاتِ النَّافِذَتَيْنِ</strong> المَفْتُوحَتَيْنِ</div>
+        <div class="example-en">The headmaster is in that room with the two open windows</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٤) لِمَنْ هَذِهِ السَّيَّارَةُ <strong>ذَاتُ البَابَيْنِ</strong>؟</div>
+        <div class="example-en">To whom does this car with two doors belong?</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٥) ذَلِكَ المَسْجِدُ <strong>ذُو المَنَارَتَيْنِ</strong> جَمِيلٌ جِدًّا</div>
+        <div class="example-en">That mosque with two minarets is very beautiful</div>
+    </div>
+    <div class="example-box">
+        <div class="example-ar">(٦) أَنَا لَا أُحِبُّ ذَلِكَ الرَّجُلَ <strong>ذَا الوَجْهَيْنِ</strong></div>
+        <div class="example-en">I don't like that two-faced man (hypocrite)</div>
+    </div>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">تَعْبِيرٌ مُهِمٌّ - Important Expression</h4>
+        <p class="arabic-text"><strong>ذُو وَجْهَيْنِ = مُنَافِقٌ</strong></p>
+        <p class="arabic-text">أَنَا لَا أُحِبُّ ذَلِكَ الرَّجُلَ ذَا الوَجْهَيْنِ (= لَا أُحِبُّ ذَلِكَ المُنَافِقَ)</p>
+        <p class="english-text">The expression <strong>ذُو وَجْهَيْنِ</strong> (literally "possessor of two faces") means a <strong>hypocrite</strong> (مُنَافِقٌ) — someone who shows one face to one group and a different face to another. This is referenced in <strong>سُورَةُ المُنَافِقُونَ</strong> (Chapter 63 of the Quran), which the new vocabulary of this lesson connects to.</p>
+    </div>
+</section>
+
+<!-- Vocabulary -->
+<section class="section" id="vocab">
+    <h2 class="section-title">الكَلِمَاتُ الجَدِيدَةُ - New Vocabulary</h2>
+
+    <div class="vocab-grid">
+        <div class="vocab-item"><div class="vocab-ar">مُشْطٌ</div><div class="vocab-en">Comb</div></div>
+        <div class="vocab-item"><div class="vocab-ar">مِخَدَّةٌ (ج. مَخَادُّ)</div><div class="vocab-en">Pillow (pl. pillows)</div></div>
+        <div class="vocab-item"><div class="vocab-ar">زِرٌّ (ج. أَزْرَارٌ)</div><div class="vocab-en">Button (pl. buttons)</div></div>
+        <div class="vocab-item"><div class="vocab-ar">مِرْآةٌ</div><div class="vocab-en">Mirror</div></div>
+        <div class="vocab-item"><div class="vocab-ar">لِصٌّ (ج. لُصُوصٌ)</div><div class="vocab-en">Thief (pl. thieves)</div></div>
+        <div class="vocab-item"><div class="vocab-ar">جُنَيْهٌ</div><div class="vocab-en">Pound (monetary unit)</div></div>
+        <div class="vocab-item"><div class="vocab-ar">مُفِيدٌ</div><div class="vocab-en">Useful</div></div>
+        <div class="vocab-item"><div class="vocab-ar">السِّيرَةُ</div><div class="vocab-en">The Prophet's biography</div></div>
+        <div class="vocab-item"><div class="vocab-ar">تَفْسِيرٌ</div><div class="vocab-en">Commentary/Exegesis of the Qur'an</div></div>
+        <div class="vocab-item"><div class="vocab-ar">ذَبَحَ - يَذْبَحُ (a-a)</div><div class="vocab-en">To slaughter</div></div>
+        <div class="vocab-item"><div class="vocab-ar">شَرَحَ - يَشْرَحُ (a-a)</div><div class="vocab-en">To explain</div></div>
+        <div class="vocab-item"><div class="vocab-ar">مَذْبَحَةٌ</div><div class="vocab-en">Slaughterhouse</div></div>
+        <div class="vocab-item"><div class="vocab-ar">ذُو وَجْهَيْنِ</div><div class="vocab-en">Hypocrite (lit. "possessor of two faces")</div></div>
+        <div class="vocab-item"><div class="vocab-ar">النَّدِيُّ</div><div class="vocab-en">One who joins every group to please them</div></div>
+    </div>
+
+    <h3 class="section-subtitle">مِنْ أَفْعَالِ الدَّرْسِ - Verbs from the Lesson</h3>
+    <table>
+        <tr><th>المَاضِي</th><th>المُضَارِعُ</th><th>الأَمْرُ</th><th>المَصْدَرُ</th><th>اسْمُ الفَاعِلِ</th><th>اسْمُ المَفْعُولِ</th></tr>
+        <tr><td>أَحَبَّ</td><td>يُحِبُّ</td><td>أَحْبِبْ</td><td>إِحْبَابًا</td><td>مُحِبٌّ</td><td>مُحَبٌّ</td></tr>
+        <tr><td>بَقِيَ</td><td>يَبْقَى</td><td>اِبْقَ</td><td>بَقَاءً</td><td>بَاقٍ</td><td>مُبْقَيٌّ</td></tr>
+        <tr><td>أَتَى</td><td>يَأْتِي</td><td>اِيتِ</td><td>إِيتَاءً</td><td>مُؤْتٍ</td><td>مُؤْتَى</td></tr>
+        <tr><td>ذَبَحَ</td><td>يَذْبَحُ</td><td>اُذْبَحْ</td><td>ذَبْحًا</td><td>ذَابِحٌ</td><td>مَذْبُوحٌ</td></tr>
+    </table>
+</section>
+
+<!-- MCQ Section -->
 <section class="section" id="mcq">
     <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
-    <div class="mcq-question" data-correct="c" data-explanation="مَصْدَرُ بَقِيَ هُوَ بَقَاء. - The masdar of بَقِيَ is بَقَاء."><h4 class="arabic-medium">١. مَا مَصْدَرُ "بَقِيَ"؟</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) بُقْيَة</span></label><label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) بَقِيَّة</span></label><label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) بَقَاء</span></label><label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) بَاقٍ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="a" data-explanation="المُثَنَّى يُرْفَعُ بِالأَلِفِ. - The dual is nominative with alif."><h4 class="arabic-medium">٢. المُثَنَّى يُرْفَعُ بِـ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) الأَلِف</span></label><label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) اليَاء</span></label><label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) الوَاو</span></label><label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) الضَّمَّة</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="b" data-explanation="بَقِيَ فِعْلٌ نَاقِصٌ. - بَقِيَ is a defective verb."><h4 class="arabic-medium">٣. "بَقِيَ" فِعْلٌ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) أَجْوَف</span></label><label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) نَاقِص</span></label><label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) صَحِيح</span></label><label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) مِثَال</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="d" data-explanation="'لِي أَخَوَانِ' - أَخَوَانِ مُثَنَّى مَرْفُوعٌ بِالأَلِفِ. - أَخَوَانِ is dual nominative."><h4 class="arabic-medium">٤. "لِي أَخَوَانِ" - "أَخَوَانِ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) جَمْعُ مُذَكَّرٍ سَالِم</span></label><label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) جَمْعُ تَكْسِيرٍ</span></label><label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) مُفْرَد</span></label><label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) مُثَنَّى</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="a" data-explanation="المُثَنَّى يُنْصَبُ وَيُجَرُّ بِاليَاءِ. - Dual is accusative/genitive with ya."><h4 class="arabic-medium">٥. المُثَنَّى يُنْصَبُ بِـ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) اليَاء</span></label><label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) الأَلِف</span></label><label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) الكَسْرَة</span></label><label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) الفَتْحَة</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="c" data-explanation="أَمْرُ بَقِيَ هُوَ اِبْقَ. - Imperative of بَقِيَ is اِبْقَ."><h4 class="arabic-medium">٦. أَمْرُ "بَقِيَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) بَقِ</span></label><label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) اُبْقُ</span></label><label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) اِبْقَ</span></label><label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) بَقَى</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="b" data-explanation="بَقَاء يَعْنِي Remaining/Staying. - بَقَاء means remaining."><h4 class="arabic-medium">٧. مَعْنَى "بَقَاء":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) Leaving</span></label><label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) Remaining</span></label><label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) Returning</span></label><label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) Running</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="d" data-explanation="'كِتَابَيْنِ' مُثَنَّى مَنْصُوبٌ بِاليَاءِ. - كِتَابَيْنِ is dual accusative."><h4 class="arabic-medium">٨. "اِشْتَرَيْتُ كِتَابَيْنِ" - "كِتَابَيْنِ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) مُثَنَّى مَرْفُوعٌ</span></label><label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) جَمْعٌ مَنْصُوبٌ</span></label><label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) مُفْرَدٌ مَنْصُوبٌ</span></label><label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مُثَنَّى مَنْصُوبٌ</span></label></div><div class="mcq-feedback"></div></div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="مَصْدَرُ بَقِيَ هُوَ بَقَاءٌ. - The masdar of بَقِيَ is بَقَاء.">
+        <h4 class="arabic-medium">١. مَا مَصْدَرُ "بَقِيَ"؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) بُقْيَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) بَقِيَّة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) بَقَاء</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) بَاقٍ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="المُثَنَّى يُرْفَعُ بِالأَلِفِ. - The dual is nominative with alif.">
+        <h4 class="arabic-medium">٢. المُثَنَّى يُرْفَعُ بِـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) الأَلِف</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) اليَاء</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) الوَاو</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) الضَّمَّة</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="بَقِيَ فِعْلٌ نَاقِصٌ (الحَرْفُ الأَخِيرُ حَرْفُ عِلَّةٍ). - بَقِيَ is a defective verb.">
+        <h4 class="arabic-medium">٣. "بَقِيَ" فِعْلٌ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) أَجْوَف</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) نَاقِص</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) صَحِيح</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) مِثَال</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="'لِي أَخَوَانِ' - أَخَوَانِ مُثَنَّى مَرْفُوعٌ بِالأَلِفِ. - أَخَوَانِ is dual nominative.">
+        <h4 class="arabic-medium">٤. "لِي أَخَوَانِ" - "أَخَوَانِ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) جَمْعُ مُذَكَّرٍ سَالِم</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) جَمْعُ تَكْسِيرٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) مُفْرَد</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) مُثَنَّى</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="المُثَنَّى يُنْصَبُ وَيُجَرُّ بِاليَاءِ. - Dual is accusative/genitive with ya.">
+        <h4 class="arabic-medium">٥. المُثَنَّى يُنْصَبُ بِـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) اليَاء</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) الأَلِف</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) الكَسْرَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) الفَتْحَة</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="أَمْرُ بَقِيَ هُوَ اِبْقَ (تُحْذَفُ الأَلِفُ). - Imperative of بَقِيَ is اِبْقَ.">
+        <h4 class="arabic-medium">٦. أَمْرُ "بَقِيَ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) بَقِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) اُبْقُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) اِبْقَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) بَقَى</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="بَقَاءٌ يَعْنِي Remaining/Staying. - بَقَاء means remaining.">
+        <h4 class="arabic-medium">٧. مَعْنَى "بَقَاءٌ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) Leaving</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) Remaining</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) Returning</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) Running</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="'كِتَابَيْنِ' مُثَنَّى مَنْصُوبٌ بِاليَاءِ. - كِتَابَيْنِ is dual accusative.">
+        <h4 class="arabic-medium">٨. "اِشْتَرَيْتُ كِتَابَيْنِ" - "كِتَابَيْنِ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) مُثَنَّى مَرْفُوعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) جَمْعٌ مَنْصُوبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) مُفْرَدٌ مَنْصُوبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مُثَنَّى مَنْصُوبٌ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="ذُو وَجْهَيْنِ مَعْنَاهُ مُنَافِقٌ (Two-faced = Hypocrite). - ذُو وَجْهَيْنِ means hypocrite.">
+        <h4 class="arabic-medium">٩. "ذُو وَجْهَيْنِ" مَعْنَاهُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q9" value="a"><span>أ) صَادِقٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="b"><span>ب) مُنَافِقٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="c"><span>ج) كَرِيمٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="d"><span>د) مَرِيضٌ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="الأُمُّ فَاعِلٌ مَرْفُوعٌ بِالضَّمَّةِ لِأَنَّهُ جَاءَ بَعْدَ الفِعْلِ بَقِيَتْ. - الأُمُّ is the doer (فاعل) after the verb.">
+        <h4 class="arabic-medium">١٠. "بَقِيَتِ الأُمُّ" - "الأُمُّ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q10" value="a"><span>أ) فَاعِلٌ مَرْفُوعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="b"><span>ب) مَفْعُولٌ بِهِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="c"><span>ج) مُبْتَدَأٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="d"><span>د) خَبَرٌ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="إِحْدَاهُمَا تُسْتَخْدَمُ مَعَ المُؤَنَّثِ، وَأَحَدُهُمَا مَعَ المُذَكَّرِ. - إِحْدَاهُمَا is for feminine.">
+        <h4 class="arabic-medium">١١. "إِحْدَاهُمَا" تُسْتَخْدَمُ مَعَ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q11" value="a"><span>أ) المُذَكَّرِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="b"><span>ب) الجَمْعِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="c"><span>ج) المُؤَنَّثِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="d"><span>د) المُفْرَدِ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="اسْمُ الفَاعِلِ مِنْ أَحَبَّ عَلَى وَزْنِ مُفْعِل = مُحِبٌّ. - Active participle of أَحَبَّ is مُحِبٌّ.">
+        <h4 class="arabic-medium">١٢. اسْمُ الفَاعِلِ مِنْ "أَحَبَّ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q12" value="a"><span>أ) حَبِيبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="b"><span>ب) مُحِبٌّ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="c"><span>ج) مَحْبُوبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="d"><span>د) حَابٌّ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="'ذُو' فِي حَالَةِ النَّصْبِ يَصِيرُ 'ذَا'. مِثَال: غَسَلْتُ القَمِيصَ ذَا الجَيْبَيْنِ. - ذُو becomes ذَا in the accusative.">
+        <h4 class="arabic-medium">١٣. "غَسَلْتُ القَمِيصَ ___ الجَيْبَيْنِ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q13" value="a"><span>أ) ذُو</span></label>
+            <label class="mcq-option"><input type="radio" name="q13" value="b"><span>ب) ذِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q13" value="c"><span>ج) ذَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q13" value="d"><span>د) ذَاتُ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="'إِحْدَاهُمَا' لِلمُؤَنَّثِ وَ'أَحَدُهُمَا' لِلمُذَكَّرِ. أُخْتَانِ مُؤَنَّثٌ فَنَسْتَخْدِمُ إِحْدَاهُمَا. - Sisters are feminine, so use إِحْدَاهُمَا.">
+        <h4 class="arabic-medium">١٤. "لِي أُخْتَانِ، ___ مُدَرِّسَةٌ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q14" value="a"><span>أ) إِحْدَاهُمَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q14" value="b"><span>ب) أَحَدُهُمَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q14" value="c"><span>ج) إِحْدَاهُمْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q14" value="d"><span>د) أَحَدُهُمْ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="بَعْدَ حَرْفِ الجَرِّ 'بِ' يَكُونُ المُثَنَّى مَجْرُورًا بِاليَاءِ (ـَيْنِ). - After a preposition, the dual takes ـَيْنِ.">
+        <h4 class="arabic-medium">١٥. "اشْتَرَيْتُ هَذِهِ المَجَلَّةَ بِ___":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q15" value="a"><span>أ) رِيَالَانِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q15" value="b"><span>ب) رِيَالًا</span></label>
+            <label class="mcq-option"><input type="radio" name="q15" value="c"><span>ج) رِيَالٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q15" value="d"><span>د) رِيَالَيْنِ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="'ذَاتِ' هِيَ المُؤَنَّثُ المَجْرُورُ مِنْ 'ذُو'. الغُرْفَة مُؤَنَّثٌ وَمَجْرُورَةٌ بِـ'فِي'. - ذَاتِ is the fem. genitive of ذُو.">
+        <h4 class="arabic-medium">١٦. "المُدِيرُ فِي الغُرْفَةِ ___ النَّافِذَتَيْنِ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q16" value="a"><span>أ) ذُو</span></label>
+            <label class="mcq-option"><input type="radio" name="q16" value="b"><span>ب) ذَاتِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q16" value="c"><span>ج) ذَا</span></label>
+            <label class="mcq-option"><input type="radio" name="q16" value="d"><span>د) ذَاتُ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
 </section>
 
-<footer style="text-align: center; padding: 30px; color: #666;"><p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الثَّالِثَةُ وَالعِشْرُونَ</p><p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 23</p></footer>
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الثَّالِثَةُ وَالعِشْرُونَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 23 (Lesson 20)</p>
+</footer>
 
-<script>document.querySelectorAll('.mcq-question').forEach(question=>{const correct=question.dataset.correct;const explanation=question.dataset.explanation||'';const options=question.querySelectorAll('.mcq-option');const feedback=question.querySelector('.mcq-feedback');options.forEach(option=>{option.addEventListener('click',function(){if(question.classList.contains('answered'))return;question.classList.add('answered');const value=this.querySelector('input').value;this.querySelector('input').checked=true;options.forEach(opt=>{if(opt.querySelector('input').value===correct)opt.classList.add('correct');});if(value===correct){this.classList.add('correct');feedback.innerHTML='<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>'+explanation;feedback.className='mcq-feedback show correct';}else{this.classList.add('incorrect');feedback.innerHTML='<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>'+explanation;feedback.className='mcq-feedback show incorrect';}});});});</script>
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
