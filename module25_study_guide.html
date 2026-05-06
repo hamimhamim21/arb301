@@ -5,57 +5,463 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 25 - ARB303 Study Guide | المحاضرة الخامسة والعشرون</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    <style>* { box-sizing: border-box; } body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; } .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); } .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; } .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; } .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; } .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); } .nav-links .nav-ar { font-size: 18px; font-weight: bold; } .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; } .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); } .main-title h1 { font-size: 48px; margin: 0 0 10px 0; } .main-title .subtitle { font-size: 24px; opacity: 0.9; } .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); } .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; } .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; } .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; } .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; } .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; } .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; } .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; } .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; } table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; } th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; } td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; } tr:nth-child(even) { background: #f8f9fa; } tr:hover { background: #e8f5e9; } .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; } .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; } .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; } .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; } .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; } .home-btn:hover { transform: scale(1.1); } .home-btn svg { width: 22px; height: 22px; fill: white; } .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; } .formula { font-size: 36px; color: #00695c; font-weight: bold; } .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; } .mcq-options { padding: 10px 20px; } .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; } .mcq-option:hover { border-color: #00897b; background: #f5f5f5; } .mcq-option input[type="radio"] { display: none; } .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; } .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; } .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; } .mcq-feedback.show { display: block; } .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; } .mcq-feedback.incorrect { background: #ffebee; color: #c62828; } @media (max-width: 768px) { .section-title { font-size: 28px; } table { font-size: 18px; } }</style>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        tr:hover { background: #e8f5e9; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0, 105, 92, 0.5); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 36px; color: #00695c; font-weight: bold; }
+        .exercise-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
+        .exercise-q, .exercise-a { padding: 15px; border-radius: 10px; font-size: 24px; }
+        .exercise-q { background: #fff3e0; border-right: 3px solid #ff9800; }
+        .exercise-a { background: #e8f5e9; border-right: 3px solid #4caf50; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; background: #f5f5f5; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) { .main-title h1 { font-size: 36px; } .section-title { font-size: 28px; } table { font-size: 18px; } .exercise-pair { grid-template-columns: 1fr; } .formula { font-size: 28px; } }
+    </style>
 </head>
 <body>
 <a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
-<nav class="nav-container"><div class="nav-title">المحاضرة الخامسة والعشرون - Lecture 25</div><div class="nav-links"><a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a><a href="#lesson"><span class="nav-ar">شرح الدرس</span><span class="nav-en">Lesson</span></a><a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a><a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a></div></nav>
 
-<div class="main-title"><h1>المُحَاضَرَةُ الخَامِسَةُ وَالعِشْرُونَ</h1><div class="subtitle">Lecture 25 - الدَّرْسُ العِشْرُونَ (Lesson 20)</div></div>
+<nav class="nav-container">
+    <div class="nav-title">المُحَاضَرَةُ الخَامِسَةُ وَالعِشْرُونَ - Lecture 25</div>
+    <div class="nav-links">
+        <a href="#verb"><span class="nav-ar">الفِعْلُ</span><span class="nav-en">Verb</span></a>
+        <a href="#lesson21"><span class="nav-ar">الدَّرْسُ ٢١</span><span class="nav-en">Lesson 21</span></a>
+        <a href="#ex1"><span class="nav-ar">تمرين ١</span><span class="nav-en">Ex 1</span></a>
+        <a href="#ex2"><span class="nav-ar">تمرين ٢</span><span class="nav-en">Ex 2</span></a>
+        <a href="#ex3"><span class="nav-ar">تمرين ٣</span><span class="nav-en">Ex 3</span></a>
+        <a href="#ex4"><span class="nav-ar">تمرين ٤</span><span class="nav-en">Ex 4</span></a>
+        <a href="#ex5"><span class="nav-ar">تمرين ٥</span><span class="nav-en">Ex 5</span></a>
+        <a href="#ex78"><span class="nav-ar">تمرين ٦-٨</span><span class="nav-en">Ex 6-8</span></a>
+        <a href="#mcq"><span class="nav-ar">أَسْئِلَة</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
 
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الخَامِسَةُ وَالعِشْرُونَ</h1>
+    <div class="subtitle">Lecture 25 - الدَّرْسُ الحَادِي وَالعِشْرُونَ (Lesson 21 - cont.)</div>
+</div>
+
+<!-- Verb Section: اِسْتَقْبَلَ -->
 <section class="section" id="verb">
-    <h2 class="section-title">الفِعْلُ: اِسْتَقْبَلَ - يَسْتَقْبِلُ</h2>
-    <p class="english-text">The Verb: To meet / To receive (Form X - اِسْتَفْعَلَ pattern)</p>
-    <div class="formula-box"><div class="formula">اِسْتَقْبَلَ - يَسْتَقْبِلُ - لَنْ يَسْتَقْبِلَ - لَمْ يَسْتَقْبِلْ - اِسْتَقْبِلْ - اِسْتِقْبَالًا</div><p class="english-text">Past - Present - Accusative - Jussive - Imperative - Masdar: Meeting/Reception</p></div>
+    <h2 class="section-title">الفِعْلُ: اِسْتَقْبَلَ - يَسْتَقْبِلُ (To Meet / Receive)</h2>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">نَوْعُ الفِعْلِ - Verb Type</h4>
+        <p class="arabic-text">اِسْتَقْبَلَ فِعْلٌ <strong>سُدَاسِيٌّ</strong> عَلَى وَزْنِ <strong>اِسْتَفْعَلَ</strong> (البَابُ العَاشِرُ / Form X). الجِذْرُ: ق ب ل.</p>
+        <p class="english-text"><strong>اِسْتَقْبَلَ</strong> is a <strong>six-letter verb</strong> on the Form X pattern (اِسْتَفْعَلَ). Its root is ق-ب-ل (related to قَبِلَ "to accept" and قَابَلَ "to meet face-to-face"). Form X often adds the meaning of "seeking" or "facing" — here it means "to go to receive/welcome someone."</p>
+    </div>
+
+    <div class="formula-box">
+        <div class="formula">اِسْتَقْبَلَ - يَسْتَقْبِلُ - لَنْ يَسْتَقْبِلَ - لَمْ يَسْتَقْبِلْ - اِسْتَقْبِلْ - اِسْتِقْبَالًا</div>
+        <p class="english-text">Past - Present - Subjunctive - Jussive - Imperative - Masdar (Meeting/Reception)</p>
+    </div>
+
+    <h3 class="section-subtitle">جَدْوَلُ التَّصْرِيفِ - Conjugation Table</h3>
     <table>
-        <tr><th>الضَّمِير</th><th>المَاضِي</th><th>المُضَارِع</th><th>الأَمْر</th></tr>
-        <tr><td class="pronoun-cell">أَنَا</td><td>اِسْتَقْبَلْتُ</td><td>أَسْتَقْبِلُ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">نَحْنُ</td><td>اِسْتَقْبَلْنَا</td><td>نَسْتَقْبِلُ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">أَنْتَ</td><td>اِسْتَقْبَلْتَ</td><td>تَسْتَقْبِلُ</td><td>اِسْتَقْبِلْ</td></tr>
-        <tr><td class="pronoun-cell">هُوَ</td><td>اِسْتَقْبَلَ</td><td>يَسْتَقْبِلُ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هِيَ</td><td>اِسْتَقْبَلَتْ</td><td>تَسْتَقْبِلُ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هُمْ</td><td>اِسْتَقْبَلُوا</td><td>يَسْتَقْبِلُونَ</td><td>-</td></tr>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ + المُضَارِع</th><th>لَمْ + المُضَارِع</th><th>الأَمْرُ</th><th>المَصْدَرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>اِسْتَقْبَلْتُ</td><td>أَسْتَقْبِلُ</td><td>لَنْ أَسْتَقْبِلَ</td><td>لَمْ أَسْتَقْبِلْ</td><td>-</td><td rowspan="14" style="font-size:28px; font-weight:bold; color:#00695c;">اِسْتِقْبَالًا<br><span class="english-text">Meeting/Reception</span></td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>اِسْتَقْبَلْنَا</td><td>نَسْتَقْبِلُ</td><td>لَنْ نَسْتَقْبِلَ</td><td>لَمْ نَسْتَقْبِلْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>اِسْتَقْبَلْتَ</td><td>تَسْتَقْبِلُ</td><td>لَنْ تَسْتَقْبِلَ</td><td>لَمْ تَسْتَقْبِلْ</td><td>اِسْتَقْبِلْ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>اِسْتَقْبَلْتِ</td><td>تَسْتَقْبِلِينَ</td><td>لَنْ تَسْتَقْبِلِي</td><td>لَمْ تَسْتَقْبِلِي</td><td>اِسْتَقْبِلِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمَا</td><td>اِسْتَقْبَلْتُمَا</td><td>تَسْتَقْبِلَانِ</td><td>لَنْ تَسْتَقْبِلَا</td><td>لَمْ تَسْتَقْبِلَا</td><td>اِسْتَقْبِلَا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>اِسْتَقْبَلْتُمْ</td><td>تَسْتَقْبِلُونَ</td><td>لَنْ تَسْتَقْبِلُوا</td><td>لَمْ تَسْتَقْبِلُوا</td><td>اِسْتَقْبِلُوا</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>اِسْتَقْبَلْتُنَّ</td><td>تَسْتَقْبِلْنَ</td><td>لَنْ تَسْتَقْبِلْنَ</td><td>لَمْ تَسْتَقْبِلْنَ</td><td>اِسْتَقْبِلْنَ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>اِسْتَقْبَلَ</td><td>يَسْتَقْبِلُ</td><td>لَنْ يَسْتَقْبِلَ</td><td>لَمْ يَسْتَقْبِلْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>اِسْتَقْبَلَتْ</td><td>تَسْتَقْبِلُ</td><td>لَنْ تَسْتَقْبِلَ</td><td>لَمْ تَسْتَقْبِلْ</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (م)</td><td>اِسْتَقْبَلَا</td><td>يَسْتَقْبِلَانِ</td><td>لَنْ يَسْتَقْبِلَا</td><td>لَمْ يَسْتَقْبِلَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمَا (مؤ)</td><td>اِسْتَقْبَلَتَا</td><td>تَسْتَقْبِلَانِ</td><td>لَنْ تَسْتَقْبِلَا</td><td>لَمْ تَسْتَقْبِلَا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>اِسْتَقْبَلُوا</td><td>يَسْتَقْبِلُونَ</td><td>لَنْ يَسْتَقْبِلُوا</td><td>لَمْ يَسْتَقْبِلُوا</td><td>-</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>اِسْتَقْبَلْنَ</td><td>يَسْتَقْبِلْنَ</td><td>لَنْ يَسْتَقْبِلْنَ</td><td>لَمْ يَسْتَقْبِلْنَ</td><td>-</td></tr>
     </table>
-    <div class="example-box"><div class="example-ar">اِسْتَقْبَلْنَا الضُّيُوفَ فِي المَطَارِ</div><div class="example-en">We received the guests at the airport</div></div>
-    <div class="example-box"><div class="example-ar">اِسْتَقْبِلْ أَخَاكَ عِنْدَ البَابِ</div><div class="example-en">Meet your brother at the door</div></div>
-    <div class="info-box"><h4>الوَزْنُ: اِسْتَفْعَلَ (Form X)</h4><p class="arabic-text">اِسْتَقْبَلَ مِنَ الأَفْعَالِ السُّدَاسِيَّةِ عَلَى وَزْنِ اِسْتَفْعَلَ. الجِذْرُ: ق ب ل</p><p class="english-text">اِسْتَقْبَلَ is a six-letter verb on Form X pattern. Root: ق ب ل (related to قَبِلَ - to accept)</p></div>
+
+    <h3 class="section-subtitle">أَمْثِلَةٌ - Examples</h3>
+    <div class="example-box"><div class="example-ar">ذَهَبْتُ لِأَسْتَقْبِلَ أَخِي فِي المَطَارِ</div><div class="example-en">I went to meet/receive my brother at the airport</div></div>
+    <div class="example-box"><div class="example-ar">اِسْتَقْبَلَتْ أُمِّي الضُّيُوفَ وَهِيَ مَسْرُورَةٌ</div><div class="example-en">My mother received the guests while she was happy</div></div>
+    <div class="example-box"><div class="example-ar">اِسْتَقْبَلَ أَهْلُ المَدِينَةِ رَسُولَ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ بِالفَرَحِ وَالسُّرُورِ</div><div class="example-en">The people of Madinah received the Messenger of Allah &#65018; with happiness and joy</div></div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">مُلَاحَظَةٌ - Note</h4>
+        <p class="arabic-text">اِسْتَقْبَلَ = قَابَلَ (بِمَعْنَى المُلَاقَاةِ وَالتَّرْحِيبِ)</p>
+        <p class="english-text">اِسْتَقْبَلَ is synonymous with قَابَلَ in the sense of meeting and welcoming someone. The word مُسْتَقْبَل (passive participle) is also used to mean "the future" (what lies ahead/facing you).</p>
+    </div>
 </section>
 
-<section class="section" id="lesson">
-    <h2 class="section-title">شَرْحُ الدَّرْسِ - Lesson Explanation</h2>
-    <p class="english-text">Lesson 20 content and explanation</p>
-    <div class="grammar-box"><p class="arabic-text">الدَّرْسُ العِشْرُونَ يَتَضَمَّنُ مُرَاجَعَةً شَامِلَةً وَتَمَارِينَ تَطْبِيقِيَّةً</p><p class="english-text">Lesson 20 contains comprehensive review and applied exercises</p></div>
+<!-- Continuation of Lesson 21 -->
+<section class="section" id="lesson21">
+    <h2 class="section-title">الاسْتِمْرَارُ فِي الدَّرْسِ الحَادِي وَالعِشْرِينَ - Lesson 21 (Continuation)</h2>
+    <p class="english-text">This lecture continues explaining Lesson 21 from Part 2 of the Madinah Book, with focus on the textbook exercises.</p>
+
+    <div class="info-box">
+        <p class="arabic-text">دَرَسْنَا فِي المُحَاضَرَةِ السَّابِقَةِ: الدَّرْسَ الحَادِيَ وَالعِشْرِينَ (الحِوَار + القَوَاعِد). وَالآنَ سَنَدْرُسُ تَمَارِينَ الكِتَابِ.</p>
+        <p class="english-text">In the previous lecture (24) we studied Lesson 21 (dialogue + grammar rules). Now we will study the textbook exercises, which practice using لَمْ, لَمَّا, and identifying sentence types.</p>
+    </div>
 </section>
 
-<section class="section" id="exercises">
-    <h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2>
-    <div class="rule-box"><p class="arabic-text">الإِجَابَةُ - Answers to exercises</p><p class="english-text">Practice exercises with answers from Lesson 20</p></div>
+<!-- Exercise 1 -->
+<section class="section" id="ex1">
+    <h2 class="section-title">التَّمْرِينُ الأَوَّلُ - Exercise 1</h2>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ:</p>
+        <p class="english-text">Answer the following questions (about the Lesson 21 dialogue):</p>
+    </div>
+
+    <div class="exercise-pair"><div class="exercise-q">(١) أَيْنَ ذَهَبَ هَارُونُ وَأَصْدِقَاؤُهُ؟</div><div class="exercise-a">ذَهَبُوا إِلَى المَطَارِ لِاسْتِقْبَالِ رَئِيسِهِمْ</div></div>
+    <p class="english-text">Where did Haroon and his friends go? — They went to the airport to welcome their leader.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٢) لِمَ لَمْ يَكْتُبْ عَلِيٌّ الوَاجِبَاتِ؟</div><div class="exercise-a">لَمْ يَكْتُبْ عَلِيٌّ الوَاجِبَاتِ لِأَنَّهُ لَمْ يَفْهَمِ الدَّرْسَ</div></div>
+    <p class="english-text">Why didn't Ali write the homework? — Because he didn't understand the lesson.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٣) مَا هُوَ الشَّيْءُ الَّذِي لَمْ يَفْهَمْهُ عَلِيٌّ؟</div><div class="exercise-a">لَمْ يَفْهَمْ عَلِيٌّ الفَرْقَ بَيْنَ الجُمْلَةِ الاسْمِيَّةِ وَالجُمْلَةِ الفِعْلِيَّةِ</div></div>
+    <p class="english-text">What didn't Ali understand? — The difference between nominal and verbal sentences.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٤) أَشَرَحَ المُدَرِّسُ الدَّرْسَ مَرَّةً أُخْرَى؟</div><div class="exercise-a">نَعَمْ، شَرَحَ المُدَرِّسُ الدَّرْسَ مَرَّةً أُخْرَى</div></div>
+    <p class="english-text">Did the teacher explain the lesson again? — Yes, he explained it again.</p>
 </section>
 
+<!-- Exercise 2 -->
+<section class="section" id="ex2">
+    <h2 class="section-title">التَّمْرِينُ الثَّانِي - Exercise 2: Sentences with لَمْ</h2>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلْ مَا يَلِي: يَذْهَبُ ← لَمْ يَذْهَبْ = مَا ذَهَبَ</p>
+        <p class="english-text">Note the pattern: The present tense verb + لَمْ = negation in the past. لَمْ يَذْهَبْ means the same as مَا ذَهَبَ (he did not go).</p>
+    </div>
+
+    <div class="example-box"><div class="example-ar">(١) لَمْ أَذْهَبْ إِلَى السُّوقِ اليَوْمَ</div><div class="example-en">I did not go to the market today</div></div>
+    <div class="example-box"><div class="example-ar">(٢) لَمْ نَلْعَبْ كُرَةَ السَّلَّةِ أَمْسِ</div><div class="example-en">We did not play basketball yesterday</div></div>
+    <div class="example-box"><div class="example-ar">(٣) لَمْ نَفْهَمْ هَذَا الدَّرْسَ جَيِّدًا</div><div class="example-en">We did not understand this lesson well</div></div>
+    <div class="example-box"><div class="example-ar">(٤) أَرَدْتُ أَنْ أَزُورَكَ البَارِحَةَ وَلَكِنَّ أَبِي لَمْ يَسْمَحْ لِي بِالخُرُوجِ لَيْلًا</div><div class="example-en">I wanted to visit you last night but my father did not allow me to go out at night</div></div>
+    <div class="example-box"><div class="example-ar">(٥) لَمْ آكُلْ شَيْئًا مُنْذُ يَوْمَيْنِ</div><div class="example-en">I have not eaten anything for two days</div></div>
+    <div class="example-box"><div class="example-ar">(٦) أَلَمْ تَسْمَعِ الأَذَانَ يَا هَارُونُ؟ بَلَى، سَمِعْتُ</div><div class="example-en">Did you not hear the adhan, O Haroon? — Yes (I did hear it)</div></div>
+    <div class="example-box"><div class="example-ar">(٧) لَمْ نَدْرُسِ اللُّغَةَ العَرَبِيَّةَ فِي بَلَدِنَا</div><div class="example-en">We did not study Arabic in our country</div></div>
+    <div class="example-box"><div class="example-ar">(٨) لَمْ يَفْتَحِ البَقَّالُ دُكَّانَهُ اليَوْمَ</div><div class="example-en">The grocer did not open his shop today</div></div>
+    <div class="example-box"><div class="example-ar">(٩) لَمْ أَشْرَبِ القَهْوَةَ بَعْدَ صَلَاةِ الفَجْرِ اليَوْمَ</div><div class="example-en">I did not drink coffee after Fajr prayer today</div></div>
+    <div class="example-box"><div class="example-ar">(١٠) غَسَلْتُ المَنَادِيلَ وَلَمْ أَغْسِلِ القُمْصَانَ</div><div class="example-en">I washed the handkerchiefs but did not wash the shirts</div></div>
+</section>
+
+<!-- Exercise 3 -->
+<section class="section" id="ex3">
+    <h2 class="section-title">التَّمْرِينُ الثَّالِثُ - Exercise 3: Negation with لَمْ</h2>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ بِالنَّفْيِ مُسْتَعْمِلًا (لَمْ):</p>
+        <p class="english-text">Answer the following questions negatively using لَمْ:</p>
+    </div>
+
+    <div class="exercise-pair"><div class="exercise-q">(١) أَدَرَسْتَ اللُّغَةَ العَرَبِيَّةَ فِي بَلَدِكَ؟</div><div class="exercise-a">لَا، لَمْ أَدْرُسِ اللُّغَةَ العَرَبِيَّةَ فِي بَلَدِي</div></div>
+    <div class="exercise-pair"><div class="exercise-q">(٢) أَكَسَرْتَ نَظَّارَةَ الحَسَنِ يَا هَارُونُ؟</div><div class="exercise-a">لَا، لَمْ أَكْسِرْ نَظَّارَةَ الحَسَنِ</div></div>
+    <div class="exercise-pair"><div class="exercise-q">(٣) أَذَهَبْتُمْ إِلَى المُتْحَفِ يَا إِخْوَانُ؟</div><div class="exercise-a">لَا، لَمْ نَذْهَبْ إِلَى المُتْحَفِ</div></div>
+    <div class="exercise-pair"><div class="exercise-q">(٤) أَدَخَلْتِ المَكْتَبَةَ الجَدِيدَةَ يَا سَلْمَى؟</div><div class="exercise-a">لَا، لَمْ أَدْخُلِ المَكْتَبَةَ الجَدِيدَةَ</div></div>
+    <div class="exercise-pair"><div class="exercise-q">(٥) أَسَأَلَكَ المُدِيرُ عَنِّي؟</div><div class="exercise-a">لَا، لَمْ يَسْأَلْنِي المُدِيرُ عَنْكَ</div></div>
+    <div class="exercise-pair"><div class="exercise-q">(٦) أَفَتَحْتَ نَافِذَةَ غُرْفَةِ المُدِيرِ يَا وَلَدُ؟</div><div class="exercise-a">لَا، لَمْ أَفْتَحْ نَافِذَةَ غُرْفَةِ المُدِيرِ</div></div>
+</section>
+
+<!-- Exercise 4 -->
+<section class="section" id="ex4">
+    <h2 class="section-title">التَّمْرِينُ الرَّابِعُ - Exercise 4: Negation with لَمَّا (Not Yet)</h2>
+    <div class="rule-box">
+        <p class="arabic-text">أَجِبْ عَنِ الأَسْئِلَةِ الآتِيَةِ بِالنَّفْيِ مُسْتَعْمِلًا (لَمَّا):</p>
+        <p class="arabic-text"><strong>لَمَّا أَكْتُبْ = لَمْ أَكْتُبْ بَعْدُ</strong> (مَعْنَاهُمَا: مَا كَتَبْتُ إِلَى الآنَ)</p>
+        <p class="english-text">Answer negatively using لَمَّا (not yet). Remember: لَمَّا أَكْتُبْ = I have not yet written (= لَمْ أَكْتُبْ بَعْدُ). The negation extends from the past to the present moment.</p>
+    </div>
+
+    <div class="exercise-pair"><div class="exercise-q">(١) أَفَهِمْتِ الدَّرْسَ يَا زَيْنَبُ؟</div><div class="exercise-a">لَا، <strong>لَمَّا</strong> أَفْهَمِ الدَّرْسَ</div></div>
+    <p class="english-text">Did you understand the lesson, O Zainab? — No, I have not yet understood it.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٢) أَرَجَعَ أَبُوكَ مِنْ دِمَشْقَ يَا عُمَرُ؟</div><div class="exercise-a">لَا، <strong>لَمَّا</strong> يَرْجِعْ أَبِي مِنْ دِمَشْقَ</div></div>
+    <p class="english-text">Has your father returned from Damascus, O Umar? — No, he has not yet returned.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٣) أَدَخَلَ المُدَرِّسُ الفَصْلَ؟</div><div class="exercise-a">لَا، <strong>لَمَّا</strong> يَدْخُلْ المُدَرِّسُ الفَصْلَ</div></div>
+    <p class="english-text">Has the teacher entered the class? — No, he hasn't entered yet.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٤) أَكَتَبْتُمُ الوَاجِبَاتِ يَا إِخْوَانُ؟</div><div class="exercise-a">لَا، <strong>لَمَّا</strong> نَكْتُبِ الوَاجِبَاتِ</div></div>
+    <p class="english-text">Have you written the homework, O brothers? — No, we haven't written it yet.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٥) أَقَرَأْنَا الدَّرْسَ الرَّابِعَ؟</div><div class="exercise-a">لَا، <strong>لَمَّا</strong> نَقْرَأِ الدَّرْسَ الرَّابِعَ</div></div>
+    <p class="english-text">Have we read lesson four? — No, we haven't read it yet.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٦) أَغَسَلْتِ قُمْصَانِي يَا أُمِّي؟</div><div class="exercise-a">لَا، <strong>لَمَّا</strong> أَغْسِلْ قُمْصَانَكَ</div></div>
+    <p class="english-text">Have you washed my shirts, O mother? — No, I haven't washed them yet.</p>
+
+    <div class="exercise-pair"><div class="exercise-q">(٧) أَذَهَبَ زَمِيلُكَ إِلَى الطَّائِفِ يَا عَلِيُّ؟</div><div class="exercise-a">لَا، <strong>لَمَّا</strong> يَذْهَبْ زَمِيلِي إِلَى الطَّائِفِ</div></div>
+    <p class="english-text">Did your colleague go to Taif, O Ali? — No, he hasn't gone yet.</p>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">فَائِدَةٌ - Useful Tip</h4>
+        <p class="arabic-text">يَجُوزُ حَذْفُ مُنْفِيِّ «لَمَّا» (أَيِ الفِعْلِ)، فَيُمْكِنُ الاكْتِفَاءُ بِـ «لَمَّا» فَقَطْ فِي الجَوَابِ.</p>
+        <p class="english-text"><strong>Important:</strong> It is permissible to drop the verb after لَمَّا and answer with just "لَمَّا" alone. So if asked "أَرَجَعَ أَبُوكَ؟" you can simply answer "لَمَّا" (Not yet). This replaces the colloquial word "لِسَّه" used in dialects.</p>
+    </div>
+</section>
+
+<!-- Exercise 5: Signs of Jazm -->
+<section class="section" id="ex5">
+    <h2 class="section-title">التَّمْرِينُ الخَامِسُ - Exercise 5: عَلَامَاتُ الجَزْمِ (Signs of Jussive)</h2>
+    <div class="rule-box">
+        <p class="arabic-text">تَأَمَّلْ صِيَغَ المُضَارِعِ المَجْزُومِ:</p>
+        <p class="english-text">Contemplate the forms of the jussive present tense. There are THREE different signs of jazm depending on the pronoun:</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">أَوَّلًا: السُّكُونُ - Sign 1: Sukoon</h4>
+        <table>
+            <tr><th>الضَّمِيرُ</th><th>المَرْفُوعُ</th><th>المَجْزُومُ (لَمْ +)</th><th>عَلَامَةُ الجَزْمِ</th></tr>
+            <tr><td class="pronoun-cell">هُوَ</td><td>يَذْهَبُ</td><td>لَمْ يَذْهَبْ</td><td>السُّكُونُ</td></tr>
+            <tr><td class="pronoun-cell">هِيَ</td><td>تَذْهَبُ</td><td>لَمْ تَذْهَبْ</td><td>السُّكُونُ</td></tr>
+            <tr><td class="pronoun-cell">أَنْتَ</td><td>تَذْهَبُ</td><td>لَمْ تَذْهَبْ</td><td>السُّكُونُ</td></tr>
+            <tr><td class="pronoun-cell">أَنَا</td><td>أَذْهَبُ</td><td>لَمْ أَذْهَبْ</td><td>السُّكُونُ</td></tr>
+            <tr><td class="pronoun-cell">نَحْنُ</td><td>نَذْهَبُ</td><td>لَمْ نَذْهَبْ</td><td>السُّكُونُ</td></tr>
+        </table>
+        <p class="english-text">For pronouns هُوَ، هِيَ، أَنْتَ، أَنَا، نَحْنُ — the sign of jazm is <strong>sukoon (ـْ)</strong> on the last letter. The dammah (ـُ) simply becomes sukoon (ـْ).</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">ثَانِيًا: حَذْفُ النُّونِ - Sign 2: Dropping the Noon</h4>
+        <table>
+            <tr><th>الضَّمِيرُ</th><th>المَرْفُوعُ</th><th>المَجْزُومُ (لَمْ +)</th><th>عَلَامَةُ الجَزْمِ</th></tr>
+            <tr><td class="pronoun-cell">هُمْ</td><td>يَذْهَبُ<strong>ونَ</strong></td><td>لَمْ يَذْهَبُ<strong>وا</strong></td><td>حَذْفُ النُّونِ</td></tr>
+            <tr><td class="pronoun-cell">أَنْتُمْ</td><td>تَذْهَبُ<strong>ونَ</strong></td><td>لَمْ تَذْهَبُ<strong>وا</strong></td><td>حَذْفُ النُّونِ</td></tr>
+            <tr><td class="pronoun-cell">أَنْتِ</td><td>تَذْهَبِ<strong>ينَ</strong></td><td>لَمْ تَذْهَبِ<strong>ي</strong></td><td>حَذْفُ النُّونِ</td></tr>
+        </table>
+        <p class="english-text">For the "five verbs" (الأَفْعَالُ الخَمْسَةُ) — هُمْ، أَنْتُمْ، أَنْتِ, plus هُمَا and أَنْتُمَا — the sign of jazm is <strong>dropping the noon</strong>. يَذْهَبُونَ → لَمْ يَذْهَبُوا (the ـونَ becomes ـوا).</p>
+    </div>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">ثَالِثًا: مَبْنِيٌّ عَلَى السُّكُونِ - Sign 3: Indeclinable (Built on Sukoon)</h4>
+        <table>
+            <tr><th>الضَّمِيرُ</th><th>المَرْفُوعُ</th><th>المَجْزُومُ (لَمْ +)</th><th>المُلَاحَظَةُ</th></tr>
+            <tr><td class="pronoun-cell">هُنَّ</td><td>يَذْهَبْنَ</td><td>لَمْ يَذْهَبْنَ</td><td>مَبْنِيٌّ (لَا تَغْيِيرَ)</td></tr>
+            <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>تَذْهَبْنَ</td><td>لَمْ تَذْهَبْنَ</td><td>مَبْنِيٌّ (لَا تَغْيِيرَ)</td></tr>
+        </table>
+        <p class="english-text">For هُنَّ and أَنْتُنَّ — the verb is <strong>indeclinable</strong> (مَبْنِيّ). It doesn't change form at all! يَذْهَبْنَ stays as يَذْهَبْنَ whether marfoo' or majzoom. It's "in the position of jazm" (فِي مَحَلِّ جَزْمٍ).</p>
+    </div>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">خُلَاصَةُ عَلَامَاتِ الجَزْمِ - Summary of Jazm Signs</h4>
+        <p class="arabic-text">١) <strong>السُّكُونُ</strong> ← لِلفِعْلِ الصَّحِيحِ الآخِرِ مَعَ: هُوَ، هِيَ، أَنْتَ، أَنَا، نَحْنُ</p>
+        <p class="arabic-text">٢) <strong>حَذْفُ النُّونِ</strong> ← لِلأَفْعَالِ الخَمْسَةِ: هُمْ، هُمَا، أَنْتُمْ، أَنْتُمَا، أَنْتِ</p>
+        <p class="arabic-text">٣) <strong>مَبْنِيٌّ</strong> (لَا تَغْيِيرَ) ← مَعَ: هُنَّ، أَنْتُنَّ</p>
+        <p class="english-text">1) Sukoon — for sound verbs with هُوَ/هِيَ/أَنْتَ/أَنَا/نَحْنُ. 2) Dropping noon — for the "five verbs." 3) No change (indeclinable) — with هُنَّ/أَنْتُنَّ.</p>
+    </div>
+</section>
+
+<!-- Exercises 6-8 -->
+<section class="section" id="ex78">
+    <h2 class="section-title">التَّمْرِينُ السَّادِسُ - Exercise 6: Apply لَمْ</h2>
+    <div class="rule-box">
+        <p class="arabic-text">أَدْخِلْ (لَمْ) عَلَى الأَفْعَالِ الآتِيَةِ:</p>
+        <p class="english-text">Apply لَمْ to the following verbs (make them jussive):</p>
+    </div>
+
+    <table>
+        <tr><th>المُضَارِعُ المَرْفُوعُ</th><th>المُضَارِعُ المَجْزُومُ</th><th>عَلَامَةُ الجَزْمِ</th></tr>
+        <tr><td>أَذْهَبُ</td><td>لَمْ <strong>أَذْهَبْ</strong></td><td>السُّكُونُ</td></tr>
+        <tr><td>يَذْهَبُونَ</td><td>لَمْ <strong>يَذْهَبُوا</strong></td><td>حَذْفُ النُّونِ</td></tr>
+        <tr><td>يَذْهَبْنَ</td><td>لَمْ <strong>يَذْهَبْنَ</strong></td><td>مَبْنِيٌّ</td></tr>
+        <tr><td>تَذْهَبِينَ</td><td>لَمْ <strong>تَذْهَبِي</strong></td><td>حَذْفُ النُّونِ</td></tr>
+        <tr><td>تَذْهَبُ</td><td>لَمْ <strong>تَذْهَبْ</strong></td><td>السُّكُونُ</td></tr>
+        <tr><td>تَذْهَبُونَ</td><td>لَمْ <strong>تَذْهَبُوا</strong></td><td>حَذْفُ النُّونِ</td></tr>
+        <tr><td>نَذْهَبُ</td><td>لَمْ <strong>نَذْهَبْ</strong></td><td>السُّكُونُ</td></tr>
+        <tr><td>يَذْهَبُ</td><td>لَمْ <strong>يَذْهَبْ</strong></td><td>السُّكُونُ</td></tr>
+    </table>
+
+    <h2 class="section-title" style="margin-top:40px;">التَّمْرِينُ الثَّامِنُ - Exercise 8: المُبْتَدَأُ وَالخَبَرُ</h2>
+    <div class="rule-box">
+        <p class="arabic-text">ضَعْ خَطًّا وَاحِدًا تَحْتَ المُبْتَدَأِ وَخَطَّيْنِ تَحْتَ الخَبَرِ:</p>
+        <p class="english-text">Identify the مُبْتَدَأ (subject) and خَبَر (predicate) in each nominal sentence. Both must be مَرْفُوع (nominative with dammah):</p>
+    </div>
+
+    <table>
+        <tr><th>الجُمْلَةُ</th><th>المُبْتَدَأُ</th><th>الخَبَرُ</th><th>Translation</th></tr>
+        <tr><td>المَاءُ قَلِيلٌ</td><td class="pronoun-cell">المَاءُ</td><td>قَلِيلٌ</td><td class="english-text">The water is scarce</td></tr>
+        <tr><td>سُعَادُ مُمَرِّضَةٌ</td><td class="pronoun-cell">سُعَادُ</td><td>مُمَرِّضَةٌ</td><td class="english-text">Suaad is a nurse</td></tr>
+        <tr><td>القَهْوَةُ بَارِدَةٌ</td><td class="pronoun-cell">القَهْوَةُ</td><td>بَارِدَةٌ</td><td class="english-text">The coffee is cold</td></tr>
+        <tr><td>النُّجُومُ جَمِيلَةٌ</td><td class="pronoun-cell">النُّجُومُ</td><td>جَمِيلَةٌ</td><td class="english-text">The stars are beautiful</td></tr>
+        <tr><td>الدُّخُولُ مَمْنُوعٌ</td><td class="pronoun-cell">الدُّخُولُ</td><td>مَمْنُوعٌ</td><td class="english-text">Entry is forbidden</td></tr>
+        <tr><td>البَابُ مُغْلَقٌ</td><td class="pronoun-cell">البَابُ</td><td>مُغْلَقٌ</td><td class="english-text">The door is closed</td></tr>
+        <tr><td>هَاشِمٌ ذَكِيٌّ</td><td class="pronoun-cell">هَاشِمٌ</td><td>ذَكِيٌّ</td><td class="english-text">Hashim is smart</td></tr>
+    </table>
+
+    <div class="info-box">
+        <p class="arabic-text">لَاحِظْ: كُلُّ مُبْتَدَأٍ وَخَبَرٍ يَنْتَهِي بِضَمَّةٍ (ُ) أَوْ تَنْوِينِ ضَمٍّ (ٌ) — لِأَنَّهُمَا <strong>مَرْفُوعَانِ</strong>.</p>
+        <p class="english-text">Notice: every مُبْتَدَأ and خَبَر ends with dammah (ُ) or tanween damm (ٌ) — because they are both مَرْفُوع (nominative). This is the key sign to look for.</p>
+    </div>
+</section>
+
+<!-- MCQ Section -->
 <section class="section" id="mcq">
     <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - Multiple Choice Questions</h2>
-    <div class="mcq-question" data-correct="d" data-explanation="اِسْتَقْبَلَ عَلَى وَزْنِ اِسْتَفْعَلَ (الباب العاشر). - اِسْتَقْبَلَ is Form X."><h4 class="arabic-medium">١. "اِسْتَقْبَلَ" عَلَى وَزْنِ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) فَعَلَ</span></label><label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) اِفْتَعَلَ</span></label><label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) تَفَعَّلَ</span></label><label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) اِسْتَفْعَلَ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="b" data-explanation="مَصْدَرُ اِسْتَقْبَلَ هُوَ اِسْتِقْبَال. - The masdar is اِسْتِقْبَال."><h4 class="arabic-medium">٢. مَصْدَرُ "اِسْتَقْبَلَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) قَبُول</span></label><label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) اِسْتِقْبَال</span></label><label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) مُسْتَقْبَل</span></label><label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) تَقَبُّل</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="a" data-explanation="جِذْرُ اِسْتَقْبَلَ هُوَ ق ب ل. - Root is ق ب ل."><h4 class="arabic-medium">٣. جِذْرُ "اِسْتَقْبَلَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) ق ب ل</span></label><label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) س ق ب</span></label><label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) ق ب ر</span></label><label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) ق ل ب</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="c" data-explanation="اِسْتَقْبَلَ يَسْتَقْبِلُ: To meet/receive. - Means to meet."><h4 class="arabic-medium">٤. مَعْنَى "اِسْتَقْبَلَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) To accept</span></label><label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) To reject</span></label><label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) To meet/receive</span></label><label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) To leave</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="b" data-explanation="اِسْتَقْبَلَ فِعْلٌ سُدَاسِيٌّ (سِتَّةُ حُرُوفٍ). - اِسْتَقْبَلَ has six letters."><h4 class="arabic-medium">٥. "اِسْتَقْبَلَ" فِعْلٌ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) ثُلَاثِيّ</span></label><label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) سُدَاسِيّ</span></label><label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) رُبَاعِيّ</span></label><label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) خُمَاسِيّ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="a" data-explanation="أَمْرُ اِسْتَقْبَلَ هُوَ اِسْتَقْبِلْ. - Imperative is اِسْتَقْبِلْ."><h4 class="arabic-medium">٦. أَمْرُ "اِسْتَقْبَلَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) اِسْتَقْبِلْ</span></label><label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) قَابِلْ</span></label><label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) اِقْبَلْ</span></label><label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) تَقَبَّلْ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="d" data-explanation="اسم المفعول من اِسْتَقْبَلَ: مُسْتَقْبَل (يُسْتَخْدَمُ أَيْضًا لِلمُسْتَقْبَلِ). - Passive participle is مُسْتَقْبَل."><h4 class="arabic-medium">٧. اسْمُ المَفْعُولِ مِنْ "اِسْتَقْبَلَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) مُسْتَقْبِل</span></label><label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) قَابِل</span></label><label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) مَقْبُول</span></label><label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) مُسْتَقْبَل</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="c" data-explanation="لَنْ يَسْتَقْبِلَ: منصوب بالفتحة. - Accusative with fathah after لَنْ."><h4 class="arabic-medium">٨. "لَنْ يَسْتَقْبِلَ" - "يَسْتَقْبِلَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) مَرْفُوع</span></label><label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) مَجْزُوم</span></label><label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) مَنْصُوب</span></label><label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مَبْنِيّ</span></label></div><div class="mcq-feedback"></div></div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="اِسْتَقْبَلَ عَلَى وَزْنِ اِسْتَفْعَلَ (البَابُ العَاشِرُ). - اِسْتَقْبَلَ is Form X.">
+        <h4 class="arabic-medium">١. "اِسْتَقْبَلَ" عَلَى وَزْنِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) فَعَلَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) اِفْتَعَلَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) تَفَعَّلَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) اِسْتَفْعَلَ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="مَصْدَرُ اِسْتَقْبَلَ هُوَ اِسْتِقْبَالٌ. - The masdar is اِسْتِقْبَال.">
+        <h4 class="arabic-medium">٢. مَصْدَرُ "اِسْتَقْبَلَ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) قَبُول</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) اِسْتِقْبَال</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) مُسْتَقْبَل</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) تَقَبُّل</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="عَلَامَةُ الجَزْمِ لِلفِعْلِ الصَّحِيحِ مَعَ هُوَ/هِيَ/أَنَا/أَنْتَ/نَحْنُ هِيَ السُّكُونُ. - Sukoon is the jazm sign for sound verbs with these pronouns.">
+        <h4 class="arabic-medium">٣. عَلَامَةُ الجَزْمِ فِي "لَمْ يَذْهَبْ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) السُّكُونُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) حَذْفُ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) الفَتْحَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) الكَسْرَةُ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="يَذْهَبُونَ مِنَ الأَفْعَالِ الخَمْسَةِ فَعَلَامَةُ جَزْمِهِ حَذْفُ النُّونِ → لَمْ يَذْهَبُوا. - Five verbs use noon-dropping.">
+        <h4 class="arabic-medium">٤. "لَمْ يَذْهَبُوا" - عَلَامَةُ الجَزْمِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) السُّكُونُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) حَذْفُ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) حَذْفُ الوَاوِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) مَبْنِيٌّ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="لَمَّا تُسْتَخْدَمُ بَدَلًا مِنَ الكَلِمَةِ العَامِّيَّةِ 'لِسَّه' وَمَعْنَاهَا Not yet. - لَمَّا means 'not yet'.">
+        <h4 class="arabic-medium">٥. "أَرَجَعَ أَبُوكَ؟" — "لَمَّا" مَعْنَاهُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) نَعَمْ رَجَعَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) لَنْ يَرْجِعَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) لَمْ يَرْجِعْ بَعْدُ (Not yet)</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) رَجَعَ أَمْسِ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="لَمْ يَذْهَبْنَ مَبْنِيٌّ عَلَى السُّكُونِ فِي مَحَلِّ جَزْمٍ (هُنَّ/أَنْتُنَّ لَا تَتَغَيَّرُ). - With هُنَّ the verb is indeclinable.">
+        <h4 class="arabic-medium">٦. "لَمْ يَذْهَبْنَ" (هُنَّ) — عَلَامَةُ الجَزْمِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) السُّكُونُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) حَذْفُ النُّونِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) الفَتْحَةُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) مَبْنِيٌّ (لَا تَغْيِيرَ)</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="'المَاءُ' هُوَ المُبْتَدَأُ (أَوَّلُ اسْمٍ فِي الجُمْلَةِ الاسْمِيَّةِ). - المَاءُ is the mubtada'.">
+        <h4 class="arabic-medium">٧. "المَاءُ قَلِيلٌ" - "المَاءُ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) مُبْتَدَأٌ مَرْفُوعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) خَبَرٌ مَرْفُوعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) فَاعِلٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) مَفْعُولٌ بِهِ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="اِسْتَقْبَلَ يَسْتَقْبِلُ مَعْنَاهُ To meet/receive/welcome. - Means to meet/receive.">
+        <h4 class="arabic-medium">٨. مَعْنَى "اِسْتَقْبَلَ":</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) To accept</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) To reject</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) To meet / receive</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) To leave</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="تَذْهَبِينَ → لَمْ تَذْهَبِي (حُذِفَتِ النُّونُ لِأَنَّهُ مِنَ الأَفْعَالِ الخَمْسَةِ). - The noon is dropped for أَنْتِ.">
+        <h4 class="arabic-medium">٩. "تَذْهَبِينَ" بَعْدَ لَمْ تَصِيرُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q9" value="a"><span>أ) لَمْ تَذْهَبِينَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="b"><span>ب) لَمْ تَذْهَبِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="c"><span>ج) لَمْ تَذْهَبْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="d"><span>د) لَمْ تَذْهَبِينِ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="'الدُّخُولُ مَمْنُوعٌ' جُمْلَةٌ اسْمِيَّةٌ لِأَنَّهَا تَبْدَأُ بِاسْمٍ. - Starts with a noun → nominal sentence.">
+        <h4 class="arabic-medium">١٠. "الدُّخُولُ مَمْنُوعٌ" جُمْلَةٌ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q10" value="a"><span>أ) اسْمِيَّةٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="b"><span>ب) فِعْلِيَّةٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="c"><span>ج) شِبْهُ جُمْلَةٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="d"><span>د) حَرْفِيَّةٌ</span></label>
+        </div><div class="mcq-feedback"></div>
+    </div>
 </section>
 
-<footer style="text-align: center; padding: 30px; color: #666;"><p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الخَامِسَةُ وَالعِشْرُونَ</p><p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 25</p></footer>
+<footer style="text-align: center; padding: 30px; color: #666;">
+    <p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الخَامِسَةُ وَالعِشْرُونَ</p>
+    <p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 25 (Lesson 21 cont.)</p>
+</footer>
 
-<script>document.querySelectorAll('.mcq-question').forEach(question=>{const correct=question.dataset.correct;const explanation=question.dataset.explanation||'';const options=question.querySelectorAll('.mcq-option');const feedback=question.querySelector('.mcq-feedback');options.forEach(option=>{option.addEventListener('click',function(){if(question.classList.contains('answered'))return;question.classList.add('answered');const value=this.querySelector('input').value;this.querySelector('input').checked=true;options.forEach(opt=>{if(opt.querySelector('input').value===correct)opt.classList.add('correct');});if(value===correct){this.classList.add('correct');feedback.innerHTML='<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>'+explanation;feedback.className='mcq-feedback show correct';}else{this.classList.add('incorrect');feedback.innerHTML='<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>'+explanation;feedback.className='mcq-feedback show incorrect';}});});});</script>
+<script>
+document.querySelectorAll('.mcq-question').forEach(question => {
+    const correct = question.dataset.correct;
+    const explanation = question.dataset.explanation || '';
+    const options = question.querySelectorAll('.mcq-option');
+    const feedback = question.querySelector('.mcq-feedback');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (question.classList.contains('answered')) return;
+            question.classList.add('answered');
+            const value = this.querySelector('input').value;
+            this.querySelector('input').checked = true;
+            options.forEach(opt => { if (opt.querySelector('input').value === correct) opt.classList.add('correct'); });
+            if (value === correct) {
+                this.classList.add('correct');
+                feedback.innerHTML = '<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ! - Correct!</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show correct';
+            } else {
+                this.classList.add('incorrect');
+                feedback.innerHTML = '<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ - Incorrect</strong><br>' + explanation;
+                feedback.className = 'mcq-feedback show incorrect';
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
