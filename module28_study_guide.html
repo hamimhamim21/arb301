@@ -3,48 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 28 - ARB303 Study Guide | المحاضرة الثامنة والعشرون</title>
+    <title>Module 28 - ARB301 Study Guide | المحاضرة الثامنة والعشرون</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    <style>* { box-sizing: border-box; } body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; } .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); } .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; } .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; } .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; } .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); } .nav-links .nav-ar { font-size: 18px; font-weight: bold; } .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; } .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); } .main-title h1 { font-size: 48px; margin: 0 0 10px 0; } .main-title .subtitle { font-size: 24px; opacity: 0.9; } .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); } .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; } .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; } .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; } .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; } .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; } .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; } table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; } th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; } td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; } tr:nth-child(even) { background: #f8f9fa; } .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; } .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; } .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; } .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; } .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; } .home-btn:hover { transform: scale(1.1); } .home-btn svg { width: 22px; height: 22px; fill: white; } .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; } .formula { font-size: 36px; color: #00695c; font-weight: bold; } .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; } .mcq-options { padding: 10px 20px; } .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; } .mcq-option:hover { border-color: #00897b; } .mcq-option input[type="radio"] { display: none; } .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; } .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; } .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; } .mcq-feedback.show { display: block; } .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; } .mcq-feedback.incorrect { background: #ffebee; color: #c62828; } @media (max-width: 768px) { .section-title { font-size: 28px; } table { font-size: 18px; } }</style>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 26px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 26px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 34px; color: #00695c; font-weight: bold; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 22px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) { .section-title { font-size: 28px; } table { font-size: 18px; } }
+    </style>
 </head>
 <body>
 <a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
-<nav class="nav-container"><div class="nav-title">المحاضرة الثامنة والعشرون - Lecture 28</div><div class="nav-links"><a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a><a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a><a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a></div></nav>
-<div class="main-title"><h1>المُحَاضَرَةُ الثَّامِنَةُ وَالعِشْرُونَ</h1><div class="subtitle">Lecture 28</div></div>
 
+<nav class="nav-container">
+    <div class="nav-title">المحاضرة الثامنة والعشرون - Lecture 28 (Review of Lesson 23)</div>
+    <div class="nav-links">
+        <a href="#review"><span class="nav-ar">مُرَاجَعَةٌ</span><span class="nav-en">Review</span></a>
+        <a href="#verb"><span class="nav-ar">بَكَى</span><span class="nav-en">Verb: Cried</span></a>
+        <a href="#ex-plural"><span class="nav-ar">تَمْرِينُ الجَمْعِ</span><span class="nav-en">Plural Exercise</span></a>
+        <a href="#ex-idafa"><span class="nav-ar">تَمْرِينُ الإِضَافَةِ</span><span class="nav-en">Idafa Exercise</span></a>
+        <a href="#ex-kam"><span class="nav-ar">تَمْرِينُ كَمْ</span><span class="nav-en">Kam Exercise</span></a>
+        <a href="#ex-la"><span class="nav-ar">لَا + المَاضِي</span><span class="nav-en">La + Past</span></a>
+        <a href="#irab"><span class="nav-ar">تَمْرِينُ الإِعْرَابِ</span><span class="nav-en">I'rab Exercise</span></a>
+        <a href="#mcq"><span class="nav-ar">أَسْئِلَةٌ</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ الثَّامِنَةُ وَالعِشْرُونَ</h1>
+    <div class="subtitle">Lecture 28 — Review & Exercises of Lesson 23</div>
+</div>
+
+<!-- ========== REVIEW ========== -->
+<section class="section" id="review">
+    <h2 class="section-title">١. مُرَاجَعَةٌ - Quick Review of Lesson 23</h2>
+    <p class="english-text">This lecture is an extended review of Lesson 23. It drills the three main topics through the book's exercises. Before tackling them, make sure these concepts are solid:</p>
+
+    <div class="grammar-box">
+        <h4 class="arabic-medium">المَوْضُوعَاتُ الثَّلَاثَةُ</h4>
+        <p class="arabic-text">١. <strong>جَمْعُ المُذَكَّرِ السَّالِمِ</strong> — بِالوَاوِ وَالنُّونِ رَفْعاً، وَبِاليَاءِ وَالنُّونِ نَصْباً وَجَرّاً، وَتُحْذَفُ النُّونُ عِنْدَ الإِضَافَةِ</p>
+        <p class="arabic-text">٢. <strong>العَدَدُ المَعْطُوفُ (21-99)</strong> — المَعْطُوفُ عَلَيْهِ مِنْ 3 إِلَى 9 يُخَالِفُ المَعْدُودَ، وَ(1-2) يُوَافِقَانِ. المَعْطُوفُ (20-90) مُلْحَقٌ بِجَمْعِ المُذَكَّرِ السَّالِمِ</p>
+        <p class="arabic-text">٣. <strong>كَمِ الاسْتِفْهَامِيَّةُ وَالخَبَرِيَّةُ</strong> — الأُولَى تَمْيِيزُهَا مُفْرَدٌ مَنْصُوبٌ، وَالثَّانِيَةُ تَمْيِيزُهَا مَجْرُورٌ</p>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">الاسْتِمْرَارُ فِي النَّفْيِ</h4>
+        <p class="arabic-text">فِي هَذَا الدَّرْسِ أَيْضاً: دُخُولُ (لَا) عَلَى الفِعْلِ المَاضِي عِنْدَ تَكْرَارِ النَّفْيِ (لَا ... وَلَا ...)</p>
+        <p class="english-text">Also in this lesson: entering (لا) over the past verb when negation is repeated ("neither ... nor ...").</p>
+    </div>
+</section>
+
+<!-- ========== VERB ========== -->
 <section class="section" id="verb">
-    <h2 class="section-title">الفِعْلُ: بَكَى - يَبْكِي</h2>
-    <p class="english-text">The Verb: To cry / To weep (Defective verb - نَاقِص)</p>
-    <div class="formula-box"><div class="formula">بَكَى - يَبْكِي - لَنْ يَبْكِيَ - لَمْ يَبْكِ - اِبْكِ - بُكَاءً</div><p class="english-text">Past - Present - Accusative - Jussive - Imperative - Masdar: Crying</p></div>
+    <h2 class="section-title">٢. الفِعْلُ: بَكَى - يَبْكِي (To Cry)</h2>
+    <p class="english-text">The featured verb of this lecture is بَكَى — to cry. It is a verb ending in alif (معتلّ الآخر — ناقص). Its conjugation has some special rules because of the weak final letter.</p>
+
+    <div class="formula-box">
+        <div class="formula">بَكَى - يَبْكِي - لَنْ يَبْكِيَ - لَمْ يَبْكِ - اِبْكِ - بُكَاءً</div>
+        <p class="english-text" style="text-align:center;">Past · Present · Nasb · Jazm · Imperative · Masdar</p>
+    </div>
+
     <table>
-        <tr><th>الضَّمِير</th><th>المَاضِي</th><th>المُضَارِع</th><th>الأَمْر</th></tr>
-        <tr><td class="pronoun-cell">أَنَا</td><td>بَكَيْتُ</td><td>أَبْكِي</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">أَنْتَ</td><td>بَكَيْتَ</td><td>تَبْكِي</td><td>اِبْكِ</td></tr>
-        <tr><td class="pronoun-cell">أَنْتِ</td><td>بَكَيْتِ</td><td>تَبْكِينَ</td><td>اِبْكِي</td></tr>
-        <tr><td class="pronoun-cell">هُوَ</td><td>بَكَى</td><td>يَبْكِي</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هِيَ</td><td>بَكَتْ</td><td>تَبْكِي</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هُمْ</td><td>بَكَوْا</td><td>يَبْكُونَ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هُنَّ</td><td>بَكَيْنَ</td><td>يَبْكِينَ</td><td>-</td></tr>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ</th><th>لَمْ</th><th>الأَمْرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>بَكَيْتُ</td><td>أَبْكِي</td><td>لَنْ أَبْكِيَ</td><td>لَمْ أَبْكِ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>بَكَيْنَا</td><td>نَبْكِي</td><td>لَنْ نَبْكِيَ</td><td>لَمْ نَبْكِ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>بَكَيْتَ</td><td>تَبْكِي</td><td>لَنْ تَبْكِيَ</td><td>لَمْ تَبْكِ</td><td>اِبْكِ</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>بَكَيْتِ</td><td>تَبْكِينَ</td><td>لَنْ تَبْكِي</td><td>لَمْ تَبْكِي</td><td>اِبْكِي</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>بَكَى</td><td>يَبْكِي</td><td>لَنْ يَبْكِيَ</td><td>لَمْ يَبْكِ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>بَكَتْ</td><td>تَبْكِي</td><td>لَنْ تَبْكِيَ</td><td>لَمْ تَبْكِ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>بَكَوْا</td><td>يَبْكُونَ</td><td>لَنْ يَبْكُوا</td><td>لَمْ يَبْكُوا</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>بَكَيْتُمْ</td><td>تَبْكُونَ</td><td>لَنْ تَبْكُوا</td><td>لَمْ تَبْكُوا</td><td>اِبْكُوا</td></tr>
     </table>
-    <div class="example-box"><div class="example-ar">بَكَى الطِّفْلُ عِنْدَمَا سَقَطَ</div><div class="example-en">The child cried when he fell</div></div>
-    <div class="example-box"><div class="example-ar">لَا تَبْكِ يَا بُنَيَّ</div><div class="example-en">Don't cry, my son</div></div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">مِنَ القُرْآنِ الكَرِيمِ</h4>
+        <p class="arabic-text">﴿فَلْيَضْحَكُوا قَلِيلاً <strong>وَلْيَبْكُوا</strong> كَثِيراً﴾</p>
+        <p class="english-text">"So let them laugh a little and weep much." [At-Tawbah 9:82] — featuring both laughing (ضحك) and crying (بكى).</p>
+    </div>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">حَذْفُ حَرْفِ العِلَّةِ فِي الجَزْمِ</h4>
+        <p class="arabic-text">عِنْدَ دُخُولِ أَدَاةِ جَزْمٍ (لَمْ / لَا النَّاهِيَةِ) عَلَى الفِعْلِ المُعْتَلِّ — <strong>تُحْذَفُ</strong> حَرْفُ العِلَّةِ</p>
+        <p class="english-text">When a jazm particle meets a weak-ending verb, the weak letter <strong>drops off</strong>: يَبْكِي → لَمْ يَبْكِ &nbsp;·&nbsp; اِبْكِي → اِبْكِ</p>
+    </div>
 </section>
 
-<section class="section" id="exercises"><h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2><div class="rule-box"><p class="arabic-text">تَمَارِينُ وَتَدْرِيبَاتٌ مِنَ الدَّرْسِ</p><p class="english-text">Exercises and drills from the lesson</p></div></section>
+<!-- ========== EXERCISE: PLURAL ========== -->
+<section class="section" id="ex-plural">
+    <h2 class="section-title">٣. تَمْرِينٌ: جَمْعُ المُذَكَّرِ السَّالِمُ</h2>
+    <p class="english-text">Exercise: convert the singular nouns into sound masculine plurals.</p>
 
+    <div class="rule-box">
+        <h4 class="arabic-medium">اجْمَعِ الأَسْمَاءَ الآتِيَةَ جَمْعَ مُذَكَّرٍ سَالِماً</h4>
+    </div>
+
+    <table>
+        <tr><th>المُفْرَدُ</th><th>الجَمْعُ</th></tr>
+        <tr><td>مُدَرِّس</td><td>مُدَرِّسُونَ</td></tr>
+        <tr><td>مُهَنْدِس</td><td>مُهَنْدِسُونَ</td></tr>
+        <tr><td>مُسْلِم</td><td>مُسْلِمُونَ</td></tr>
+        <tr><td>كَافِرٌ</td><td>كَافِرُونَ</td></tr>
+        <tr><td>غَائِبٌ</td><td>غَائِبُونَ</td></tr>
+        <tr><td>مُجْتَهِدٌ</td><td>مُجْتَهِدُونَ</td></tr>
+        <tr><td>مُؤْمِنٌ</td><td>مُؤْمِنُونَ</td></tr>
+        <tr><td>صَالِحٌ</td><td>صَالِحُونَ</td></tr>
+    </table>
+</section>
+
+<!-- ========== EXERCISE: IDAFA ========== -->
+<section class="section" id="ex-idafa">
+    <h2 class="section-title">٤. تَمْرِينٌ: حَذْفُ النُّونِ فِي الإِضَافَةِ</h2>
+    <p class="english-text">Exercise: attach the plural to the bracketed word to form an idafa (remember: drop the final nun).</p>
+
+    <div class="example-box"><div class="example-ar">أَبْنَاءُ المُدَرِّسِ → أَبْنَاءُ المُدَرِّسِينَ (sons of the teachers)</div></div>
+
+    <table>
+        <tr><th>المِثَالُ</th><th>النَّتِيجَةُ</th></tr>
+        <tr><td>(المُهَنْدِسُونَ) بُيُوتٌ</td><td>مُهَنْدِسُو البُيُوتِ</td></tr>
+        <tr><td>(المُدَرِّسُونَ) سَيَّارَاتٌ</td><td>مُدَرِّسُو السَّيَّارَاتِ</td></tr>
+        <tr><td>(المُؤْمِنُونَ) أَمِيرٌ</td><td>مُؤْمِنُو الأَمِيرِ</td></tr>
+        <tr><td>(المُسْلِمُونَ) إِمَامٌ</td><td>مُسْلِمُو الإِمَامِ</td></tr>
+        <tr><td>(النَّقَّالُونَ) دَكَاكِينُ</td><td>نَقَّالُو الدَّكَاكِينِ</td></tr>
+        <tr><td>(الكَافِرُونَ) دِينٌ</td><td>كَافِرُو الدِّينِ</td></tr>
+    </table>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">القَاعِدَةُ</h4>
+        <p class="arabic-text">عِنْدَ الإِضَافَةِ: مُسْلِمُونَ → مُسْلِمُو / مُسْلِمِينَ → مُسْلِمِي</p>
+        <p class="english-text">In idafa: the final ن is dropped. This is one of the most tested rules!</p>
+    </div>
+</section>
+
+<!-- ========== EXERCISE: KAM ========== -->
+<section class="section" id="ex-kam">
+    <h2 class="section-title">٥. تَمْرِينٌ: كَمِ الاسْتِفْهَامِيَّةُ وَالخَبَرِيَّةُ</h2>
+    <p class="english-text">Distinguishing the two types of kam — a frequent exam question.</p>
+
+    <h3 class="section-subtitle">حِوَارُ التَّسَوُّقِ - Shopping Dialogue</h3>
+    <div class="example-box">
+        <p class="arabic-text"><strong>هَارُون</strong>: مَا أَجْمَلَ حَقِيبَتَكَ يَا أُسْتَاذُ! بِكَمِ اشْتَرَيْتَهَا؟</p>
+        <p class="english-text">Harun: How beautiful your bag is, teacher! For how much did you buy it? (كم استفهامية)</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>المُدَرِّسُ</strong>: اشْتَرَيْتُهَا بِثَمَانِينَ رِيَالاً.</p>
+        <p class="english-text">Teacher: I bought it for 80 riyals.</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>هَاشِم</strong>: أَنَا اشْتَرَيْتُ مِثْلَهَا بِسَبْعِينَ رِيَالاً.</p>
+        <p class="english-text">Hashim: I bought one like it for 70 riyals.</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>عَمْرُو</strong>: أَنَا اشْتَرَيْتُ حَقِيبَةً أَصْغَرَ مِنْهَا بِسِتِّينَ رِيَالاً.</p>
+        <p class="english-text">Amr: I bought a smaller one for 60 riyals.</p>
+    </div>
+
+    <h3 class="section-subtitle">مِثَالٌ لِلْخَبَرِيَّةِ</h3>
+    <div class="example-box"><div class="example-ar">كَمْ مِنْ طَالِبٍ نَجَحَ فِي الامْتِحَانِ! (خبرية — كثير)</div><div class="example-en">So many students passed the exam!</div></div>
+    <div class="example-box"><div class="example-ar">كَمْ طَالِبٍ فِي الفَصْلِ! (خبرية — بالإضافة)</div><div class="example-en">Many students are in the class!</div></div>
+</section>
+
+<!-- ========== LA + MADI ========== -->
+<section class="section" id="ex-la">
+    <h2 class="section-title">٦. (لَا) النَّافِيَةُ عَلَى المَاضِي</h2>
+    <p class="english-text">From تمرين 12 of the lesson: study these sentences using (لا) with past verbs in parallel negation.</p>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">القَاعِدَةُ</h4>
+        <p class="arabic-text">إِذَا دَخَلَتْ (لَا) عَلَى الفِعْلِ المَاضِي — <strong>وَجَبَ تَكْرَارُهَا</strong></p>
+        <p class="english-text">When (لا) enters over a past verb, it <strong>must be repeated</strong>. You can't use it just once on a past verb — you need the parallel pattern: لا ... ولا ...</p>
+    </div>
+
+    <div class="example-box"><div class="example-ar">لَا أَكَلْتُ وَلَا شَرِبْتُ</div><div class="example-en">I did not eat and I did not drink</div></div>
+    <div class="example-box"><div class="example-ar">ذَلِكَ الطَّالِبُ لَا حَفِظَ الدَّرْسَ وَلَا كَتَبَ الوَاجِبَ</div><div class="example-en">That student did not memorize the lesson and did not write the homework</div></div>
+    <div class="example-box"><div class="example-ar">لَا ضَرَبَنِي وَلَا ضَرَبْتُهُ</div><div class="example-en">He did not hit me and I did not hit him</div></div>
+    <div class="example-box"><div class="example-ar">لَا رَآنِي وَلَا رَأَيْتُهُ</div><div class="example-en">He did not see me and I did not see him</div></div>
+
+    <div class="info-box">
+        <p class="arabic-text">قَالَ تَعَالَى: ﴿فَلَا صَدَّقَ وَلَا صَلَّى﴾ [القيامة: ٣١]</p>
+        <p class="english-text">"He neither affirmed the truth nor prayed" — the Quranic example.</p>
+    </div>
+</section>
+
+<!-- ========== I'RAB EXERCISE ========== -->
+<section class="section" id="irab">
+    <h2 class="section-title">٧. تَمْرِينُ الإِعْرَابِ المُفَصَّلِ</h2>
+    <p class="english-text">Full i'rab of the key example sentence from the lesson.</p>
+
+    <div class="example-box"><div class="example-ar">اشْتَرَيْتُ خَمْسَةً وَعِشْرِينَ قَلَماً</div><div class="example-en">I bought 25 pens</div></div>
+
+    <table>
+        <tr><th>الكَلِمَةُ</th><th>إِعْرَابُهَا</th></tr>
+        <tr><td>اشْتَرَيْتُ</td><td>فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى السُّكُونِ لِاتِّصَالِهِ بِتَاءِ الفَاعِلِ. التَّاءُ: ضَمِيرٌ مُتَّصِلٌ مَبْنِيٌّ عَلَى الضَّمِّ فِي مَحَلِّ رَفْعٍ فَاعِلٌ</td></tr>
+        <tr><td>خَمْسَةً</td><td>مَفْعُولٌ بِهِ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ</td></tr>
+        <tr><td>وَعِشْرِينَ</td><td>الوَاوُ: حَرْفُ عَطْفٍ · عِشْرِينَ: مَعْطُوفٌ عَلَى (خَمْسَةً) مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ اليَاءُ لِأَنَّهُ مُلْحَقٌ بِجَمْعِ المُذَكَّرِ السَّالِمِ</td></tr>
+        <tr><td>قَلَماً</td><td>تَمْيِيزٌ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ الظَّاهِرَةُ</td></tr>
+    </table>
+</section>
+
+<!-- ========== MCQ ========== -->
 <section class="section" id="mcq">
-    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - MCQ</h2>
-    <div class="mcq-question" data-correct="b" data-explanation="مَصْدَرُ بَكَى هُوَ بُكَاء. - Masdar is بُكَاء."><h4 class="arabic-medium">١. مَصْدَرُ "بَكَى":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) بَكْي</span></label><label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) بُكَاء</span></label><label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) بَاكٍ</span></label><label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) مَبْكِيّ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="c" data-explanation="بَكَى فِعْلٌ نَاقِصٌ. - بَكَى is defective."><h4 class="arabic-medium">٢. "بَكَى" فِعْلٌ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) صَحِيح</span></label><label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) أَجْوَف</span></label><label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) نَاقِص</span></label><label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) مِثَال</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="a" data-explanation="عَكْسُ بَكَى هُوَ ضَحِكَ. - Opposite of cry is laugh."><h4 class="arabic-medium">٣. عَكْسُ "بَكَى":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) ضَحِكَ</span></label><label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) نَامَ</span></label><label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) فَرِحَ</span></label><label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) صَمَتَ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="d" data-explanation="بَكَى يَبْكِي: To cry/weep."><h4 class="arabic-medium">٤. مَعْنَى "بَكَى":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) To laugh</span></label><label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) To sleep</span></label><label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) To hope</span></label><label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) To cry</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="b" data-explanation="أَمْرُ بَكَى هُوَ اِبْكِ. - Imperative is اِبْكِ."><h4 class="arabic-medium">٥. أَمْرُ "بَكَى":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) بَكِ</span></label><label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) اِبْكِ</span></label><label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) اُبْكُ</span></label><label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) بُكِ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="a" data-explanation="'لَا تَبْكِ' - لا ناهية تجزم المضارع بحذف حرف العلة. - Jussive by deleting weak letter."><h4 class="arabic-medium">٦. "لَا تَبْكِ" - عَلَامَةُ الجَزْمِ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) حَذْفُ حَرْفِ العِلَّةِ</span></label><label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) السُّكُون</span></label><label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) حَذْفُ النُّونِ</span></label><label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) الفَتْحَة</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="c" data-explanation="اسم الفاعل من بَكَى: بَاكٍ. - Active participle is بَاكٍ."><h4 class="arabic-medium">٧. اسْمُ الفَاعِلِ مِنْ "بَكَى":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) مَبْكِيّ</span></label><label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) بَكَّاء</span></label><label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) بَاكٍ</span></label><label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) بُكَاء</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="d" data-explanation="'لَنْ يَبْكِيَ' منصوب بالفتحة. - Accusative with fathah after لَنْ."><h4 class="arabic-medium">٨. "لَنْ يَبْكِيَ" - "يَبْكِيَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) مَرْفُوع</span></label><label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) مَجْزُوم</span></label><label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) مَبْنِيّ</span></label><label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مَنْصُوب</span></label></div><div class="mcq-feedback"></div></div>
+    <h2 class="section-title">٨. أَسْئِلَةُ الاخْتِيَارِ - MCQ</h2>
+
+    <div class="mcq-question" data-correct="b" data-explanation="بَكَى ينتهي بألف، لمّا يُجزم تُحذف حرف العلة: لم يبكِ. When jussive, the weak alif drops.">
+        <h4 class="arabic-medium">١. جَزْمُ الفِعْلِ (يَبْكِي):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) لَمْ يَبْكِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) لَمْ يَبْكِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) لَمْ يَبْكَى</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) لَمْ يَبْكُو</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="مصدر بَكَى هو بُكَاء. Masdar is bukā'.">
+        <h4 class="arabic-medium">٢. مَصْدَرُ (بَكَى):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) بَكْي</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) بَاكٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) بُكَاء</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) بَكَوَان</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="جمع (مسلم) = مسلمون. Plural of muslim is muslimūn.">
+        <h4 class="arabic-medium">٣. جَمْعُ (مُسْلِم) جَمْعَ مُذَكَّرٍ سَالِماً (رَفْعاً):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) مُسْلِمُونَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) مُسْلِمَانِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) مُسْلِمِينَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) مُسْلِمَات</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="(مسلمو الإمام) — تُحذف النون عند الإضافة. Nun dropped in idafa.">
+        <h4 class="arabic-medium">٤. (المُسْلِمُونَ + إِمَام) فِي الإِضَافَةِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) مُسْلِمُونَ الإِمَامِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) مُسْلِمُو الإِمَامِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) مُسْلِمِينَ الإِمَامِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) مُسْلِمَاتُ الإِمَامِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="يجب تكرار (لا) عند دخولها على الماضي. When (لا) enters on past, it must repeat.">
+        <h4 class="arabic-medium">٥. عِنْدَ دُخُولِ (لَا) عَلَى الفِعْلِ المَاضِي يَجِبُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) حَذْفُ الفِعْلِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) جَزْمُ الفِعْلِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) تَكْرَارُهَا (لَا ... وَلَا ...)</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) نَصْبُ الفِعْلِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="(بكم اشتريتها؟) كم استفهامية — تحتاج إجابة. It's a question.">
+        <h4 class="arabic-medium">٦. (بِكَمِ اشْتَرَيْتَهَا؟) — نَوْعُ (كَم):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) شَرْطِيَّةٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) مَوْصُولَةٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) خَبَرِيَّةٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) اسْتِفْهَامِيَّةٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="المعدود مذكر (طالب)، فالعدد (ثلاثة) يأتي بالتاء (مخالفة). Masc. counted → number with tā'.">
+        <h4 class="arabic-medium">٧. ثَلَاثَةٌ وَعِشْرُونَ ... (المَعْدُودُ طَالِب):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) طَالِبُونَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) طَالِباً</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) طُلَّابٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) طَالِبَيْنِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="الواو حرف عطف، وعشرين معطوف منصوب بالياء (ملحق بجمع المذكر السالم).">
+        <h4 class="arabic-medium">٨. فِي (خَمْسَةً وَعِشْرِينَ قَلَماً) إِعْرَابُ (عِشْرِينَ):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) مَعْطُوفٌ مَنْصُوبٌ بِاليَاءِ (مُلْحَقٌ بِجَمْعِ المُذَكَّرِ السَّالِمِ)</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) تَمْيِيزٌ مَنْصُوبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) حَالٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مُبْتَدَأٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="أمر بَكَى مع (أنتَ): اِبْكِ. Imperative is ibki.">
+        <h4 class="arabic-medium">٩. فِعْلُ الأَمْرِ مِنْ (بَكَى) مَعَ (أَنْتَ):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q9" value="a"><span>أ) اُبْكُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="b"><span>ب) اِبْكِي</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="c"><span>ج) اِبْكِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="d"><span>د) اُبْكَى</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="قَلَماً تمييز منصوب بالفتحة. Qalaman is tamyiz mansub.">
+        <h4 class="arabic-medium">١٠. (قَلَماً) فِي الجُمْلَةِ السَّابِقَةِ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q10" value="a"><span>أ) فَاعِلٌ مَرْفُوعٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="b"><span>ب) تَمْيِيزٌ مَنْصُوبٌ بِالفَتْحَةِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="c"><span>ج) مُضَافٌ إِلَيْهِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="d"><span>د) حَالٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
 </section>
 
-<footer style="text-align: center; padding: 30px; color: #666;"><p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ الثَّامِنَةُ وَالعِشْرُونَ</p><p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 28</p></footer>
-<script>document.querySelectorAll('.mcq-question').forEach(question=>{const correct=question.dataset.correct;const explanation=question.dataset.explanation||'';const options=question.querySelectorAll('.mcq-option');const feedback=question.querySelector('.mcq-feedback');options.forEach(option=>{option.addEventListener('click',function(){if(question.classList.contains('answered'))return;question.classList.add('answered');const value=this.querySelector('input').value;this.querySelector('input').checked=true;options.forEach(opt=>{if(opt.querySelector('input').value===correct)opt.classList.add('correct');});if(value===correct){this.classList.add('correct');feedback.innerHTML='<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ!</strong><br>'+explanation;feedback.className='mcq-feedback show correct';}else{this.classList.add('incorrect');feedback.innerHTML='<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ</strong><br>'+explanation;feedback.className='mcq-feedback show incorrect';}});});});</script>
+<footer style="text-align: center; padding: 30px; color: #666;"><p>ARB301 - مُرَاجَعَةُ الدَّرْسِ الثَّالِثِ وَالعِشْرِينَ - المُحَاضَرَةُ الثَّامِنَةُ وَالعِشْرُونَ</p><p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 28 (Review)</p></footer>
+<script>document.querySelectorAll('.mcq-question').forEach(question=>{const correct=question.dataset.correct;const explanation=question.dataset.explanation||'';const options=question.querySelectorAll('.mcq-option');const feedback=question.querySelector('.mcq-feedback');options.forEach(option=>{option.addEventListener('click',function(){if(question.classList.contains('answered'))return;question.classList.add('answered');const value=this.querySelector('input').value;this.querySelector('input').checked=true;options.forEach(opt=>{if(opt.querySelector('input').value===correct)opt.classList.add('correct');});if(value===correct){this.classList.add('correct');feedback.innerHTML='<strong>✓ إِجَابَةٌ صَحِيحَةٌ!</strong><br>'+explanation;feedback.className='mcq-feedback show correct';}else{this.classList.add('incorrect');feedback.innerHTML='<strong>✗ إِجَابَةٌ خَاطِئَةٌ</strong><br>'+explanation;feedback.className='mcq-feedback show incorrect';}});});});</script>
 </body>
 </html>
