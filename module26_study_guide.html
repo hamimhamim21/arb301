@@ -3,48 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 26 - ARB303 Study Guide | المحاضرة السادسة والعشرون</title>
+    <title>Module 26 - ARB301 Study Guide | المحاضرة السادسة والعشرون</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    <style>* { box-sizing: border-box; } body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; } .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); } .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; } .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; } .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; } .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); } .nav-links .nav-ar { font-size: 18px; font-weight: bold; } .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; } .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); } .main-title h1 { font-size: 48px; margin: 0 0 10px 0; } .main-title .subtitle { font-size: 24px; opacity: 0.9; } .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); } .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; } .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; } .arabic-text { font-size: 28px; color: #2c3e50; line-height: 1.9; } .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; } .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; } .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; } .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; } table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; } th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; } td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; } tr:nth-child(even) { background: #f8f9fa; } .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; } .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; } .example-ar { font-size: 28px; color: #2c3e50; margin-bottom: 8px; } .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; } .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; } .home-btn:hover { transform: scale(1.1); } .home-btn svg { width: 22px; height: 22px; fill: white; } .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; } .formula { font-size: 36px; color: #00695c; font-weight: bold; } .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; } .mcq-options { padding: 10px 20px; } .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 24px; font-family: 'Amiri', serif; } .mcq-option:hover { border-color: #00897b; } .mcq-option input[type="radio"] { display: none; } .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; } .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; } .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; } .mcq-feedback.show { display: block; } .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; } .mcq-feedback.incorrect { background: #ffebee; color: #c62828; } @media (max-width: 768px) { .section-title { font-size: 28px; } table { font-size: 18px; } }</style>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Amiri', serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 2; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .nav-container { position: sticky; top: 0; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); padding: 15px; border-radius: 10px; margin-bottom: 30px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .nav-title { color: white; font-size: 24px; margin-bottom: 10px; text-align: center; }
+        .nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .nav-links a { color: white; text-decoration: none; padding: 10px 18px; background: rgba(255,255,255,0.2); border-radius: 12px; font-size: 14px; transition: all 0.3s; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+        .nav-links a:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+        .nav-links .nav-ar { font-size: 18px; font-weight: bold; }
+        .nav-links .nav-en { font-size: 12px; opacity: 0.85; font-family: Georgia, serif; }
+        .main-title { text-align: center; background: linear-gradient(135deg, #2c3e50 0%, #00695c 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .main-title h1 { font-size: 48px; margin: 0 0 10px 0; }
+        .main-title .subtitle { font-size: 24px; opacity: 0.9; }
+        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .section-title { font-size: 36px; color: #00695c; border-bottom: 4px solid #00897b; padding-bottom: 15px; margin-bottom: 25px; }
+        .section-subtitle { font-size: 28px; color: #00897b; margin: 25px 0 15px 0; }
+        .arabic-medium { font-size: 32px; color: #2c3e50; line-height: 2; }
+        .arabic-text { font-size: 26px; color: #2c3e50; line-height: 1.9; }
+        .english-text { font-family: Georgia, serif; direction: ltr; text-align: left; color: #555; font-size: 18px; margin: 5px 0; }
+        .grammar-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-right: 5px solid #00695c; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .rule-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .info-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-right: 5px solid #2196f3; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .warning-box { background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-right: 5px solid #f44336; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 22px; }
+        th { background: linear-gradient(135deg, #00695c 0%, #00897b 100%); color: white; padding: 15px; text-align: center; }
+        td { padding: 12px 15px; border: 1px solid #ddd; text-align: center; }
+        tr:nth-child(even) { background: #f8f9fa; }
+        .pronoun-cell { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); font-weight: bold; color: #00695c; }
+        .example-box { background: #f8f9fa; border-radius: 10px; padding: 20px; margin: 15px 0; border-right: 4px solid #00897b; }
+        .example-ar { font-size: 26px; color: #2c3e50; margin-bottom: 8px; }
+        .example-en { font-family: Georgia, serif; font-size: 16px; color: #666; direction: ltr; text-align: left; }
+        .home-btn { position: fixed; top: 20px; left: 20px; width: 45px; height: 45px; background: linear-gradient(135deg, #00695c 0%, #00897b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 105, 92, 0.4); z-index: 1001; transition: all 0.3s; }
+        .home-btn:hover { transform: scale(1.1); }
+        .home-btn svg { width: 22px; height: 22px; fill: white; }
+        .formula-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; padding: 25px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 34px; color: #00695c; font-weight: bold; }
+        .mcq-question { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border-right: 5px solid #ff9800; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .mcq-options { padding: 10px 20px; }
+        .mcq-option { display: block; padding: 12px 18px; margin: 8px 0; background: white; border: 2px solid #e0e0e0; border-radius: 10px; cursor: pointer; transition: all 0.3s; font-size: 22px; font-family: 'Amiri', serif; }
+        .mcq-option:hover { border-color: #00897b; }
+        .mcq-option input[type="radio"] { display: none; }
+        .mcq-option.correct { border-color: #4caf50 !important; background: #e8f5e9 !important; }
+        .mcq-option.incorrect { border-color: #f44336 !important; background: #ffebee !important; }
+        .mcq-feedback { margin-top: 10px; padding: 10px 15px; border-radius: 8px; font-size: 20px; display: none; }
+        .mcq-feedback.show { display: block; }
+        .mcq-feedback.correct { background: #e8f5e9; color: #2e7d32; }
+        .mcq-feedback.incorrect { background: #ffebee; color: #c62828; }
+        @media (max-width: 768px) { .section-title { font-size: 28px; } table { font-size: 18px; } }
+    </style>
 </head>
 <body>
 <a href="index.html" class="home-btn" title="Back to Home"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
-<nav class="nav-container"><div class="nav-title">المحاضرة السادسة والعشرون - Lecture 26</div><div class="nav-links"><a href="#verb"><span class="nav-ar">الفعل</span><span class="nav-en">Verb</span></a><a href="#exercises"><span class="nav-ar">تمارين</span><span class="nav-en">Exercises</span></a><a href="#mcq"><span class="nav-ar">أسئلة</span><span class="nav-en">MCQ</span></a></div></nav>
-<div class="main-title"><h1>المُحَاضَرَةُ السَّادِسَةُ وَالعِشْرُونَ</h1><div class="subtitle">Lecture 26</div></div>
 
-<section class="section" id="verb">
-    <h2 class="section-title">الفِعْلُ: اِسْتَرَاحَ - يَسْتَرِيحُ</h2>
-    <p class="english-text">The Verb: To relax / To take a rest (Form X hollow verb - اِسْتَفْعَلَ أَجْوَف)</p>
-    <div class="formula-box"><div class="formula">اِسْتَرَاحَ - يَسْتَرِيحُ - لَنْ يَسْتَرِيحَ - لَمْ يَسْتَرِحْ - اِسْتَرِحْ - اِسْتِرَاحَةً</div><p class="english-text">Past - Present - Accusative - Jussive - Imperative - Masdar: Rest/Relaxation</p></div>
+<nav class="nav-container">
+    <div class="nav-title">المحاضرة السادسة والعشرون - Lecture 26 (Lesson 23 Introduction)</div>
+    <div class="nav-links">
+        <a href="#vocab"><span class="nav-ar">المُفْرَدَاتُ</span><span class="nav-en">Vocabulary</span></a>
+        <a href="#verb"><span class="nav-ar">اسْتَرَاحَ</span><span class="nav-en">Verb: Rest</span></a>
+        <a href="#numbers-11-19"><span class="nav-ar">الأَعْدَادُ المُرَكَّبَةُ</span><span class="nav-en">Compound 11-19</span></a>
+        <a href="#uqood"><span class="nav-ar">العُقُودُ</span><span class="nav-en">Tens 20-90</span></a>
+        <a href="#matuf"><span class="nav-ar">المَعْطُوفَةُ</span><span class="nav-en">Coupled 21-99</span></a>
+        <a href="#lati"><span class="nav-ar">اللَّاتِي</span><span class="nav-en">Fem. Relative</span></a>
+        <a href="#dialogue"><span class="nav-ar">الحِوَارُ</span><span class="nav-en">Dialogue</span></a>
+        <a href="#mcq"><span class="nav-ar">أَسْئِلَةٌ</span><span class="nav-en">MCQ</span></a>
+    </div>
+</nav>
+
+<div class="main-title">
+    <h1>المُحَاضَرَةُ السَّادِسَةُ وَالعِشْرُونَ</h1>
+    <div class="subtitle">Lecture 26 — Introduction to Lesson 23 (Numbers + Relative Pronouns)</div>
+</div>
+
+<!-- ========== VOCAB ========== -->
+<section class="section" id="vocab">
+    <h2 class="section-title">١. الكَلِمَاتُ الجَدِيدَةُ - New Vocabulary</h2>
+    <p class="english-text">Key vocabulary introduced in Lesson 23. Several of these are technical grammar terms — make sure you recognize them because they appear throughout the rest of this lesson.</p>
+
     <table>
-        <tr><th>الضَّمِير</th><th>المَاضِي</th><th>المُضَارِع</th><th>الأَمْر</th></tr>
-        <tr><td class="pronoun-cell">أَنَا</td><td>اِسْتَرَحْتُ</td><td>أَسْتَرِيحُ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">نَحْنُ</td><td>اِسْتَرَحْنَا</td><td>نَسْتَرِيحُ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">أَنْتَ</td><td>اِسْتَرَحْتَ</td><td>تَسْتَرِيحُ</td><td>اِسْتَرِحْ</td></tr>
-        <tr><td class="pronoun-cell">هُوَ</td><td>اِسْتَرَاحَ</td><td>يَسْتَرِيحُ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هِيَ</td><td>اِسْتَرَاحَتْ</td><td>تَسْتَرِيحُ</td><td>-</td></tr>
-        <tr><td class="pronoun-cell">هُمْ</td><td>اِسْتَرَاحُوا</td><td>يَسْتَرِيحُونَ</td><td>-</td></tr>
+        <tr><th>الكَلِمَةُ</th><th>المَعْنَى</th><th>الجَمْعُ</th></tr>
+        <tr><td>اسْتِقْبَالٌ</td><td>Reception / Welcoming</td><td>—</td></tr>
+        <tr><td>مِثَالٌ</td><td>Example</td><td>أَمْثِلَةٌ</td></tr>
+        <tr><td>الضَّمَّةُ (ـُ)</td><td>Damma (short u)</td><td>—</td></tr>
+        <tr><td>الفَتْحَةُ (ـَ)</td><td>Fatha (short a)</td><td>—</td></tr>
+        <tr><td>الكَسْرَةُ (ـِ)</td><td>Kasra (short i)</td><td>—</td></tr>
+        <tr><td>حَضَرَ (يَحْضُرُ)</td><td>To attend / come</td><td>—</td></tr>
+        <tr><td>اسْتَرَاحَ (يَسْتَرِيحُ)</td><td>To rest / take a break</td><td>—</td></tr>
+        <tr><td>أَتَى (يَأْتِي)</td><td>To come</td><td>—</td></tr>
+        <tr><td>رَئِيسٌ</td><td>Leader / Head</td><td>رُؤَسَاءُ</td></tr>
+        <tr><td>مَهْلاً</td><td>Slowly / Wait a moment</td><td>—</td></tr>
+        <tr><td>قِسْمٌ</td><td>Part / Section</td><td>أَقْسَامٌ</td></tr>
+        <tr><td>فَرْقٌ</td><td>Difference</td><td>فُرُوقٌ</td></tr>
+        <tr><td>زَهْرَةٌ</td><td>Flower</td><td>زَهْرٌ / أَزْهَارٌ</td></tr>
     </table>
-    <div class="example-box"><div class="example-ar">اِسْتَرِحْ قَلِيلًا ثُمَّ أَكْمِلِ العَمَلَ</div><div class="example-en">Rest a little then complete the work</div></div>
-    <div class="example-box"><div class="example-ar">اِسْتَرَاحَ المُسَافِرُونَ فِي الفُنْدُقِ</div><div class="example-en">The travelers rested at the hotel</div></div>
-    <div class="info-box"><h4>مُلَاحَظَة - Note</h4><p class="arabic-text">اِسْتَرَاحَ مِنَ الأَفْعَالِ السُّدَاسِيَّةِ عَلَى وَزْنِ اِسْتَفْعَلَ وَهُوَ أَجْوَف (حَرْفُ العِلَّةِ فِي الوَسَطِ). الجِذْرُ: ر و ح</p><p class="english-text">اِسْتَرَاحَ is a Form X hollow verb. Root: ر و ح (related to رَاحَة - comfort)</p></div>
 </section>
 
-<section class="section" id="exercises"><h2 class="section-title">تَمَارِينُ الكِتَابِ - Book Exercises</h2><div class="rule-box"><p class="arabic-text">تَمَارِينُ وَتَدْرِيبَاتٌ مِنَ الدَّرْسِ</p><p class="english-text">Exercises and drills from the lesson</p></div></section>
+<!-- ========== VERB ========== -->
+<section class="section" id="verb">
+    <h2 class="section-title">٢. الفِعْلُ: اسْتَرَاحَ - يَسْتَرِيحُ (To Rest)</h2>
+    <p class="english-text">The featured verb is اسْتَرَاحَ — to rest / take a break. This is a <strong>6-letter verb (سُدَاسِيٌّ)</strong> beginning with hamzat al-wasl. It's also معتلّ الوسط (hollow, because of the alif in the middle).</p>
 
+    <div class="formula-box">
+        <div class="formula">اسْتَرَاحَ - يَسْتَرِيحُ - لَنْ يَسْتَرِيحَ - لَمْ يَسْتَرِحْ - اسْتَرِحْ - اسْتِرَاحَةً</div>
+        <p class="english-text" style="text-align:center;">Past · Present · Nasb · Jazm · Imperative · Masdar (A rest/break)</p>
+    </div>
+
+    <table>
+        <tr><th>الضَّمِيرُ</th><th>المَاضِي</th><th>المُضَارِعُ</th><th>لَنْ</th><th>لَمْ</th><th>الأَمْرُ</th></tr>
+        <tr><td class="pronoun-cell">أَنَا</td><td>اسْتَرَحْتُ فِي المَنْزِلِ</td><td>أَسْتَرِيحُ</td><td>لَنْ أَسْتَرِيحَ</td><td>لَمْ أَسْتَرِحْ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">نَحْنُ</td><td>اسْتَرَحْنَا</td><td>نَسْتَرِيحُ</td><td>لَنْ نَسْتَرِيحَ</td><td>لَمْ نَسْتَرِحْ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">أَنْتَ</td><td>اسْتَرَحْتَ</td><td>تَسْتَرِيحُ</td><td>لَنْ تَسْتَرِيحَ</td><td>لَمْ تَسْتَرِحْ</td><td>اسْتَرِحْ مِنَ العَمَلِ يَا أَخِي</td></tr>
+        <tr><td class="pronoun-cell">أَنْتِ</td><td>اسْتَرَحْتِ</td><td>تَسْتَرِيحِينَ</td><td>لَنْ تَسْتَرِيحِي</td><td>لَمْ تَسْتَرِيحِي</td><td>اسْتَرِيحِي مِنَ العَمَلِ</td></tr>
+        <tr><td class="pronoun-cell">هُوَ</td><td>اسْتَرَاحَ</td><td>يَسْتَرِيحُ</td><td>لَنْ يَسْتَرِيحَ</td><td>لَمْ يَسْتَرِحْ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">هِيَ</td><td>اسْتَرَاحَتْ</td><td>تَسْتَرِيحُ</td><td>لَنْ تَسْتَرِيحَ</td><td>لَمْ تَسْتَرِحْ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">هُمْ</td><td>اسْتَرَاحُوا</td><td>يَسْتَرِيحُونَ</td><td>لَنْ يَسْتَرِيحُوا</td><td>لَمْ يَسْتَرِيحُوا</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُمْ</td><td>اسْتَرَحْتُمْ</td><td>تَسْتَرِيحُونَ</td><td>لَنْ تَسْتَرِيحُوا</td><td>لَمْ تَسْتَرِيحُوا</td><td>اسْتَرِيحُوا يَا أَوْلَادُ</td></tr>
+        <tr><td class="pronoun-cell">هُنَّ</td><td>اسْتَرَحْنَ</td><td>يَسْتَرِحْنَ</td><td>لَنْ يَسْتَرِحْنَ</td><td>لَمْ يَسْتَرِحْنَ</td><td>—</td></tr>
+        <tr><td class="pronoun-cell">أَنْتُنَّ</td><td>اسْتَرَحْتُنَّ</td><td>تَسْتَرِحْنَ</td><td>لَنْ تَسْتَرِحْنَ</td><td>لَمْ تَسْتَرِحْنَ</td><td>اسْتَرِحْنَ يَا بَنَاتُ</td></tr>
+    </table>
+
+    <div class="warning-box">
+        <h4 class="arabic-medium">حَذْفُ حَرْفِ العِلَّةِ فِي الجَزْمِ</h4>
+        <p class="arabic-text">الفِعْلُ أَجْوَفُ (الوَسَطُ ألف/ياء). عِنْدَ الجَزْمِ تُحْذَفُ اليَاءُ: يَسْتَرِيحُ ← لَمْ يَسْتَرِحْ · اسْتَرِيحُ ← اسْتَرِحْ</p>
+        <p class="english-text">This is a hollow verb. When jazm hits it, the long ي in the middle drops: يستريح → لم يسترح · استريح → استرح.</p>
+    </div>
+
+    <div class="example-box"><div class="example-ar">يَا خَالِدُ! لَقَدْ لَعِبْتَ كَثِيراً، فَاسْتَرِحْ</div><div class="example-en">O Khalid! You played a lot — so rest!</div></div>
+    <div class="example-box"><div class="example-ar">أَخِي سَافَرَ مِنْ مَكَّةَ إِلَى المَدِينَةِ، لِذَلِكَ فَهُوَ يُرِيدُ أَنْ يَسْتَرِيحَ</div><div class="example-en">My brother traveled from Makkah to Madinah, so he wants to rest</div></div>
+    <div class="example-box"><div class="example-ar">سَنَبْدَأُ الدَّرْسَ بَعْدَ عَشْرِ دَقَائِقَ، فَاسْتَرِيحُوا الآنَ</div><div class="example-en">We'll start the lesson in 10 minutes — take a rest now</div></div>
+</section>
+
+<!-- ========== COMPOUND 11-19 ========== -->
+<section class="section" id="numbers-11-19">
+    <h2 class="section-title">٣. الأَعْدَادُ المُرَكَّبَةُ (11 - 19)</h2>
+    <p class="english-text">Compound numbers are written as TWO separate words side by side: ones digit + عَشَر / عَشْرَة. They split into two rule groups: (a) 11 & 12 where both parts agree with the counted noun, and (b) 13-19 where the first part opposes and the second agrees.</p>
+
+    <div class="formula-box">
+        <div class="formula">العَدَدُ المُرَكَّبُ = عَدَدٌ + عَشَر / عَشْرَة</div>
+        <p class="english-text" style="text-align:center;">Two separate words written side by side</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">أ. العَدَدَانِ (11 & 12)</h4>
+        <p class="arabic-text">الجُزْءُ الأَوَّلُ <strong>يُوَافِقُ</strong> وَالجُزْءُ الثَّانِي <strong>يُوَافِقُ</strong> (✓ ✓)</p>
+        <p class="english-text"><strong>Both parts agree</strong> with the counted noun (gender match throughout).</p>
+    </div>
+
+    <table>
+        <tr><th>الرَّقْمُ</th><th>مَعَ المُذَكَّرِ (طَالِب)</th><th>مَعَ المُؤَنَّثِ (طَالِبَة)</th></tr>
+        <tr><td>١١</td><td>أَحَدَ عَشَرَ طَالِباً</td><td>إِحْدَى عَشْرَةَ طَالِبَةً</td></tr>
+        <tr><td>١٢</td><td>اِثْنَا عَشَرَ طَالِباً</td><td>اِثْنَتَا عَشْرَةَ طَالِبَةً</td></tr>
+    </table>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">ب. الأَعْدَادُ مِنْ (13 - 19)</h4>
+        <p class="arabic-text">الجُزْءُ الأَوَّلُ <strong>يُخَالِفُ</strong> وَالجُزْءُ الثَّانِي <strong>يُوَافِقُ</strong> (✗ ✓)</p>
+        <p class="english-text"><strong>First part opposes</strong> (taa' swap for 3-9), <strong>second part agrees</strong> (عَشَر/عَشْرَة).</p>
+    </div>
+
+    <table>
+        <tr><th>الرَّقْمُ</th><th>مَعَ المُذَكَّرِ</th><th>مَعَ المُؤَنَّثِ</th></tr>
+        <tr><td>١٣</td><td>ثَلَاثَةَ عَشَرَ طَالِباً</td><td>ثَلَاثَ عَشْرَةَ طَالِبَةً</td></tr>
+        <tr><td>١٤</td><td>أَرْبَعَةَ عَشَرَ طَالِباً</td><td>أَرْبَعَ عَشْرَةَ طَالِبَةً</td></tr>
+        <tr><td>١٥</td><td>خَمْسَةَ عَشَرَ طَالِباً</td><td>خَمْسَ عَشْرَةَ طَالِبَةً</td></tr>
+        <tr><td>١٦</td><td>سِتَّةَ عَشَرَ طَالِباً</td><td>سِتَّ عَشْرَةَ طَالِبَةً</td></tr>
+        <tr><td>١٧</td><td>سَبْعَةَ عَشَرَ طَالِباً</td><td>سَبْعَ عَشْرَةَ طَالِبَةً</td></tr>
+        <tr><td>١٨</td><td>ثَمَانِيَةَ عَشَرَ طَالِباً</td><td>ثَمَانِيَ عَشْرَةَ طَالِبَةً</td></tr>
+        <tr><td>١٩</td><td>تِسْعَةَ عَشَرَ طَالِباً</td><td>تِسْعَ عَشْرَةَ طَالِبَةً</td></tr>
+    </table>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">التَّمْيِيزُ وَالإِعْرَابُ</h4>
+        <p class="arabic-text">• تَمْيِيزُ المُرَكَّبَةِ: <strong>مُفْرَدٌ مَنْصُوبٌ</strong></p>
+        <p class="arabic-text">• العَدَدُ المُرَكَّبُ كَامِلاً: <strong>مَبْنِيٌّ عَلَى فَتْحِ الجُزْأَيْنِ</strong> (إِلَّا اثْنَا عَشَرَ، فَيَتَغَيَّرُ جُزْؤُهُ الأَوَّلُ كَالمُثَنَّى)</p>
+        <p class="english-text">Compound tamyiz: <strong>singular + mansub</strong>. The compound itself is built on the fatha of both parts (except 12's first part, which inflects like the dual).</p>
+    </div>
+</section>
+
+<!-- ========== UQOOD (TENS) ========== -->
+<section class="section" id="uqood">
+    <h2 class="section-title">٤. أَلْفَاظُ العُقُودِ (20, 30, ..., 90)</h2>
+    <p class="english-text">The "uqood" are the round tens: 20, 30, ... 90. The word عَقْد literally means "decade" — a group of 10 years. They all use a <strong>single form</strong> for both masculine and feminine counted nouns.</p>
+
+    <div class="formula-box">
+        <div class="formula">عَقْد = Decade = عَشْرُ سَنَوَاتٍ</div>
+        <p class="english-text" style="text-align:center;">Plural: عُقُود</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">خَصَائِصُ العُقُودِ</h4>
+        <p class="arabic-text">• لَفْظٌ وَاحِدٌ لِلْمُذَكَّرِ وَالمُؤَنَّثِ: عِشْرُونَ طَالِباً / عِشْرُونَ طَالِبَةً</p>
+        <p class="arabic-text">• تَمْيِيزُهَا: <strong>مُفْرَدٌ مَنْصُوبٌ</strong></p>
+        <p class="arabic-text">• تُعْرَبُ إِعْرَابَ <strong>جَمْعِ المُذَكَّرِ السَّالِمِ</strong> (مُلْحَقَةٌ بِهِ) — بِالوَاوِ رَفْعاً، وَبِاليَاءِ نَصْباً وَجَرّاً</p>
+        <p class="english-text">One form for both genders. Tamyiz is singular + mansub. They inflect like the sound masculine plural: واو/نون in raf', ياء/نون in nasb-jarr. They're called "attached" (ملحقة) to the jam', not an actual jam', because their singular doesn't exist.</p>
+    </div>
+
+    <table>
+        <tr><th>الرَّقْمُ</th><th>المَرْفُوعُ</th><th>المَنْصُوبُ / المَجْرُورُ</th></tr>
+        <tr><td>٢٠</td><td>عِشْرُونَ</td><td>عِشْرِينَ</td></tr>
+        <tr><td>٣٠</td><td>ثَلَاثُونَ</td><td>ثَلَاثِينَ</td></tr>
+        <tr><td>٤٠</td><td>أَرْبَعُونَ</td><td>أَرْبَعِينَ</td></tr>
+        <tr><td>٥٠</td><td>خَمْسُونَ</td><td>خَمْسِينَ</td></tr>
+        <tr><td>٦٠</td><td>سِتُّونَ</td><td>سِتِّينَ</td></tr>
+        <tr><td>٧٠</td><td>سَبْعُونَ</td><td>سَبْعِينَ</td></tr>
+        <tr><td>٨٠</td><td>ثَمَانُونَ</td><td>ثَمَانِينَ</td></tr>
+        <tr><td>٩٠</td><td>تِسْعُونَ</td><td>تِسْعِينَ</td></tr>
+    </table>
+
+    <div class="example-box"><div class="example-ar">جَاءَ <strong>عِشْرُونَ</strong> طَبِيباً (رَفْع)</div><div class="example-en">Twenty doctors came</div></div>
+    <div class="example-box"><div class="example-ar">رَأَيْتُ <strong>خَمْسِينَ</strong> عُصْفُوراً (نَصْب)</div><div class="example-en">I saw fifty birds</div></div>
+    <div class="example-box"><div class="example-ar">صَلَّيْتُ فِي <strong>ثَلَاثِينَ</strong> مَسْجِداً (جَرّ)</div><div class="example-en">I prayed in thirty mosques</div></div>
+</section>
+
+<!-- ========== MATUF 21-99 ========== -->
+<section class="section" id="matuf">
+    <h2 class="section-title">٥. الأَعْدَادُ المَعْطُوفَةُ (21 - 99)</h2>
+    <p class="english-text">"Coupled numbers" (معطوفة) — two numbers joined by وَ (and). They cover 21-99 (excluding the pure tens). The first part follows its own category rule; the second part is always a عقد (tens word) and stays the same.</p>
+
+    <div class="formula-box">
+        <div class="formula">المَعْطُوفَةُ = عَدَدٌ + وَ + عَقْدٌ</div>
+        <p class="english-text" style="text-align:center;">e.g., وَاحِدٌ وَعِشْرُونَ (21), خَمْسَةٌ وَعِشْرُونَ (25), تِسْعَةٌ وَتِسْعُونَ (99)</p>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">أ. إِذَا كَانَ المَعْطُوفُ عَلَيْهِ (1 / 2)</h4>
+        <p class="arabic-text">الجُزْءُ الأَوَّلُ <strong>يُوَافِقُ</strong> المَعْدُودَ</p>
+        <div class="example-box"><div class="example-ar">فِي الفَصْلِ <strong>وَاحِدٌ وَعِشْرُونَ</strong> طَالِباً / <strong>إِحْدَى وَعِشْرُونَ</strong> طَالِبَةً</div></div>
+        <div class="example-box"><div class="example-ar">اِثْنَانِ وَعِشْرُونَ طَالِباً / اِثْنَتَانِ وَعِشْرُونَ طَالِبَةً</div></div>
+    </div>
+
+    <div class="rule-box">
+        <h4 class="arabic-medium">ب. إِذَا كَانَ المَعْطُوفُ عَلَيْهِ (3 - 9)</h4>
+        <p class="arabic-text">الجُزْءُ الأَوَّلُ <strong>يُخَالِفُ</strong> المَعْدُودَ</p>
+        <div class="example-box"><div class="example-ar">فِي الشَّهْرِ <strong>تِسْعَةٌ وَعِشْرُونَ</strong> أَوْ <strong>ثَلَاثُونَ</strong> يَوْماً</div></div>
+        <div class="example-box"><div class="example-ar">عَلَى المَكْتَبِ <strong>أَرْبَعٌ وَخَمْسُونَ</strong> مِسْطَرَةً</div><div class="example-en">On the desk are 54 rulers (مسطرة = fem., so 4 = أربع without taa)</div></div>
+    </div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">إِعْرَابُ المَعْطُوفِ</h4>
+        <p class="arabic-text">العَدَدُ الثَّانِي (العَقْد) مَعْطُوفٌ بِالوَاوِ عَلَى الأَوَّلِ، وَيَأْخُذُ نَفْسَ إِعْرَابِ المَعْطُوفِ عَلَيْهِ. فَإِذَا كَانَ الأَوَّلُ مَرْفُوعاً فَالثَّانِي بِالوَاوِ، وَإِذَا كَانَ مَنْصُوباً أَوْ مَجْرُوراً فَبِاليَاءِ</p>
+        <p class="english-text">The second part is معطوف (conjoined) — it matches the case of the first. Raf' → واو; nasb/jarr → ياء.</p>
+        <div class="example-box"><div class="example-ar">جَاءَ خَمْسَةٌ وَعِشْرُونَ رَجُلاً (رَفْع)</div></div>
+        <div class="example-box"><div class="example-ar">رَأَيْتُ خَمْسَةً وَعِشْرِينَ رَجُلاً (نَصْب)</div></div>
+    </div>
+</section>
+
+<!-- ========== AL-LATI (feminine relative pronoun) ========== -->
+<section class="section" id="lati">
+    <h2 class="section-title">٦. اللَّاتِي = اللَّائِي - Feminine Plural Relative Pronoun</h2>
+    <p class="english-text">Two equivalent forms of the same relative pronoun — meaning "(the women/girls) who...". Used for feminine plural antecedents. Both الَّلاتِي and الَّلائِي are completely interchangeable.</p>
+
+    <div class="formula-box">
+        <div class="formula">اللَّاتِي = اللَّائِي</div>
+        <p class="english-text" style="text-align:center;">"those (fem.) who..." — for feminine plural antecedents</p>
+    </div>
+
+    <div class="example-box"><div class="example-ar">الطَّالِبَاتُ <strong>اللَّاتِي</strong> (اللَّائِي) خَرَجْنَ مِنَ الفَصْلِ الآنَ مِنَ الفِلِبِّينِ</div><div class="example-en">The students who left the classroom just now are from the Philippines</div></div>
+    <div class="example-box"><div class="example-ar">السَّيِّدَاتُ <strong>اللَّاتِي</strong> (اللَّائِي) خَرَجْنَ الآنَ مِنَ المُسْتَشْفَى طَبِيبَاتٌ</div><div class="example-en">The ladies who just left the hospital are doctors</div></div>
+    <div class="example-box"><div class="example-ar">البَنَاتُ <strong>اللَّاتِي</strong> (اللَّائِي) يَقْرَأْنَ الصُّحُفَ طَالِبَاتٌ</div><div class="example-en">The girls who read the newspapers are students</div></div>
+
+    <div class="info-box">
+        <h4 class="arabic-medium">مُرَاجَعَةُ الأَسْمَاءِ المَوْصُولَةِ</h4>
+        <table>
+            <tr><th>العَدَدُ وَالجِنْسُ</th><th>الاسْمُ المَوْصُولُ</th></tr>
+            <tr><td>مُذَكَّرٌ مُفْرَدٌ</td><td>الَّذِي</td></tr>
+            <tr><td>مُؤَنَّثٌ مُفْرَدٌ</td><td>الَّتِي</td></tr>
+            <tr><td>مُذَكَّرٌ مُثَنَّى</td><td>الَّذَانِ / الَّذَيْنِ</td></tr>
+            <tr><td>مُؤَنَّثٌ مُثَنَّى</td><td>الَّتَانِ / الَّتَيْنِ</td></tr>
+            <tr><td>مُذَكَّرٌ جَمْعٌ</td><td>الَّذِينَ</td></tr>
+            <tr><td>مُؤَنَّثٌ جَمْعٌ</td><td><strong>اللَّاتِي = اللَّائِي</strong></td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- ========== DIALOGUE ========== -->
+<section class="section" id="dialogue">
+    <h2 class="section-title">٧. الحِوَارُ - Classroom Dialogue</h2>
+    <p class="english-text">The opening dialogue from Lesson 23 — features numbers, relative pronouns, and common classroom phrases.</p>
+
+    <div class="example-box">
+        <p class="arabic-text"><strong>المُدَرِّسُ</strong>: السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</p>
+        <p class="english-text">Teacher: Peace be upon you and Allah's mercy and blessings.</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>الطُّلَّابُ</strong>: وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ. أَهْلاً وَسَهْلاً وَمَرْحَباً يَا أُسْتَاذُ.</p>
+        <p class="english-text">Students: And upon you peace, Allah's mercy and blessings. Welcome, O teacher.</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>المُدَرِّسُ</strong>: أَشْكُرُكُمْ يَا إِخْوَانُ. كَمْ طَالِباً فِي فَصْلِكُمْ هَذَا؟</p>
+        <p class="english-text">Teacher: Thank you, brothers. How many students are in your class?</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>عُمَرُ</strong>: فِيهِ أَرْبَعُونَ طَالِباً.</p>
+        <p class="english-text">Umar: There are forty students in it.</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>المُدَرِّسُ</strong>: وَلَكِنِّي أَرَى خَمْسَةً وَثَلَاثِينَ طَالِباً فَقَطْ. فَأَيْنَ الآخَرُونَ؟</p>
+        <p class="english-text">Teacher: But I see only thirty-five students. Where are the others?</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>عُمَرُ</strong>: هُمْ غَائِبُونَ اليَوْمَ.</p>
+        <p class="english-text">Umar: They are absent today.</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>المُدَرِّسُ</strong>: أَيَّ كِتَابٍ تَقْرَأُونَ؟</p>
+        <p class="english-text">Teacher: Which book are you reading?</p>
+    </div>
+    <div class="example-box">
+        <p class="arabic-text"><strong>عَدْنَانُ</strong>: نَقْرَأُ هَذَا الكِتَابَ. اسْمُهُ "قِصَصُ النَّبِيِّينَ".</p>
+        <p class="english-text">Adnan: We read this book — its name is "Stories of the Prophets".</p>
+    </div>
+</section>
+
+<!-- ========== MCQ ========== -->
 <section class="section" id="mcq">
-    <h2 class="section-title">أَسْئِلَةُ الاخْتِيَارِ - MCQ</h2>
-    <div class="mcq-question" data-correct="b" data-explanation="مَصْدَرُ اِسْتَرَاحَ هُوَ اِسْتِرَاحَة. - Masdar is اِسْتِرَاحَة."><h4 class="arabic-medium">١. مَصْدَرُ "اِسْتَرَاحَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) رَاحَة</span></label><label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) اِسْتِرَاحَة</span></label><label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) مُسْتَرِيح</span></label><label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) تَرْوِيح</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="d" data-explanation="اِسْتَرَاحَ عَلَى وَزْنِ اِسْتَفْعَلَ. - Form X pattern."><h4 class="arabic-medium">٢. "اِسْتَرَاحَ" عَلَى وَزْنِ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) فَعَلَ</span></label><label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) تَفَعَّلَ</span></label><label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) اِفْتَعَلَ</span></label><label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) اِسْتَفْعَلَ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="a" data-explanation="جِذْرُ اِسْتَرَاحَ: ر و ح. - Root is ر و ح."><h4 class="arabic-medium">٣. جِذْرُ "اِسْتَرَاحَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) ر و ح</span></label><label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) س ر ح</span></label><label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) ر ح م</span></label><label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) ر ي ح</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="c" data-explanation="اِسْتَرَاحَ فِعْلٌ أَجْوَفُ سُدَاسِيٌّ. - Hollow six-letter verb."><h4 class="arabic-medium">٤. "اِسْتَرَاحَ" فِعْلٌ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) صَحِيح</span></label><label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) نَاقِص</span></label><label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) أَجْوَف</span></label><label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) مِثَال</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="b" data-explanation="أَمْرُ اِسْتَرَاحَ: اِسْتَرِحْ. - Imperative is اِسْتَرِحْ."><h4 class="arabic-medium">٥. أَمْرُ "اِسْتَرَاحَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) اِسْتَرَحْ</span></label><label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) اِسْتَرِحْ</span></label><label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) رِحْ</span></label><label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) اِرْتَحْ</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="a" data-explanation="اِسْتَرَاحَ يَسْتَرِيحُ: To relax/rest."><h4 class="arabic-medium">٦. مَعْنَى "اِسْتَرَاحَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) To rest</span></label><label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) To leave</span></label><label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) To work</span></label><label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) To run</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="c" data-explanation="لَمْ يَسْتَرِحْ: مجزوم بحذف حرف العلة. - Jussive by deleting weak letter."><h4 class="arabic-medium">٧. "لَمْ يَسْتَرِحْ" - عَلَامَةُ الجَزْمِ:</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) السُّكُون</span></label><label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) حَذْفُ النُّونِ</span></label><label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) حَذْفُ حَرْفِ العِلَّةِ</span></label><label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) الفَتْحَة</span></label></div><div class="mcq-feedback"></div></div>
-    <div class="mcq-question" data-correct="d" data-explanation="اسم الفاعل: مُسْتَرِيح. - Active participle is مُسْتَرِيح."><h4 class="arabic-medium">٨. اسْمُ الفَاعِلِ مِنْ "اِسْتَرَاحَ":</h4><div class="mcq-options"><label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) مُسْتَرَاح</span></label><label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) رَائِح</span></label><label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) مُرْتَاح</span></label><label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) مُسْتَرِيح</span></label></div><div class="mcq-feedback"></div></div>
+    <h2 class="section-title">٨. أَسْئِلَةُ الاخْتِيَارِ - MCQ</h2>
+
+    <div class="mcq-question" data-correct="c" data-explanation="اسْتِرَاحَة مصدر اسْتَرَاحَ. Masdar of istarāḥa is istirāḥa.">
+        <h4 class="arabic-medium">١. مَصْدَرُ (اسْتَرَاحَ):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q1" value="a"><span>أ) رَاحَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="b"><span>ب) مُسْتَرِيح</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="c"><span>ج) اسْتِرَاحَة</span></label>
+            <label class="mcq-option"><input type="radio" name="q1" value="d"><span>د) رَوْح</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="الفعل أجوف، تُحذف الياء عند الجزم: لم يسترحْ. Hollow verb loses its middle ya' in jazm.">
+        <h4 class="arabic-medium">٢. جَزْمُ (يَسْتَرِيحُ):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q2" value="a"><span>أ) لَمْ يَسْتَرِيحْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="b"><span>ب) لَمْ يَسْتَرِحْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="c"><span>ج) لَمْ يَسْتَرَاحْ</span></label>
+            <label class="mcq-option"><input type="radio" name="q2" value="d"><span>د) لَمْ يَسْتَرُحْ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="مع المذكر (طالب): أحدَ عشرَ. Masc. 11 = aḥada 'ashara.">
+        <h4 class="arabic-medium">٣. (11 طَالِب) — أَيُّ صَحِيحٌ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q3" value="a"><span>أ) أَحَدَ عَشَرَ طَالِباً</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="b"><span>ب) إِحْدَى عَشْرَةَ طَالِباً</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="c"><span>ج) وَاحِدٌ عَشْرَةَ طَالِباً</span></label>
+            <label class="mcq-option"><input type="radio" name="q3" value="d"><span>د) أَحَدَةَ عَشْرَةَ طَالِباً</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="مع المؤنث (طالبة): خمسَ عشرةَ. First part opposes (no taa), second agrees (with taa for fem.).">
+        <h4 class="arabic-medium">٤. (15 طَالِبَة) — أَيُّ صَحِيحٌ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q4" value="a"><span>أ) خَمْسَةَ عَشَرَ طَالِبَةً</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="b"><span>ب) خَمْسَةَ عَشْرَةَ طَالِبَةً</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="c"><span>ج) خَمْسُ عَشْرَةَ طَالِبَةً</span></label>
+            <label class="mcq-option"><input type="radio" name="q4" value="d"><span>د) خَمْسَ عَشْرَةَ طَالِبَةً</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="تمييز 11-19: مفرد منصوب. 11-19 tamyiz is singular mansub.">
+        <h4 class="arabic-medium">٥. تَمْيِيزُ الأَعْدَادِ المُرَكَّبَةِ (11 - 19):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q5" value="a"><span>أ) مُفْرَدٌ مَنْصُوبٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="b"><span>ب) مُفْرَدٌ مَجْرُورٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="c"><span>ج) جَمْعٌ مَجْرُورٌ</span></label>
+            <label class="mcq-option"><input type="radio" name="q5" value="d"><span>د) جَمْعٌ مَرْفُوعٌ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="العُقُود ملحقة بجمع المذكر السالم — واو رفعاً وياء نصباً وجرّاً. Tens inflect like sound masc. plural.">
+        <h4 class="arabic-medium">٦. ألْفَاظُ العُقُودِ (20-90) تُعْرَبُ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q6" value="a"><span>أ) إِعْرَابَ المُثَنَّى</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="b"><span>ب) مَبْنِيَّةً عَلَى الفَتْحِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="c"><span>ج) مُلْحَقَةً بِجَمْعِ المُذَكَّرِ السَّالِمِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q6" value="d"><span>د) مَعْطُوفَةً</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="العقود لفظ واحد للمذكر والمؤنث. Uqood have one form for both genders.">
+        <h4 class="arabic-medium">٧. كَمْ لَفْظاً لِلْعَقْدِ الوَاحِدِ (مِثْلُ 20) مَعَ المُذَكَّرِ وَالمُؤَنَّثِ؟</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q7" value="a"><span>أ) لَفْظَانِ مُخْتَلِفَانِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="b"><span>ب) لَفْظٌ وَاحِدٌ لِكِلَا الجِنْسَيْنِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="c"><span>ج) ثَلَاثَةُ أَلْفَاظٍ</span></label>
+            <label class="mcq-option"><input type="radio" name="q7" value="d"><span>د) يَتَغَيَّرُ حَسَبَ العَدَدِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="اللاتي = اللائي كلاهما للجمع المؤنث. Al-lātī and al-lā'ī are both for fem. plural.">
+        <h4 class="arabic-medium">٨. (اللَّاتِي) وَ(اللَّائِي) اسْمَانِ مَوْصُولَانِ لـ:</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q8" value="a"><span>أ) المُذَكَّرِ المُفْرَدِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="b"><span>ب) المُؤَنَّثِ المُفْرَدِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="c"><span>ج) المُذَكَّرِ الجَمْعِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q8" value="d"><span>د) المُؤَنَّثِ الجَمْعِ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="b" data-explanation="(خمسةً وثلاثين) — خمسة (مذكر لأن طالب مذكر)، وثلاثين معطوف منصوب بالياء. 3-9 opposes.">
+        <h4 class="arabic-medium">٩. (35 طَالِب) فِي (رَأَيْتُ ... طَالِباً):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q9" value="a"><span>أ) خَمْسَ وَثَلَاثُونَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="b"><span>ب) خَمْسَةً وَثَلَاثِينَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="c"><span>ج) خَمْسَةً وَثَلَاثُونَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q9" value="d"><span>د) خَمْسٌ وَثَلَاثِينَ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="a" data-explanation="استراح = to rest/take a break. Istarāḥa means 'to rest'.">
+        <h4 class="arabic-medium">١٠. مَعْنَى (اسْتَرَاحَ):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q10" value="a"><span>أ) To rest / take a break</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="b"><span>ب) To study</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="c"><span>ج) To run</span></label>
+            <label class="mcq-option"><input type="radio" name="q10" value="d"><span>د) To travel</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="c" data-explanation="11 و12 يوافقان في الجزأين. 11 and 12 have BOTH parts agreeing.">
+        <h4 class="arabic-medium">١١. فِي العَدَدَيْنِ (11) وَ(12):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q11" value="a"><span>أ) كِلَا الجُزْأَيْنِ يُخَالِفَانِ المَعْدُودَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="b"><span>ب) الأَوَّلُ يُوَافِقُ وَالثَّانِي يُخَالِفُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="c"><span>ج) كِلَا الجُزْأَيْنِ يُوَافِقَانِ المَعْدُودَ</span></label>
+            <label class="mcq-option"><input type="radio" name="q11" value="d"><span>د) الأَوَّلُ يُخَالِفُ وَالثَّانِي يُوَافِقُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
+
+    <div class="mcq-question" data-correct="d" data-explanation="13-19: الجزء الأول يخالف، الثاني يوافق. 13-19: first opposes, second agrees.">
+        <h4 class="arabic-medium">١٢. فِي الأَعْدَادِ (13 - 19):</h4>
+        <div class="mcq-options">
+            <label class="mcq-option"><input type="radio" name="q12" value="a"><span>أ) كِلَا الجُزْأَيْنِ يُوَافِقَانِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="b"><span>ب) كِلَا الجُزْأَيْنِ يُخَالِفَانِ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="c"><span>ج) الأَوَّلُ يُوَافِقُ وَالثَّانِي يُخَالِفُ</span></label>
+            <label class="mcq-option"><input type="radio" name="q12" value="d"><span>د) الأَوَّلُ يُخَالِفُ وَالثَّانِي يُوَافِقُ</span></label>
+        </div>
+        <div class="mcq-feedback"></div>
+    </div>
 </section>
 
-<footer style="text-align: center; padding: 30px; color: #666;"><p>ARB303 - الدَّوْرَةُ الرَّابِعَةُ - المُحَاضَرَةُ السَّادِسَةُ وَالعِشْرُونَ</p><p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 26</p></footer>
-<script>document.querySelectorAll('.mcq-question').forEach(question=>{const correct=question.dataset.correct;const explanation=question.dataset.explanation||'';const options=question.querySelectorAll('.mcq-option');const feedback=question.querySelector('.mcq-feedback');options.forEach(option=>{option.addEventListener('click',function(){if(question.classList.contains('answered'))return;question.classList.add('answered');const value=this.querySelector('input').value;this.querySelector('input').checked=true;options.forEach(opt=>{if(opt.querySelector('input').value===correct)opt.classList.add('correct');});if(value===correct){this.classList.add('correct');feedback.innerHTML='<strong>\u2713 إِجَابَةٌ صَحِيحَةٌ!</strong><br>'+explanation;feedback.className='mcq-feedback show correct';}else{this.classList.add('incorrect');feedback.innerHTML='<strong>\u2717 إِجَابَةٌ خَاطِئَةٌ</strong><br>'+explanation;feedback.className='mcq-feedback show incorrect';}});});});</script>
+<footer style="text-align: center; padding: 30px; color: #666;"><p>ARB301 - الدَّرْسُ الثَّالِثُ وَالعِشْرُونَ - المُحَاضَرَةُ السَّادِسَةُ وَالعِشْرُونَ</p><p style="font-family: Georgia, serif; margin-top: 10px;">Madinah Arabic Book 3 - Lecture 26</p></footer>
+<script>document.querySelectorAll('.mcq-question').forEach(question=>{const correct=question.dataset.correct;const explanation=question.dataset.explanation||'';const options=question.querySelectorAll('.mcq-option');const feedback=question.querySelector('.mcq-feedback');options.forEach(option=>{option.addEventListener('click',function(){if(question.classList.contains('answered'))return;question.classList.add('answered');const value=this.querySelector('input').value;this.querySelector('input').checked=true;options.forEach(opt=>{if(opt.querySelector('input').value===correct)opt.classList.add('correct');});if(value===correct){this.classList.add('correct');feedback.innerHTML='<strong>✓ إِجَابَةٌ صَحِيحَةٌ!</strong><br>'+explanation;feedback.className='mcq-feedback show correct';}else{this.classList.add('incorrect');feedback.innerHTML='<strong>✗ إِجَابَةٌ خَاطِئَةٌ</strong><br>'+explanation;feedback.className='mcq-feedback show incorrect';}});});});</script>
 </body>
 </html>
